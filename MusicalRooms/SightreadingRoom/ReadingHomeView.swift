@@ -74,15 +74,15 @@ struct ReadingHomeView: View {
                                 .foregroundColor(Color("darkerBrown"))
                             }
                             .padding()
-                            .frame(width:300, height: 80, alignment: .leading)
+                            .frame(width: 300, height: 80, alignment: .leading)
                             .background( Color("evenLighterBrown"))
                             .cornerRadius(20)
                             
                         }
                     }
                     .padding()
-                    .frame(width:340, height: 170, alignment: .leading)
-                    .background( Color("lightBrown"))
+                    .frame(width: 340, height: 160, alignment: .leading)
+                    .background(Color("lightBrown"))
                     .cornerRadius(20)
                 }
             }

@@ -18,6 +18,7 @@
 		2E16227E2741F2E300791ADC /* ReadingHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16227D2741F2E300791ADC /* ReadingHomeView.swift */; };
 		2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16227F2741F2F700791ADC /* TunerHomeView.swift */; };
 		2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1622812741F30400791ADC /* MetronomeHomeView.swift */; };
+		FFC4C925274264FF00248FD9 /* GradeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4C924274264FF00248FD9 /* GradeStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		2E16227D2741F2E300791ADC /* ReadingHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingHomeView.swift; sourceTree = "<group>"; };
 		2E16227F2741F2F700791ADC /* TunerHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerHomeView.swift; sourceTree = "<group>"; };
 		2E1622812741F30400791ADC /* MetronomeHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeHomeView.swift; sourceTree = "<group>"; };
+		FFC4C924274264FF00248FD9 /* GradeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		2E16224A27412CA100791ADC /* MusicalRooms */ = {
 			isa = PBXGroup;
 			children = (
+				FFC4C924274264FF00248FD9 /* GradeStruct.swift */,
 				2E16227A2741F2AA00791ADC /* MetronomeRoom */,
 				2E1622792741F2A400791ADC /* TunerRoom */,
 				2E1622782741F29800791ADC /* SightreadingRoom */,
@@ -301,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFC4C925274264FF00248FD9 /* GradeStruct.swift in Sources */,
 				2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */,
 				2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */,
 				2E16224E27412CA100791ADC /* ContentView.swift in Sources */,

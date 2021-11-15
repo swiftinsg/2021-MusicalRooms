@@ -43,7 +43,10 @@ struct ReadingHomeView: View {
                                     HStack {
                                         ForEach(0 ..< timedQuestions.count) { time in
                                             Text("\(timedQuestions[time])s")
-                                                .frame(width: 60, height: 20, alignment: .center)
+                                                .frame(width: 45, height: 20, alignment: .center)
+                                                .onTapGesture {
+                                                    
+                                                }
                                         }
                                     }
                                 }
@@ -58,7 +61,10 @@ struct ReadingHomeView: View {
                                     HStack {
                                         ForEach(0 ..< drilledQuestions.count) { drill in
                                             Text("\(drilledQuestions[drill])")
-                                                .frame(width: 60, height: 20, alignment: .center)
+                                                .frame(width: 45, height: 20, alignment: .center)
+                                                .onTapGesture {
+                                                    
+                                                }
                                         }
                                     }
                                 }
@@ -68,14 +74,14 @@ struct ReadingHomeView: View {
                                 .foregroundColor(Color("darkerBrown"))
                             }
                             .padding()
-                            .frame(width:350, height: 80, alignment: .leading)
+                            .frame(width:300, height: 80, alignment: .leading)
                             .background( Color("evenLighterBrown"))
                             .cornerRadius(20)
                             
                         }
                     }
                     .padding()
-                    .frame(width:380, height: 170, alignment: .leading)
+                    .frame(width:340, height: 170, alignment: .leading)
                     .background( Color("lightBrown"))
                     .cornerRadius(20)
                 }

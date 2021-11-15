@@ -9,10 +9,9 @@ import SwiftUI
 
 struct MetronomeHomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Welcome to the metronome room")
     }
 }
-
 struct MetronomeHomeView_Previews: PreviewProvider {
     static var previews: some View {
         MetronomeHomeView()

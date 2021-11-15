@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  MusicalRooms
-//
-//  Created by sap on 14/11/21.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -13,40 +6,36 @@ struct ContentView: View {
     var darkBrown:Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
     
     var body: some View {
-        
-        TabView{
+        TabView {
             TheoryHomeView()
                 .tabItem{
                     Image(systemName: "rectangle.and.pencil.and.ellipsis")
                     Text("Theory")
-                }.tag(1)
+                }
+            
             ReadingHomeView()
                 .tabItem{
                     Image(systemName: "music.note.list")
                     Text("Sightreading")
-                }.tag(2)
+                }
+            
             TunerHomeView()
                 .tabItem{
                     Image(systemName: "tuningfork")
                     Text("Tuner")
-                }.tag(3)
+                }
+    
             MetronomeHomeView()
                 .tabItem{
                     Image(systemName: "metronome")
                     Text("Metronome")
-                }.tag(4)
-            
+                }
         }
         .accentColor(darkBrown)
         .font(Font.body)
         .onAppear{
-            UITabBar.appearance().barTintColor = UIColor.init(lightBrown)
             UITabBar.appearance().unselectedItemTintColor = UIColor.init(lightBrown)
         }
-        
-        
-        
-        
         
     }
 }

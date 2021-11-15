@@ -1,10 +1,3 @@
-//
-//  MetronomeHomeView.swift
-//  MusicalRooms
-//
-//  Created by sap on 15/11/21.
-//
-
 import SwiftUI
 import AVFAudio
 
@@ -18,12 +11,25 @@ struct MetronomeHomeView: View {
     @State var barNotes: Int = 1
     @State var isOn:Bool = false
     
+    @AppStorage("sigIndex") var sigIndex:Int = 1
+    let signatures = ["1/4", "2/4", "3/4", "4/4", "5/4", "6/4", "3/8", "5/8", "6/8", "7/8", "9/8", "12/8"]
+    
+    @State var displayNumpad:Bool = false
+    @State var displaySigSelect:Bool = false
+    
+    @State var minusButtonSize:CGFloat = 1.0
+    @State var plusButtonSize:CGFloat = 1.0
+    @State var playButtonSize:CGFloat = 1.0
+    
+    
+    
+    
     var body: some View {
     
         VStack{
             
             Text("Metronome")
-                .font(.title.bold())
+                .font(Font.system(size: 32, weight: .bold))
                 .frame( alignment: .leading)
                 .offset(x:-65)
                 .padding()
@@ -36,9 +42,11 @@ struct MetronomeHomeView: View {
                 Rectangle()
                     .foregroundColor(lightBrown)
                     .frame(width: 7, height: 300, alignment: .center)
+                    .cornerRadius(2)
                 Circle()
                     .foregroundColor(lightBrown)
                     .frame(width: 20, height: 20, alignment: .center)
+                    .offset(y: CGFloat(-bpm*280/200+160))
             }
             
             Spacer().frame(height:20)
@@ -56,31 +64,35 @@ struct MetronomeHomeView: View {
             ZStack{
                 Rectangle()
                     .foregroundColor(backBrown)
-                    .frame(width: 250, height: 55, alignment: .center)
+                    .frame(width: 280, height: 60, alignment: .center)
                     .cornerRadius(10)
                 
-                HStack{
-                    Button("\(Image(systemName: "minus"))"){
-                        print("Minus bpm")
-                    }
-                    .font(.title2.bold())
-                    .foregroundColor(darkBrown)
-                    
-                    Spacer().frame(width: 55)
-                    
-                    Text("\(bpm)")
-                        .font(.title.bold())
-                        .foregroundColor(darkBrown)
-                    
-                    Spacer().frame(width: 55)
-                    
-                    Button("\(Image(systemName: "plus"))"){
-                        print("Plus bpm")
-                    }
-                    .font(.title2.bold())
-                    .foregroundColor(darkBrown)
-                    
+                Button("\(Image(systemName: "minus"))"){
+                    if(bpm > 1){bpm-=1}
+                    print("Minus bpm")
                 }
+                .font(.title2.bold())
+                .foregroundColor(darkBrown)
+                .offset(x: -85)
+                
+                Text("\(bpm)")
+                    .font(.title.bold())
+                    .foregroundColor(darkBrown)
+                    .onTapGesture{
+                        displayNumpad.toggle()
+                    }
+                    .sheet(isPresented: $displayNumpad, content: {
+                        BpmNumpadView(bpm: $bpm)
+                    })
+                
+                
+                Button("\(Image(systemName: "plus"))"){
+                    if(bpm < 230) {bpm+=1}
+                    print("Plus bpm")
+                }
+                .font(.title2.bold())
+                .foregroundColor(darkBrown)
+                .offset(x: 85)
             }
             
             Spacer().frame(height: 40)
@@ -90,31 +102,38 @@ struct MetronomeHomeView: View {
                 //Play
                 ZStack{
                     Rectangle()
-                        .foregroundColor(Color(red: 205/255, green: 150/255, blue: 100/255))
-                        .frame(width: 165, height: 55, alignment: .center)
+                        .foregroundColor(backBrown)
+                        .frame(width: 205, height: 60, alignment: .center)
                         .cornerRadius(10)
                     Button(isOn ? "\(Image(systemName: "pause.fill"))" : "\(Image(systemName: "play.fill"))"){
                         isOn = !isOn
                         print("Start metronome")
                     }
-                    .frame(width: 155, height: 60, alignment: .center)
+                    .frame(width: 195, alignment: .center)
                     .font(.title2.bold())
                     .foregroundColor(darkBrown)
                 }
                 
-                Spacer().frame(width: 15)
+                Spacer().frame(width: 10)
                 
                 //TimeSignature selector
                 ZStack{
                     Rectangle()
-                        .foregroundColor(Color(red: 205/255, green: 150/255, blue: 100/255))
-                        .frame(width: 70, height: 55, alignment: .center)
+                        .foregroundColor(backBrown)
+                        .frame(width: 70, height: 60, alignment: .center)
                         .cornerRadius(10)
-                    Button("6/8"){
+                    Button{
                         print("Open timesignature page")
+                        displaySigSelect.toggle()
+                    } label: {
+                        Text(signatures[sigIndex])
+                            .font(.title2.bold())
+                            .foregroundColor(darkBrown)
                     }
-                    .font(.title2.bold())
-                    .foregroundColor(darkBrown)
+                    .frame(width: 60, alignment: .center)
+                    .sheet(isPresented: $displaySigSelect, content: {
+                        TimeSigSelectView(selIndex:$sigIndex)
+                    })
                 }
                 
             }
@@ -124,6 +143,7 @@ struct MetronomeHomeView: View {
         }.offset(y:-20)
         
     }
+    
 }
 
 func tempoName(bpm: Int) -> String{
@@ -148,6 +168,6 @@ func tempoName(bpm: Int) -> String{
 
 struct MetronomeHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        MetronomeHomeView(bpm: 60, barNotes: 1) //no pulses if 1
+        MetronomeHomeView() //no pulses if 1
     }
 }

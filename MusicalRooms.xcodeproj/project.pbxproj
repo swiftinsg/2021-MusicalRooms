@@ -19,6 +19,8 @@
 		2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16227F2741F2F700791ADC /* TunerHomeView.swift */; };
 		2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1622812741F30400791ADC /* MetronomeHomeView.swift */; };
 		2E162287274206E000791ADC /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = 2E162286274206E000791ADC /* SwiftySound */; };
+		2E1622892742561200791ADC /* BpmNumpadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1622882742561200791ADC /* BpmNumpadView.swift */; };
+		2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		2E16227D2741F2E300791ADC /* ReadingHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingHomeView.swift; sourceTree = "<group>"; };
 		2E16227F2741F2F700791ADC /* TunerHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerHomeView.swift; sourceTree = "<group>"; };
 		2E1622812741F30400791ADC /* MetronomeHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeHomeView.swift; sourceTree = "<group>"; };
+		2E1622882742561200791ADC /* BpmNumpadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BpmNumpadView.swift; sourceTree = "<group>"; };
+		2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSigSelectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				2E1622812741F30400791ADC /* MetronomeHomeView.swift */,
+				2E1622882742561200791ADC /* BpmNumpadView.swift */,
+				2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */,
 			);
 			path = MetronomeRoom;
 			sourceTree = "<group>";
@@ -314,7 +320,9 @@
 				2E16224E27412CA100791ADC /* ContentView.swift in Sources */,
 				2E16224C27412CA100791ADC /* MusicalRoomsApp.swift in Sources */,
 				2E16227E2741F2E300791ADC /* ReadingHomeView.swift in Sources */,
+				2E1622892742561200791ADC /* BpmNumpadView.swift in Sources */,
 				2E1622762741F26500791ADC /* TheoryHomeView.swift in Sources */,
+				2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

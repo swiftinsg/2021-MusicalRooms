@@ -30,7 +30,7 @@ struct ReadingHomeView: View {
                         .multilineTextAlignment(.leading)
                         .font(.system(.title, design: .rounded))
                         .lineLimit(3)
-                        .foregroundColor(Color("darkBrown"))
+                        .foregroundColor(Color("darkerBrown"))
                     
                     
                     VStack(alignment: .leading) {
@@ -71,7 +71,7 @@ struct ReadingHomeView: View {
                         .multilineTextAlignment(.leading)
                         .font(.system(.title, design: .rounded))
                         .lineLimit(3)
-                        .foregroundColor(Color("darkBrown"))
+                        .foregroundColor(Color("darkerBrown"))
                     
                     
                     VStack(alignment: .leading) {
@@ -111,7 +111,7 @@ struct ReadingHomeView: View {
                         .multilineTextAlignment(.leading)
                         .font(.system(.title, design: .rounded))
                         .lineLimit(3)
-                        .foregroundColor(Color("darkBrown"))
+                        .foregroundColor(Color("darkerBrown"))
                     
                     
                     VStack(alignment: .leading) {
@@ -151,7 +151,7 @@ struct ReadingHomeView: View {
                         .multilineTextAlignment(.leading)
                         .font(.system(.title, design: .rounded))
                         .lineLimit(3)
-                        .foregroundColor(Color("darkBrown"))
+                        .foregroundColor(Color("darkerBrown"))
                     
                     
                     VStack(alignment: .leading) {

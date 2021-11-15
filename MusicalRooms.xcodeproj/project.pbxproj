@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BBE2CD610EC63FAF0B95D19 /* GradeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE21893CACBA742A275AC5 /* GradeStruct.swift */; };
 		2E16224C27412CA100791ADC /* MusicalRoomsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16224B27412CA100791ADC /* MusicalRoomsApp.swift */; };
 		2E16224E27412CA100791ADC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16224D27412CA100791ADC /* ContentView.swift */; };
 		2E16225027412CA500791ADC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E16224F27412CA500791ADC /* Assets.xcassets */; };
@@ -21,7 +22,6 @@
 		2E162287274206E000791ADC /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = 2E162286274206E000791ADC /* SwiftySound */; };
 		2E1622892742561200791ADC /* BpmNumpadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1622882742561200791ADC /* BpmNumpadView.swift */; };
 		2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */; };
-		FFC4C925274264FF00248FD9 /* GradeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4C924274264FF00248FD9 /* GradeStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1BBE21893CACBA742A275AC5 /* GradeStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeStruct.swift; sourceTree = "<group>"; };
 		2E16224827412CA100791ADC /* MusicalRooms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicalRooms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E16224B27412CA100791ADC /* MusicalRoomsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsApp.swift; sourceTree = "<group>"; };
 		2E16224D27412CA100791ADC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		2E1622812741F30400791ADC /* MetronomeHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeHomeView.swift; sourceTree = "<group>"; };
 		2E1622882742561200791ADC /* BpmNumpadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BpmNumpadView.swift; sourceTree = "<group>"; };
 		2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSigSelectView.swift; sourceTree = "<group>"; };
-		FFC4C924274264FF00248FD9 /* GradeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +110,6 @@
 		2E16224A27412CA100791ADC /* MusicalRooms */ = {
 			isa = PBXGroup;
 			children = (
-				FFC4C924274264FF00248FD9 /* GradeStruct.swift */,
 				2E16227A2741F2AA00791ADC /* MetronomeRoom */,
 				2E1622792741F2A400791ADC /* TunerRoom */,
 				2E1622782741F29800791ADC /* SightreadingRoom */,
@@ -152,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				2E1622752741F26500791ADC /* TheoryHomeView.swift */,
+				1BBE21893CACBA742A275AC5 /* GradeStruct.swift */,
 			);
 			path = TheoryRoom;
 			sourceTree = "<group>";
@@ -318,7 +318,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFC4C925274264FF00248FD9 /* GradeStruct.swift in Sources */,
 				2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */,
 				2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */,
 				2E16224E27412CA100791ADC /* ContentView.swift in Sources */,
@@ -327,6 +326,7 @@
 				2E1622892742561200791ADC /* BpmNumpadView.swift in Sources */,
 				2E1622762741F26500791ADC /* TheoryHomeView.swift in Sources */,
 				2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */,
+				1BBE2CD610EC63FAF0B95D19 /* GradeStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

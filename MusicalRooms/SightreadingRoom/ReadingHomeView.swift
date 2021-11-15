@@ -18,12 +18,9 @@ struct ReadingHomeView: View {
         //Header
         VStack(alignment: .leading) {
             Text("Sightreading")
-                .font(.system(.largeTitle, design: .rounded))
-                .fontWeight(.semibold)
-                .foregroundStyle(.primary)
-                .padding(.horizontal)
-                .padding(.top)
-                .font(.system(size: 1000))
+                .font(Font.system(size: 32, weight: .bold))
+                .frame( alignment: .leading)
+                .padding()
 
             ScrollView(.vertical, showsIndicators: false) {
                 ForEach(0 ..< clefs.count) { clef in
@@ -86,7 +83,7 @@ struct ReadingHomeView: View {
                     .cornerRadius(20)
                 }
             }
-        }
+        }.offset(y:20)
     }
 }
 

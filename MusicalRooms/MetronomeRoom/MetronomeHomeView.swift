@@ -38,7 +38,7 @@ struct MetronomeHomeView: View {
             Text("Metronome")
                 .font(Font.system(size: 32, weight: .bold))
                 .frame( alignment: .leading)
-                .offset(x:-65)
+                .offset(x:-65,y:-10)
                 .padding()
 
             Spacer().frame(height: 30)
@@ -56,7 +56,7 @@ struct MetronomeHomeView: View {
                     .offset(y: CGFloat(-bpm*280/200+160))
             }
 
-            Spacer().frame(height:20)
+            Spacer().frame(height:25)
 
 
             // Tempo name
@@ -64,7 +64,7 @@ struct MetronomeHomeView: View {
                 .font(.title3.bold())
                 .foregroundColor(lightBrown)
 
-            Spacer().frame(height:30)
+            Spacer().frame(height:45)
 
 
             // BPM modifier

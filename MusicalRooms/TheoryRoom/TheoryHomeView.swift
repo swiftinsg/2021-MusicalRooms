@@ -17,12 +17,9 @@ struct TheoryHomeView: View {
         
         VStack(alignment: .leading) {
             Text("Theory")
-                .font(.system(.largeTitle, design: .rounded))
-                .fontWeight(.semibold)
-                .foregroundStyle(.primary)
-                .padding(.horizontal)
-                .padding(.top)
-                .font(.system(size: 1000))
+                .font(Font.system(size: 32, weight: .bold))
+                .frame( alignment: .leading)
+                .padding()
 
             ScrollView(.vertical, showsIndicators: false) {
                 ForEach(grades) { grade in
@@ -66,7 +63,9 @@ struct TheoryHomeView: View {
                     }
                 }
             }
-        }
+        }.offset(y:20)
+
+
     }
 }
 

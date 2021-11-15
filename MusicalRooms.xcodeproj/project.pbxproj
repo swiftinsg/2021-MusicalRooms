@@ -14,6 +14,10 @@
 		2E16225D27412CA500791ADC /* MusicalRoomsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16225C27412CA500791ADC /* MusicalRoomsTests.swift */; };
 		2E16226727412CA500791ADC /* MusicalRoomsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */; };
 		2E16226927412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */; };
+		2E1622762741F26500791ADC /* TheoryHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1622752741F26500791ADC /* TheoryHomeView.swift */; };
+		2E16227E2741F2E300791ADC /* ReadingHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16227D2741F2E300791ADC /* ReadingHomeView.swift */; };
+		2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16227F2741F2F700791ADC /* TunerHomeView.swift */; };
+		2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1622812741F30400791ADC /* MetronomeHomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		2E16226227412CA500791ADC /* MusicalRoomsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicalRoomsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsUITests.swift; sourceTree = "<group>"; };
 		2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2E1622752741F26500791ADC /* TheoryHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryHomeView.swift; sourceTree = "<group>"; };
+		2E16227D2741F2E300791ADC /* ReadingHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingHomeView.swift; sourceTree = "<group>"; };
+		2E16227F2741F2F700791ADC /* TunerHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerHomeView.swift; sourceTree = "<group>"; };
+		2E1622812741F30400791ADC /* MetronomeHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeHomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,10 @@
 		2E16224A27412CA100791ADC /* MusicalRooms */ = {
 			isa = PBXGroup;
 			children = (
+				2E16227A2741F2AA00791ADC /* MetronomeRoom */,
+				2E1622792741F2A400791ADC /* TunerRoom */,
+				2E1622782741F29800791ADC /* SightreadingRoom */,
+				2E1622772741F27E00791ADC /* TheoryRoom */,
 				2E16224B27412CA100791ADC /* MusicalRoomsApp.swift */,
 				2E16224D27412CA100791ADC /* ContentView.swift */,
 				2E16224F27412CA500791ADC /* Assets.xcassets */,
@@ -125,6 +137,38 @@
 				2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */,
 			);
 			path = MusicalRoomsUITests;
+			sourceTree = "<group>";
+		};
+		2E1622772741F27E00791ADC /* TheoryRoom */ = {
+			isa = PBXGroup;
+			children = (
+				2E1622752741F26500791ADC /* TheoryHomeView.swift */,
+			);
+			path = TheoryRoom;
+			sourceTree = "<group>";
+		};
+		2E1622782741F29800791ADC /* SightreadingRoom */ = {
+			isa = PBXGroup;
+			children = (
+				2E16227D2741F2E300791ADC /* ReadingHomeView.swift */,
+			);
+			path = SightreadingRoom;
+			sourceTree = "<group>";
+		};
+		2E1622792741F2A400791ADC /* TunerRoom */ = {
+			isa = PBXGroup;
+			children = (
+				2E16227F2741F2F700791ADC /* TunerHomeView.swift */,
+			);
+			path = TunerRoom;
+			sourceTree = "<group>";
+		};
+		2E16227A2741F2AA00791ADC /* MetronomeRoom */ = {
+			isa = PBXGroup;
+			children = (
+				2E1622812741F30400791ADC /* MetronomeHomeView.swift */,
+			);
+			path = MetronomeRoom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +301,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */,
+				2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */,
 				2E16224E27412CA100791ADC /* ContentView.swift in Sources */,
 				2E16224C27412CA100791ADC /* MusicalRoomsApp.swift in Sources */,
+				2E16227E2741F2E300791ADC /* ReadingHomeView.swift in Sources */,
+				2E1622762741F26500791ADC /* TheoryHomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

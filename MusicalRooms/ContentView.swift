@@ -9,8 +9,37 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        TabView{
+            TheoryHomeView()
+                .tabItem{
+                    Image(systemName: "rectangle.and.pencil.and.ellipsis")
+                    Text("Theory")
+                }
+            ReadingHomeView()
+                .tabItem{
+                    Image(systemName: "music.note.list")
+                    Text("Sightreading")
+                }
+            TunerHomeView()
+                .tabItem{
+                    Image(systemName: "tuningfork")
+                    Text("Tuner")
+                }
+            MetronomeHomeView()
+                .tabItem{
+                    Image(systemName: "metronome")
+                    Text("Metronome")
+                }
+            
+        }
+        .preferredColorScheme(.light)
+        .accentColor(Color.brown)
+        
+        
+        
+        
+        
     }
 }
 

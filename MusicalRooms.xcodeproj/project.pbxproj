@@ -18,7 +18,6 @@
 		2E16227E2741F2E300791ADC /* ReadingHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16227D2741F2E300791ADC /* ReadingHomeView.swift */; };
 		2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16227F2741F2F700791ADC /* TunerHomeView.swift */; };
 		2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1622812741F30400791ADC /* MetronomeHomeView.swift */; };
-		2E162284274206B100791ADC /* MetronomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E162283274206B100791ADC /* MetronomeManager.swift */; };
 		2E162287274206E000791ADC /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = 2E162286274206E000791ADC /* SwiftySound */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +53,6 @@
 		2E16227D2741F2E300791ADC /* ReadingHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingHomeView.swift; sourceTree = "<group>"; };
 		2E16227F2741F2F700791ADC /* TunerHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerHomeView.swift; sourceTree = "<group>"; };
 		2E1622812741F30400791ADC /* MetronomeHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeHomeView.swift; sourceTree = "<group>"; };
-		2E162283274206B100791ADC /* MetronomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				2E1622812741F30400791ADC /* MetronomeHomeView.swift */,
-				2E162283274206B100791ADC /* MetronomeManager.swift */,
 			);
 			path = MetronomeRoom;
 			sourceTree = "<group>";
@@ -315,7 +312,6 @@
 				2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */,
 				2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */,
 				2E16224E27412CA100791ADC /* ContentView.swift in Sources */,
-				2E162284274206B100791ADC /* MetronomeManager.swift in Sources */,
 				2E16224C27412CA100791ADC /* MusicalRoomsApp.swift in Sources */,
 				2E16227E2741F2E300791ADC /* ReadingHomeView.swift in Sources */,
 				2E1622762741F26500791ADC /* TheoryHomeView.swift in Sources */,

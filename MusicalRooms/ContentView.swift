@@ -19,22 +19,22 @@ struct ContentView: View {
                 .tabItem{
                     Image(systemName: "rectangle.and.pencil.and.ellipsis")
                     Text("Theory")
-                }
+                }.tag(1)
             ReadingHomeView()
                 .tabItem{
                     Image(systemName: "music.note.list")
                     Text("Sightreading")
-                }
+                }.tag(2)
             TunerHomeView()
                 .tabItem{
                     Image(systemName: "tuningfork")
                     Text("Tuner")
-                }
+                }.tag(3)
             MetronomeHomeView()
                 .tabItem{
                     Image(systemName: "metronome")
                     Text("Metronome")
-                }
+                }.tag(4)
             
         }
         .accentColor(darkBrown)

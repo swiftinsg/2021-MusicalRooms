@@ -18,159 +18,61 @@ struct ReadingHomeView: View {
         //Header
         VStack(alignment: .leading) {
             Text("Sightreading")
-                                       .font(.system(.largeTitle, design: .rounded))
-                                       .fontWeight(.semibold)
-                                       .foregroundStyle(.primary)
-                                       .padding(.horizontal)
-                                       .padding(.top)
-                                       .font(.system(size: 1000))
+                .font(.system(.largeTitle, design: .rounded))
+                .fontWeight(.semibold)
+                .foregroundStyle(.primary)
+                .padding(.horizontal)
+                .padding(.top)
+                .font(.system(size: 1000))
             
             ScrollView(.vertical, showsIndicators: false) {
-            //Alto
-            HStack(alignment: .bottom) {
-                
-                VStack(alignment: .leading) {
-                    
-                    Text("Alto")
-                        .fontWeight(.semibold)
-                        .multilineTextAlignment(.leading)
-                        .font(.system(.title, design: .rounded))
-                        .lineLimit(3)
-                        .foregroundColor(Color("darkerBrown"))
-                    
-                    
-                    VStack(alignment: .leading) {
-                        Text("Timed:     15s      30s      45s      60s")
-                            .multilineTextAlignment(.leading)
-                            .font(.system(size: 20,design: .rounded))
-                            .lineLimit(3)
-                            .foregroundColor(Color("darkerBrown"))
-                        Text("Drill:          10        20         30        40")
-                            .multilineTextAlignment(.leading)
-                            .font(.system(size: 20,design: .rounded))
-                            .lineLimit(3)
-                            .foregroundColor(Color("darkerBrown"))
-                    }
-                    .padding()
-                    .frame(width:350, height: 80, alignment: .leading)
-                    .background( Color("evenLighterBrown"))
-                    .cornerRadius(20)
-                    
-                }
-                
-                Spacer()
-                
-            }
-            
-            .padding()
-            .frame(width:380, height: 170, alignment: .leading)
-            .background( Color("lightBrown"))
-            .cornerRadius(20)
-            
-            // Bass
-            HStack(alignment: .bottom) {
-                
-                VStack(alignment: .leading) {
-                    
-                    Text("Bass")
-                        .fontWeight(.semibold)
-                        .multilineTextAlignment(.leading)
-                        .font(.system(.title, design: .rounded))
-                        .lineLimit(3)
-                        .foregroundColor(Color("darkerBrown"))
-                    
-                    
-                    VStack(alignment: .leading) {
-                        Text("Timed:     15s      30s      45s      60s")
-                            .multilineTextAlignment(.leading)
-                            .font(.system(size: 20,design: .rounded))
-                            .lineLimit(3)
-                            .foregroundColor(Color("darkerBrown"))
-                        Text("Drill:          10        20         30        40")
-                            .multilineTextAlignment(.leading)
-                            .font(.system(size: 20,design: .rounded))
-                            .lineLimit(3)
-                            .foregroundColor(Color("darkerBrown"))
-                    }
-                    .padding()
-                    .frame(width:350, height: 80, alignment: .leading)
-                    .background( Color("evenLighterBrown"))
-                    .cornerRadius(20)
-                    
-                    
-                    Spacer()
-    
-                }
-                .padding()
-                .frame(width:380, height: 170, alignment: .leading)
-                .background( Color("lightBrown"))
-                .cornerRadius(20)
-                
-            }
-            // Tenor
-            HStack(alignment: .bottom) {
-                
-                VStack(alignment: .leading) {
-                    
-                    Text("Tenor")
-                        .fontWeight(.semibold)
-                        .multilineTextAlignment(.leading)
-                        .font(.system(.title, design: .rounded))
-                        .lineLimit(3)
-                        .foregroundColor(Color("darkerBrown"))
-                    
-                    
-                    VStack(alignment: .leading) {
-                        Text("Timed:     15s      30s      45s      60s")
-                            .multilineTextAlignment(.leading)
-                            .font(.system(size: 20,design: .rounded))
-                            .lineLimit(3)
-                            .foregroundColor(Color("darkerBrown"))
-                        Text("Drill:          10        20         30        40")
-                            .multilineTextAlignment(.leading)
-                            .font(.system(size: 20,design: .rounded))
-                            .lineLimit(3)
-                            .foregroundColor(Color("darkerBrown"))
-                    }
-                    .padding()
-                    .frame(width:350, height: 80, alignment: .leading)
-                    .background( Color("evenLighterBrown"))
-                    .cornerRadius(20)
-                    
-                    
-                    Spacer()
-    
-                }
-                .padding()
-                .frame(width:380, height: 170, alignment: .leading)
-                .background( Color("lightBrown"))
-                .cornerRadius(20)
-                
-            }
-            // Treble
-            HStack(alignment: .bottom) {
-                
-                VStack(alignment: .leading) {
-                    
-                    Text("Treble")
-                        .fontWeight(.semibold)
-                        .multilineTextAlignment(.leading)
-                        .font(.system(.title, design: .rounded))
-                        .lineLimit(3)
-                        .foregroundColor(Color("darkerBrown"))
-                    
-                    
-                    VStack(alignment: .leading) {
-                        Text("Timed:     15s      30s      45s      60s")
-                            .multilineTextAlignment(.leading)
-                            .font(.system(size: 20,design: .rounded))
-                            .lineLimit(3)
-                            .foregroundColor(Color("darkerBrown"))
-                        Text("Drill:          10        20         30        40")
-                            .multilineTextAlignment(.leading)
-                            .font(.system(size: 20,design: .rounded))
-                            .lineLimit(3)
-                            .foregroundColor(Color("darkerBrown"))
+                ForEach(0 ..< clefs.count) { clef in
+                    HStack(alignment: .bottom) {
+                        VStack(alignment: .leading) {
+                            Text(clefs[clef])
+                                .fontWeight(.semibold)
+                                .multilineTextAlignment(.leading)
+                                .font(.system(.title, design: .rounded))
+                                .lineLimit(3)
+                                .foregroundColor(Color("darkBrown"))
+                            
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    Text("Timed:")
+                                        .frame(width: 60, height: 20)
+                                    HStack {
+                                        ForEach(0 ..< timedQuestions.count) { time in
+                                            Text("\(timedQuestions[time])s")
+                                                .frame(width: 60, height: 20, alignment: .center)
+                                        }
+                                    }
+                                }
+                                .multilineTextAlignment(.leading)
+                                .font(.system(size: 20,design: .rounded))
+                                .lineLimit(3)
+                                .foregroundColor(Color("darkerBrown"))
+                                
+                                HStack {
+                                    Text("Drill:")
+                                        .frame(width: 60, height: 20, alignment: .leading)
+                                    HStack {
+                                        ForEach(0 ..< drilledQuestions.count) { drill in
+                                            Text("\(drilledQuestions[drill])")
+                                                .frame(width: 60, height: 20, alignment: .center)
+                                        }
+                                    }
+                                }
+                                .multilineTextAlignment(.leading)
+                                .font(.system(size: 20,design: .rounded))
+                                .lineLimit(3)
+                                .foregroundColor(Color("darkerBrown"))
+                            }
+                            .padding()
+                            .frame(width:350, height: 80, alignment: .leading)
+                            .background( Color("evenLighterBrown"))
+                            .cornerRadius(20)
+                            
+                        }
                     }
                     .padding()
                     .frame(width:380, height: 170, alignment: .leading)

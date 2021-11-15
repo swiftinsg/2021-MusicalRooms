@@ -21,6 +21,7 @@
 		2E162287274206E000791ADC /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = 2E162286274206E000791ADC /* SwiftySound */; };
 		2E1622892742561200791ADC /* BpmNumpadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1622882742561200791ADC /* BpmNumpadView.swift */; };
 		2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */; };
+		FFC4C925274264FF00248FD9 /* GradeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4C924274264FF00248FD9 /* GradeStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		2E1622812741F30400791ADC /* MetronomeHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeHomeView.swift; sourceTree = "<group>"; };
 		2E1622882742561200791ADC /* BpmNumpadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BpmNumpadView.swift; sourceTree = "<group>"; };
 		2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSigSelectView.swift; sourceTree = "<group>"; };
+		FFC4C924274264FF00248FD9 /* GradeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		2E16224A27412CA100791ADC /* MusicalRooms */ = {
 			isa = PBXGroup;
 			children = (
+				FFC4C924274264FF00248FD9 /* GradeStruct.swift */,
 				2E16227A2741F2AA00791ADC /* MetronomeRoom */,
 				2E1622792741F2A400791ADC /* TunerRoom */,
 				2E1622782741F29800791ADC /* SightreadingRoom */,
@@ -315,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFC4C925274264FF00248FD9 /* GradeStruct.swift in Sources */,
 				2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */,
 				2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */,
 				2E16224E27412CA100791ADC /* ContentView.swift in Sources */,

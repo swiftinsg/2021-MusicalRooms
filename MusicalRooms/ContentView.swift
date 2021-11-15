@@ -9,23 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
         TabView{
             TheoryHomeView()
                 .tabItem{
                     Image(systemName: "rectangle.and.pencil.and.ellipsis")
                     Text("Theory")
                 }
+            
             ReadingHomeView()
                 .tabItem{
                     Image(systemName: "music.note.list")
                     Text("Sightreading")
                 }
+            
             TunerHomeView()
                 .tabItem{
                     Image(systemName: "tuningfork")
                     Text("Tuner")
                 }
+            
             MetronomeHomeView()
                 .tabItem{
                     Image(systemName: "metronome")
@@ -35,11 +37,6 @@ struct ContentView: View {
         }
         .preferredColorScheme(.light)
         .accentColor(Color.brown)
-        
-        
-        
-        
-        
     }
 }
 

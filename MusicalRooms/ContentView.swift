@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabView{
+        TabView {
             TheoryHomeView()
                 .tabItem{
                     Image(systemName: "rectangle.and.pencil.and.ellipsis")
@@ -33,7 +33,6 @@ struct ContentView: View {
                     Image(systemName: "metronome")
                     Text("Metronome")
                 }
-            
         }
         .preferredColorScheme(.light)
         .accentColor(Color.brown)

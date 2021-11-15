@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ReadingHomeView: View {
+    
+    @State var clefs = ["Treble", "Alto", "Tenor", "Bass"]
+    @State var timedQuestions = [15,30,45,60]
+    @State var drilledQuestions = [10,20,30,40]
+    
     var body: some View {
         
+        //Header
         VStack(alignment: .leading) {
             Text("Sightreading")
                                        .font(.system(.largeTitle, design: .rounded))
@@ -167,22 +173,12 @@ struct ReadingHomeView: View {
                             .foregroundColor(Color("darkerBrown"))
                     }
                     .padding()
-                    .frame(width:350, height: 80, alignment: .leading)
-                    .background( Color("evenLighterBrown"))
+                    .frame(width:380, height: 170, alignment: .leading)
+                    .background( Color("lightBrown"))
                     .cornerRadius(20)
-                    
-                    
-                    Spacer()
-    
                 }
-                .padding()
-                .frame(width:380, height: 170, alignment: .leading)
-                .background( Color("lightBrown"))
-                .cornerRadius(20)
-                
             }
         }
-    }
     }
 }
 

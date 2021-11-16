@@ -24,7 +24,7 @@ struct TimeSigSelectView: View {
             ForEach(1 ..< 4){ row in
                 HStack {
                     ForEach(1 ..< 5) { column in
-                        var index = (column + (row-1)*4) - 1
+                        let index = (column + (row-1)*4) - 1
                         let sig = signatures[index]
 
                         Button {

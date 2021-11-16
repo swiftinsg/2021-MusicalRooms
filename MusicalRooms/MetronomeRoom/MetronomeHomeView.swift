@@ -14,6 +14,8 @@ struct MetronomeHomeView: View {
     var darkBrown: Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
     var backBrown: Color = Color(red: 211/255, green: 165/255, blue: 109/255)
 
+    @State var pressed = false
+    
     @State var bpm: Int = 60
     @State var barNotes: Int = 1
     @State var isOn: Bool = false
@@ -46,6 +48,7 @@ struct MetronomeHomeView: View {
                     .foregroundColor(lightBrown)
                     .frame(width: 7, height: 300, alignment: .center)
                     .cornerRadius(2)
+                    
                 Circle()
                     .foregroundColor(lightBrown)
                     .frame(width: 20, height: 20, alignment: .center)
@@ -83,12 +86,13 @@ struct MetronomeHomeView: View {
                         Image(systemName: "minus")
                     }
                 }
-                .font(.title2.bold())
                 .foregroundColor(darkBrown)
+                .font(.title2.bold())
                 .offset(x: -95)
 
                 Text("\(bpm)")
-                    .font(.title.bold())
+                    .bold()
+                    .font(.title)
                     .foregroundColor(darkBrown)
                     .frame(width: 60, height: 60, alignment: .center)
                     .onTapGesture{
@@ -100,7 +104,7 @@ struct MetronomeHomeView: View {
 
 
                 Button {
-                    if(bpm < 230) {bpm+=1}
+                    if (bpm < 230) { bpm += 1 }
                     print("Plus bpm")
                 } label: {
                     ZStack{
@@ -119,10 +123,9 @@ struct MetronomeHomeView: View {
                 .frame(height: 40)
 
             HStack {
-
-                //Play
+                //Play Button
                 Button {
-                    isOn = !isOn
+                    isOn.toggle()
                     print("Start metronome")
                 } label: {
                     ZStack{
@@ -130,11 +133,12 @@ struct MetronomeHomeView: View {
                             .foregroundColor(backBrown)
                             .frame(width: 205, height: 60, alignment: .center)
                             .cornerRadius(10)
-                        isOn ?
-                        Image(systemName: "pause.fill") :
-                        Image(systemName: "play.fill")
+                        if isOn {
+                            Image(systemName: "pause.fill")
+                        } else {
+                            Image(systemName: "play.fill")
+                        }
                     }
-                    
                 }
                 .font(.title2.bold())
                 .foregroundColor(darkBrown)
@@ -146,6 +150,7 @@ struct MetronomeHomeView: View {
                     Button {
                         print("Open timesignature page")
                         print("\(sigIndex), \(signatures)")
+                        
                         displaySigSelect.toggle()
                     } label: {
                         ZStack {
@@ -155,7 +160,8 @@ struct MetronomeHomeView: View {
                                 .cornerRadius(10)
                             
                             Text(signatures[sigIndex])
-                                .font(.title2.bold())
+                                .bold()
+                                .font(.title2)
                                 .foregroundColor(darkBrown)
                         }
                     }
@@ -168,26 +174,6 @@ struct MetronomeHomeView: View {
         .offset(y:-20)
     }
 }
-
-func tempoName(bpm: Int) -> String {
-    if(bpm < 20){ return "Larghissimo" }
-    else if(bpm < 40){ return "Gravo" }
-    else if(bpm < 50){ return "Lento" }
-    else if(bpm < 55){ return "Largo" }
-    else if(bpm < 65){ return "Adagio" }
-    else if(bpm < 70){ return "Adagietto" }
-    else if(bpm < 80){ return "Andante" }
-    else if(bpm < 100){ return "Moderato" }
-    else if(bpm < 110){ return "Allegretto" }
-    else if(bpm < 130){ return "Allegro" }
-    else if(bpm < 140){ return "Vivace" }
-    else if(bpm < 180){ return "Presto" }
-    else { return "Prestissimo" }
-}
-
-
-
-
 
 struct MetronomeHomeView_Previews: PreviewProvider {
     static var previews: some View {

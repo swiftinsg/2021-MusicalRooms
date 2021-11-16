@@ -67,6 +67,7 @@ struct TheoryHomeView: View {
                     }
                 }
             }
+            .frame(width: 400)
         }
         .offset(y:20)
     }

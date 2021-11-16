@@ -18,7 +18,7 @@ struct MetronomeHomeView: View {
     @State var barNotes: Int = 1
     @State var isOn: Bool = false
 
-    @AppStorage("sigIndex") var sigIndex: Int = 1
+    @AppStorage("sigIndex") var sigIndex: Int = 0
     let signatures = ["1/4", "2/4", "3/4", "4/4", "5/4", "6/4", "3/8", "5/8", "6/8", "7/8", "9/8", "12/8"]
 
     @State var displayNumpad: Bool = false
@@ -76,15 +76,21 @@ struct MetronomeHomeView: View {
                     print("Minus bpm")
                     
                 } label: {
-                    Image(systemName: "minus")
+                    ZStack{
+                        Rectangle()
+                            .foregroundColor(backBrown)
+                            .frame(width: 60, height: 60, alignment: .center)
+                        Image(systemName: "minus")
+                    }
                 }
                 .font(.title2.bold())
                 .foregroundColor(darkBrown)
-                .offset(x: -85)
+                .offset(x: -95)
 
                 Text("\(bpm)")
                     .font(.title.bold())
                     .foregroundColor(darkBrown)
+                    .frame(width: 60, height: 60, alignment: .center)
                     .onTapGesture{
                         displayNumpad.toggle()
                     }
@@ -97,11 +103,16 @@ struct MetronomeHomeView: View {
                     if(bpm < 230) {bpm+=1}
                     print("Plus bpm")
                 } label: {
-                    Image(systemName: "plus")
+                    ZStack{
+                        Rectangle()
+                            .foregroundColor(backBrown)
+                            .frame(width: 60, height: 60, alignment: .center)
+                        Image(systemName: "plus")
+                    }
                 }
                 .font(.title2.bold())
                 .foregroundColor(darkBrown)
-                .offset(x: 85)
+                .offset(x: 95)
             }
 
             Spacer()
@@ -110,31 +121,31 @@ struct MetronomeHomeView: View {
             HStack {
 
                 //Play
-                ZStack {
-                    Rectangle()
-                        .foregroundColor(backBrown)
-                        .frame(width: 205, height: 60, alignment: .center)
-                        .cornerRadius(10)
-                    Button {
-                        isOn = !isOn
-                        print("Start metronome")
-                    } label: {
+                Button {
+                    isOn = !isOn
+                    print("Start metronome")
+                } label: {
+                    ZStack{
+                        Rectangle()
+                            .foregroundColor(backBrown)
+                            .frame(width: 205, height: 60, alignment: .center)
+                            .cornerRadius(10)
                         isOn ?
                         Image(systemName: "pause.fill") :
                         Image(systemName: "play.fill")
-                        
                     }
-                    .frame(width: 195, alignment: .center)
-                    .font(.title2.bold())
-                    .foregroundColor(darkBrown)
+                    
                 }
+                .font(.title2.bold())
+                .foregroundColor(darkBrown)
 
                 Spacer()
-                    .frame(width: 10)
+                    .frame(width: 15)
 
                 //Time Signature Selector
                     Button {
                         print("Open timesignature page")
+                        print("\(sigIndex), \(signatures)")
                         displaySigSelect.toggle()
                     } label: {
                         ZStack {

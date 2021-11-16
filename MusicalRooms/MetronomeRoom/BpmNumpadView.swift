@@ -27,14 +27,14 @@ struct BpmNumpadView: View {
         
         Spacer().frame(height:20)
         
-        ForEach(1..<4){row in
-            HStack{
-                ForEach(1..<4){column in
-                    let num = column + (row-1)*3
-                    Button{
+        ForEach(1..<4){ row in
+            HStack {
+                ForEach(1..<4){ column in
+                    let num = column + (row-1) * 3
+                    Button {
                         appendDigit(digit: num)
                     } label: {
-                        ZStack{
+                        ZStack {
                             Circle()
                                 .foregroundColor(backBrown)
                                 .frame(width: 60, height: 60, alignment: .center)
@@ -43,11 +43,12 @@ struct BpmNumpadView: View {
                                 .foregroundColor(.white)
                         }
                         
-                    }.padding(10)
+                    }
+                    .padding(10)
                 }
             }
         }
-        Button{
+        Button {
             appendDigit(digit: 0)
         } label: {
             ZStack{
@@ -59,13 +60,14 @@ struct BpmNumpadView: View {
                     .foregroundColor(.white)
             }
             
-        }.padding(10)
+        }
+        .padding(10)
         
-        Spacer().frame(height:30)
-        
+        Spacer()
+            .frame(height:30)
         
         //Submit button
-        Button{
+        Button {
             presentationMode.wrappedValue.dismiss()
         } label: {
             ZStack{
@@ -78,7 +80,6 @@ struct BpmNumpadView: View {
                     .foregroundColor(.white)
             }
         }
-        
     }
     
     func appendDigit(digit: Int) {

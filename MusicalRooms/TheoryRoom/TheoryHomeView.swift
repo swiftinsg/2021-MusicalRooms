@@ -9,7 +9,12 @@ import SwiftUI
 
 struct TheoryHomeView: View {
 
-    @State var grades = [Grade(number: 1, percentageCorrect: 80), Grade(number: 2, percentageCorrect: 80), Grade(number: 3, percentageCorrect: 80), Grade(number: 4, percentageCorrect: 80), Grade(number: 5, percentageCorrect: 80)]
+    @State var grades = [
+        Grade(number: 1, percentageCorrect: 80),
+        Grade(number: 2, percentageCorrect: 80),
+        Grade(number: 3, percentageCorrect: 80),
+        Grade(number: 4, percentageCorrect: 80),
+        Grade(number: 5, percentageCorrect: 80)]
 
     @State var percentCorrect: Double = 50
 
@@ -53,7 +58,6 @@ struct TheoryHomeView: View {
                                     RoundedRectangle(cornerRadius: 5)
                                         .fill(Color("darkBrown"))
                                         .frame(width: (grade.percentageCorrect / 100 * 300))
-
                                 }
                         }
                         .padding()
@@ -63,9 +67,8 @@ struct TheoryHomeView: View {
                     }
                 }
             }
-        }.offset(y:20)
-
-
+        }
+        .offset(y:20)
     }
 }
 

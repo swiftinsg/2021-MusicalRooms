@@ -2,11 +2,11 @@ import SwiftUI
 
 struct BpmNumpadView: View {
     
-    @Environment(\.presentationMode) var presMode
+    @Environment(\.presentationMode) var presentationMode
     
-    var lightBrown:Color = Color(red: 131/255, green: 78/255, blue: 44/255, opacity: 1.0)
-    var darkBrown:Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
-    var backBrown:Color = Color(red: 211/255, green: 165/255, blue: 109/255)
+    var lightBrown: Color = Color(red: 131/255, green: 78/255, blue: 44/255, opacity: 1.0)
+    var darkBrown: Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
+    var backBrown: Color = Color(red: 211/255, green: 165/255, blue: 109/255)
     
     @Binding var bpm: Int
     @State var hasChanged: Bool = false
@@ -66,7 +66,7 @@ struct BpmNumpadView: View {
         
         //Submit button
         Button{
-            presMode.wrappedValue.dismiss()
+            presentationMode.wrappedValue.dismiss()
         } label: {
             ZStack{
                 Rectangle()
@@ -81,13 +81,11 @@ struct BpmNumpadView: View {
         
     }
     
-    
-    
-    func appendDigit(digit: Int){
-        if(hasChanged && bpm < 100){
-            let joinStr = String(bpm) + String(digit)
-            bpm = Int(joinStr) ?? 60
-        }else{
+    func appendDigit(digit: Int) {
+        if hasChanged && bpm < 100 {
+            let joinStr = bpm + digit
+            bpm = joinStr
+        } else {
             bpm = digit
             self.hasChanged = true
         }

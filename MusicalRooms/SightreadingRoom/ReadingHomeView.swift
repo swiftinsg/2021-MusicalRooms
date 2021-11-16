@@ -42,7 +42,7 @@ struct ReadingHomeView: View {
                                             Text("\(timedQuestions[time])s")
                                                 .frame(width: 45, height: 20, alignment: .center)
                                                 .onTapGesture {
-
+                                                    //Add what you want to do here
                                                 }
                                         }
                                     }
@@ -83,7 +83,8 @@ struct ReadingHomeView: View {
                     .cornerRadius(20)
                 }
             }
-        }.offset(y:20)
+        }
+        .offset(y:20)
     }
 }
 

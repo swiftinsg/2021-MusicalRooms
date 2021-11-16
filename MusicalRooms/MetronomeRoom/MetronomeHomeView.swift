@@ -132,7 +132,7 @@ struct MetronomeHomeView: View {
                 Spacer()
                     .frame(width: 10)
 
-                //TimeSignature selector
+                //Time Signature Selector
                     Button {
                         print("Open timesignature page")
                         displaySigSelect.toggle()

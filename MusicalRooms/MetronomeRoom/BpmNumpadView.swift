@@ -27,9 +27,9 @@ struct BpmNumpadView: View {
         
         Spacer().frame(height:20)
         
-        ForEach(1..<4){ row in
+        ForEach(1 ..< 4){ row in
             HStack {
-                ForEach(1..<4){ column in
+                ForEach(1 ..< 4){ column in
                     let num = column + (row-1) * 3
                     Button {
                         appendDigit(digit: num)

@@ -8,14 +8,14 @@
 import SwiftUI
 import AVFAudio
 
+//Note that sig - signature
+
 struct MetronomeHomeView: View {
 
-    var lightBrown: Color = Color(red: 131/255, green: 78/255, blue: 44/255, opacity: 1.0)
-    var darkBrown: Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
-    var backBrown: Color = Color(red: 211/255, green: 165/255, blue: 109/255)
+    let lightBrown: Color = Color(red: 131/255, green: 78/255, blue: 44/255, opacity: 1.0)
+    let darkBrown: Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
+    let backBrown: Color = Color(red: 211/255, green: 165/255, blue: 109/255)
 
-    @State var pressed = false
-    
     @State var bpm: Int = 60
     @State var barNotes: Int = 1
     @State var isOn: Bool = false

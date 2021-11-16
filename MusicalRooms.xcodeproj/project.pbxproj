@@ -25,6 +25,7 @@
 		C541403827434A24003C1B30 /* SightreadingQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403727434A24003C1B30 /* SightreadingQuizView.swift */; };
 		C541403A27435125003C1B30 /* SightreadingQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403927435125003C1B30 /* SightreadingQuestions.swift */; };
 		FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */; };
+		FF73401D2743C64C001AC430 /* metronomeSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF73401C2743C64C001AC430 /* metronomeSound.mp3 */; };
 		FFCCE1D12743A0FC0072D97D /* TempoName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCCE1D02743A0FC0072D97D /* TempoName.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		C541403727434A24003C1B30 /* SightreadingQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightreadingQuizView.swift; sourceTree = "<group>"; };
 		C541403927435125003C1B30 /* SightreadingQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightreadingQuestions.swift; sourceTree = "<group>"; };
 		FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEnharmonic.swift; sourceTree = "<group>"; };
+		FF73401C2743C64C001AC430 /* metronomeSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = metronomeSound.mp3; sourceTree = "<group>"; };
 		FFCCE1D02743A0FC0072D97D /* TempoName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +188,7 @@
 		2E16227A2741F2AA00791ADC /* MetronomeRoom */ = {
 			isa = PBXGroup;
 			children = (
+				FF73401C2743C64C001AC430 /* metronomeSound.mp3 */,
 				FFCCE1D02743A0FC0072D97D /* TempoName.swift */,
 				2E1622812741F30400791ADC /* MetronomeHomeView.swift */,
 				2E1622882742561200791ADC /* BpmNumpadView.swift */,
@@ -304,6 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF73401D2743C64C001AC430 /* metronomeSound.mp3 in Resources */,
 				2E16225327412CA500791ADC /* Preview Assets.xcassets in Resources */,
 				2E16225027412CA500791ADC /* Assets.xcassets in Resources */,
 			);

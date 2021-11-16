@@ -33,7 +33,7 @@ struct SightreadingQuizView: View {
             
             
             VStack{
-                HStack{
+                HStack (spacing: 15){
                     //C
                     Button{
                     } label:{
@@ -81,9 +81,9 @@ struct SightreadingQuizView: View {
                     .cornerRadius(20)
                     
                 }
-                HStack{
+                HStack (spacing: 15){
                     
-                    // G
+                    // F
                     Button{
                     } label:{
                         Text("F")
@@ -98,7 +98,7 @@ struct SightreadingQuizView: View {
                     .background( Color("evenLighterBrown"))
                     .cornerRadius(20)
                     
-                    //D
+                    //G
                     
                     Button{
                     } label:{

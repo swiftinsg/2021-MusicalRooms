@@ -24,6 +24,7 @@
 		2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */; };
 		C541403827434A24003C1B30 /* SightreadingQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403727434A24003C1B30 /* SightreadingQuizView.swift */; };
 		C541403A27435125003C1B30 /* SightreadingQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403927435125003C1B30 /* SightreadingQuestions.swift */; };
+		FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */; };
 		FFCCE1D12743A0FC0072D97D /* TempoName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCCE1D02743A0FC0072D97D /* TempoName.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSigSelectView.swift; sourceTree = "<group>"; };
 		C541403727434A24003C1B30 /* SightreadingQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightreadingQuizView.swift; sourceTree = "<group>"; };
 		C541403927435125003C1B30 /* SightreadingQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightreadingQuestions.swift; sourceTree = "<group>"; };
+		FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEnharmonic.swift; sourceTree = "<group>"; };
 		FFCCE1D02743A0FC0072D97D /* TempoName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +169,7 @@
 			children = (
 				2E16227D2741F2E300791ADC /* ReadingHomeView.swift */,
 				C541403727434A24003C1B30 /* SightreadingQuizView.swift */,
+				FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */,
 				C541403927435125003C1B30 /* SightreadingQuestions.swift */,
 			);
 			path = SightreadingRoom;
@@ -335,6 +338,7 @@
 				2E16224E27412CA100791ADC /* ContentView.swift in Sources */,
 				2E16224C27412CA100791ADC /* MusicalRoomsApp.swift in Sources */,
 				2E16227E2741F2E300791ADC /* ReadingHomeView.swift in Sources */,
+				FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */,
 				2E1622892742561200791ADC /* BpmNumpadView.swift in Sources */,
 				2E1622762741F26500791ADC /* TheoryHomeView.swift in Sources */,
 				2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */,

@@ -25,6 +25,7 @@
 		2E8679A227438A6900BA1372 /* MetronomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8679A127438A6900BA1372 /* MetronomeManager.swift */; };
 		C541403827434A24003C1B30 /* SightreadingQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403727434A24003C1B30 /* SightreadingQuizView.swift */; };
 		C541403A27435125003C1B30 /* SightreadingQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403927435125003C1B30 /* SightreadingQuestions.swift */; };
+		FF49C7532744B3A80021D612 /* CustomViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF49C7522744B3A80021D612 /* CustomViewModifiers.swift */; };
 		FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */; };
 		FF73401D2743C64C001AC430 /* metronomeSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF73401C2743C64C001AC430 /* metronomeSound.mp3 */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		2E8679A127438A6900BA1372 /* MetronomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeManager.swift; sourceTree = "<group>"; };
 		C541403727434A24003C1B30 /* SightreadingQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightreadingQuizView.swift; sourceTree = "<group>"; };
 		C541403927435125003C1B30 /* SightreadingQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightreadingQuestions.swift; sourceTree = "<group>"; };
+		FF49C7522744B3A80021D612 /* CustomViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewModifiers.swift; sourceTree = "<group>"; };
 		FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEnharmonic.swift; sourceTree = "<group>"; };
 		FF73401C2743C64C001AC430 /* metronomeSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = metronomeSound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				2E16227F2741F2F700791ADC /* TunerHomeView.swift */,
+				FF49C7522744B3A80021D612 /* CustomViewModifiers.swift */,
 			);
 			path = TunerRoom;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF49C7532744B3A80021D612 /* CustomViewModifiers.swift in Sources */,
 				2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */,
 				2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */,
 				C541403827434A24003C1B30 /* SightreadingQuizView.swift in Sources */,

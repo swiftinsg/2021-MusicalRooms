@@ -147,8 +147,8 @@ struct MetronomeHomeView: View {
                 }
                 .font(.title2.bold())
                 .foregroundColor(darkBrown)
-                .onchange(of: isOn){
-                    if(isOn) metronome.start()
+                .onChange(of: isOn) { _ in
+                    if(isOn) { metronome.start() }
                 }
 
                 Spacer()

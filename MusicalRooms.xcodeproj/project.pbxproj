@@ -22,6 +22,7 @@
 		2E162287274206E000791ADC /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = 2E162286274206E000791ADC /* SwiftySound */; };
 		2E1622892742561200791ADC /* BpmNumpadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1622882742561200791ADC /* BpmNumpadView.swift */; };
 		2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */; };
+		2E8679A227438A6900BA1372 /* MetronomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8679A127438A6900BA1372 /* MetronomeManager.swift */; };
 		C541403827434A24003C1B30 /* SightreadingQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403727434A24003C1B30 /* SightreadingQuizView.swift */; };
 		C541403A27435125003C1B30 /* SightreadingQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403927435125003C1B30 /* SightreadingQuestions.swift */; };
 		FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */; };
@@ -64,6 +65,7 @@
 		2E1622812741F30400791ADC /* MetronomeHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeHomeView.swift; sourceTree = "<group>"; };
 		2E1622882742561200791ADC /* BpmNumpadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BpmNumpadView.swift; sourceTree = "<group>"; };
 		2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSigSelectView.swift; sourceTree = "<group>"; };
+		2E8679A127438A6900BA1372 /* MetronomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeManager.swift; sourceTree = "<group>"; };
 		C541403727434A24003C1B30 /* SightreadingQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightreadingQuizView.swift; sourceTree = "<group>"; };
 		C541403927435125003C1B30 /* SightreadingQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightreadingQuestions.swift; sourceTree = "<group>"; };
 		FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEnharmonic.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				FF73401C2743C64C001AC430 /* metronomeSound.mp3 */,
 				FFCCE1D02743A0FC0072D97D /* TempoName.swift */,
 				2E1622812741F30400791ADC /* MetronomeHomeView.swift */,
+				2E8679A127438A6900BA1372 /* MetronomeManager.swift */,
 				2E1622882742561200791ADC /* BpmNumpadView.swift */,
 				2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */,
 			);
@@ -346,6 +349,7 @@
 				2E1622892742561200791ADC /* BpmNumpadView.swift in Sources */,
 				2E1622762741F26500791ADC /* TheoryHomeView.swift in Sources */,
 				2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */,
+				2E8679A227438A6900BA1372 /* MetronomeManager.swift in Sources */,
 				1BBE2CD610EC63FAF0B95D19 /* GradeStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

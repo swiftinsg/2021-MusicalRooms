@@ -1,5 +1,5 @@
 import SwiftUI
-import SwiftySound
+
 
 struct Note: Identifiable, Equatable {
     var id = UUID()

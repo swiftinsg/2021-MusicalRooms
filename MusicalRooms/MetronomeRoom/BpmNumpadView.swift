@@ -9,7 +9,14 @@ struct BpmNumpadView: View {
     var backBrown: Color = Color(red: 211/255, green: 165/255, blue: 109/255)
     
     @Binding var bpm: Int
+    @State var newBpm: Int
     @State var hasChanged: Bool = false
+    
+    init(bpm: Binding<Int>){
+        self._bpm = bpm
+        self._newBpm = State(initialValue: bpm.wrappedValue)
+        self.hasChanged = false
+    }
     
     var body: some View {
         
@@ -83,9 +90,11 @@ struct BpmNumpadView: View {
     }
     
     func appendDigit(digit: Int) {
-        if hasChanged && bpm < 100 {
-            let joinStr = bpm + digit
-            bpm = joinStr
+        if hasChanged {
+            if(bpm < 100){
+                let joinStr = "\(bpm)\(digit)"
+                bpm = Int(joinStr) ?? 0
+            } else {return}
         } else {
             bpm = digit
             self.hasChanged = true

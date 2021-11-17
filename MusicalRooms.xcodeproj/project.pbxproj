@@ -26,7 +26,9 @@
 		2ECC0AC62744AEED0085142E /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = 2ECC0AC52744AEED0085142E /* Subsonic */; };
 		C541403827434A24003C1B30 /* SightreadingQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403727434A24003C1B30 /* SightreadingQuizView.swift */; };
 		C541403A27435125003C1B30 /* SightreadingQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403927435125003C1B30 /* SightreadingQuestions.swift */; };
+		FF49C7572744D1840021D612 /* SineWaves in Resources */ = {isa = PBXBuildFile; fileRef = FF49C7562744D1840021D612 /* SineWaves */; };
 		FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +70,9 @@
 		2E655CE42744A7BB00CCDF70 /* metronome.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = metronome.wav; path = ../../../../../../Downloads/metronome.wav; sourceTree = "<group>"; };
 		C541403727434A24003C1B30 /* SightreadingQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightreadingQuizView.swift; sourceTree = "<group>"; };
 		C541403927435125003C1B30 /* SightreadingQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightreadingQuestions.swift; sourceTree = "<group>"; };
+		FF49C7562744D1840021D612 /* SineWaves */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SineWaves; sourceTree = "<group>"; };
 		FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEnharmonic.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,7 @@
 		2E1622792741F2A400791ADC /* TunerRoom */ = {
 			isa = PBXGroup;
 			children = (
+				FF49C7562744D1840021D612 /* SineWaves */,
 				2E16227F2741F2F700791ADC /* TunerHomeView.swift */,
 			);
 			path = TunerRoom;
@@ -188,6 +193,7 @@
 		2E16227A2741F2AA00791ADC /* MetronomeRoom */ = {
 			isa = PBXGroup;
 			children = (
+<
 				2E655CE42744A7BB00CCDF70 /* metronome.wav */,
 				2E655CE32744A7BB00CCDF70 /* metronomeUp.wav */,
 				2E1622812741F30400791ADC /* MetronomeHomeView.swift */,
@@ -309,6 +315,7 @@
 			files = (
 				2E655CE52744A7BB00CCDF70 /* metronomeUp.wav in Resources */,
 				2E16225327412CA500791ADC /* Preview Assets.xcassets in Resources */,
+				FF49C7572744D1840021D612 /* SineWaves in Resources */,
 				2E16225027412CA500791ADC /* Assets.xcassets in Resources */,
 				2E655CE62744A7BB00CCDF70 /* metronome.wav in Resources */,
 			);

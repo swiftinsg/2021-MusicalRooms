@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftySound
 
 struct Note: Identifiable, Equatable {
     var id = UUID()
@@ -23,16 +24,19 @@ struct TunerHomeView: View {
         Note(name: "G#"),
         Note(name: "A#")]
     
+    fileprivate func selectSelectedKey(_ note: Int) {
+        for num in 0 ..< notes.count {
+            notes[num].isSelected = false
+        }
+        notes[note].isSelected.toggle()
+    }
+    
     var body: some View {
         VStack {
             HStack {
                 ForEach(7 ..< notes.count) { note in
                     Button {
-                        for num in 0 ..< notes.count {
-                            notes[num].isSelected = false
-                            print(index)
-                        }
-                        notes[note].isSelected.toggle()
+                        selectSelectedKey(note)
                     } label: {
                         VStack {
                             Text(notes[note].name)
@@ -56,11 +60,7 @@ struct TunerHomeView: View {
             HStack {
                 ForEach(0 ..< 7) { note in
                     Button {
-                        for num in 0 ..< notes.count {
-                            notes[num].isSelected = false
-                            print(index)
-                        }
-                        notes[note].isSelected.toggle()
+                        selectSelectedKey(note)
                     } label: {
                         Text(notes[note].name)
                             .bold()
@@ -74,6 +74,40 @@ struct TunerHomeView: View {
                     .cornerRadius(20)
                 }
             }
+            
+            Spacer()
+                .frame(height: 35)
+            RoundedRectangle(cornerRadius: 20)
+                .frame(width: 350, height: 120)
+                .foregroundColor(Color("darkerBrown"))
+                .overlay(
+                    HStack {
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: "tuningfork")
+                                .font(Font.title)
+                                .frame(width: 80, height: 80, alignment: .center)
+                                .foregroundColor(Color("darkBrown"))
+                                .background(Color("lightBrown"))
+                                .cornerRadius(20)
+                                .offset(x: -40)
+                        }
+                        
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: "speaker.wave.3")
+                                .font(Font.title)
+                                .frame(width: 80, height: 80, alignment: .center)
+                                .foregroundColor(Color("darkBrown"))
+                                .background(Color("lightBrown"))
+                                .cornerRadius(20)
+                                .offset(x: 40)
+                        }
+                    }
+                        .frame(width: 350, height: 120, alignment: .center)
+                )
         }
     }
 }

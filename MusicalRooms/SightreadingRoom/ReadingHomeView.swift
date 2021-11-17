@@ -24,7 +24,8 @@ struct ReadingHomeView: View {
 
             ScrollView(.vertical, showsIndicators: false) {
                 ForEach(0 ..< clefs.count) { clef in
-                    HStack(alignment: .bottom) {
+                    HStack(alignment: .center) {
+                        Image (clefs[clef])
                         VStack(alignment: .leading) {
                             Text(clefs[clef])
                                 .fontWeight(.semibold)
@@ -40,7 +41,7 @@ struct ReadingHomeView: View {
                                     HStack {
                                         ForEach(0 ..< timedQuestions.count) { time in
                                             Text("\(timedQuestions[time])s")
-                                                .frame(width: 45, height: 20, alignment: .center)
+                                                .frame(width: 40, height: 20, alignment: .center)
                                                 .onTapGesture {
                                                     //navigation link to be addded to SightreadingQuizView
                                                 }
@@ -58,7 +59,7 @@ struct ReadingHomeView: View {
                                     HStack {
                                         ForEach(0 ..< drilledQuestions.count) { drill in
                                             Text("\(drilledQuestions[drill])")
-                                                .frame(width: 45, height: 20, alignment: .center)
+                                                .frame(width: 40, height: 20, alignment: .center)
                                                 .onTapGesture {
 
                                                 }
@@ -71,14 +72,14 @@ struct ReadingHomeView: View {
                                 .foregroundColor(Color("darkerBrown"))
                             }
                             .padding()
-                            .frame(width: 300, height: 80, alignment: .leading)
+                            .frame(width: 280, height: 80, alignment: .leading)
                             .background( Color("evenLighterBrown"))
                             .cornerRadius(20)
 
                         }
                     }
                     .padding()
-                    .frame(width: 340, height: 160, alignment: .leading)
+                    .frame(width: 370, height: 160, alignment: .leading)
                     .background(Color("lightBrown"))
                     .cornerRadius(20)
                 }

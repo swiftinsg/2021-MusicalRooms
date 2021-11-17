@@ -22,7 +22,7 @@ struct TunerHomeView: View {
         Note(name: "F#"),
         Note(name: "G#"),
         Note(name: "A#")]
-
+    
     var body: some View {
         VStack {
             HStack {
@@ -50,13 +50,28 @@ struct TunerHomeView: View {
                     .cornerRadius(20)
                 }
             }
+            
+            Spacer()
+                .frame(height: 50)
             HStack {
-                ForEach(7 ..< notes.count) { note in
+                ForEach(0 ..< 7) { note in
                     Button {
-                        
+                        for num in 0 ..< notes.count {
+                            notes[num].isSelected = false
+                            print(index)
+                        }
+                        notes[note].isSelected.toggle()
                     } label: {
                         Text(notes[note].name)
+                            .bold()
+                            .font(.system(size: 20, design: .rounded))
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(!notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
                     }
+                    .padding()
+                    .frame(width:50, height: 50, alignment: .leading)
+                    .background(!notes[note].isSelected ? Color("evenLighterBrown") : Color("darkBrown"))
+                    .cornerRadius(20)
                 }
             }
         }

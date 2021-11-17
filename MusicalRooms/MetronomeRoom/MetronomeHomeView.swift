@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import AVFAudio
+import Subsonic
 
 struct MetronomeHomeView: View {
 
@@ -17,13 +17,11 @@ struct MetronomeHomeView: View {
     @State var bpm: Int = 60
     @State var barNotes: Int = 1
     @State var isOn: Bool = false
-    @State var armAngle:Double = 30
-    
-    @State var metronome: MetronomeManager = MetronomeManager(bpm: .constant(60), barNotes: .constant(1), isOn: .constant(false), armAngle: .constant(0.0))
+    @State var armAngle:Double = 0
 
     @AppStorage("sigIndex") var sigIndex: Int = 0
     let signatures = ["1/4", "2/4", "3/4", "4/4", "5/4", "6/4", "3/8", "5/8", "6/8", "7/8", "9/8", "12/8"]
-    let sigNotes = [1, 2, 3, 4, 5, 6, 3, 5, 6, 7, 8, 9, 12]
+    let sigNotes = [1, 2, 3, 4, 5, 6, 3, 5, 6, 7, 9, 12]
 
     @State var displayNumpad: Bool = false
     @State var displaySigSelect: Bool = false
@@ -57,10 +55,7 @@ struct MetronomeHomeView: View {
                     .frame(width: 20, height: 20, alignment: .center)
                     .offset(y: CGFloat(-bpm*280/200+160))
             }.rotationEffect(Angle.degrees(armAngle), anchor: .bottom)
-                .onAppear{
-                    metronome = MetronomeManager(bpm: $bpm, barNotes: $barNotes, isOn: $isOn, armAngle: $armAngle)
-                }
-
+            
             Spacer().frame(height:25)
 
 
@@ -131,7 +126,7 @@ struct MetronomeHomeView: View {
                 //Play Button
                 Button {
                     isOn.toggle()
-                    print("Start metronome")
+                    print("Toggle metronome")
                 } label: {
                     ZStack{
                         Rectangle()
@@ -147,8 +142,9 @@ struct MetronomeHomeView: View {
                 }
                 .font(.title2.bold())
                 .foregroundColor(darkBrown)
-                .onChange(of: isOn) { _ in
-                    if(isOn) { metronome.start() }
+                .onChange(of: isOn){ value in
+                    if(isOn){start()}
+                    else {timer.invalidate()}
                 }
 
                 Spacer()
@@ -174,7 +170,7 @@ struct MetronomeHomeView: View {
                         }
                     }
                     .onChange(of: sigIndex){index in
-                        barNotes = sigNotes[index]
+                        barNotes = sigNotes[sigIndex]
                     }
                     .frame(width: 60, alignment: .center)
                     .sheet(isPresented: $displaySigSelect) {
@@ -184,7 +180,64 @@ struct MetronomeHomeView: View {
         }
         .offset(y:-20)
     }
+    
+    
+    
+    
+    // *********** Metronome tick & sound functions ********
+    
+    @State var timer: Timer
+    @State var note:Int = 1
+    
+    @StateObject var metrSound = SubsonicPlayer(sound: "metronome.wav")
+    @StateObject var metrUpSound = SubsonicPlayer(sound: "metronomeUp.wav")
+    
+    
+    
+    func start(){
+        barNotes = sigNotes[sigIndex]
+        
+        isOn = true
+        self.tick()
+    }
+    
+    func tick(){
+        if(!isOn){return}
+        print("Note: \(note), barNotes: \(barNotes)")
+        
+        sound()
+        
+        if(note < barNotes){note+=1}
+        else{ note = 1 }
+        
+        let delay:Double = Double(60)/Double(bpm)
+        print("BPM: \(bpm), delay: \(delay)")
+        timer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false, block: {timer in
+            self.tick()
+        })
+    }
+    
+    func sound(){
+        var isPulse = false
+        if(barNotes != 1 && note == 1){ isPulse = true }
+        
+        isPulse ? metrUpSound.play() : metrSound.play()
+    }
+    
+    // Just a value to fill the timer var first
+    init(){
+        self.timer = Timer(timeInterval: 0.1, repeats: false, block: {timer in
+            print("Metronome initialised")
+        })
+        barNotes = sigNotes[sigIndex]
+    }
+    
+    
 }
+
+
+
+
 
 func tempoName(bpm: Int) -> String {
     if(bpm < 20){ return "Larghissimo" }
@@ -202,12 +255,8 @@ func tempoName(bpm: Int) -> String {
     else { return "Prestissimo" }
 }
 
-
-
-
-
 struct MetronomeHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        MetronomeHomeView(metronome: MetronomeManager(bpm: .constant(60), barNotes: .constant(1), isOn: .constant(false), armAngle: .constant(0)))
+        MetronomeHomeView()
     }
 }

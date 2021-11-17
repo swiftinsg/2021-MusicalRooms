@@ -20,57 +20,50 @@ struct TimeSigSelectView: View {
     
     var body: some View {
         
-        VStack{
-            ForEach(1 ..< 4){ row in
-                HStack {
-                    ForEach(1 ..< 5) { column in
-                        let index = (column + (row-1)*4) - 1
-                        let sig = signatures[index]
+        ForEach(1 ..< 4){ row in
+            HStack {
+                ForEach(1 ..< 5) { column in
+                    let index: Int = (column + (row-1)*4) - 1
+                    let sig = signatures[index]
 
-                        Button {
-                            selIndex = index
-                        } label: {
-                            ZStack{
-                                Rectangle()
-                                    .foregroundColor(selIndex==index ? lightBrown : backBrown)
-                                    .frame(width: 75, height: 50, alignment: .center)
-                                    .cornerRadius(10)
-                                    .padding(2)
-                                Text(sig)
-                                    .font(Font.system(size: 24, weight: .bold, design: .rounded))
-                                    .foregroundColor(.white)
-                            }
+                    Button {
+                        selIndex = index
+                    } label: {
+                        ZStack{
+                            Rectangle()
+                                .foregroundColor(selIndex == index ? lightBrown : backBrown)
+                                .frame(width: 75, height: 50, alignment: .center)
+                                .cornerRadius(10)
+                                .padding(2)
+                            Text(sig)
+                                .font(Font.system(size: 24, weight: .bold, design: .rounded))
+                                .foregroundColor(.white)
                         }
-
                     }
+
                 }
             }
-            
-            Spacer().frame(height:30)
-            
-            //Dismiss
-            Button {
-                presentationMode.wrappedValue.dismiss()
-            } label: {
-                ZStack{
-                    Rectangle()
-                        .fill(lightBrown)
-                        .frame(width: 270, height: 60, alignment: .center)
-                        .cornerRadius(10)
-                    Text("OK")
-                        .font(Font.system(size: 32, weight: .bold, design: .rounded))
-                        .foregroundColor(.white)
-                }
+        }
+        
+        Spacer().frame(height:30)
+        
+        //Dismiss
+        Button {
+            presentationMode.wrappedValue.dismiss()
+        } label: {
+            ZStack{
+                Rectangle()
+                    .fill(lightBrown)
+                    .frame(width: 270, height: 60, alignment: .center)
+                    .cornerRadius(10)
+                Text("OK")
+                    .font(Font.system(size: 32, weight: .bold, design: .rounded))
+                    .foregroundColor(.white)
             }
-            
-            
-            
         }
     }
     
-    func getSig(index: Int) -> String {
-        return signatures[index]
-    }
+    
 }
 
 struct TimeSigSelectView_Previews: PreviewProvider {

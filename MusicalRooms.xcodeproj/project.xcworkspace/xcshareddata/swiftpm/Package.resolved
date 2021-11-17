@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "SwiftySound",
-        "repositoryURL": "https://github.com/adamcichy/SwiftySound",
+        "package": "Subsonic",
+        "repositoryURL": "https://github.com/twostraws/Subsonic",
         "state": {
-          "branch": "master",
-          "revision": "de233cc96b0154cb26c66b9a0f1c2719709c83ac",
-          "version": null
+          "branch": null,
+          "revision": "156c5742279df5d2315e29534a2410f418c8a772",
+          "version": "0.2.0"
         }
       }
     ]

@@ -193,7 +193,7 @@
 		2E16227A2741F2AA00791ADC /* MetronomeRoom */ = {
 			isa = PBXGroup;
 			children = (
-<
+
 				2E655CE42744A7BB00CCDF70 /* metronome.wav */,
 				2E655CE32744A7BB00CCDF70 /* metronomeUp.wav */,
 				2E1622812741F30400791ADC /* MetronomeHomeView.swift */,

@@ -243,12 +243,13 @@ struct MetronomeHomeView: View {
         let delay:Double = Double(60)/Double(bpm)
         swing(delay: delay)
         
-        //Delay to sync sound with swing
-        Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false, block: {timer in
+        let soundDelay = delay*0.78
+        Timer.scheduledTimer(withTimeInterval: soundDelay, repeats: false, block: {timer in
             sound()
-            if(note < barNotes){note+=1}
-            else{ note = 1 }
         })
+        
+        if(note < barNotes){note+=1}
+        else{ note = 1 }
         
         timer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false, block: {timer in
             self.tick()
@@ -275,6 +276,19 @@ struct MetronomeHomeView: View {
         }
     }
     
+    func swing(delay: Double){
+        let nextAngle = armAngle == 0 ? 30 : -armAngle
+        withAnimation(.easeInOut(duration: delay)){
+            armAngle = nextAngle
+        }
+    }
+
+    func endSwing(){
+        withAnimation(.easeInOut(duration: 2.0)){
+            armAngle = 0
+        }
+    }
+
     // Just a value to fill the timer var first
     init(){
         self.timer = Timer(timeInterval: 0.1, repeats: false, block: {timer in

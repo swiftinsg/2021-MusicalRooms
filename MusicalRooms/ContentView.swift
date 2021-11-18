@@ -20,11 +20,11 @@ struct ContentView: View {
                     Text("Theory")
                 }
 
-            ReadingHomeView()
+            /*ReadingHomeView()
                 .tabItem{
                     Image(systemName: "music.note.list")
                     Text("Sightreading")
-                }
+                }*/
 
             TunerHomeView()
                 .tabItem{
@@ -37,6 +37,13 @@ struct ContentView: View {
                     Image(systemName: "metronome")
                     Text("Metronome")
                 }
+            
+            RecorderHomeView()
+                .tabItem{
+                    Image(systemName: "waveform")
+                    Text("Recorder")
+                }
+            
         }
         .accentColor(darkBrown)
         .font(Font.body)

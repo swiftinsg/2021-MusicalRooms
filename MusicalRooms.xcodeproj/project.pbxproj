@@ -23,6 +23,8 @@
 		2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */; };
 		2E6F2CDC2746333F0010E515 /* metronome.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDA2746333F0010E515 /* metronome.wav */; };
 		2E6F2CDD2746333F0010E515 /* metronomeUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDB2746333F0010E515 /* metronomeUp.wav */; };
+		2E6F2CDF274653210010E515 /* RecorderHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDE274653210010E515 /* RecorderHomeView.swift */; };
+		2E6F2CE32746778F0010E515 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F2CE22746778F0010E515 /* Extensions.swift */; };
 		2ECC0AC62744AEED0085142E /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = 2ECC0AC52744AEED0085142E /* Subsonic */; };
 		C541403827434A24003C1B30 /* SightreadingQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403727434A24003C1B30 /* SightreadingQuizView.swift */; };
 		C541403A27435125003C1B30 /* SightreadingQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403927435125003C1B30 /* SightreadingQuestions.swift */; };
@@ -69,6 +71,8 @@
 		2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSigSelectView.swift; sourceTree = "<group>"; };
 		2E6F2CDA2746333F0010E515 /* metronome.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = metronome.wav; path = assets/metronome.wav; sourceTree = "<group>"; };
 		2E6F2CDB2746333F0010E515 /* metronomeUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = metronomeUp.wav; path = assets/metronomeUp.wav; sourceTree = "<group>"; };
+		2E6F2CDE274653210010E515 /* RecorderHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderHomeView.swift; sourceTree = "<group>"; };
+		2E6F2CE22746778F0010E515 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C541403727434A24003C1B30 /* SightreadingQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightreadingQuizView.swift; sourceTree = "<group>"; };
 		C541403927435125003C1B30 /* SightreadingQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightreadingQuestions.swift; sourceTree = "<group>"; };
 		C5809AC627464B1900EDAA9D /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
@@ -103,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BBE25915727AB14910C8ADB /* RecorderRoom */ = {
+			isa = PBXGroup;
+			children = (
+				2E6F2CDE274653210010E515 /* RecorderHomeView.swift */,
+				2E6F2CE22746778F0010E515 /* Extensions.swift */,
+			);
+			path = RecorderRoom;
+			sourceTree = "<group>";
+		};
 		2E16223F27412CA000791ADC = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +139,7 @@
 		2E16224A27412CA100791ADC /* MusicalRooms */ = {
 			isa = PBXGroup;
 			children = (
+				1BBE25915727AB14910C8ADB /* RecorderRoom */,
 				2E16227A2741F2AA00791ADC /* MetronomeRoom */,
 				2E1622792741F2A400791ADC /* TunerRoom */,
 				2E1622782741F29800791ADC /* SightreadingRoom */,
@@ -349,6 +363,7 @@
 				2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */,
 				C541403827434A24003C1B30 /* SightreadingQuizView.swift in Sources */,
 				C541403A27435125003C1B30 /* SightreadingQuestions.swift in Sources */,
+				2E6F2CDF274653210010E515 /* RecorderHomeView.swift in Sources */,
 				2E16224E27412CA100791ADC /* ContentView.swift in Sources */,
 				2E16224C27412CA100791ADC /* MusicalRoomsApp.swift in Sources */,
 				2E16227E2741F2E300791ADC /* ReadingHomeView.swift in Sources */,
@@ -357,6 +372,7 @@
 				2E1622762741F26500791ADC /* TheoryHomeView.swift in Sources */,
 				C5809AC727464B1900EDAA9D /* Words.swift in Sources */,
 				2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */,
+				2E6F2CE32746778F0010E515 /* Extensions.swift in Sources */,
 				1BBE2CD610EC63FAF0B95D19 /* GradeStruct.swift in Sources */,
 				C5809AC927464B8100EDAA9D /* OverviewView.swift in Sources */,
 			);

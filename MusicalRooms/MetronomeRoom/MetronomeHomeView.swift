@@ -175,6 +175,7 @@ struct MetronomeHomeView: View {
                     if(isOn){start()}
                     else {
                         timer.invalidate()
+                        soundDelayTimer.invalidate()
                         endSwing()
                     }
                 }
@@ -222,6 +223,7 @@ struct MetronomeHomeView: View {
     
     // *********** Metronome tick & sound functions ********
     
+    @State var soundDelayTimer: Timer
     @State var timer: Timer
     @State var note:Int = 1
     
@@ -232,6 +234,7 @@ struct MetronomeHomeView: View {
     
     func start(){
         barNotes = sigNotes[sigIndex]
+        note = 1
         
         isOn = true
         self.tick()
@@ -244,7 +247,7 @@ struct MetronomeHomeView: View {
         swing(delay: delay)
         
         let soundDelay = delay*0.78
-        Timer.scheduledTimer(withTimeInterval: soundDelay, repeats: false, block: {timer in
+        soundDelayTimer = Timer.scheduledTimer(withTimeInterval: soundDelay, repeats: false, block: {timer in
             sound()
         })
         
@@ -275,24 +278,14 @@ struct MetronomeHomeView: View {
             armAngle = 0
         }
     }
-    
-    func swing(delay: Double){
-        let nextAngle = armAngle == 0 ? 30 : -armAngle
-        withAnimation(.easeInOut(duration: delay)){
-            armAngle = nextAngle
-        }
-    }
-
-    func endSwing(){
-        withAnimation(.easeInOut(duration: 2.0)){
-            armAngle = 0
-        }
-    }
 
     // Just a value to fill the timer var first
     init(){
         self.timer = Timer(timeInterval: 0.1, repeats: false, block: {timer in
             print("Metronome initialised")
+        })
+        self.soundDelayTimer = Timer(timeInterval: 0.01, repeats: false, block: {timer in
+            print("")
         })
         barNotes = sigNotes[sigIndex]
     }

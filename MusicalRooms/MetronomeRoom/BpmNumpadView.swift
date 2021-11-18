@@ -78,7 +78,6 @@ struct BpmNumpadView: View {
         
         //Submit button
         Button {
-            print("\(bpm), \(newBpm)")
             bpm = newBpm
             updateBPM = true
             presentationMode.wrappedValue.dismiss()
@@ -96,7 +95,6 @@ struct BpmNumpadView: View {
     }
     
     func appendDigit(digit: Int) {
-        print("\(bpm), \(newBpm), \(digit)")
         if hasChanged {
             if(newBpm < 100){
                 let joinStr = "\(newBpm)\(digit)"

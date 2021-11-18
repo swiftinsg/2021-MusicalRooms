@@ -18,6 +18,11 @@ struct MetronomeHomeView: View {
     @State var barNotes: Int = 1
     @State var isOn: Bool = false
     @State var armAngle:Double = 0
+    
+    @State var weightOffset: CGFloat = 76
+    @State var lastWeightOffset: CGFloat = 76
+    @State var updateBPM: Bool = false
+    //Set to true from other files to update the arm offset
 
     @AppStorage("sigIndex") var sigIndex: Int = 0
     let signatures = ["1/4", "2/4", "3/4", "4/4", "5/4", "6/4", "3/8", "5/8", "6/8", "7/8", "9/8", "12/8"]
@@ -26,7 +31,6 @@ struct MetronomeHomeView: View {
     @State var displayNumpad: Bool = false
     @State var displaySigSelect: Bool = false
 
-    
     @State var minusButtonSize: CGFloat = 1.0
     @State var plusButtonSize: CGFloat = 1.0
     @State var playButtonSize: CGFloat = 1.0
@@ -49,12 +53,35 @@ struct MetronomeHomeView: View {
                     .foregroundColor(lightBrown)
                     .frame(width: 7, height: 300, alignment: .center)
                     .cornerRadius(2)
-                    
+                
                 Circle()
                     .foregroundColor(lightBrown)
                     .frame(width: 20, height: 20, alignment: .center)
-                    .offset(y: CGFloat(-bpm*280/200+160))
+                    .offset(y: weightOffset)
+                    .gesture(
+                        DragGesture(minimumDistance: 0.1)
+                            .onChanged({value in
+                                weightOffset = CGFloat(min(max(lastWeightOffset + value.translation.height, -120), 158.6))
+                                
+                                let newBpm: Double = -(Double(weightOffset)-160)*200/280
+                                bpm = Int(newBpm)
+                            })
+                            .onEnded({value in
+                                lastWeightOffset = weightOffset
+                            })
+                    )
+                
             }.rotationEffect(Angle.degrees(armAngle), anchor: .bottom)
+                .onChange(of: bpm, perform: {bpm in
+                    weightOffset = CGFloat( -bpm*280/200 + 160) //-120:160
+                })
+                /*.onChange(of: updateBPM, perform: {bpm in
+                    if(update == true) {
+                        updateOffsetFromBPM()
+                        update = false
+                    }
+                })*/
+            
             
             Spacer().frame(height:25)
 
@@ -76,7 +103,8 @@ struct MetronomeHomeView: View {
                     .cornerRadius(10)
 
                 Button {
-                    if (bpm > 1) { bpm-=1 }
+                    if (bpm > 1) { bpm -= 1 }
+                    updateOffsetFromBPM()
                     print("Minus bpm")
                     
                 } label: {
@@ -99,12 +127,13 @@ struct MetronomeHomeView: View {
                         displayNumpad.toggle()
                     }
                     .sheet(isPresented: $displayNumpad) {
-                        BpmNumpadView(bpm: $bpm)
+                        BpmNumpadView(bpm: $bpm, updateBPM: $updateBPM)
                     }
 
 
                 Button {
                     if (bpm < 230) { bpm += 1 }
+                    updateOffsetFromBPM()
                     print("Plus bpm")
                 } label: {
                     ZStack{
@@ -144,7 +173,10 @@ struct MetronomeHomeView: View {
                 .foregroundColor(darkBrown)
                 .onChange(of: isOn){ value in
                     if(isOn){start()}
-                    else {timer.invalidate()}
+                    else {
+                        timer.invalidate()
+                        endSwing()
+                    }
                 }
 
                 Spacer()
@@ -181,6 +213,10 @@ struct MetronomeHomeView: View {
         .offset(y:-20)
     }
     
+    func updateOffsetFromBPM(){
+        weightOffset = CGFloat( -bpm*280/200 + 160)
+    }
+    
     
     
     
@@ -203,15 +239,17 @@ struct MetronomeHomeView: View {
     
     func tick(){
         if(!isOn){return}
-        print("Note: \(note), barNotes: \(barNotes)")
-        
-        sound()
-        
-        if(note < barNotes){note+=1}
-        else{ note = 1 }
         
         let delay:Double = Double(60)/Double(bpm)
-        print("BPM: \(bpm), delay: \(delay)")
+        swing(delay: delay)
+        
+        //Delay to sync sound with swing
+        Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false, block: {timer in
+            sound()
+            if(note < barNotes){note+=1}
+            else{ note = 1 }
+        })
+        
         timer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false, block: {timer in
             self.tick()
         })
@@ -222,6 +260,19 @@ struct MetronomeHomeView: View {
         if(barNotes != 1 && note == 1){ isPulse = true }
         
         isPulse ? metrUpSound.play() : metrSound.play()
+    }
+    
+    func swing(delay: Double){
+        let nextAngle = armAngle == 0 ? 30 : -armAngle
+        withAnimation(.easeInOut(duration: delay)){
+            armAngle = nextAngle
+        }
+    }
+    
+    func endSwing(){
+        withAnimation(.easeInOut(duration: 2.0)){
+            armAngle = 0
+        }
     }
     
     // Just a value to fill the timer var first

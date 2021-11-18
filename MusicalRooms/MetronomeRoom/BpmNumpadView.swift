@@ -7,20 +7,23 @@ struct BpmNumpadView: View {
     var lightBrown: Color = Color(red: 131/255, green: 78/255, blue: 44/255, opacity: 1.0)
     var darkBrown: Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
     var backBrown: Color = Color(red: 211/255, green: 165/255, blue: 109/255)
-    
+        
     @Binding var bpm: Int
     @State var newBpm: Int
     @State var hasChanged: Bool = false
     
-    init(bpm: Binding<Int>){
+    @Binding var updateBPM: Bool
+    
+    init(bpm: Binding<Int>, updateBPM: Binding<Bool>){
         self._bpm = bpm
         self._newBpm = State(initialValue: bpm.wrappedValue)
-        self.hasChanged = false
+        self._hasChanged = State(initialValue: false)
+        self._updateBPM = updateBPM
     }
     
     var body: some View {
         
-        Text("\(bpm)")
+        Text("\(newBpm)")
             .font(.system(size: 32, design: .rounded).bold())
             .foregroundColor(lightBrown)
             .padding(.top, 5)
@@ -75,6 +78,9 @@ struct BpmNumpadView: View {
         
         //Submit button
         Button {
+            print("\(bpm), \(newBpm)")
+            bpm = newBpm
+            updateBPM = true
             presentationMode.wrappedValue.dismiss()
         } label: {
             ZStack{
@@ -90,13 +96,14 @@ struct BpmNumpadView: View {
     }
     
     func appendDigit(digit: Int) {
+        print("\(bpm), \(newBpm), \(digit)")
         if hasChanged {
-            if(bpm < 100){
-                let joinStr = "\(bpm)\(digit)"
-                bpm = Int(joinStr) ?? 0
+            if(newBpm < 100){
+                let joinStr = "\(newBpm)\(digit)"
+                newBpm = Int(joinStr) ?? 0
             } else {return}
         } else {
-            bpm = digit
+            newBpm = digit
             self.hasChanged = true
         }
     }
@@ -108,6 +115,6 @@ struct BpmNumpadView: View {
 
 struct BpmNumpadView_Previews: PreviewProvider {
     static var previews: some View {
-        BpmNumpadView(bpm: .constant(60))
+        BpmNumpadView(bpm: .constant(60), updateBPM: .constant(false))
     }
 }

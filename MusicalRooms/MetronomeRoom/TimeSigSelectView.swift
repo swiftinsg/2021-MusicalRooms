@@ -20,10 +20,10 @@ struct TimeSigSelectView: View {
     
     var body: some View {
         
-        ForEach(1 ..< 4){ row in
+        ForEach(1 ..< 5){ row in
             HStack {
-                ForEach(1 ..< 5) { column in
-                    let index: Int = (column + (row-1)*4) - 1
+                ForEach(1 ..< 4) { column in
+                    let index: Int = (column + (row-1)*3) - 1
                     let sig = signatures[index]
 
                     Button {
@@ -34,7 +34,7 @@ struct TimeSigSelectView: View {
                                 .foregroundColor(selIndex == index ? lightBrown : backBrown)
                                 .frame(width: 75, height: 50, alignment: .center)
                                 .cornerRadius(10)
-                                .padding(2)
+                                .padding(4)
                             Text(sig)
                                 .font(Font.system(size: 24, weight: .bold, design: .rounded))
                                 .foregroundColor(.white)
@@ -45,7 +45,7 @@ struct TimeSigSelectView: View {
             }
         }
         
-        Spacer().frame(height:30)
+        Spacer().frame(height:50)
         
         //Dismiss
         Button {

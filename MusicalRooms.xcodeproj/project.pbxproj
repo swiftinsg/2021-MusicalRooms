@@ -122,7 +122,6 @@
 		2E16224A27412CA100791ADC /* MusicalRooms */ = {
 			isa = PBXGroup;
 			children = (
-				2ECC0ACB2745225E0085142E /* misc */,
 				2E16227A2741F2AA00791ADC /* MetronomeRoom */,
 				2E1622792741F2A400791ADC /* TunerRoom */,
 				2E1622782741F29800791ADC /* SightreadingRoom */,
@@ -199,13 +198,6 @@
 				2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */,
 			);
 			path = MetronomeRoom;
-			sourceTree = "<group>";
-		};
-		2ECC0ACB2745225E0085142E /* misc */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

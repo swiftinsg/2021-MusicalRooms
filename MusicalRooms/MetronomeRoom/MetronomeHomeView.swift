@@ -265,7 +265,6 @@ struct MetronomeHomeView: View {
     
     func swing(delay: Double){
         let nextAngle = armAngle == 0 ? 30 : -armAngle
-        
         withAnimation(.easeInOut(duration: delay)){
             armAngle = nextAngle
         }
@@ -277,6 +276,19 @@ struct MetronomeHomeView: View {
         }
     }
     
+    func swing(delay: Double){
+        let nextAngle = armAngle == 0 ? 30 : -armAngle
+        withAnimation(.easeInOut(duration: delay)){
+            armAngle = nextAngle
+        }
+    }
+
+    func endSwing(){
+        withAnimation(.easeInOut(duration: 2.0)){
+            armAngle = 0
+        }
+    }
+
     // Just a value to fill the timer var first
     init(){
         self.timer = Timer(timeInterval: 0.1, repeats: false, block: {timer in

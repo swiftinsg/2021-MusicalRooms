@@ -29,6 +29,9 @@
 		C5809AC727464B1900EDAA9D /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5809AC627464B1900EDAA9D /* Words.swift */; };
 		C5809AC927464B8100EDAA9D /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5809AC827464B8100EDAA9D /* OverviewView.swift */; };
 		FF49C7572744D1840021D612 /* SineWaves in Resources */ = {isa = PBXBuildFile; fileRef = FF49C7562744D1840021D612 /* SineWaves */; };
+		FF5B9B7D27465408005312EF /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7927465408005312EF /* BottomButtonView.swift */; };
+		FF5B9B7E27465408005312EF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7A27465408005312EF /* Note.swift */; };
+		FF5B9B8027465408005312EF /* SelectKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7C27465408005312EF /* SelectKeyView.swift */; };
 		FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +77,9 @@
 		C5809AC627464B1900EDAA9D /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		C5809AC827464B8100EDAA9D /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		FF49C7562744D1840021D612 /* SineWaves */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SineWaves; sourceTree = "<group>"; };
+		FF5B9B7927465408005312EF /* BottomButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
+		FF5B9B7A27465408005312EF /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		FF5B9B7C27465408005312EF /* SelectKeyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectKeyView.swift; sourceTree = "<group>"; };
 		FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEnharmonic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +196,9 @@
 			children = (
 				FF49C7562744D1840021D612 /* SineWaves */,
 				2E16227F2741F2F700791ADC /* TunerHomeView.swift */,
+				FF5B9B7927465408005312EF /* BottomButtonView.swift */,
+				FF5B9B7A27465408005312EF /* Note.swift */,
+				FF5B9B7C27465408005312EF /* SelectKeyView.swift */,
 			);
 			path = TunerRoom;
 			sourceTree = "<group>";
@@ -350,11 +359,14 @@
 				C541403827434A24003C1B30 /* SightreadingQuizView.swift in Sources */,
 				C541403A27435125003C1B30 /* SightreadingQuestions.swift in Sources */,
 				2E16224E27412CA100791ADC /* ContentView.swift in Sources */,
+				FF5B9B8027465408005312EF /* SelectKeyView.swift in Sources */,
 				2E16224C27412CA100791ADC /* MusicalRoomsApp.swift in Sources */,
+				FF5B9B7D27465408005312EF /* BottomButtonView.swift in Sources */,
 				2E16227E2741F2E300791ADC /* ReadingHomeView.swift in Sources */,
 				FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */,
 				2E1622892742561200791ADC /* BpmNumpadView.swift in Sources */,
 				2E1622762741F26500791ADC /* TheoryHomeView.swift in Sources */,
+				FF5B9B7E27465408005312EF /* Note.swift in Sources */,
 				C5809AC727464B1900EDAA9D /* Words.swift in Sources */,
 				2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */,
 				1BBE2CD610EC63FAF0B95D19 /* GradeStruct.swift in Sources */,

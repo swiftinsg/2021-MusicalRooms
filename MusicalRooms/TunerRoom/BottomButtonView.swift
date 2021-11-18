@@ -29,16 +29,15 @@ struct BottomButtonView: View {
             }
             
             Button {
-                print(notes)
+                isOn.toggle()
                 var selectedNotePath = ""
                 for note in notes {
                     if note.isSelected {
                         selectedNotePath = Bundle.main.path(forResource: note.name, ofType: "mp3")!
-                    } else {
-                        
                     }
                 }
-                let url = URL(string: selectedNotePath)!
+                
+                let url = URL(string: selectedNotePath) ?? URL(string: Bundle.main.path(forResource: "A", ofType: "mp3")!)!
                 audioPlayer = try? AVAudioPlayer(contentsOf: url)
                 if isOn { audioPlayer.stop() }
                 else { audioPlayer.play() }
@@ -53,7 +52,7 @@ struct BottomButtonView: View {
                     .offset(x: 40)
             }
         }
-            .frame(width: 350, height: 120, alignment: .center)
+        .frame(width: 350, height: 120, alignment: .center)
     }
 }
 
@@ -67,10 +66,10 @@ struct BottomButtonView_Previews: PreviewProvider {
             Note(name: "G"),
             Note(name: "A"),
             Note(name: "B"),
-            Note(name: "C#"),
-            Note(name: "D#"),
-            Note(name: "F#"),
-            Note(name: "G#"),
-            Note(name: "A#")]))
+            Note(name: "Csharp"),
+            Note(name: "Dsharp"),
+            Note(name: "Fsharp"),
+            Note(name: "Gsharp"),
+            Note(name: "Asharp")]))
     }
 }

@@ -10,11 +10,11 @@ struct TunerHomeView: View {
         Note(name: "G"),
         Note(name: "A"),
         Note(name: "B"),
-        Note(name: "C#"),
-        Note(name: "D#"),
-        Note(name: "F#"),
-        Note(name: "G#"),
-        Note(name: "A#")]
+        Note(name: "Csharp"),
+        Note(name: "Dsharp"),
+        Note(name: "Fsharp"),
+        Note(name: "Gsharp"),
+        Note(name: "Asharp")]
     
     var body: some View {
         VStack {

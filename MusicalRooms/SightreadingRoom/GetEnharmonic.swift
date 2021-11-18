@@ -23,3 +23,21 @@ func getEnharmonic(_ note: String) -> String {
         return "nil"
     }
 }
+
+func conversion(_ note: String) -> String {
+    switch note {
+    case "Csharp":
+        return "C#"
+    case "Dsharp":
+        return "D#"
+    case "Fsharp":
+        return "F#"
+    case "Gsharp":
+        return "G#"
+    case "Asharp":
+        return "A#"
+    default:
+        return "nil"
+    }
+    
+}

@@ -26,9 +26,9 @@ struct SelectKeyView: View {
                         selectSelectedKey(note)
                     } label: {
                         VStack {
-                            Text(notes[note].name)
+                            Text(conversion(notes[note].name))
                                 .fontWeight(.semibold)
-                            Text(getEnharmonic(notes[note].name))
+                            Text(getEnharmonic(conversion(notes[note].name)))
                                 .fontWeight(.semibold)
                         }
                         .font(.system(size: 20, design: .rounded))
@@ -104,10 +104,10 @@ struct SelectKeyView_Previews: PreviewProvider {
             Note(name: "G"),
             Note(name: "A"),
             Note(name: "B"),
-            Note(name: "C#"),
-            Note(name: "D#"),
-            Note(name: "F#"),
-            Note(name: "G#"),
-            Note(name: "A#")]))
+            Note(name: "Csharp"),
+            Note(name: "Dsharp"),
+            Note(name: "Fsharp"),
+            Note(name: "Gsharp"),
+            Note(name: "Asharp")]))
     }
 }

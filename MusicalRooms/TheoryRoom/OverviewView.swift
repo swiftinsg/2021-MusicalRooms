@@ -33,16 +33,18 @@ struct OverviewView: View {
                         Word(title:"rallentando (or rall.)"),
                         Word(title:"ritardando (or ritard. or rit.)"),
                         Word(title:"staccato (or stacc.)")]
-        
-        
+    
+    
     var body: some View {
-        List(words) { word in
-                    Text(word.title)
-                }
+        List {
+            ForEach(words) {word in
+                Text(word.title)
+            }
+        }
+        .listRowBackground(Color("darkBrown"))
         .navigationTitle("Overview")
     }
 }
-
 struct OverviewView_Previews: PreviewProvider {
     static var previews: some View {
         OverviewView()

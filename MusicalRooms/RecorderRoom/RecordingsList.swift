@@ -16,12 +16,18 @@ struct RecordingsList: View {
     @ObservedObject var audioRecorder: AudioRecorder
     
     var body: some View {
+        Text("")
         List {
             ForEach(audioRecorder.recordings, id: \.createdAt) { recording in
                 RecordingRow(audioURL: recording.fileURL)
             }
-                .onDelete(perform: delete)
+            .onDelete(perform: delete)
         }
+        .toolbar{
+            EditButton()
+        }
+        .listStyle(.plain)
+        .padding()
     }
     
     func delete(at offsets: IndexSet) {
@@ -69,6 +75,6 @@ struct RecordingRow: View {
 
 struct RecordingsList_Previews: PreviewProvider {
     static var previews: some View {
-        RecordingsList(audioRecorder: AudioRecorder())
+        RecorderHomeView(timer: Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: {timer in print("")}))
     }
 }

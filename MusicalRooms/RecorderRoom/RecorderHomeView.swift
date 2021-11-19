@@ -23,23 +23,45 @@ struct RecorderHomeView: View {
     
     @ObservedObject var audioRecorder = AudioRecorder()
     
+    @State var recordingLength = 0
+    @State var lengthDisplayed = false
+    @State var timer: Timer
+    
     var body: some View {
         
         NavigationView {
             VStack{
                 
-                Spacer().frame(height:40)
+                Text("Recorder")
+                    .font(Font.system(size: 32, weight: .bold))
+                    .multilineTextAlignment(.leading)
+                    .frame( alignment: .leading)
+                    .offset(x:-85,y:-86)
+                    .padding()
+                
+                Spacer().frame(height:10)
                 
                 // RECORDING LIST
                 RecordingsList(audioRecorder: audioRecorder)
+                    .offset(y: -80)
+                
+                
+                if(lengthDisplayed){
+                    Text("\(String(format: "%.2d", recordingLength / 60)):\(String(format: "%.2d", recordingLength % 60))")
+                        .foregroundColor(lightBrown)
+                        .font(Font.system(size: 18, weight: .semibold, design: .monospaced))
+                        .offset(y: -100)
+                }
                 
                 
                 // Record button
                 Button{
                     if(self.audioRecorder.recording){
                         self.audioRecorder.stopRecording()
+                        stopLengthTimer()
                     }else{
                         self.audioRecorder.startRecording()
+                        startLengthTimer()
                     }
                     
                 } label: {
@@ -63,7 +85,7 @@ struct RecorderHomeView: View {
                         }
                     }else{
                         withAnimation(.easeInOut(duration: 0.2)){
-                            recordButtonSize = 60
+                        recordButtonSize = 60
                             recordBorderWidth = 3
                             recordButtonBorder = 75
                             recordButtonRadius = 30
@@ -71,12 +93,11 @@ struct RecorderHomeView: View {
                     }
                 
                 })
-                .background(.white)
                 
             }
-            .navigationBarTitle("Recorder")
-            .navigationBarItems(trailing: EditButton())
+            
         }
+        
         
         
         
@@ -96,4 +117,23 @@ struct RecorderHomeView: View {
         audioRecorder.deleteRecording(urlsToDelete: urlsToDelete)
     }
     
+    func startLengthTimer(){
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: {timer in
+            recordingLength += 1
+        })
+        lengthDisplayed = true
+    }
+    func stopLengthTimer(){
+        self.timer.invalidate()
+        recordingLength = 0
+        lengthDisplayed = false
+    }
+    
+}
+
+
+struct RecorderHomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        RecorderHomeView(timer: Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: {timer in print("")}))
+    }
 }

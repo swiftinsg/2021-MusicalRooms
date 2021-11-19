@@ -40,8 +40,9 @@ struct MetronomeHomeView: View {
         VStack{
             Text("Metronome")
                 .font(Font.system(size: 32, weight: .bold))
+                .multilineTextAlignment(.leading)
                 .frame( alignment: .leading)
-                .offset(x:-65,y:-10)
+                .offset(x:-65)
                 .padding()
 
             Spacer()

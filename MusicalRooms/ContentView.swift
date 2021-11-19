@@ -38,7 +38,7 @@ struct ContentView: View {
                     Text("Metronome")
                 }
             
-            RecorderHomeView()
+            RecorderHomeView(timer: Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: {timer in print("")}))
                 .tabItem{
                     Image(systemName: "waveform")
                     Text("Recorder")

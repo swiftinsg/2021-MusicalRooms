@@ -37,6 +37,13 @@ struct ContentView: View {
                     Image(systemName: "metronome")
                     Text("Metronome")
                 }
+            
+            RecorderHomeView(timer: Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: {timer in print("")} )  )
+                .tabItem{
+                    Image(systemName: "waveform")
+                    Text("Recorder")
+                }
+            
         }
         .accentColor(darkBrown)
         .font(Font.body)

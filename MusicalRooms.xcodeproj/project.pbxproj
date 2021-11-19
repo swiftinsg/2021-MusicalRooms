@@ -227,9 +227,9 @@
 				2E16227F2741F2F700791ADC /* TunerHomeView.swift */,
 				FF3FEC7D2747214C0024DAD3 /* ActualTunerView.swift */,
 				FF5B9B7927465408005312EF /* BottomButtonView.swift */,
+				FF5B9B7C27465408005312EF /* SelectKeyView.swift */,
 				FF5B9B7A27465408005312EF /* Note.swift */,
 				FF3FEC7F274730DC0024DAD3 /* Oscillator.swift */,
-				FF5B9B7C27465408005312EF /* SelectKeyView.swift */,
 			);
 			path = TunerRoom;
 			sourceTree = "<group>";

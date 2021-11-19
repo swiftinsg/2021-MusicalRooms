@@ -11,6 +11,7 @@ import AudioKit
 struct BottomButtonView: View {
     
     @Binding var notes: [Note]
+    @Binding var variance: Float
     @State var isOn = false
     @State var noteFrequency: Float = 440
     
@@ -40,7 +41,7 @@ struct BottomButtonView: View {
                 if isOn {
                     osc.stop()
                 } else {
-                    osc.start(frequency: noteFrequency)
+                    osc.start(frequency: noteFrequency, variance)
                 }
                 
                 
@@ -72,6 +73,6 @@ struct BottomButtonView_Previews: PreviewProvider {
             Note(name: "Dsharp", hertz: 311.13),
             Note(name: "Fsharp", hertz: 369.99),
             Note(name: "Gsharp", hertz: 415.30),
-            Note(name: "Asharp", hertz: 466.16)]))
+            Note(name: "Asharp", hertz: 466.16)]), variance: .constant(0))
     }
 }

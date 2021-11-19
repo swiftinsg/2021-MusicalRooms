@@ -10,6 +10,7 @@ import SwiftUI
 struct SelectKeyView: View {
     
     @Binding var notes: [Note]
+    @Binding var variance: Float
     
     fileprivate func selectSelectedKey(_ note: Int) {
         for num in 0 ..< notes.count {
@@ -88,7 +89,7 @@ struct SelectKeyView: View {
                 .frame(width: 350, height: 120)
                 .foregroundColor(Color("darkerBrown"))
                 .overlay(
-                    BottomButtonView(notes: $notes)
+                    BottomButtonView(notes: $notes, variance: $variance)
                 )
         }
     }
@@ -108,6 +109,6 @@ struct SelectKeyView_Previews: PreviewProvider {
             Note(name: "Dsharp", hertz: 311.13),
             Note(name: "Fsharp", hertz: 369.99),
             Note(name: "Gsharp", hertz: 415.30),
-            Note(name: "Asharp", hertz: 466.16)]))
+            Note(name: "Asharp", hertz: 466.16)]), variance: .constant(0))
     }
 }

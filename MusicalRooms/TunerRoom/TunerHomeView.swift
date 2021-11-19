@@ -16,6 +16,8 @@ struct TunerHomeView: View {
         Note(name: "Gsharp", hertz: 415.30),
         Note(name: "Asharp", hertz: 466.16)]
     
+    @State var variance: Float = 0.0
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Tuner")
@@ -23,11 +25,11 @@ struct TunerHomeView: View {
                 .frame( alignment: .leading)
                 .padding()
             
-            TunerView()
+            TunerView(variance: $variance)
                 Spacer()
                 .frame(height: 30)
             
-            SelectKeyView(notes: $notes)
+            SelectKeyView(notes: $notes, variance: $variance)
         }
     }
 }

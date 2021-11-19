@@ -21,6 +21,11 @@
 		2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1622812741F30400791ADC /* MetronomeHomeView.swift */; };
 		2E1622892742561200791ADC /* BpmNumpadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1622882742561200791ADC /* BpmNumpadView.swift */; };
 		2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */; };
+		2E2A69BC2747816F002E5471 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69BB2747816F002E5471 /* AudioRecorder.swift */; };
+		2E2A69BE274781B9002E5471 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69BD274781B9002E5471 /* Recording.swift */; };
+		2E2A69C7274783E5002E5471 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69C6274783E5002E5471 /* AudioPlayer.swift */; };
+		2E2A69C927478B80002E5471 /* RecordingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69C827478B80002E5471 /* RecordingsList.swift */; };
+		2E2A69CB27478D0E002E5471 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69CA27478D0E002E5471 /* Helpers.swift */; };
 		2E6F2CDC2746333F0010E515 /* metronome.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDA2746333F0010E515 /* metronome.wav */; };
 		2E6F2CDD2746333F0010E515 /* metronomeUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDB2746333F0010E515 /* metronomeUp.wav */; };
 		2E6F2CDF274653210010E515 /* RecorderHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDE274653210010E515 /* RecorderHomeView.swift */; };
@@ -69,6 +74,11 @@
 		2E1622812741F30400791ADC /* MetronomeHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeHomeView.swift; sourceTree = "<group>"; };
 		2E1622882742561200791ADC /* BpmNumpadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BpmNumpadView.swift; sourceTree = "<group>"; };
 		2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSigSelectView.swift; sourceTree = "<group>"; };
+		2E2A69BB2747816F002E5471 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		2E2A69BD274781B9002E5471 /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
+		2E2A69C6274783E5002E5471 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		2E2A69C827478B80002E5471 /* RecordingsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingsList.swift; sourceTree = "<group>"; };
+		2E2A69CA27478D0E002E5471 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		2E6F2CDA2746333F0010E515 /* metronome.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = metronome.wav; path = assets/metronome.wav; sourceTree = "<group>"; };
 		2E6F2CDB2746333F0010E515 /* metronomeUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = metronomeUp.wav; path = assets/metronomeUp.wav; sourceTree = "<group>"; };
 		2E6F2CDE274653210010E515 /* RecorderHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderHomeView.swift; sourceTree = "<group>"; };
@@ -110,8 +120,11 @@
 		1BBE25915727AB14910C8ADB /* RecorderRoom */ = {
 			isa = PBXGroup;
 			children = (
+				2E2A69C5274783D2002E5471 /* Managers */,
 				2E6F2CDE274653210010E515 /* RecorderHomeView.swift */,
+				2E2A69C827478B80002E5471 /* RecordingsList.swift */,
 				2E6F2CE22746778F0010E515 /* Extensions.swift */,
+				2E2A69BD274781B9002E5471 /* Recording.swift */,
 			);
 			path = RecorderRoom;
 			sourceTree = "<group>";
@@ -218,6 +231,16 @@
 				2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */,
 			);
 			path = MetronomeRoom;
+			sourceTree = "<group>";
+		};
+		2E2A69C5274783D2002E5471 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2E2A69BB2747816F002E5471 /* AudioRecorder.swift */,
+				2E2A69C6274783E5002E5471 /* AudioPlayer.swift */,
+				2E2A69CA27478D0E002E5471 /* Helpers.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,17 +383,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */,
+				2E2A69CB27478D0E002E5471 /* Helpers.swift in Sources */,
 				2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */,
 				C541403827434A24003C1B30 /* SightreadingQuizView.swift in Sources */,
 				C541403A27435125003C1B30 /* SightreadingQuestions.swift in Sources */,
 				2E6F2CDF274653210010E515 /* RecorderHomeView.swift in Sources */,
 				2E16224E27412CA100791ADC /* ContentView.swift in Sources */,
+				2E2A69C7274783E5002E5471 /* AudioPlayer.swift in Sources */,
+				2E2A69C927478B80002E5471 /* RecordingsList.swift in Sources */,
 				2E16224C27412CA100791ADC /* MusicalRoomsApp.swift in Sources */,
 				2E16227E2741F2E300791ADC /* ReadingHomeView.swift in Sources */,
 				FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */,
 				2E1622892742561200791ADC /* BpmNumpadView.swift in Sources */,
+				2E2A69BC2747816F002E5471 /* AudioRecorder.swift in Sources */,
 				2E1622762741F26500791ADC /* TheoryHomeView.swift in Sources */,
 				C5809AC727464B1900EDAA9D /* Words.swift in Sources */,
+				2E2A69BE274781B9002E5471 /* Recording.swift in Sources */,
 				2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */,
 				2E6F2CE32746778F0010E515 /* Extensions.swift in Sources */,
 				1BBE2CD610EC63FAF0B95D19 /* GradeStruct.swift in Sources */,
@@ -540,8 +568,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -568,8 +596,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

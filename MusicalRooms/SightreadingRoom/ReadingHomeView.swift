@@ -24,67 +24,87 @@ struct ReadingHomeView: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 ForEach(0 ..< clefs.count) { clef in
-                    HStack(alignment: .center) {
-                        Image (clefs[clef])
-                        VStack(alignment: .leading) {
-                            Text(clefs[clef])
-                                .fontWeight(.semibold)
-                                .multilineTextAlignment(.leading)
-                                .font(.system(.title, design: .rounded))
-                                .lineLimit(3)
-                                .foregroundColor(Color("darkBrown"))
+                    
+                    ZStack{
+                        
+                        //Large background
+                        Rectangle()
+                            .foregroundColor(Color("evenLighterBrown"))
+                            .cornerRadius(13)
+                            .frame(width: 340, height: 140, alignment: .center)
+                        
+                        HStack{
                             
-                            VStack(alignment: .leading) {
-                                HStack {
-                                    Text("Timed:")
-                                        .frame(width: 60, height: 20)
-                                    HStack {
-                                        ForEach(0 ..< timedQuestions.count) { time in
-                                            NavigationLink {
-                                                
-                                            } label: {
-                                                Text("\(timedQuestions[time])s")
-                                                    .frame(width: 40, height: 20, alignment: .center)
-                                            }
-                                        }
-                                    }
-                                }
-                                .multilineTextAlignment(.leading)
-                                .font(.system(size: 20,design: .rounded))
-                                .lineLimit(3)
-                                .foregroundColor(Color("darkerBrown"))
+                            //Clef icon
+                            Image(clefs[clef])
+                                .foregroundColor(Color("lightBrown"))
+                                .padding(5)
+                            
+                            VStack(alignment: .leading){
                                 
-                                HStack {
-                                    Text("Drill:")
-                                        .frame(width: 60, height: 20, alignment: .leading)
-                                    HStack {
-                                        ForEach(0 ..< drilledQuestions.count) { drill in
-                                            NavigationLink {
+                                //Clef title
+                                Text("\(clefs[clef])")
+                                    .font(Font.system(size: 26, weight: .semibold, design: .default))
+                                    .frame(alignment: .leading)
+                                    .offset(x: 15)
+                                    .foregroundColor(Color("darkBrown"))
+                                
+                                //Options
+                                
+                                ZStack{
+                                    
+                                    let lightBackBrown = Color(red: 244/255, green: 232/255, blue: 216/255)
+                                    
+                                    Rectangle()
+                                        .foregroundColor(lightBackBrown)
+                                        .cornerRadius(10)
+                                        .frame(width: 240, height: 70, alignment: .center)
+                                    
+                                    Rectangle()
+                                        .foregroundColor(Color("darkBrown"))
+                                        .frame(width: 240, height: 1, alignment: .center)
+                                    
+                                    //Option Buttons
+                                    let types = ["Timed", "Drill"]
+                                    ForEach(types, id: \.self){type in
+                                        
+                                        let isTimed = type == "Timed"
+                                        HStack{
+                                            if(!isTimed){Spacer().frame(width: 5)}
+                                            
+                                            Text(type)
+                                                .font(Font.system(size: 14, weight: .medium, design: .default))
+                                                .foregroundColor(Color("darkBrown"))
+                                            Spacer().frame(width: (isTimed ? 16 : 30))
+                                            
+                                            ForEach(isTimed  ? timedQuestions : drilledQuestions, id: \.self){ question in
                                                 
-                                            } label: {
-                                                Text("\(drilledQuestions[drill])")
-                                                    .frame(width: 40, height: 20, alignment: .center)
+                                                NavigationLink{
+                                                    //TODO: Link to quix (isTimed ? timed : drilled)
+                                                } label: {
+                                                    Text("\(question)\(isTimed ? "s" : " ")")
+                                                        .font(Font.system(size: 14, weight: .bold, design: .default))
+                                                        .foregroundColor(Color("darkBrown"))
+                                                }
+                                                Spacer().frame(width: isTimed ? 12 : 16.5)
+                                                
                                             }
-                                        }
+                                        }.offset(y: (isTimed ? -14 : 14))
+                                        
                                     }
-                                }
-                                .multilineTextAlignment(.leading)
-                                .font(.system(size: 20,design: .rounded))
-                                .lineLimit(3)
-                                .foregroundColor(Color("darkerBrown"))
+                                    //End buttons
+                                    
+                                }.offset(y:-8)
                             }
-                            .padding()
-                            .frame(width: 280, height: 80, alignment: .leading)
-                            .background( Color("evenLighterBrown"))
-                            .cornerRadius(20)
-                            
                         }
+                        
                     }
-                    .padding()
-                    .frame(width: 370, height: 160, alignment: .leading)
-                    .background(Color("lightBrown"))
-                    .cornerRadius(20)
+                    
+                    Spacer().frame(height:20)
+                    
                 }
+                    
+                    
             }
         }
         .offset(y:20)

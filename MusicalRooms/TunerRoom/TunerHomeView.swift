@@ -3,21 +3,30 @@ import SwiftUI
 struct TunerHomeView: View {
     
     @State var notes = [
-        Note(name: "C"),
-        Note(name: "D"),
-        Note(name: "E"),
-        Note(name: "F"),
-        Note(name: "G"),
-        Note(name: "A"),
-        Note(name: "B"),
-        Note(name: "Csharp"),
-        Note(name: "Dsharp"),
-        Note(name: "Fsharp"),
-        Note(name: "Gsharp"),
-        Note(name: "Asharp")]
+        Note(name: "C", hertz: 261.63),
+        Note(name: "D", hertz: 293.66),
+        Note(name: "E", hertz: 329.63),
+        Note(name: "F", hertz: 349.23),
+        Note(name: "G", hertz: 392.00),
+        Note(name: "A", hertz: 440.00),
+        Note(name: "B", hertz: 493.883),
+        Note(name: "Csharp", hertz: 277.18),
+        Note(name: "Dsharp", hertz: 311.13),
+        Note(name: "Fsharp", hertz: 369.99),
+        Note(name: "Gsharp", hertz: 415.30),
+        Note(name: "Asharp", hertz: 466.16)]
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
+            Text("Tuner")
+                .font(Font.system(size: 32, weight: .bold))
+                .frame( alignment: .leading)
+                .padding()
+            
+            TunerView()
+                Spacer()
+                .frame(height: 30)
+            
             SelectKeyView(notes: $notes)
         }
     }

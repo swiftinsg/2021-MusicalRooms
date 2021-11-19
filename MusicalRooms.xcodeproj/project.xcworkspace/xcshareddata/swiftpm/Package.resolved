@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "AudioKit",
+        "repositoryURL": "https://github.com/AudioKit/AudioKit",
+        "state": {
+          "branch": "main",
+          "revision": "4203ffd9dc90f4a9f3e28892664cb0e0ea38cfc3",
+          "version": null
+        }
+      },
+      {
         "package": "Subsonic",
         "repositoryURL": "https://github.com/twostraws/Subsonic",
         "state": {

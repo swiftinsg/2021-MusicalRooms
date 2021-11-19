@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
-import AVFoundation
+import AudioKit
 
 struct BottomButtonView: View {
     
     @Binding var notes: [Note]
-    @State var audioPlayer: AVAudioPlayer!
+    @Binding var variance: Float
     @State var isOn = false
+    @State var noteFrequency: Float = 440
+    
+    var osc = OscillatorObject()
     
     var body: some View {
         HStack {
@@ -30,17 +33,17 @@ struct BottomButtonView: View {
             
             Button {
                 isOn.toggle()
-                var selectedNotePath = ""
                 for note in notes {
                     if note.isSelected {
-                        selectedNotePath = Bundle.main.path(forResource: note.name, ofType: "mp3")!
+                        noteFrequency = note.hertz
                     }
                 }
+                if isOn {
+                    osc.stop()
+                } else {
+                    osc.start(frequency: noteFrequency, variance)
+                }
                 
-                let url = URL(string: selectedNotePath) ?? URL(string: Bundle.main.path(forResource: "A", ofType: "mp3")!)!
-                audioPlayer = try? AVAudioPlayer(contentsOf: url)
-                if isOn { audioPlayer.stop() }
-                else { audioPlayer.play() }
                 
             } label: {
                 Image(systemName: "speaker.wave.3")
@@ -59,17 +62,17 @@ struct BottomButtonView: View {
 struct BottomButtonView_Previews: PreviewProvider {
     static var previews: some View {
         BottomButtonView(notes: .constant([
-            Note(name: "C"),
-            Note(name: "D"),
-            Note(name: "E"),
-            Note(name: "F"),
-            Note(name: "G"),
-            Note(name: "A"),
-            Note(name: "B"),
-            Note(name: "Csharp"),
-            Note(name: "Dsharp"),
-            Note(name: "Fsharp"),
-            Note(name: "Gsharp"),
-            Note(name: "Asharp")]))
+            Note(name: "C", hertz: 261.63),
+            Note(name: "D", hertz: 293.66),
+            Note(name: "E", hertz: 329.63),
+            Note(name: "F", hertz: 349.23),
+            Note(name: "G", hertz: 392.00),
+            Note(name: "A", hertz: 440.00),
+            Note(name: "B", hertz: 466.16),
+            Note(name: "Csharp", hertz: 277.18),
+            Note(name: "Dsharp", hertz: 311.13),
+            Note(name: "Fsharp", hertz: 369.99),
+            Note(name: "Gsharp", hertz: 415.30),
+            Note(name: "Asharp", hertz: 466.16)]), variance: .constant(0))
     }
 }

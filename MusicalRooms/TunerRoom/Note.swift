@@ -12,4 +12,5 @@ struct Note: Identifiable, Equatable {
     
     var name: String
     var isSelected: Bool = false
+    var hertz: Float
 }

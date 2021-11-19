@@ -20,16 +20,42 @@ struct TunerView: View {
                 .overlay(
                     VStack {
                         HStack {
-                            Circle()
-                                .frame(width: 25, height: 25, alignment: .center)
-                                .foregroundColor(Color("darkBrown"))
-                                .overlay(
-                                Image(systemName: "plus")
-                                    .foregroundColor(Color("lightBrown"))
-                                )
-                                .onTapGesture {
-                                    AFrequency += 5; variance += 5
+                            Button {
+                                AFrequency += 5; variance += 5
+                            } label: {
+                                Circle()
+                                    .frame(width: 25, height: 25, alignment: .center)
+                                    .foregroundColor(Color("darkBrown"))
+                                    .overlay(
+                                        Image(systemName: "plus")
+                                            .foregroundColor(Color("lightBrown"))
+                                        )
+                            }
+                            
+                            VStack {
+                                
+                                Text("A") //Placeholder text
+                                    .fontWeight(.heavy)
+                                    .font(Font.system(size: 30))
+                                Text(String(AFrequency) + "Hz")
+                                    .fontWeight(.bold)
+                                    .font(Font.system(size: 10))
+                                    .foregroundColor(Color("darkerBrown"))
+                            }
+                            
+                            HStack {
+                                Button {
+                                    AFrequency -= 5; variance -= 5
+                                } label: {
+                                    Circle()
+                                        .frame(width: 25, height: 25, alignment: .center)
+                                        .foregroundColor(Color("darkBrown"))
+                                        .overlay(
+                                            Image(systemName: "minus")
+                                                .foregroundColor(Color("lightBrown"))
+                                            )
                                 }
+                            }
                         }
                     }
                 )

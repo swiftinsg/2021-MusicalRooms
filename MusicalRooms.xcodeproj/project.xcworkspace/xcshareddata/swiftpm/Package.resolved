@@ -18,6 +18,15 @@
           "revision": "156c5742279df5d2315e29534a2410f418c8a772",
           "version": "0.2.0"
         }
+      },
+      {
+        "package": "Tuna",
+        "repositoryURL": "https://github.com/alladinian/Tuna",
+        "state": {
+          "branch": null,
+          "revision": "a5b1e8d1c1549df3e90cc4b5f4148fda1d364777",
+          "version": "0.9.0"
+        }
       }
     ]
   },

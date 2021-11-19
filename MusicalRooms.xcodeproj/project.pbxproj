@@ -45,6 +45,7 @@
 		C541403A27435125003C1B30 /* SightreadingQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403927435125003C1B30 /* SightreadingQuestions.swift */; };
 		C5809AC727464B1900EDAA9D /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5809AC627464B1900EDAA9D /* Words.swift */; };
 		C5809AC927464B8100EDAA9D /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5809AC827464B8100EDAA9D /* OverviewView.swift */; };
+		C5AD267127474E6B00FC4447 /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AD267027474E6A00FC4447 /* FlashcardView.swift */; };
 		FF3FEC7E2747214C0024DAD3 /* ActualTunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FEC7D2747214C0024DAD3 /* ActualTunerView.swift */; };
 		FF3FEC80274730DC0024DAD3 /* Oscillator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FEC7F274730DC0024DAD3 /* Oscillator.swift */; };
 		FF3FEC86274736EA0024DAD3 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF3FEC85274736EA0024DAD3 /* AudioKit */; };
@@ -52,6 +53,7 @@
 		FF5B9B7E27465408005312EF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7A27465408005312EF /* Note.swift */; };
 		FF5B9B8027465408005312EF /* SelectKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7C27465408005312EF /* SelectKeyView.swift */; };
 		FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */; };
+		FFF81474274776C400FA5775 /* Tuna in Frameworks */ = {isa = PBXBuildFile; productRef = FFF81473274776C400FA5775 /* Tuna */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,7 @@
 		C541403927435125003C1B30 /* SightreadingQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightreadingQuestions.swift; sourceTree = "<group>"; };
 		C5809AC627464B1900EDAA9D /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		C5809AC827464B8100EDAA9D /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
+		C5AD267027474E6A00FC4447 /* FlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
 		FF3FEC7D2747214C0024DAD3 /* ActualTunerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualTunerView.swift; sourceTree = "<group>"; };
 		FF3FEC7F274730DC0024DAD3 /* Oscillator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oscillator.swift; sourceTree = "<group>"; };
 		FF5B9B7927465408005312EF /* BottomButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF3FEC86274736EA0024DAD3 /* AudioKit in Frameworks */,
+				FFF81474274776C400FA5775 /* Tuna in Frameworks */,
 				2ECC0AC62744AEED0085142E /* Subsonic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,6 +230,7 @@
 				2E1622752741F26500791ADC /* TheoryHomeView.swift */,
 				C5809AC627464B1900EDAA9D /* Words.swift */,
 				C5809AC827464B8100EDAA9D /* OverviewView.swift */,
+				C5AD267027474E6A00FC4447 /* FlashcardView.swift */,
 				1BBE21893CACBA742A275AC5 /* GradeStruct.swift */,
 			);
 			path = TheoryRoom;
@@ -315,6 +320,7 @@
 			packageProductDependencies = (
 				2ECC0AC52744AEED0085142E /* Subsonic */,
 				FF3FEC85274736EA0024DAD3 /* AudioKit */,
+				FFF81473274776C400FA5775 /* Tuna */,
 			);
 			productName = MusicalRooms;
 			productReference = 2E16224827412CA100791ADC /* MusicalRooms.app */;
@@ -391,6 +397,7 @@
 			packageReferences = (
 				2ECC0AC42744AEED0085142E /* XCRemoteSwiftPackageReference "Subsonic" */,
 				FF3FEC84274736EA0024DAD3 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				FFF81472274776C400FA5775 /* XCRemoteSwiftPackageReference "Tuna" */,
 			);
 			productRefGroup = 2E16224927412CA100791ADC /* Products */;
 			projectDirPath = "";
@@ -447,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF3FEC7E2747214C0024DAD3 /* ActualTunerView.swift in Sources */,
+				C5AD267127474E6B00FC4447 /* FlashcardView.swift in Sources */,
 				2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */,
 				2E2A69CB27478D0E002E5471 /* Helpers.swift in Sources */,
 				2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */,
@@ -830,6 +838,14 @@
 				kind = branch;
 			};
 		};
+		FFF81472274776C400FA5775 /* XCRemoteSwiftPackageReference "Tuna" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alladinian/Tuna";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -842,6 +858,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF3FEC84274736EA0024DAD3 /* XCRemoteSwiftPackageReference "AudioKit" */;
 			productName = AudioKit;
+		};
+		FFF81473274776C400FA5775 /* Tuna */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFF81472274776C400FA5775 /* XCRemoteSwiftPackageReference "Tuna" */;
+			productName = Tuna;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

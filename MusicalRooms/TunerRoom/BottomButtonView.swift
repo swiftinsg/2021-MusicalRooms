@@ -20,13 +20,12 @@ struct BottomButtonView: View {
     var body: some View {
         HStack {
             Button {
-                
             } label: {
                 Image(systemName: "tuningfork")
                     .font(Font.title)
                     .frame(width: 80, height: 80, alignment: .center)
                     .foregroundColor(Color("darkBrown"))
-                    .background(Color("lightBrown"))
+                    .background(Color("evenLighterBrown"))
                     .cornerRadius(20)
                     .offset(x: -40)
             }
@@ -50,7 +49,7 @@ struct BottomButtonView: View {
                     .font(Font.title)
                     .frame(width: 80, height: 80, alignment: .center)
                     .foregroundColor(Color("darkBrown"))
-                    .background(Color("lightBrown"))
+                    .background(Color("evenLighterBrown"))
                     .cornerRadius(20)
                     .offset(x: 40)
             }

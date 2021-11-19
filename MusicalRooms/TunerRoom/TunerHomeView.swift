@@ -25,7 +25,7 @@ struct TunerHomeView: View {
                 .frame( alignment: .leading)
                 .padding()
             
-            TunerView(variance: $variance)
+            ActualTunaView(variance: $variance)
                 Spacer()
                 .frame(height: 30)
             

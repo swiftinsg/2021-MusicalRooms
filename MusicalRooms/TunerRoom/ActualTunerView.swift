@@ -6,19 +6,26 @@
 //
 
 import SwiftUI
+import Tuna
 
-struct TunerView: View {
+struct ActualTunaView: View {
     
     @State var AFrequency = 440.0
     @Binding var variance: Float
+    
+    let topLineColor: Color = Color("topLineColor")
+    let bottomLineColor: Color = Color("bottomLineColor")
     
     var body: some View {
         VStack {
             RoundedRectangle(cornerRadius: 20)
                 .frame(width: 350, height: 160, alignment: .center)
-                .foregroundColor(Color("lightBrown"))
+                .foregroundColor(Color("evenLighterBrown"))
                 .overlay(
                     VStack {
+                        Rectangle()
+                            .frame(width: 2, height: 35)
+                            .foregroundColor(topLineColor)
                         HStack {
                             Button {
                                 AFrequency += 5; variance += 5
@@ -28,7 +35,7 @@ struct TunerView: View {
                                     .foregroundColor(Color("darkBrown"))
                                     .overlay(
                                         Image(systemName: "plus")
-                                            .foregroundColor(Color("lightBrown"))
+                                            .foregroundColor(Color("evenLighterBrown"))
                                         )
                             }
                             
@@ -52,12 +59,26 @@ struct TunerView: View {
                                         .foregroundColor(Color("darkBrown"))
                                         .overlay(
                                             Image(systemName: "minus")
-                                                .foregroundColor(Color("lightBrown"))
+                                                .foregroundColor(Color("evenLighterBrown"))
                                             )
                                 }
                             }
                         }
+                        HStack {
+                            ForEach(0 ..< 11) { rectangle in
+                                Rectangle()
+                                    .frame(
+                                    width: 2,
+                                    height: rectangle == 5 ? 50 : 25
+                                    )
+                                    .foregroundColor(rectangle == 5 ? bottomLineColor : .black )
+                                    .offset(y: rectangle != 5 ? 15 : 3)
+                                    
+                            }
+                            .frame(width: 23, height: 50, alignment: .center)
+                        }
                     }
+                        
                 )
         }
     }
@@ -65,6 +86,6 @@ struct TunerView: View {
 
 struct TunerView_Previews: PreviewProvider {
     static var previews: some View {
-        TunerView(variance: .constant(0))
+        ActualTunaView(variance: .constant(0))
     }
 }

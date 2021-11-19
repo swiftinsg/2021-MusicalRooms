@@ -16,17 +16,18 @@ struct BottomButtonView: View {
     @State var noteFrequency: Float = 440
     
     var osc = OscillatorObject()
+    var pitchManager = PitchDetector()
     
     var body: some View {
         HStack {
             Button {
-                
+                pitchManager.start()
             } label: {
                 Image(systemName: "tuningfork")
                     .font(Font.title)
                     .frame(width: 80, height: 80, alignment: .center)
                     .foregroundColor(Color("darkBrown"))
-                    .background(Color("lightBrown"))
+                    .background(Color("evenLighterBrown"))
                     .cornerRadius(20)
                     .offset(x: -40)
             }
@@ -50,7 +51,7 @@ struct BottomButtonView: View {
                     .font(Font.title)
                     .frame(width: 80, height: 80, alignment: .center)
                     .foregroundColor(Color("darkBrown"))
-                    .background(Color("lightBrown"))
+                    .background(Color("evenLighterBrown"))
                     .cornerRadius(20)
                     .offset(x: 40)
             }

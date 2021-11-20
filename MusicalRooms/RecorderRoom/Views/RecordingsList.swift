@@ -13,19 +13,31 @@ struct RecordingsList: View {
     let darkBrown: Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
     let backBrown: Color = Color(red: 211/255, green: 165/255, blue: 109/255)
     
+    @State var isEditing = false
     @ObservedObject var audioRecorder: AudioRecorder
     
     var body: some View {
-        Text("")
+        
+        Button{
+            withAnimation(.easeInOut){
+                isEditing.toggle()
+            }
+        }label: {
+            Text(isEditing ? "Done" : "Edit")
+                .font(Font.system(size: 18, weight: .semibold, design: .default))
+                .foregroundColor(darkBrown)
+                .multilineTextAlignment(.trailing)
+        }
+        .offset(x: 120, y: 20)
+ 
+        
         List {
             ForEach(audioRecorder.recordings, id: \.createdAt) { recording in
                 RecordingRow(audioURL: recording.fileURL)
             }
             .onDelete(perform: delete)
         }
-        .toolbar{
-            EditButton()
-        }
+        .environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive))
         .listStyle(.plain)
         .padding()
     }

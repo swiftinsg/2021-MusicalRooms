@@ -35,7 +35,7 @@ struct BpmNumpadView: View {
                     .stroke(lightBrown, lineWidth: 4)
             )
         
-        Spacer().frame(height:20)
+        Spacer().frame(height: 30)
         
         ForEach(1 ..< 4){ row in
             HStack {
@@ -54,7 +54,7 @@ struct BpmNumpadView: View {
                         }
                         
                     }
-                    .padding(10)
+                    
                 }
             }
         }

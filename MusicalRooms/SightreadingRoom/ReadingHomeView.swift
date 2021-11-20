@@ -31,7 +31,7 @@ struct ReadingHomeView: View {
                         Rectangle()
                             .foregroundColor(Color("evenLighterBrown"))
                             .cornerRadius(13)
-                            .frame(width: 340, height: 140, alignment: .center)
+                            .frame(width: 370, height: 140, alignment: .center)
                         
                         HStack{
                             
@@ -46,7 +46,7 @@ struct ReadingHomeView: View {
                                 Text("\(clefs[clef])")
                                     .font(Font.system(size: 26, weight: .semibold, design: .default))
                                     .frame(alignment: .leading)
-                                    .offset(x: 15)
+                                    .offset(y: 10)
                                     .foregroundColor(Color("darkBrown"))
                                 
                                 //Options
@@ -58,11 +58,13 @@ struct ReadingHomeView: View {
                                     Rectangle()
                                         .foregroundColor(lightBackBrown)
                                         .cornerRadius(10)
-                                        .frame(width: 240, height: 70, alignment: .center)
+                                        .frame(width: 260, height: 70, alignment: .center)
+                                        .offset(x: -5)
                                     
                                     Rectangle()
                                         .foregroundColor(Color("darkBrown"))
-                                        .frame(width: 240, height: 1, alignment: .center)
+                                        .frame(width: 260, height: 1, alignment: .center)
+                                        .offset(x: -5)
                                     
                                     //Option Buttons
                                     let types = ["Timed", "Drill"]
@@ -73,9 +75,10 @@ struct ReadingHomeView: View {
                                             if(!isTimed){Spacer().frame(width: 5)}
                                             
                                             Text(type)
-                                                .font(Font.system(size: 14, weight: .medium, design: .default))
+                                                .font(Font.system(size: 14, weight: .heavy, design: .default))
                                                 .foregroundColor(Color("darkBrown"))
-                                            Spacer().frame(width: (isTimed ? 16 : 30))
+                                            
+                                            Spacer().frame(width: (isTimed ? 6 : 22))
                                             
                                             ForEach(isTimed  ? timedQuestions : drilledQuestions, id: \.self){ question in
                                                 
@@ -85,8 +88,9 @@ struct ReadingHomeView: View {
                                                     Text("\(question)\(isTimed ? "s" : " ")")
                                                         .font(Font.system(size: 14, weight: .bold, design: .default))
                                                         .foregroundColor(Color("darkBrown"))
+                                                        .frame(width: 27, height: 8, alignment: .center)
                                                 }
-                                                Spacer().frame(width: isTimed ? 12 : 16.5)
+                                                Spacer().frame(width: 2)
                                                 
                                             }
                                         }.offset(y: (isTimed ? -14 : 14))
@@ -98,7 +102,7 @@ struct ReadingHomeView: View {
                             }
                         }
                         
-                    }
+                    }.offset(x: 10)
                     
                     Spacer().frame(height:20)
                     

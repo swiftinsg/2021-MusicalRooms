@@ -39,6 +39,7 @@ struct TimeSigSelectView: View {
                                 .font(Font.system(size: 24, weight: .bold, design: .rounded))
                                 .foregroundColor(.white)
                         }
+                        .frame(width: 65, height: 50, alignment: .center)
                     }
 
                 }

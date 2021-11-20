@@ -38,13 +38,17 @@ struct MetronomeHomeView: View {
     var body: some View {
         
         VStack{
-            Text("Metronome")
-                .font(Font.system(size: 32, weight: .bold))
-                .multilineTextAlignment(.leading)
-                .frame( alignment: .leading)
-                .offset(x:-65)
-                .padding()
-
+            ZStack{
+                Text("Metronome")
+                    .font(Font.system(size: 32, weight: .bold))
+                    .multilineTextAlignment(.leading)
+                    .frame( alignment: .leading)
+                    .offset(x:-65, y:20)
+                    .padding()
+                /*RecorderHomeView(isMini: true)
+                    .offset(x: 115, y: 95)*/
+            }
+            
             Spacer()
                 .frame(height: 30)
             
@@ -76,12 +80,6 @@ struct MetronomeHomeView: View {
                 .onChange(of: bpm, perform: {bpm in
                     weightOffset = CGFloat( -bpm*280/200 + 160) //-120:160
                 })
-                /*.onChange(of: updateBPM, perform: {bpm in
-                    if(update == true) {
-                        updateOffsetFromBPM()
-                        update = false
-                    }
-                })*/
             
             
             Spacer().frame(height:25)
@@ -106,7 +104,6 @@ struct MetronomeHomeView: View {
                 Button {
                     if (bpm > 1) { bpm -= 1 }
                     updateOffsetFromBPM()
-                    print("Minus bpm")
                     
                 } label: {
                     ZStack{
@@ -135,7 +132,6 @@ struct MetronomeHomeView: View {
                 Button {
                     if (bpm < 230) { bpm += 1 }
                     updateOffsetFromBPM()
-                    print("Plus bpm")
                 } label: {
                     ZStack{
                         Rectangle()
@@ -186,9 +182,6 @@ struct MetronomeHomeView: View {
 
                 //Time Signature Selector
                     Button {
-                        print("Open timesignature page")
-                        print("\(sigIndex), \(signatures)")
-                        
                         displaySigSelect.toggle()
                     } label: {
                         ZStack {
@@ -228,10 +221,8 @@ struct MetronomeHomeView: View {
     @State var timer: Timer
     @State var note:Int = 1
     
-    @StateObject var metrSound = SubsonicPlayer(sound: "metronome.wav")
-    @StateObject var metrUpSound = SubsonicPlayer(sound: "metronomeUp.wav")
-    
-    
+    @State var metrSound = AudioPlayer()
+    @StateObject var metrUpSound = AudioPlayer()
     
     func start(){
         barNotes = sigNotes[sigIndex]
@@ -244,10 +235,13 @@ struct MetronomeHomeView: View {
     func tick(){
         if(!isOn){return}
         
-        let delay:Double = Double(60)/Double(bpm)
+        var delay:Double = Double(60)/Double(bpm)
+        if armAngle == 0 {
+            delay = delay*0.55
+        }
         swing(delay: delay)
         
-        let soundDelay = delay*0.78
+        let soundDelay = armAngle != 0 ? delay*0.72 : 0.0
         soundDelayTimer = Timer.scheduledTimer(withTimeInterval: soundDelay, repeats: false, block: {timer in
             sound()
         })
@@ -264,7 +258,10 @@ struct MetronomeHomeView: View {
         var isPulse = false
         if(barNotes != 1 && note == 1){ isPulse = true }
         
-        isPulse ? metrUpSound.play() : metrSound.play()
+        let metrUrl = Bundle.main.url(forResource: "metronome", withExtension: ".wav")!
+        let metrUpUrl = Bundle.main.url(forResource: "metronomeUp", withExtension: ".wav")!
+        
+        isPulse ? metrUpSound.startPlayback(audio: metrUrl) : metrSound.startPlayback(audio: metrUpUrl)
     }
     
     func swing(delay: Double){

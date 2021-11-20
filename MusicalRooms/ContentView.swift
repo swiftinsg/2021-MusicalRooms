@@ -13,6 +13,7 @@ struct ContentView: View {
     var darkBrown:Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
 
     var body: some View {
+        
         TabView {
             TheoryHomeView()
                 .tabItem{

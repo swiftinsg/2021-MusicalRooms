@@ -11,15 +11,6 @@
         }
       },
       {
-        "package": "Subsonic",
-        "repositoryURL": "https://github.com/twostraws/Subsonic",
-        "state": {
-          "branch": null,
-          "revision": "156c5742279df5d2315e29534a2410f418c8a772",
-          "version": "0.2.0"
-        }
-      },
-      {
         "package": "Tuna",
         "repositoryURL": "https://github.com/alladinian/Tuna",
         "state": {

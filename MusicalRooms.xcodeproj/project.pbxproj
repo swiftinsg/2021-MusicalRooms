@@ -41,7 +41,6 @@
 		2E6F2CDD2746333F0010E515 /* metronomeUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDB2746333F0010E515 /* metronomeUp.wav */; };
 		2E6F2CDF274653210010E515 /* RecorderHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDE274653210010E515 /* RecorderHomeView.swift */; };
 		2E6F2CE32746778F0010E515 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F2CE22746778F0010E515 /* Extensions.swift */; };
-		2ECC0AC62744AEED0085142E /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = 2ECC0AC52744AEED0085142E /* Subsonic */; };
 		C541403827434A24003C1B30 /* SightreadingQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403727434A24003C1B30 /* SightreadingQuizView.swift */; };
 		C541403A27435125003C1B30 /* SightreadingQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403927435125003C1B30 /* SightreadingQuestions.swift */; };
 		C5809AC727464B1900EDAA9D /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5809AC627464B1900EDAA9D /* Words.swift */; };
@@ -133,7 +132,6 @@
 			files = (
 				FF3FEC86274736EA0024DAD3 /* AudioKit in Frameworks */,
 				FFF81474274776C400FA5775 /* Tuna in Frameworks */,
-				2ECC0AC62744AEED0085142E /* Subsonic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +329,6 @@
 			);
 			name = MusicalRooms;
 			packageProductDependencies = (
-				2ECC0AC52744AEED0085142E /* Subsonic */,
 				FF3FEC85274736EA0024DAD3 /* AudioKit */,
 				FFF81473274776C400FA5775 /* Tuna */,
 			);
@@ -408,7 +405,6 @@
 			);
 			mainGroup = 2E16223F27412CA000791ADC;
 			packageReferences = (
-				2ECC0AC42744AEED0085142E /* XCRemoteSwiftPackageReference "Subsonic" */,
 				FF3FEC84274736EA0024DAD3 /* XCRemoteSwiftPackageReference "AudioKit" */,
 				FFF81472274776C400FA5775 /* XCRemoteSwiftPackageReference "Tuna" */,
 			);
@@ -846,14 +842,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2ECC0AC42744AEED0085142E /* XCRemoteSwiftPackageReference "Subsonic" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/twostraws/Subsonic";
-			requirement = {
-				kind = exactVersion;
-				version = 0.2.0;
-			};
-		};
 		FF3FEC84274736EA0024DAD3 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AudioKit/AudioKit";
@@ -873,11 +861,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2ECC0AC52744AEED0085142E /* Subsonic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2ECC0AC42744AEED0085142E /* XCRemoteSwiftPackageReference "Subsonic" */;
-			productName = Subsonic;
-		};
 		FF3FEC85274736EA0024DAD3 /* AudioKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FF3FEC84274736EA0024DAD3 /* XCRemoteSwiftPackageReference "AudioKit" */;

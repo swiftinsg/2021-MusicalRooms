@@ -12,5 +12,6 @@ struct Word: Identifiable, Equatable {
     
     var title: String
     var altText: String?
+    var definition: String
     var isTapped = false
 }

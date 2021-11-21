@@ -12,5 +12,5 @@ struct Grade: Identifiable, Equatable {
     
     var number: Int
     var percentageCorrect: Double
-    var words: [Word] = [Word(title: "adagio")]
+    var words: [Word] = [Word(title: "adagio", definition: "slowly")]
 }

@@ -53,6 +53,7 @@
 		FF5B9B8027465408005312EF /* SelectKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7C27465408005312EF /* SelectKeyView.swift */; };
 		FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */; };
 		FF7A9AC6274A1063003F3BC2 /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = FF7A9AC5274A1063003F3BC2 /* Subsonic */; };
+		FF9D9D5A274A7CF500B25121 /* DefinitionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D9D59274A7CF500B25121 /* DefinitionModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		FF5B9B7A27465408005312EF /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FF5B9B7C27465408005312EF /* SelectKeyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectKeyView.swift; sourceTree = "<group>"; };
 		FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEnharmonic.swift; sourceTree = "<group>"; };
+		FF9D9D59274A7CF500B25121 /* DefinitionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 				2E1622752741F26500791ADC /* TheoryHomeView.swift */,
 				C5809AC627464B1900EDAA9D /* Words.swift */,
 				C5809AC827464B8100EDAA9D /* OverviewView.swift */,
+				FF9D9D59274A7CF500B25121 /* DefinitionModalView.swift */,
 				C5AD267027474E6A00FC4447 /* FlashcardView.swift */,
 				1BBE21893CACBA742A275AC5 /* GradeStruct.swift */,
 			);
@@ -464,6 +467,7 @@
 				2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */,
 				2E2A69CB27478D0E002E5471 /* Helpers.swift in Sources */,
 				2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */,
+				FF9D9D5A274A7CF500B25121 /* DefinitionModalView.swift in Sources */,
 				C541403827434A24003C1B30 /* SightreadingQuizView.swift in Sources */,
 				C541403A27435125003C1B30 /* SightreadingQuestions.swift in Sources */,
 				2E6F2CDF274653210010E515 /* RecorderHomeView.swift in Sources */,

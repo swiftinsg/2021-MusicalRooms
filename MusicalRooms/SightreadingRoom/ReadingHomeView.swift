@@ -28,26 +28,30 @@ struct ReadingHomeView: View {
                     ZStack{
                         
                         //Large background
-                        Rectangle()
+                        RoundedRectangle(cornerRadius: 13)
                             .foregroundColor(Color("darkLightBrown"))
-                            .cornerRadius(13)
-                            .frame(width: 320, height: 140, alignment: .center)
+                            .frame(height: 140)
+                            .padding(3)
                         
+
                         HStack{
                             
                             //Clef icon
                             Image(clefs[clef])
                                 .foregroundColor(Color("darkerBrown"))
-                                .padding(5)
+                                .padding()
+                                .offset(x:-2)
                             
                             VStack(alignment: .leading){
                                 
+                                
+                                Spacer().frame(height: 5)
                                 //Clef title
                                 Text("\(clefs[clef])")
                                     .font(Font.system(size: 26, weight: .semibold, design: .default))
-                                    .frame(alignment: .leading)
-                                    .offset(y: 10)
                                     .foregroundColor(Color("darkerBrown"))
+                                    .offset(x:-5)
+                                
                                 
                                 //Options
                                 
@@ -58,12 +62,12 @@ struct ReadingHomeView: View {
                                     Rectangle()
                                         .foregroundColor(lightBackBrown)
                                         .cornerRadius(10)
-                                        .frame(width: 240, height: 70, alignment: .center)
+                                        .frame(width: 270, height: 70, alignment: .center)
                                         .offset(x: -5)
                                     
                                     Rectangle()
                                         .foregroundColor(Color("darkBrown"))
-                                        .frame(width: 240, height: 1, alignment: .center)
+                                        .frame(width: 270, height: 1, alignment: .center)
                                         .offset(x: -5)
                                     
                                     //Option Buttons
@@ -71,14 +75,14 @@ struct ReadingHomeView: View {
                                     ForEach(types, id: \.self){type in
                                         
                                         let isTimed = type == "Timed"
-                                        HStack{
-                                            if(!isTimed){Spacer().frame(width: 4)}
-                                            
+                                        HStack(spacing: 0){
+
                                             Text(type)
                                                 .font(Font.system(size: 14, weight: .heavy, design: .default))
                                                 .foregroundColor(Color("darkBrown"))
+                                                .frame(width: 45, height: 8, alignment: .center)
                                             
-                                            Spacer().frame(width: (isTimed ? 6 : 20))
+                                            Spacer().frame(width: 6)
                                             
                                             ForEach(isTimed  ? timedQuestions : drilledQuestions, id: \.self){ question in
                                                 
@@ -90,19 +94,26 @@ struct ReadingHomeView: View {
                                                         .foregroundColor(Color("darkBrown"))
                                                         .frame(width: 27, height: 8, alignment: .center)
                                                 }
-                                                Spacer().frame(width: 2)
+                                                .navigationBarTitle("")
+                                                .navigationBarBackButtonHidden(true)
+                                                .navigationBarHidden(true)
                                                 
                                             }
+
                                         }.offset(y: (isTimed ? -14 : 14))
                                         
                                     }
                                     //End buttons
                                     
-                                }.offset(y:-8)
+                                }//END OPTIONS
+                                .offset(x:-10, y:-8)
+                                
                             }
                         }
                         
-                    }.offset(x: 10)
+                        
+                    }//END CARD
+                    .padding()
                     
                     Spacer().frame(height:20)
                     

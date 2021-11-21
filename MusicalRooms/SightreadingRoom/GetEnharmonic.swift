@@ -10,15 +10,15 @@ import Foundation
 func getEnharmonic(_ note: String) -> String {
     switch note {
     case "C#":
-        return "Db"
+        return "D♭"
     case "D#":
-        return "Eb"
+        return "E♭"
     case "F#":
-        return "Gb"
+        return "G♭"
     case "G#":
-        return "Ab"
+        return "A♭"
     case "A#":
-        return "Bb"
+        return "B♭"
     default:
         return "nil"
     }

@@ -25,11 +25,14 @@ struct TunerHomeView: View {
                 .frame( alignment: .leading)
                 .padding()
             
-            ActualTunaView(variance: $variance)
-                Spacer()
-                .frame(height: 30)
+            VStack(alignment: .center){
+                ActualTunaView(variance: $variance)
+                    Spacer()
+                    .frame(height: 30)
+                
+                SelectKeyView(notes: $notes, variance: $variance)
+            }
             
-            SelectKeyView(notes: $notes, variance: $variance)
         }
     }
 }

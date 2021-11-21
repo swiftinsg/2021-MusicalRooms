@@ -37,14 +37,43 @@ struct OverviewView: View {
     
     var body: some View {
         NavigationView{
-        List {
-            ForEach(words) {word in
-                Text(word.title)
-            }
+            VStack{
+                    
+            
+            
+                List {
+                        // To make the background transparent, we have we use a ForEach as a wrapper
+                        ForEach(words) {word in
+                            Text (word.title)
+                        .foregroundColor(Color("darkerBrown"))
+                        .font(.system(size: 25, design: .rounded))
+                        .fontWeight(.semibold)
+
+                            
+                        }
+                        .listRowBackground(Color("lightBrown"))
+                    }
+
+            
+                Button {
+                } label: {
+                    Text("Start")
+                        .foregroundColor(Color.white)
+                        .fontWeight(.semibold)
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: 30, design: .rounded))
+                }
+                .padding()
+                .frame(width:100, height: 60, alignment: .leading)
+                .background( Color("darkBrown"))
+                .cornerRadius(10)
+                
+        .navigationTitle("Grade 1") //to do: link this to TheoryHomeView
+                    
         }
-        
-        .navigationTitle("Overview")
+            
     }
+       
     }
 }
 struct OverviewView_Previews: PreviewProvider {

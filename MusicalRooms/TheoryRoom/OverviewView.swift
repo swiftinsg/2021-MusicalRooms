@@ -15,28 +15,61 @@ struct OverviewView: View {
     var body: some View {
         NavigationView {
             VStack {
-                    List {
-                        if expandAll {
-                            ForEach(words) {word in
-                                NavigationLink {
+                List {
+                    if expandAll {
+                        ForEach(words) { word in
+                            NavigationLink {
+                                
+                            } label: {
+                                VStack {
+                                    Text(word.title)
+                                        .foregroundColor(Color("darkerBrown"))
+                                        .font(.system(size: 25, design: .rounded))
+                                        .fontWeight(.semibold)
                                     
-                                } label: {
-                                Text (word.title)
-                                    .foregroundColor(Color("darkerBrown"))
-                                    .font(.system(size: 25, design: .rounded))
-                                    .fontWeight(.semibold)
+                                    if let altText = word.altText {
+                                        Text(altText)
+                                            .foregroundColor(Color("darkerBrown"))
+                                            .font(.system(size: 20, design: .rounded))
+                                            .fontWeight(.medium)
+                                            .multilineTextAlignment(.leading)
+                                    } else {
+                                        Text("---")
+                                            .foregroundColor(Color("darkerBrown"))
+                                            .font(.system(size: 20, design: .rounded))
+                                            .fontWeight(.medium)
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                }
+                                .frame(width: 150, height: 42, alignment: .leading)
                             }
                             .listRowBackground(Color("lightBrown"))
-                            }
-                        } else {
-                            ForEach(0 ..< 5) {
-                                word in NavigationLink {
+                        }
+                    } else {
+                        ForEach(0 ..< 5) {
+                            word in NavigationLink {
+                                
+                            } label: {
+                                VStack {
+                                    Text(words[word].title)
+                                        .foregroundColor(Color("darkerBrown"))
+                                        .font(.system(size: 25, design: .rounded))
+                                        .fontWeight(.semibold)
                                     
-                                } label: {
-                                Text(words[word].title)
-                                    .foregroundColor(Color("darkerBrown"))
-                                    .font(.system(size: 25, design: .rounded))
-                                    .fontWeight(.semibold)
+                                    if let altText = words[word].altText {
+                                        Text(altText)
+                                            .foregroundColor(Color("darkerBrown"))
+                                            .font(.system(size: 20, design: .rounded))
+                                            .fontWeight(.medium)
+                                    } else {
+                                        Text("---")
+                                            .foregroundColor(Color("darkerBrown"))
+                                            .font(.system(size: 20, design: .rounded))
+                                            .fontWeight(.medium)
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                }
+                                .frame(width: 150, height: 42, alignment: .leading)
                             }
                             .listRowBackground(Color("lightBrown"))
                         }
@@ -50,7 +83,7 @@ struct OverviewView: View {
                     expandAll.toggle()
                 } label: {
                     HStack {
-                        Image(systemName: expandAll ? "chevron.down" : "chevron.up")
+                        Image(systemName: !expandAll ? "chevron.down" : "chevron.up")
                         Text("Expand All")
                             .fontWeight(.heavy)
                     }
@@ -61,7 +94,7 @@ struct OverviewView: View {
                     .cornerRadius(20)
                 }
                 .offset(y: -120)
-
+                
                 Button {
                     
                 } label: {
@@ -75,7 +108,6 @@ struct OverviewView: View {
                 .frame(width:350, height: 50, alignment: .center)
                 .background( Color("darkBrown"))
                 .cornerRadius(10)
-                
                 .navigationTitle("Grade 1") //to do: link this to TheoryHomeView
                 
             }
@@ -86,29 +118,31 @@ struct OverviewView: View {
 }
 struct OverviewView_Previews: PreviewProvider {
     static var previews: some View {
-        OverviewView(words: .constant( [Word(title:"a tempo"),
-                                        Word(title:"accelerando (or accel.)"),
-                                        Word(title:"adagio"),
-                                        Word(title:"allegretto"),
-                                        Word(title:"allegro"),
-                                        Word(title:"andante"),
-                                        Word(title:"cantabile"),
-                                        Word(title:"crescendo (or cresc.)"),
-                                        Word(title:"da capo (or D.C.)"),
-                                        Word(title:"decrescendo (or decresc.)"),
-                                        Word(title:"diminuendo (or dim.)"),
-                                        Word(title:"dolce"),
-                                        Word(title:"f (forte)"),
-                                        Word(title:"ff (fortissimo)"),
-                                        Word(title:"fine, al fine"),
-                                        Word(title:"legato"),
-                                        Word(title:"mf (mezzo forte)"),
-                                        Word(title:"moderato"),
-                                        Word(title:"mp (mezzo piano)"),
-                                        Word(title:"p (piano)"),
-                                        Word(title:"pp (pianissimo)"),
-                                        Word(title:"rallentando (or rall.)"),
-                                        Word(title:"ritardando (or ritard. or rit.)"),
-                                        Word(title:"staccato (or stacc.)")]))
+        OverviewView(words: .constant(
+            [
+                Word(title:"a tempo"),
+                Word(title:"accelerando", altText: "accel."),
+                Word(title:"adagio"),
+                Word(title:"allegretto"),
+                Word(title:"allegro"),
+                Word(title:"andante"),
+                Word(title:"cantabile"),
+                Word(title:"crescendo", altText: "cresc."),
+                Word(title:"da capo", altText: "D.C."),
+                Word(title:"decrescendo", altText: "decresc."),
+                Word(title:"diminuendo", altText: "dimin. / dim."),
+                Word(title:"dolce"),
+                Word(title:"forte", altText: "f"),
+                Word(title:"fortissimo", altText: "ff"),
+                Word(title:"fine, al fine"),
+                Word(title:"legato"),
+                Word(title:"mezzo forte", altText: "mf"),
+                Word(title:"moderato"),
+                Word(title:"mezzo piano", altText: "mf"),
+                Word(title:"piano", altText: "p"),
+                Word(title:"pianissimo", altText: "pp"),
+                Word(title:"rallentando", altText: "rall."),
+                Word(title:"ritardando", altText: "ritard. / rit."),
+                Word(title:"staccato", altText: "stacc.")]))
     }
 }

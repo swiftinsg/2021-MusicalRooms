@@ -11,5 +11,6 @@ struct Word: Identifiable, Equatable {
     var id = UUID()
     
     var title: String
+    var altText: String?
     var isTapped = false
 }

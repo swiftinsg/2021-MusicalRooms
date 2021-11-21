@@ -8,9 +8,33 @@
 import SwiftUI
 
 struct TheoryHomeView: View {
-
+    
     @State var grades = [
-        Grade(number: 1, percentageCorrect: 80),
+        Grade(number: 1, percentageCorrect: 80, words: [
+            Word(title:"a tempo"),
+            Word(title:"accelerando (or accel.)"),
+            Word(title:"adagio"),
+            Word(title:"allegretto"),
+            Word(title:"allegro"),
+            Word(title:"andante"),
+            Word(title:"cantabile"),
+            Word(title:"crescendo (or cresc.)"),
+            Word(title:"da capo (or D.C.)"),
+            Word(title:"decrescendo (or decresc.)"),
+            Word(title:"diminuendo (or dim.)"),
+            Word(title:"dolce"),
+            Word(title:"f (forte)"),
+            Word(title:"ff (fortissimo)"),
+            Word(title:"fine, al fine"),
+            Word(title:"legato"),
+            Word(title:"mf (mezzo forte)"),
+            Word(title:"moderato"),
+            Word(title:"mp (mezzo piano)"),
+            Word(title:"p (piano)"),
+            Word(title:"pp (pianissimo)"),
+            Word(title:"rallentando (or rall.)"),
+            Word(title:"ritardando (or ritard. or rit.)"),
+            Word(title:"staccato (or stacc.)")]),
         Grade(number: 2, percentageCorrect: 80),
         Grade(number: 3, percentageCorrect: 80),
         Grade(number: 4, percentageCorrect: 80),
@@ -19,7 +43,6 @@ struct TheoryHomeView: View {
     @State var percentCorrect: Double = 50
 
     var body: some View {
-        
         VStack(alignment: .leading) {
             Text("Theory")
                 .font(Font.system(size: 32, weight: .bold))
@@ -27,9 +50,9 @@ struct TheoryHomeView: View {
                 .padding()
 
             ScrollView(.vertical, showsIndicators: false) {
-                ForEach(grades) { grade in
+                ForEach($grades) { $grade in
                     NavigationLink {
-
+                        OverviewView(words: $grade.words)
                     } label: {
                         VStack(alignment: .leading) {
                             HStack(alignment: .bottom) {

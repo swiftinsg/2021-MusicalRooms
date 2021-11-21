@@ -52,6 +52,7 @@
 		FF5B9B7E27465408005312EF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7A27465408005312EF /* Note.swift */; };
 		FF5B9B8027465408005312EF /* SelectKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7C27465408005312EF /* SelectKeyView.swift */; };
 		FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */; };
+		FF7A9AC6274A1063003F3BC2 /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = FF7A9AC5274A1063003F3BC2 /* Subsonic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF7A9AC6274A1063003F3BC2 /* Subsonic in Frameworks */,
 				FF3FEC86274736EA0024DAD3 /* AudioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +327,7 @@
 			name = MusicalRooms;
 			packageProductDependencies = (
 				FF3FEC85274736EA0024DAD3 /* AudioKit */,
+				FF7A9AC5274A1063003F3BC2 /* Subsonic */,
 			);
 			productName = MusicalRooms;
 			productReference = 2E16224827412CA100791ADC /* MusicalRooms.app */;
@@ -400,7 +403,7 @@
 			mainGroup = 2E16223F27412CA000791ADC;
 			packageReferences = (
 				FF3FEC84274736EA0024DAD3 /* XCRemoteSwiftPackageReference "AudioKit" */,
-				FFF81472274776C400FA5775 /* XCRemoteSwiftPackageReference "Tuna" */,
+				FF7A9AC4274A1063003F3BC2 /* XCRemoteSwiftPackageReference "Subsonic" */,
 			);
 			productRefGroup = 2E16224927412CA100791ADC /* Products */;
 			projectDirPath = "";
@@ -843,12 +846,12 @@
 				kind = branch;
 			};
 		};
-		FFF81472274776C400FA5775 /* XCRemoteSwiftPackageReference "Tuna" */ = {
+		FF7A9AC4274A1063003F3BC2 /* XCRemoteSwiftPackageReference "Subsonic" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/alladinian/Tuna";
+			repositoryURL = "https://github.com/twostraws/Subsonic";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -858,6 +861,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF3FEC84274736EA0024DAD3 /* XCRemoteSwiftPackageReference "AudioKit" */;
 			productName = AudioKit;
+		};
+		FF7A9AC5274A1063003F3BC2 /* Subsonic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF7A9AC4274A1063003F3BC2 /* XCRemoteSwiftPackageReference "Subsonic" */;
+			productName = Subsonic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

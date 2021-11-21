@@ -36,7 +36,6 @@
 		2E2A69DF27481689002E5471 /* G#.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2A69D527481689002E5471 /* G#.mp3 */; };
 		2E2A69E027481689002E5471 /* A#.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2A69D627481689002E5471 /* A#.mp3 */; };
 		2E2A69E127481689002E5471 /* Asharp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2A69D727481689002E5471 /* Asharp.mp3 */; };
-		2E2A69E32748872D002E5471 /* MiniRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69E22748872D002E5471 /* MiniRecorderView.swift */; };
 		2E6F2CDC2746333F0010E515 /* metronome.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDA2746333F0010E515 /* metronome.wav */; };
 		2E6F2CDD2746333F0010E515 /* metronomeUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDB2746333F0010E515 /* metronomeUp.wav */; };
 		2E6F2CDF274653210010E515 /* RecorderHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDE274653210010E515 /* RecorderHomeView.swift */; };
@@ -105,7 +104,6 @@
 		2E2A69D527481689002E5471 /* G#.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "G#.mp3"; sourceTree = "<group>"; };
 		2E2A69D627481689002E5471 /* A#.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "A#.mp3"; sourceTree = "<group>"; };
 		2E2A69D727481689002E5471 /* Asharp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Asharp.mp3; sourceTree = "<group>"; };
-		2E2A69E22748872D002E5471 /* MiniRecorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniRecorderView.swift; sourceTree = "<group>"; };
 		2E6F2CDA2746333F0010E515 /* metronome.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = metronome.wav; path = assets/metronome.wav; sourceTree = "<group>"; };
 		2E6F2CDB2746333F0010E515 /* metronomeUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = metronomeUp.wav; path = assets/metronomeUp.wav; sourceTree = "<group>"; };
 		2E6F2CDE274653210010E515 /* RecorderHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderHomeView.swift; sourceTree = "<group>"; };
@@ -304,7 +302,6 @@
 			isa = PBXGroup;
 			children = (
 				2E6F2CDE274653210010E515 /* RecorderHomeView.swift */,
-				2E2A69E22748872D002E5471 /* MiniRecorderView.swift */,
 				2E2A69C827478B80002E5471 /* RecordingsList.swift */,
 			);
 			path = Views;
@@ -474,7 +471,6 @@
 				2E16224C27412CA100791ADC /* MusicalRoomsApp.swift in Sources */,
 				FF5B9B7D27465408005312EF /* BottomButtonView.swift in Sources */,
 				FF3FEC80274730DC0024DAD3 /* Oscillator.swift in Sources */,
-				2E2A69E32748872D002E5471 /* MiniRecorderView.swift in Sources */,
 				2E16227E2741F2E300791ADC /* ReadingHomeView.swift in Sources */,
 				FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */,
 				2E1622892742561200791ADC /* BpmNumpadView.swift in Sources */,

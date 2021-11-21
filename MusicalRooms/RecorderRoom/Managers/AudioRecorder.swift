@@ -30,6 +30,7 @@ class AudioRecorder: NSObject,ObservableObject {
     }
     
     func startRecording() {
+        
         let recordingSession = AVAudioSession.sharedInstance()
         
         do {

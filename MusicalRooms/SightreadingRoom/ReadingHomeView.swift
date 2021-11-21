@@ -29,15 +29,15 @@ struct ReadingHomeView: View {
                         
                         //Large background
                         Rectangle()
-                            .foregroundColor(Color("evenLighterBrown"))
+                            .foregroundColor(Color("darkLightBrown"))
                             .cornerRadius(13)
-                            .frame(width: 370, height: 140, alignment: .center)
+                            .frame(width: 320, height: 140, alignment: .center)
                         
                         HStack{
                             
                             //Clef icon
                             Image(clefs[clef])
-                                .foregroundColor(Color("lightBrown"))
+                                .foregroundColor(Color("darkerBrown"))
                                 .padding(5)
                             
                             VStack(alignment: .leading){
@@ -47,7 +47,7 @@ struct ReadingHomeView: View {
                                     .font(Font.system(size: 26, weight: .semibold, design: .default))
                                     .frame(alignment: .leading)
                                     .offset(y: 10)
-                                    .foregroundColor(Color("darkBrown"))
+                                    .foregroundColor(Color("darkerBrown"))
                                 
                                 //Options
                                 
@@ -58,12 +58,12 @@ struct ReadingHomeView: View {
                                     Rectangle()
                                         .foregroundColor(lightBackBrown)
                                         .cornerRadius(10)
-                                        .frame(width: 260, height: 70, alignment: .center)
+                                        .frame(width: 240, height: 70, alignment: .center)
                                         .offset(x: -5)
                                     
                                     Rectangle()
                                         .foregroundColor(Color("darkBrown"))
-                                        .frame(width: 260, height: 1, alignment: .center)
+                                        .frame(width: 240, height: 1, alignment: .center)
                                         .offset(x: -5)
                                     
                                     //Option Buttons
@@ -72,13 +72,13 @@ struct ReadingHomeView: View {
                                         
                                         let isTimed = type == "Timed"
                                         HStack{
-                                            if(!isTimed){Spacer().frame(width: 5)}
+                                            if(!isTimed){Spacer().frame(width: 4)}
                                             
                                             Text(type)
                                                 .font(Font.system(size: 14, weight: .heavy, design: .default))
                                                 .foregroundColor(Color("darkBrown"))
                                             
-                                            Spacer().frame(width: (isTimed ? 6 : 22))
+                                            Spacer().frame(width: (isTimed ? 6 : 20))
                                             
                                             ForEach(isTimed  ? timedQuestions : drilledQuestions, id: \.self){ question in
                                                 

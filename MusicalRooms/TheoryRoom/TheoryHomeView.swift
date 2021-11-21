@@ -38,7 +38,7 @@ struct TheoryHomeView: View {
                                     .multilineTextAlignment(.leading)
                                     .font(.system(size: 25, design: .rounded))
                                     .lineLimit(3)
-                                    .foregroundColor(Color("darkBrown"))
+                                    .foregroundColor(Color("darkerBrown"))
 
                                 Text(String(format: "%.2f", grade.percentageCorrect) + "%")
                                     .fontWeight(.semibold)
@@ -52,7 +52,7 @@ struct TheoryHomeView: View {
                             .offset(y: -20)
 
                             RoundedRectangle(cornerRadius: 5)
-                                .foregroundColor(Color("evenLighterBrown"))
+                                .foregroundColor(Color("darkLightBrown"))
                                 .frame(width: 300, height: 10, alignment: .leading)
                                 .overlay(alignment: .leading) {
                                     RoundedRectangle(cornerRadius: 5)
@@ -61,9 +61,9 @@ struct TheoryHomeView: View {
                                 }
                         }
                         .padding()
-                        .frame(width: 340, height: 135, alignment: .leading)
-                        .background(Color("evenLighterBrown"))
-                        .cornerRadius(20)
+                        .frame(width: 330, height: 135, alignment: .leading)
+                        .background(Color("lightBrown"))
+                        .cornerRadius(10)
                     }
                 }
             }

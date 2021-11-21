@@ -10,6 +10,7 @@ import SwiftUI
 struct FlashcardsView: View {
 
     var body: some View {
+        
         VStack (alignment: .center, spacing: 50) {
             RoundedRectangle(cornerRadius: 10)
                 .frame(width:350, height: 250, alignment: .leading)

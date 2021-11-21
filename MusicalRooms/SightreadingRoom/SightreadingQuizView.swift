@@ -14,7 +14,7 @@ struct SightreadingQuizView: View {
     @State var sharps = ["C#", "D#", "F#", "G#", "A#"]
     
     var body: some View {
-        VStack (alignment: .center, spacing: 50) {
+        VStack (alignment: .center, spacing: 40) {
             RoundedRectangle(cornerRadius: 20)
                 .frame(width:350, height: 250, alignment: .leading)
                 .foregroundColor(Color("lightBrown"))
@@ -89,11 +89,11 @@ struct SightreadingQuizView: View {
                         } label: {
                             Text("\(sharps[note])\(getEnharmonic(sharps[note]))")
                                 .foregroundColor(Color("darkBrown"))
-                                .font(.system(size: 29, design: .rounded))
+                                .font(.system(size: 26.5, design: .rounded))
                                 .multilineTextAlignment(.leading)
                         }
                         .padding()
-                        .frame(width:71, height: 130, alignment: .leading)
+                        .frame(width:68, height: 130, alignment: .leading)
                         .background( Color("evenLighterBrown"))
                         .cornerRadius(20)
                     }

@@ -21,7 +21,7 @@ struct TimeSigSelectView: View {
     var body: some View {
         
         ForEach(1 ..< 5){ row in
-            HStack {
+            HStack (spacing: 25){
                 ForEach(1 ..< 4) { column in
                     let index: Int = (column + (row-1)*3) - 1
                     let sig = signatures[index]

@@ -36,13 +36,15 @@ struct OverviewView: View {
     
     
     var body: some View {
+        NavigationView{
         List {
             ForEach(words) {word in
                 Text(word.title)
             }
         }
-        .listRowBackground(Color("darkBrown"))
+        
         .navigationTitle("Overview")
+    }
     }
 }
 struct OverviewView_Previews: PreviewProvider {

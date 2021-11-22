@@ -12,14 +12,73 @@ struct DefinitionModalView: View {
     var words: [Word]
     var currentWord: Int
     
+    @State var isFlipped = false
     @State var moveOnToNextWord = false
+    @State var degrees: Angle = Angle(degrees: 0)
     
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
+            ZStack {
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: 350, height: 300, alignment: .center)
+                    .foregroundColor(Color("lightBrown"))
+                
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: 350, height: 50, alignment: .leading)
+                    .foregroundColor(Color("darkBrown"))
+                    .overlay(
+                        Text("\(currentWord) / \(words.count)")
+                            .font(.system(size: 19, design: .rounded))
+                            .foregroundColor(Color("darkerBrown"))
+                            .bold()
+                            .offset(x: -120)
+                    )
+                    .offset(y: -125)
+                
+                VStack {
+                    Text(words[currentWord].title)
+                        .bold()
+                        .font(.system(size: 30, design: .rounded))
+                    if let altText = words[currentWord].altText {
+                        Text(altText)
+                            .font(.system(size: 20, design: .rounded))
+                    } else {
+                        Text("---")
+                            .font(.system(size: 20, design: .rounded))
+                    }
+                }
+            }
             RoundedRectangle(cornerRadius: 20)
-                .frame(width: 350, height: 385, alignment: .center)
+                .frame(width: 350, height: 90)
+                .foregroundColor(Color("lightBrown"))
+                .overlay(
+                    HStack {
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: "chevron.left.2")
+                                .foregroundColor(Color("darkerBrown"))
+                                .font(.system(size: 30))
+                        }
+                        .offset(x: -60)
+                        
+                        Rectangle()
+                            .frame(width: 2)
+                            .foregroundColor(Color("darkBrown"))
+                        
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: "chevron.right.2")
+                                .foregroundColor(Color("darkerBrown"))
+                                .font(.system(size: 30))
+                        }
+                        .offset(x: 60)
+                    }
+                )
+                .offset(y: 30)
         }
     }
 }

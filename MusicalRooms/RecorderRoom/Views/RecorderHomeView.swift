@@ -33,16 +33,16 @@ struct RecorderHomeView: View {
         
         VStack{
             
+            Spacer().frame(height: 20)
+            
+            Text("Recorder")
+                .font(Font.system(size: 28, weight: .bold))
+                .padding()
+            
+            Spacer().frame(height: 20)
+            
+            
             if !isMini{
-                Text("Recorder")
-                    .font(Font.system(size: 32, weight: .bold))
-                    .multilineTextAlignment(.leading)
-                    .frame( alignment: .leading)
-                    .offset(x:-85, y:6)
-                    .padding()
-                
-                Spacer().frame(height:10)
-                
                 // RECORDING LIST
                 RecordingsList(audioRecorder: audioRecorder)
             }

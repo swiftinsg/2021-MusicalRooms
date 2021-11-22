@@ -36,6 +36,8 @@
 		2E2A69DF27481689002E5471 /* G#.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2A69D527481689002E5471 /* G#.mp3 */; };
 		2E2A69E027481689002E5471 /* A#.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2A69D627481689002E5471 /* A#.mp3 */; };
 		2E2A69E127481689002E5471 /* Asharp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2A69D727481689002E5471 /* Asharp.mp3 */; };
+		2E6B1443274B55CB00509406 /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = 2E6B1442274B55CB00509406 /* Subsonic */; };
+		2E6B1446274B562200509406 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2E6B1445274B562200509406 /* AudioKit */; };
 		2E6F2CDC2746333F0010E515 /* metronome.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDA2746333F0010E515 /* metronome.wav */; };
 		2E6F2CDD2746333F0010E515 /* metronomeUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDB2746333F0010E515 /* metronomeUp.wav */; };
 		2E6F2CDF274653210010E515 /* RecorderHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDE274653210010E515 /* RecorderHomeView.swift */; };
@@ -47,7 +49,6 @@
 		C5AD267127474E6B00FC4447 /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AD267027474E6A00FC4447 /* FlashcardView.swift */; };
 		FF3FEC7E2747214C0024DAD3 /* ActualTunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FEC7D2747214C0024DAD3 /* ActualTunerView.swift */; };
 		FF3FEC80274730DC0024DAD3 /* Oscillator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FEC7F274730DC0024DAD3 /* Oscillator.swift */; };
-		FF3FEC86274736EA0024DAD3 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF3FEC85274736EA0024DAD3 /* AudioKit */; };
 		FF5B9B7D27465408005312EF /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7927465408005312EF /* BottomButtonView.swift */; };
 		FF5B9B7E27465408005312EF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7A27465408005312EF /* Note.swift */; };
 		FF5B9B8027465408005312EF /* SelectKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7C27465408005312EF /* SelectKeyView.swift */; };
@@ -127,7 +128,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF3FEC86274736EA0024DAD3 /* AudioKit in Frameworks */,
+				2E6B1446274B562200509406 /* AudioKit in Frameworks */,
+				2E6B1443274B55CB00509406 /* Subsonic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				2E6F2CDA2746333F0010E515 /* metronome.wav */,
-				2E1622812741F30400791ADC /* MetronomeHomeView.swift */,
 				2E6F2CDB2746333F0010E515 /* metronomeUp.wav */,
+				2E1622812741F30400791ADC /* MetronomeHomeView.swift */,
 				2E1622882742561200791ADC /* BpmNumpadView.swift */,
 				2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */,
 			);
@@ -324,7 +326,8 @@
 			);
 			name = MusicalRooms;
 			packageProductDependencies = (
-				FF3FEC85274736EA0024DAD3 /* AudioKit */,
+				2E6B1442274B55CB00509406 /* Subsonic */,
+				2E6B1445274B562200509406 /* AudioKit */,
 			);
 			productName = MusicalRooms;
 			productReference = 2E16224827412CA100791ADC /* MusicalRooms.app */;
@@ -399,8 +402,8 @@
 			);
 			mainGroup = 2E16223F27412CA000791ADC;
 			packageReferences = (
-				FF3FEC84274736EA0024DAD3 /* XCRemoteSwiftPackageReference "AudioKit" */,
-				FFF81472274776C400FA5775 /* XCRemoteSwiftPackageReference "Tuna" */,
+				2E6B1441274B55CB00509406 /* XCRemoteSwiftPackageReference "Subsonic" */,
+				2E6B1444274B562200509406 /* XCRemoteSwiftPackageReference "AudioKit" */,
 			);
 			productRefGroup = 2E16224927412CA100791ADC /* Products */;
 			projectDirPath = "";
@@ -835,7 +838,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FF3FEC84274736EA0024DAD3 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+		2E6B1441274B55CB00509406 /* XCRemoteSwiftPackageReference "Subsonic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/Subsonic";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		2E6B1444274B562200509406 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AudioKit/AudioKit";
 			requirement = {
@@ -843,20 +854,17 @@
 				kind = branch;
 			};
 		};
-		FFF81472274776C400FA5775 /* XCRemoteSwiftPackageReference "Tuna" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/alladinian/Tuna";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FF3FEC85274736EA0024DAD3 /* AudioKit */ = {
+		2E6B1442274B55CB00509406 /* Subsonic */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FF3FEC84274736EA0024DAD3 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			package = 2E6B1441274B55CB00509406 /* XCRemoteSwiftPackageReference "Subsonic" */;
+			productName = Subsonic;
+		};
+		2E6B1445274B562200509406 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E6B1444274B562200509406 /* XCRemoteSwiftPackageReference "AudioKit" */;
 			productName = AudioKit;
 		};
 /* End XCSwiftPackageProductDependency section */

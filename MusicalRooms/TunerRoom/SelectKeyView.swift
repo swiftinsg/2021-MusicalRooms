@@ -22,7 +22,7 @@ struct SelectKeyView: View {
     var body: some View {
         VStack {
             
-            Spacer().frame(height:35)
+            Spacer().frame(height: 55)
             
             HStack {
                 ForEach(7 ..< notes.count) { note in
@@ -53,40 +53,21 @@ struct SelectKeyView: View {
             Spacer()
                 .frame(height: 10)
             
-            VStack {
-                HStack {
-                    ForEach(0 ..< 7) { note in
-                        Button {
-                            selectSelectedKey(note)
-                        } label: {
-                            Text(notes[note].name)
-                                .bold()
-                                .font(Font.system(size: 20, weight: .semibold, design: .rounded))
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(!notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
-                        }
-                        .frame(width: 43, height: 70, alignment: .center)
-                        .background(!notes[note].isSelected ? Color("evenLighterBrown") : Color("darkBrown"))
-                        .cornerRadius(12)
+            HStack {
+                ForEach(0 ..< 7) { note in
+                    Button {
+                        selectSelectedKey(note)
+                    } label: {
+                        Text(notes[note].name)
+                            .bold()
+                            .font(Font.system(size: 20, weight: .semibold, design: .rounded))
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(!notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
                     }
+                    .frame(width: 43, height: 70, alignment: .center)
+                    .background(!notes[note].isSelected ? Color("evenLighterBrown") : Color("darkBrown"))
+                    .cornerRadius(12)
                 }
-                /*HStack {
-                    ForEach(3 ..< 7) { note in
-                        Button {
-                            selectSelectedKey(note)
-                        } label: {
-                            Text(notes[note].name)
-                                .bold()
-                                .font(.system(size: 20, design: .rounded))
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(!notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
-                        }
-                        .padding(1)
-                        .frame(width:65, height: 80, alignment: .center)
-                        .background(!notes[note].isSelected ? Color("evenLighterBrown") : Color("darkBrown"))
-                        .cornerRadius(20)
-                    }
-                }*/
             }
             
             Spacer()

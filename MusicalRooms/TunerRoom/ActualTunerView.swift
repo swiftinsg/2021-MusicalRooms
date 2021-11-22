@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ActualTunaView: View {
+struct ActualTunerView: View {
     
     @State var AFrequency = 440.0
     @Binding var variance: Float
@@ -18,7 +18,7 @@ struct ActualTunaView: View {
     var body: some View {
         VStack {
             RoundedRectangle(cornerRadius: 20)
-                .frame(width: 350, height: 160, alignment: .center)
+                .frame(width: 350, height: 180, alignment: .center)
                 .foregroundColor(Color("evenLighterBrown"))
                 .overlay(
                     VStack {
@@ -26,6 +26,28 @@ struct ActualTunaView: View {
                             .frame(width: 2, height: 35)
                             .foregroundColor(topLineColor)
                         HStack {
+                            Button {
+                                AFrequency -= 5; variance -= 5
+                            } label: {
+                                Circle()
+                                    .frame(width: 25, height: 25, alignment: .center)
+                                    .foregroundColor(Color("darkBrown"))
+                                    .overlay(
+                                        Image(systemName: "minus")
+                                            .foregroundColor(Color("evenLighterBrown"))
+                                        )
+                            }
+                            
+                            VStack {
+                                Text("A") //Placeholder text
+                                    .fontWeight(.heavy)
+                                    .font(Font.system(size: 30))
+                                Text(String(AFrequency) + "Hz")
+                                    .fontWeight(.bold)
+                                    .font(Font.system(size: 10))
+                                    .foregroundColor(Color("darkerBrown"))
+                            }
+                            
                             Button {
                                 AFrequency += 5; variance += 5
                             } label: {
@@ -38,30 +60,7 @@ struct ActualTunaView: View {
                                         )
                             }
                             
-                            VStack {
-                                
-                                Text("A") //Placeholder text
-                                    .fontWeight(.heavy)
-                                    .font(Font.system(size: 30))
-                                Text(String(AFrequency) + "Hz")
-                                    .fontWeight(.bold)
-                                    .font(Font.system(size: 10))
-                                    .foregroundColor(Color("darkerBrown"))
-                            }
                             
-                            HStack {
-                                Button {
-                                    AFrequency -= 5; variance -= 5
-                                } label: {
-                                    Circle()
-                                        .frame(width: 25, height: 25, alignment: .center)
-                                        .foregroundColor(Color("darkBrown"))
-                                        .overlay(
-                                            Image(systemName: "minus")
-                                                .foregroundColor(Color("evenLighterBrown"))
-                                            )
-                                }
-                            }
                         }
                         HStack {
                             ForEach(0 ..< 11) { rectangle in
@@ -85,6 +84,6 @@ struct ActualTunaView: View {
 
 struct TunerView_Previews: PreviewProvider {
     static var previews: some View {
-        ActualTunaView(variance: .constant(0))
+        ActualTunerView(variance: .constant(0))
     }
 }

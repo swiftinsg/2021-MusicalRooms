@@ -11,12 +11,12 @@
         }
       },
       {
-        "package": "Tuna",
-        "repositoryURL": "https://github.com/alladinian/Tuna",
+        "package": "Subsonic",
+        "repositoryURL": "https://github.com/twostraws/Subsonic",
         "state": {
-          "branch": null,
-          "revision": "a5b1e8d1c1549df3e90cc4b5f4148fda1d364777",
-          "version": "0.9.0"
+          "branch": "main",
+          "revision": "b9ccab1c94294e2dd87b83d2c9cfb8da01629f84",
+          "version": null
         }
       }
     ]

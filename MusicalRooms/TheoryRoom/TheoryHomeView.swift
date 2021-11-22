@@ -20,10 +20,9 @@ struct TheoryHomeView: View {
 
     var body: some View {
         
-        VStack(alignment: .leading) {
+        VStack{
             Text("Theory")
-                .font(Font.system(size: 32, weight: .bold))
-                .frame( alignment: .leading)
+                .font(Font.system(size: 28, weight: .bold))
                 .padding()
 
             ScrollView(.vertical, showsIndicators: false) {
@@ -68,6 +67,7 @@ struct TheoryHomeView: View {
                 }
             }
             .frame(width: 400)
+            .padding(.bottom, 22)
         }
         .offset(y:20)
     }

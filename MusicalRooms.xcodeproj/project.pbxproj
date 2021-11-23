@@ -1,837 +1,828 @@
 // !$*UTF8*$!
 {
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 55;
-	objects = {
+    archiveVersion = 1;
+    classes = {
+    };
+    objectVersion = 55;
+    objects = {
 
 /* Begin PBXBuildFile section */
-		1BBE2CD610EC63FAF0B95D19 /* GradeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE21893CACBA742A275AC5 /* GradeStruct.swift */; };
-		2E16224C27412CA100791ADC /* MusicalRoomsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16224B27412CA100791ADC /* MusicalRoomsApp.swift */; };
-		2E16224E27412CA100791ADC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16224D27412CA100791ADC /* ContentView.swift */; };
-		2E16225027412CA500791ADC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E16224F27412CA500791ADC /* Assets.xcassets */; };
-		2E16225327412CA500791ADC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E16225227412CA500791ADC /* Preview Assets.xcassets */; };
-		2E16225D27412CA500791ADC /* MusicalRoomsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16225C27412CA500791ADC /* MusicalRoomsTests.swift */; };
-		2E16226727412CA500791ADC /* MusicalRoomsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */; };
-		2E16226927412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */; };
-		2E1622762741F26500791ADC /* TheoryHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1622752741F26500791ADC /* TheoryHomeView.swift */; };
-		2E16227E2741F2E300791ADC /* ReadingHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16227D2741F2E300791ADC /* ReadingHomeView.swift */; };
-		2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16227F2741F2F700791ADC /* TunerHomeView.swift */; };
-		2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1622812741F30400791ADC /* MetronomeHomeView.swift */; };
-		2E1622892742561200791ADC /* BpmNumpadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1622882742561200791ADC /* BpmNumpadView.swift */; };
-		2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */; };
-		2E2A69BC2747816F002E5471 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69BB2747816F002E5471 /* AudioRecorder.swift */; };
-		2E2A69BE274781B9002E5471 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69BD274781B9002E5471 /* Recording.swift */; };
-		2E2A69C7274783E5002E5471 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69C6274783E5002E5471 /* AudioPlayer.swift */; };
-		2E2A69C927478B80002E5471 /* RecordingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69C827478B80002E5471 /* RecordingsList.swift */; };
-		2E2A69CB27478D0E002E5471 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69CA27478D0E002E5471 /* Helpers.swift */; };
-		2E6B1443274B55CB00509406 /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = 2E6B1442274B55CB00509406 /* Subsonic */; };
-		2E6B1446274B562200509406 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2E6B1445274B562200509406 /* AudioKit */; };
-		2E6F2CDC2746333F0010E515 /* metronome.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDA2746333F0010E515 /* metronome.wav */; };
-		2E6F2CDD2746333F0010E515 /* metronomeUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDB2746333F0010E515 /* metronomeUp.wav */; };
-		2E6F2CDF274653210010E515 /* RecorderHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDE274653210010E515 /* RecorderHomeView.swift */; };
-		2E6F2CE32746778F0010E515 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F2CE22746778F0010E515 /* Extensions.swift */; };
-		C541403827434A24003C1B30 /* SightreadingQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403727434A24003C1B30 /* SightreadingQuizView.swift */; };
-		C541403A27435125003C1B30 /* SightreadingQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403927435125003C1B30 /* SightreadingQuestions.swift */; };
-		C5809AC727464B1900EDAA9D /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5809AC627464B1900EDAA9D /* Words.swift */; };
-		C5809AC927464B8100EDAA9D /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5809AC827464B8100EDAA9D /* OverviewView.swift */; };
-		C5AD267127474E6B00FC4447 /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AD267027474E6A00FC4447 /* FlashcardView.swift */; };
-		FF3FEC7E2747214C0024DAD3 /* ActualTunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FEC7D2747214C0024DAD3 /* ActualTunerView.swift */; };
-		FF3FEC80274730DC0024DAD3 /* Oscillator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FEC7F274730DC0024DAD3 /* Oscillator.swift */; };
-		FF5B9B7D27465408005312EF /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7927465408005312EF /* BottomButtonView.swift */; };
-		FF5B9B7E27465408005312EF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7A27465408005312EF /* Note.swift */; };
-		FF5B9B8027465408005312EF /* SelectKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7C27465408005312EF /* SelectKeyView.swift */; };
-		FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */; };
-		FF9D9D5A274A7CF500B25121 /* DefinitionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D9D59274A7CF500B25121 /* DefinitionModalView.swift */; };
+        1BBE2CD610EC63FAF0B95D19 /* GradeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE21893CACBA742A275AC5 /* GradeStruct.swift */; };
+        2E16224C27412CA100791ADC /* MusicalRoomsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16224B27412CA100791ADC /* MusicalRoomsApp.swift */; };
+        2E16224E27412CA100791ADC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16224D27412CA100791ADC /* ContentView.swift */; };
+        2E16225027412CA500791ADC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E16224F27412CA500791ADC /* Assets.xcassets */; };
+        2E16225327412CA500791ADC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E16225227412CA500791ADC /* Preview Assets.xcassets */; };
+        2E16225D27412CA500791ADC /* MusicalRoomsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16225C27412CA500791ADC /* MusicalRoomsTests.swift */; };
+        2E16226727412CA500791ADC /* MusicalRoomsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */; };
+        2E16226927412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */; };
+        2E1622762741F26500791ADC /* TheoryHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1622752741F26500791ADC /* TheoryHomeView.swift */; };
+        2E16227E2741F2E300791ADC /* ReadingHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16227D2741F2E300791ADC /* ReadingHomeView.swift */; };
+        2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16227F2741F2F700791ADC /* TunerHomeView.swift */; };
+        2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1622812741F30400791ADC /* MetronomeHomeView.swift */; };
+        2E1622892742561200791ADC /* BpmNumpadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1622882742561200791ADC /* BpmNumpadView.swift */; };
+        2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */; };
+        2E2A69BC2747816F002E5471 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69BB2747816F002E5471 /* AudioRecorder.swift */; };
+        2E2A69BE274781B9002E5471 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69BD274781B9002E5471 /* Recording.swift */; };
+        2E2A69C7274783E5002E5471 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69C6274783E5002E5471 /* AudioPlayer.swift */; };
+        2E2A69C927478B80002E5471 /* RecordingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69C827478B80002E5471 /* RecordingsList.swift */; };
+        2E2A69CB27478D0E002E5471 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69CA27478D0E002E5471 /* Helpers.swift */; };
+        2E6F2CDC2746333F0010E515 /* metronome.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDA2746333F0010E515 /* metronome.wav */; };
+        2E6F2CDD2746333F0010E515 /* metronomeUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDB2746333F0010E515 /* metronomeUp.wav */; };
+        2E6F2CDF274653210010E515 /* RecorderHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDE274653210010E515 /* RecorderHomeView.swift */; };
+        2E6F2CE32746778F0010E515 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F2CE22746778F0010E515 /* Extensions.swift */; };
+        C541403827434A24003C1B30 /* SightreadingQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403727434A24003C1B30 /* SightreadingQuizView.swift */; };
+        C541403A27435125003C1B30 /* SightreadingQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541403927435125003C1B30 /* SightreadingQuestions.swift */; };
+        C5809AC727464B1900EDAA9D /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5809AC627464B1900EDAA9D /* Words.swift */; };
+        C5809AC927464B8100EDAA9D /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5809AC827464B8100EDAA9D /* OverviewView.swift */; };
+        C5AD267127474E6B00FC4447 /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AD267027474E6A00FC4447 /* FlashcardView.swift */; };
+        FF3FEC7E2747214C0024DAD3 /* ActualTunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FEC7D2747214C0024DAD3 /* ActualTunerView.swift */; };
+        FF3FEC80274730DC0024DAD3 /* Oscillator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FEC7F274730DC0024DAD3 /* Oscillator.swift */; };
+        FF3FEC86274736EA0024DAD3 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF3FEC85274736EA0024DAD3 /* AudioKit */; };
+        FF5B9B7D27465408005312EF /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7927465408005312EF /* BottomButtonView.swift */; };
+        FF5B9B7E27465408005312EF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7A27465408005312EF /* Note.swift */; };
+        FF5B9B8027465408005312EF /* SelectKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7C27465408005312EF /* SelectKeyView.swift */; };
+        FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */; };
+        FF7A9AC6274A1063003F3BC2 /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = FF7A9AC5274A1063003F3BC2 /* Subsonic */; };
+        FF9D9D5A274A7CF500B25121 /* DefinitionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D9D59274A7CF500B25121 /* DefinitionModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2E16225927412CA500791ADC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2E16224027412CA100791ADC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2E16224727412CA100791ADC;
-			remoteInfo = MusicalRooms;
-		};
-		2E16226327412CA500791ADC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2E16224027412CA100791ADC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2E16224727412CA100791ADC;
-			remoteInfo = MusicalRooms;
-		};
+        2E16225927412CA500791ADC /* PBXContainerItemProxy */ = {
+            isa = PBXContainerItemProxy;
+            containerPortal = 2E16224027412CA100791ADC /* Project object */;
+            proxyType = 1;
+            remoteGlobalIDString = 2E16224727412CA100791ADC;
+            remoteInfo = MusicalRooms;
+        };
+        2E16226327412CA500791ADC /* PBXContainerItemProxy */ = {
+            isa = PBXContainerItemProxy;
+            containerPortal = 2E16224027412CA100791ADC /* Project object */;
+            proxyType = 1;
+            remoteGlobalIDString = 2E16224727412CA100791ADC;
+            remoteInfo = MusicalRooms;
+        };
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1BBE21893CACBA742A275AC5 /* GradeStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeStruct.swift; sourceTree = "<group>"; };
-		2E16224827412CA100791ADC /* MusicalRooms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicalRooms.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E16224B27412CA100791ADC /* MusicalRoomsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsApp.swift; sourceTree = "<group>"; };
-		2E16224D27412CA100791ADC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		2E16224F27412CA500791ADC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2E16225227412CA500791ADC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2E16225827412CA500791ADC /* MusicalRoomsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicalRoomsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E16225C27412CA500791ADC /* MusicalRoomsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsTests.swift; sourceTree = "<group>"; };
-		2E16226227412CA500791ADC /* MusicalRoomsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicalRoomsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsUITests.swift; sourceTree = "<group>"; };
-		2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		2E1622752741F26500791ADC /* TheoryHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryHomeView.swift; sourceTree = "<group>"; };
-		2E16227D2741F2E300791ADC /* ReadingHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingHomeView.swift; sourceTree = "<group>"; };
-		2E16227F2741F2F700791ADC /* TunerHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerHomeView.swift; sourceTree = "<group>"; };
-		2E1622812741F30400791ADC /* MetronomeHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeHomeView.swift; sourceTree = "<group>"; };
-		2E1622882742561200791ADC /* BpmNumpadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BpmNumpadView.swift; sourceTree = "<group>"; };
-		2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSigSelectView.swift; sourceTree = "<group>"; };
-		2E2A69BB2747816F002E5471 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
-		2E2A69BD274781B9002E5471 /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
-		2E2A69C6274783E5002E5471 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
-		2E2A69C827478B80002E5471 /* RecordingsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingsList.swift; sourceTree = "<group>"; };
-		2E2A69CA27478D0E002E5471 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		2E6F2CDA2746333F0010E515 /* metronome.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = metronome.wav; path = assets/metronome.wav; sourceTree = "<group>"; };
-		2E6F2CDB2746333F0010E515 /* metronomeUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = metronomeUp.wav; path = assets/metronomeUp.wav; sourceTree = "<group>"; };
-		2E6F2CDE274653210010E515 /* RecorderHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderHomeView.swift; sourceTree = "<group>"; };
-		2E6F2CE22746778F0010E515 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		2EBE5DDC27494FD6006162BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		C541403727434A24003C1B30 /* SightreadingQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightreadingQuizView.swift; sourceTree = "<group>"; };
-		C541403927435125003C1B30 /* SightreadingQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightreadingQuestions.swift; sourceTree = "<group>"; };
-		C5809AC627464B1900EDAA9D /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
-		C5809AC827464B8100EDAA9D /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
-		C5AD267027474E6A00FC4447 /* FlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
-		FF3FEC7D2747214C0024DAD3 /* ActualTunerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualTunerView.swift; sourceTree = "<group>"; };
-		FF3FEC7F274730DC0024DAD3 /* Oscillator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oscillator.swift; sourceTree = "<group>"; };
-		FF5B9B7927465408005312EF /* BottomButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
-		FF5B9B7A27465408005312EF /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
-		FF5B9B7C27465408005312EF /* SelectKeyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectKeyView.swift; sourceTree = "<group>"; };
-		FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEnharmonic.swift; sourceTree = "<group>"; };
-		FF9D9D59274A7CF500B25121 /* DefinitionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionModalView.swift; sourceTree = "<group>"; };
+        1BBE21893CACBA742A275AC5 /* GradeStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeStruct.swift; sourceTree = "<group>"; };
+        2E16224827412CA100791ADC /* MusicalRooms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicalRooms.app; sourceTree = BUILT_PRODUCTS_DIR; };
+        2E16224B27412CA100791ADC /* MusicalRoomsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsApp.swift; sourceTree = "<group>"; };
+        2E16224D27412CA100791ADC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+        2E16224F27412CA500791ADC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+        2E16225227412CA500791ADC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+        2E16225827412CA500791ADC /* MusicalRoomsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicalRoomsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+        2E16225C27412CA500791ADC /* MusicalRoomsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsTests.swift; sourceTree = "<group>"; };
+        2E16226227412CA500791ADC /* MusicalRoomsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicalRoomsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+        2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsUITests.swift; sourceTree = "<group>"; };
+        2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+        2E1622752741F26500791ADC /* TheoryHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryHomeView.swift; sourceTree = "<group>"; };
+        2E16227D2741F2E300791ADC /* ReadingHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingHomeView.swift; sourceTree = "<group>"; };
+        2E16227F2741F2F700791ADC /* TunerHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerHomeView.swift; sourceTree = "<group>"; };
+        2E1622812741F30400791ADC /* MetronomeHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeHomeView.swift; sourceTree = "<group>"; };
+        2E1622882742561200791ADC /* BpmNumpadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BpmNumpadView.swift; sourceTree = "<group>"; };
+        2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSigSelectView.swift; sourceTree = "<group>"; };
+        2E2A69BB2747816F002E5471 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+        2E2A69BD274781B9002E5471 /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
+        2E2A69C6274783E5002E5471 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+        2E2A69C827478B80002E5471 /* RecordingsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingsList.swift; sourceTree = "<group>"; };
+        2E2A69CA27478D0E002E5471 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+        2E6F2CDA2746333F0010E515 /* metronome.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = metronome.wav; path = assets/metronome.wav; sourceTree = "<group>"; };
+        2E6F2CDB2746333F0010E515 /* metronomeUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = metronomeUp.wav; path = assets/metronomeUp.wav; sourceTree = "<group>"; };
+        2E6F2CDE274653210010E515 /* RecorderHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderHomeView.swift; sourceTree = "<group>"; };
+        2E6F2CE22746778F0010E515 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+        2EBE5DDC27494FD6006162BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+        C541403727434A24003C1B30 /* SightreadingQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightreadingQuizView.swift; sourceTree = "<group>"; };
+        C541403927435125003C1B30 /* SightreadingQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightreadingQuestions.swift; sourceTree = "<group>"; };
+        C5809AC627464B1900EDAA9D /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
+        C5809AC827464B8100EDAA9D /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
+        C5AD267027474E6A00FC4447 /* FlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
+        FF3FEC7D2747214C0024DAD3 /* ActualTunerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualTunerView.swift; sourceTree = "<group>"; };
+        FF3FEC7F274730DC0024DAD3 /* Oscillator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oscillator.swift; sourceTree = "<group>"; };
+        FF5B9B7927465408005312EF /* BottomButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
+        FF5B9B7A27465408005312EF /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+        FF5B9B7C27465408005312EF /* SelectKeyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectKeyView.swift; sourceTree = "<group>"; };
+        FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEnharmonic.swift; sourceTree = "<group>"; };
+        FF9D9D59274A7CF500B25121 /* DefinitionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2E16224527412CA100791ADC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FF7A9AC6274A1063003F3BC2 /* Subsonic in Frameworks */,
-				FF3FEC86274736EA0024DAD3 /* AudioKit in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2E16225527412CA500791ADC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2E16225F27412CA500791ADC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        2E16224527412CA100791ADC /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                FF7A9AC6274A1063003F3BC2 /* Subsonic in Frameworks */,
+                FF3FEC86274736EA0024DAD3 /* AudioKit in Frameworks */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        2E16225527412CA500791ADC /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        2E16225F27412CA500791ADC /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1BBE25915727AB14910C8ADB /* RecorderRoom */ = {
-			isa = PBXGroup;
-			children = (
-				2E2A69E52748873D002E5471 /* Views */,
-				2E2A69C5274783D2002E5471 /* Managers */,
-				2E6F2CE22746778F0010E515 /* Extensions.swift */,
-				2E2A69BD274781B9002E5471 /* Recording.swift */,
-			);
-			path = RecorderRoom;
-			sourceTree = "<group>";
-		};
-		2E16223F27412CA000791ADC = {
-			isa = PBXGroup;
-			children = (
-				2E16224A27412CA100791ADC /* MusicalRooms */,
-				2E16225B27412CA500791ADC /* MusicalRoomsTests */,
-				2E16226527412CA500791ADC /* MusicalRoomsUITests */,
-				2E16224927412CA100791ADC /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		2E16224927412CA100791ADC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2E16224827412CA100791ADC /* MusicalRooms.app */,
-				2E16225827412CA500791ADC /* MusicalRoomsTests.xctest */,
-				2E16226227412CA500791ADC /* MusicalRoomsUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		2E16224A27412CA100791ADC /* MusicalRooms */ = {
-			isa = PBXGroup;
-			children = (
-				2EBE5DDC27494FD6006162BD /* Info.plist */,
-				1BBE25915727AB14910C8ADB /* RecorderRoom */,
-				2E16227A2741F2AA00791ADC /* MetronomeRoom */,
-				2E1622792741F2A400791ADC /* TunerRoom */,
-				2E1622782741F29800791ADC /* SightreadingRoom */,
-				2E1622772741F27E00791ADC /* TheoryRoom */,
-				2E16224B27412CA100791ADC /* MusicalRoomsApp.swift */,
-				2E16224D27412CA100791ADC /* ContentView.swift */,
-				2E16224F27412CA500791ADC /* Assets.xcassets */,
-				2E16225127412CA500791ADC /* Preview Content */,
-			);
-			path = MusicalRooms;
-			sourceTree = "<group>";
-		};
-		2E16225127412CA500791ADC /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				2E16225227412CA500791ADC /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		2E16225B27412CA500791ADC /* MusicalRoomsTests */ = {
-			isa = PBXGroup;
-			children = (
-				2E16225C27412CA500791ADC /* MusicalRoomsTests.swift */,
-			);
-			path = MusicalRoomsTests;
-			sourceTree = "<group>";
-		};
-		2E16226527412CA500791ADC /* MusicalRoomsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */,
-				2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */,
-			);
-			path = MusicalRoomsUITests;
-			sourceTree = "<group>";
-		};
-		2E1622772741F27E00791ADC /* TheoryRoom */ = {
-			isa = PBXGroup;
-			children = (
-				2E1622752741F26500791ADC /* TheoryHomeView.swift */,
-				C5809AC627464B1900EDAA9D /* Words.swift */,
-				C5809AC827464B8100EDAA9D /* OverviewView.swift */,
-				FF9D9D59274A7CF500B25121 /* DefinitionModalView.swift */,
-				C5AD267027474E6A00FC4447 /* FlashcardView.swift */,
-				1BBE21893CACBA742A275AC5 /* GradeStruct.swift */,
-			);
-			path = TheoryRoom;
-			sourceTree = "<group>";
-		};
-		2E1622782741F29800791ADC /* SightreadingRoom */ = {
-			isa = PBXGroup;
-			children = (
-				2E16227D2741F2E300791ADC /* ReadingHomeView.swift */,
-				C541403727434A24003C1B30 /* SightreadingQuizView.swift */,
-				FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */,
-				C541403927435125003C1B30 /* SightreadingQuestions.swift */,
-			);
-			path = SightreadingRoom;
-			sourceTree = "<group>";
-		};
-		2E1622792741F2A400791ADC /* TunerRoom */ = {
-			isa = PBXGroup;
-			children = (
-				2E16227F2741F2F700791ADC /* TunerHomeView.swift */,
-				FF3FEC7D2747214C0024DAD3 /* ActualTunerView.swift */,
-				FF5B9B7927465408005312EF /* BottomButtonView.swift */,
-				FF5B9B7C27465408005312EF /* SelectKeyView.swift */,
-				FF5B9B7A27465408005312EF /* Note.swift */,
-				FF3FEC7F274730DC0024DAD3 /* Oscillator.swift */,
-			);
-			path = TunerRoom;
-			sourceTree = "<group>";
-		};
-		2E16227A2741F2AA00791ADC /* MetronomeRoom */ = {
-			isa = PBXGroup;
-			children = (
-				2E6F2CDA2746333F0010E515 /* metronome.wav */,
-				2E6F2CDB2746333F0010E515 /* metronomeUp.wav */,
-				2E1622812741F30400791ADC /* MetronomeHomeView.swift */,
-				2E1622882742561200791ADC /* BpmNumpadView.swift */,
-				2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */,
-			);
-			path = MetronomeRoom;
-			sourceTree = "<group>";
-		};
-		2E2A69C5274783D2002E5471 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				2E2A69BB2747816F002E5471 /* AudioRecorder.swift */,
-				2E2A69C6274783E5002E5471 /* AudioPlayer.swift */,
-				2E2A69CA27478D0E002E5471 /* Helpers.swift */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
-		2E2A69E52748873D002E5471 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				2E6F2CDE274653210010E515 /* RecorderHomeView.swift */,
-				2E2A69C827478B80002E5471 /* RecordingsList.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
+        1BBE25915727AB14910C8ADB /* RecorderRoom */ = {
+            isa = PBXGroup;
+            children = (
+                2E2A69E52748873D002E5471 /* Views */,
+                2E2A69C5274783D2002E5471 /* Managers */,
+                2E6F2CE22746778F0010E515 /* Extensions.swift */,
+                2E2A69BD274781B9002E5471 /* Recording.swift */,
+            );
+            path = RecorderRoom;
+            sourceTree = "<group>";
+        };
+        2E16223F27412CA000791ADC = {
+            isa = PBXGroup;
+            children = (
+                2E16224A27412CA100791ADC /* MusicalRooms */,
+                2E16225B27412CA500791ADC /* MusicalRoomsTests */,
+                2E16226527412CA500791ADC /* MusicalRoomsUITests */,
+                2E16224927412CA100791ADC /* Products */,
+            );
+            sourceTree = "<group>";
+        };
+        2E16224927412CA100791ADC /* Products */ = {
+            isa = PBXGroup;
+            children = (
+                2E16224827412CA100791ADC /* MusicalRooms.app */,
+                2E16225827412CA500791ADC /* MusicalRoomsTests.xctest */,
+                2E16226227412CA500791ADC /* MusicalRoomsUITests.xctest */,
+            );
+            name = Products;
+            sourceTree = "<group>";
+        };
+        2E16224A27412CA100791ADC /* MusicalRooms */ = {
+            isa = PBXGroup;
+            children = (
+                2EBE5DDC27494FD6006162BD /* Info.plist */,
+                1BBE25915727AB14910C8ADB /* RecorderRoom */,
+                2E16227A2741F2AA00791ADC /* MetronomeRoom */,
+                2E1622792741F2A400791ADC /* TunerRoom */,
+                2E1622782741F29800791ADC /* SightreadingRoom */,
+                2E1622772741F27E00791ADC /* TheoryRoom */,
+                2E16224B27412CA100791ADC /* MusicalRoomsApp.swift */,
+                2E16224D27412CA100791ADC /* ContentView.swift */,
+                2E16224F27412CA500791ADC /* Assets.xcassets */,
+                2E16225127412CA500791ADC /* Preview Content */,
+            );
+            path = MusicalRooms;
+            sourceTree = "<group>";
+        };
+        2E16225127412CA500791ADC /* Preview Content */ = {
+            isa = PBXGroup;
+            children = (
+                2E16225227412CA500791ADC /* Preview Assets.xcassets */,
+            );
+            path = "Preview Content";
+            sourceTree = "<group>";
+        };
+        2E16225B27412CA500791ADC /* MusicalRoomsTests */ = {
+            isa = PBXGroup;
+            children = (
+                2E16225C27412CA500791ADC /* MusicalRoomsTests.swift */,
+            );
+            path = MusicalRoomsTests;
+            sourceTree = "<group>";
+        };
+        2E16226527412CA500791ADC /* MusicalRoomsUITests */ = {
+            isa = PBXGroup;
+            children = (
+                2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */,
+                2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */,
+            );
+            path = MusicalRoomsUITests;
+            sourceTree = "<group>";
+        };
+        2E1622772741F27E00791ADC /* TheoryRoom */ = {
+            isa = PBXGroup;
+            children = (
+                2E1622752741F26500791ADC /* TheoryHomeView.swift */,
+                C5809AC627464B1900EDAA9D /* Words.swift */,
+                C5809AC827464B8100EDAA9D /* OverviewView.swift */,
+                FF9D9D59274A7CF500B25121 /* DefinitionModalView.swift */,
+                C5AD267027474E6A00FC4447 /* FlashcardView.swift */,
+                1BBE21893CACBA742A275AC5 /* GradeStruct.swift */,
+            );
+            path = TheoryRoom;
+            sourceTree = "<group>";
+        };
+        2E1622782741F29800791ADC /* SightreadingRoom */ = {
+            isa = PBXGroup;
+            children = (
+                2E16227D2741F2E300791ADC /* ReadingHomeView.swift */,
+                C541403727434A24003C1B30 /* SightreadingQuizView.swift */,
+                FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */,
+                C541403927435125003C1B30 /* SightreadingQuestions.swift */,
+            );
+            path = SightreadingRoom;
+            sourceTree = "<group>";
+        };
+        2E1622792741F2A400791ADC /* TunerRoom */ = {
+            isa = PBXGroup;
+            children = (
+                2E16227F2741F2F700791ADC /* TunerHomeView.swift */,
+                FF3FEC7D2747214C0024DAD3 /* ActualTunerView.swift */,
+                FF5B9B7927465408005312EF /* BottomButtonView.swift */,
+                FF5B9B7C27465408005312EF /* SelectKeyView.swift */,
+                FF5B9B7A27465408005312EF /* Note.swift */,
+                FF3FEC7F274730DC0024DAD3 /* Oscillator.swift */,
+            );
+            path = TunerRoom;
+            sourceTree = "<group>";
+        };
+        2E16227A2741F2AA00791ADC /* MetronomeRoom */ = {
+            isa = PBXGroup;
+            children = (
+                2E6F2CDA2746333F0010E515 /* metronome.wav */,
+                2E6F2CDB2746333F0010E515 /* metronomeUp.wav */,
+                2E1622812741F30400791ADC /* MetronomeHomeView.swift */,
+                2E1622882742561200791ADC /* BpmNumpadView.swift */,
+                2E1E0EF227428A5B00C81050 /* TimeSigSelectView.swift */,
+            );
+            path = MetronomeRoom;
+            sourceTree = "<group>";
+        };
+        2E2A69C5274783D2002E5471 /* Managers */ = {
+            isa = PBXGroup;
+            children = (
+                2E2A69BB2747816F002E5471 /* AudioRecorder.swift */,
+                2E2A69C6274783E5002E5471 /* AudioPlayer.swift */,
+                2E2A69CA27478D0E002E5471 /* Helpers.swift */,
+            );
+            path = Managers;
+            sourceTree = "<group>";
+        };
+        2E2A69E52748873D002E5471 /* Views */ = {
+            isa = PBXGroup;
+            children = (
+                2E6F2CDE274653210010E515 /* RecorderHomeView.swift */,
+                2E2A69C827478B80002E5471 /* RecordingsList.swift */,
+            );
+            path = Views;
+            sourceTree = "<group>";
+        };
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2E16224727412CA100791ADC /* MusicalRooms */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2E16226C27412CA500791ADC /* Build configuration list for PBXNativeTarget "MusicalRooms" */;
-			buildPhases = (
-				2E16224427412CA100791ADC /* Sources */,
-				2E16224527412CA100791ADC /* Frameworks */,
-				2E16224627412CA100791ADC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MusicalRooms;
-			packageProductDependencies = (
-				FF3FEC85274736EA0024DAD3 /* AudioKit */,
-				FF7A9AC5274A1063003F3BC2 /* Subsonic */,
-
-			);
-			productName = MusicalRooms;
-			productReference = 2E16224827412CA100791ADC /* MusicalRooms.app */;
-			productType = "com.apple.product-type.application";
-		};
-		2E16225727412CA500791ADC /* MusicalRoomsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2E16226F27412CA500791ADC /* Build configuration list for PBXNativeTarget "MusicalRoomsTests" */;
-			buildPhases = (
-				2E16225427412CA500791ADC /* Sources */,
-				2E16225527412CA500791ADC /* Frameworks */,
-				2E16225627412CA500791ADC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2E16225A27412CA500791ADC /* PBXTargetDependency */,
-			);
-			name = MusicalRoomsTests;
-			productName = MusicalRoomsTests;
-			productReference = 2E16225827412CA500791ADC /* MusicalRoomsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		2E16226127412CA500791ADC /* MusicalRoomsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2E16227227412CA500791ADC /* Build configuration list for PBXNativeTarget "MusicalRoomsUITests" */;
-			buildPhases = (
-				2E16225E27412CA500791ADC /* Sources */,
-				2E16225F27412CA500791ADC /* Frameworks */,
-				2E16226027412CA500791ADC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2E16226427412CA500791ADC /* PBXTargetDependency */,
-			);
-			name = MusicalRoomsUITests;
-			productName = MusicalRoomsUITests;
-			productReference = 2E16226227412CA500791ADC /* MusicalRoomsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
+        2E16224727412CA100791ADC /* MusicalRooms */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = 2E16226C27412CA500791ADC /* Build configuration list for PBXNativeTarget "MusicalRooms" */;
+            buildPhases = (
+                2E16224427412CA100791ADC /* Sources */,
+                2E16224527412CA100791ADC /* Frameworks */,
+                2E16224627412CA100791ADC /* Resources */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+            );
+            name = MusicalRooms;
+            packageProductDependencies = (
+                FF3FEC85274736EA0024DAD3 /* AudioKit */,
+                FF7A9AC5274A1063003F3BC2 /* Subsonic */,
+            );
+            productName = MusicalRooms;
+            productReference = 2E16224827412CA100791ADC /* MusicalRooms.app */;
+            productType = "com.apple.product-type.application";
+        };
+        2E16225727412CA500791ADC /* MusicalRoomsTests */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = 2E16226F27412CA500791ADC /* Build configuration list for PBXNativeTarget "MusicalRoomsTests" */;
+            buildPhases = (
+                2E16225427412CA500791ADC /* Sources */,
+                2E16225527412CA500791ADC /* Frameworks */,
+                2E16225627412CA500791ADC /* Resources */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+                2E16225A27412CA500791ADC /* PBXTargetDependency */,
+            );
+            name = MusicalRoomsTests;
+            productName = MusicalRoomsTests;
+            productReference = 2E16225827412CA500791ADC /* MusicalRoomsTests.xctest */;
+            productType = "com.apple.product-type.bundle.unit-test";
+        };
+        2E16226127412CA500791ADC /* MusicalRoomsUITests */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = 2E16227227412CA500791ADC /* Build configuration list for PBXNativeTarget "MusicalRoomsUITests" */;
+            buildPhases = (
+                2E16225E27412CA500791ADC /* Sources */,
+                2E16225F27412CA500791ADC /* Frameworks */,
+                2E16226027412CA500791ADC /* Resources */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+                2E16226427412CA500791ADC /* PBXTargetDependency */,
+            );
+            name = MusicalRoomsUITests;
+            productName = MusicalRoomsUITests;
+            productReference = 2E16226227412CA500791ADC /* MusicalRoomsUITests.xctest */;
+            productType = "com.apple.product-type.bundle.ui-testing";
+        };
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2E16224027412CA100791ADC /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1310;
-				TargetAttributes = {
-					2E16224727412CA100791ADC = {
-						CreatedOnToolsVersion = 13.1;
-					};
-					2E16225727412CA500791ADC = {
-						CreatedOnToolsVersion = 13.1;
-						TestTargetID = 2E16224727412CA100791ADC;
-					};
-					2E16226127412CA500791ADC = {
-						CreatedOnToolsVersion = 13.1;
-						TestTargetID = 2E16224727412CA100791ADC;
-					};
-				};
-			};
-			buildConfigurationList = 2E16224327412CA100791ADC /* Build configuration list for PBXProject "MusicalRooms" */;
-			compatibilityVersion = "Xcode 13.0";
-			developmentRegion = en;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 2E16223F27412CA000791ADC;
-			packageReferences = (
-				FF3FEC84274736EA0024DAD3 /* XCRemoteSwiftPackageReference "AudioKit" */,
-				FF7A9AC4274A1063003F3BC2 /* XCRemoteSwiftPackageReference "Subsonic" */,
-			);
-			productRefGroup = 2E16224927412CA100791ADC /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				2E16224727412CA100791ADC /* MusicalRooms */,
-				2E16225727412CA500791ADC /* MusicalRoomsTests */,
-				2E16226127412CA500791ADC /* MusicalRoomsUITests */,
-			);
-		};
+        2E16224027412CA100791ADC /* Project object */ = {
+            isa = PBXProject;
+            attributes = {
+                BuildIndependentTargetsInParallel = 1;
+                LastSwiftUpdateCheck = 1310;
+                LastUpgradeCheck = 1310;
+                TargetAttributes = {
+                    2E16224727412CA100791ADC = {
+                        CreatedOnToolsVersion = 13.1;
+                    };
+                    2E16225727412CA500791ADC = {
+                        CreatedOnToolsVersion = 13.1;
+                        TestTargetID = 2E16224727412CA100791ADC;
+                    };
+                    2E16226127412CA500791ADC = {
+                        CreatedOnToolsVersion = 13.1;
+                        TestTargetID = 2E16224727412CA100791ADC;
+                    };
+                };
+            };
+            buildConfigurationList = 2E16224327412CA100791ADC /* Build configuration list for PBXProject "MusicalRooms" */;
+            compatibilityVersion = "Xcode 13.0";
+            developmentRegion = en;
+            hasScannedForEncodings = 0;
+            knownRegions = (
+                en,
+                Base,
+            );
+            mainGroup = 2E16223F27412CA000791ADC;
+            packageReferences = (
+                FF3FEC84274736EA0024DAD3 /* XCRemoteSwiftPackageReference "AudioKit" */,
+                FF7A9AC4274A1063003F3BC2 /* XCRemoteSwiftPackageReference "Subsonic" */,
+            );
+            productRefGroup = 2E16224927412CA100791ADC /* Products */;
+            projectDirPath = "";
+            projectRoot = "";
+            targets = (
+                2E16224727412CA100791ADC /* MusicalRooms */,
+                2E16225727412CA500791ADC /* MusicalRoomsTests */,
+                2E16226127412CA500791ADC /* MusicalRoomsUITests */,
+            );
+        };
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2E16224627412CA100791ADC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2E16225327412CA500791ADC /* Preview Assets.xcassets in Resources */,
-				2E16225027412CA500791ADC /* Assets.xcassets in Resources */,
-				2E6F2CDC2746333F0010E515 /* metronome.wav in Resources */,
-				2E6F2CDD2746333F0010E515 /* metronomeUp.wav in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2E16225627412CA500791ADC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2E16226027412CA500791ADC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        2E16224627412CA100791ADC /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                2E16225327412CA500791ADC /* Preview Assets.xcassets in Resources */,
+                2E16225027412CA500791ADC /* Assets.xcassets in Resources */,
+                2E6F2CDC2746333F0010E515 /* metronome.wav in Resources */,
+                2E6F2CDD2746333F0010E515 /* metronomeUp.wav in Resources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        2E16225627412CA500791ADC /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        2E16226027412CA500791ADC /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2E16224427412CA100791ADC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FF3FEC7E2747214C0024DAD3 /* ActualTunerView.swift in Sources */,
-				C5AD267127474E6B00FC4447 /* FlashcardView.swift in Sources */,
-				2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */,
-				2E2A69CB27478D0E002E5471 /* Helpers.swift in Sources */,
-				2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */,
-				FF9D9D5A274A7CF500B25121 /* DefinitionModalView.swift in Sources */,
-				C541403827434A24003C1B30 /* SightreadingQuizView.swift in Sources */,
-				C541403A27435125003C1B30 /* SightreadingQuestions.swift in Sources */,
-				2E6F2CDF274653210010E515 /* RecorderHomeView.swift in Sources */,
-				2E16224E27412CA100791ADC /* ContentView.swift in Sources */,
-				FF5B9B8027465408005312EF /* SelectKeyView.swift in Sources */,
-				2E2A69C7274783E5002E5471 /* AudioPlayer.swift in Sources */,
-				2E2A69C927478B80002E5471 /* RecordingsList.swift in Sources */,
-				2E16224C27412CA100791ADC /* MusicalRoomsApp.swift in Sources */,
-				FF5B9B7D27465408005312EF /* BottomButtonView.swift in Sources */,
-				FF3FEC80274730DC0024DAD3 /* Oscillator.swift in Sources */,
-				2E16227E2741F2E300791ADC /* ReadingHomeView.swift in Sources */,
-				FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */,
-				2E1622892742561200791ADC /* BpmNumpadView.swift in Sources */,
-				2E2A69BC2747816F002E5471 /* AudioRecorder.swift in Sources */,
-				2E1622762741F26500791ADC /* TheoryHomeView.swift in Sources */,
-				FF5B9B7E27465408005312EF /* Note.swift in Sources */,
-				C5809AC727464B1900EDAA9D /* Words.swift in Sources */,
-				2E2A69BE274781B9002E5471 /* Recording.swift in Sources */,
-				2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */,
-				2E6F2CE32746778F0010E515 /* Extensions.swift in Sources */,
-				1BBE2CD610EC63FAF0B95D19 /* GradeStruct.swift in Sources */,
-				C5809AC927464B8100EDAA9D /* OverviewView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2E16225427412CA500791ADC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2E16225D27412CA500791ADC /* MusicalRoomsTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2E16225E27412CA500791ADC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2E16226927412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift in Sources */,
-				2E16226727412CA500791ADC /* MusicalRoomsUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        2E16224427412CA100791ADC /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                FF3FEC7E2747214C0024DAD3 /* ActualTunerView.swift in Sources */,
+                C5AD267127474E6B00FC4447 /* FlashcardView.swift in Sources */,
+                2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */,
+                2E2A69CB27478D0E002E5471 /* Helpers.swift in Sources */,
+                2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */,
+                FF9D9D5A274A7CF500B25121 /* DefinitionModalView.swift in Sources */,
+                C541403827434A24003C1B30 /* SightreadingQuizView.swift in Sources */,
+                C541403A27435125003C1B30 /* SightreadingQuestions.swift in Sources */,
+                2E6F2CDF274653210010E515 /* RecorderHomeView.swift in Sources */,
+                2E16224E27412CA100791ADC /* ContentView.swift in Sources */,
+                FF5B9B8027465408005312EF /* SelectKeyView.swift in Sources */,
+                2E2A69C7274783E5002E5471 /* AudioPlayer.swift in Sources */,
+                2E2A69C927478B80002E5471 /* RecordingsList.swift in Sources */,
+                2E16224C27412CA100791ADC /* MusicalRoomsApp.swift in Sources */,
+                FF5B9B7D27465408005312EF /* BottomButtonView.swift in Sources */,
+                FF3FEC80274730DC0024DAD3 /* Oscillator.swift in Sources */,
+                2E16227E2741F2E300791ADC /* ReadingHomeView.swift in Sources */,
+                FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */,
+                2E1622892742561200791ADC /* BpmNumpadView.swift in Sources */,
+                2E2A69BC2747816F002E5471 /* AudioRecorder.swift in Sources */,
+                2E1622762741F26500791ADC /* TheoryHomeView.swift in Sources */,
+                FF5B9B7E27465408005312EF /* Note.swift in Sources */,
+                C5809AC727464B1900EDAA9D /* Words.swift in Sources */,
+                2E2A69BE274781B9002E5471 /* Recording.swift in Sources */,
+                2E1E0EF327428A5B00C81050 /* TimeSigSelectView.swift in Sources */,
+                2E6F2CE32746778F0010E515 /* Extensions.swift in Sources */,
+                1BBE2CD610EC63FAF0B95D19 /* GradeStruct.swift in Sources */,
+                C5809AC927464B8100EDAA9D /* OverviewView.swift in Sources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        2E16225427412CA500791ADC /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                2E16225D27412CA500791ADC /* MusicalRoomsTests.swift in Sources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        2E16225E27412CA500791ADC /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                2E16226927412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift in Sources */,
+                2E16226727412CA500791ADC /* MusicalRoomsUITests.swift in Sources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2E16225A27412CA500791ADC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2E16224727412CA100791ADC /* MusicalRooms */;
-			targetProxy = 2E16225927412CA500791ADC /* PBXContainerItemProxy */;
-		};
-		2E16226427412CA500791ADC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2E16224727412CA100791ADC /* MusicalRooms */;
-			targetProxy = 2E16226327412CA500791ADC /* PBXContainerItemProxy */;
-		};
+        2E16225A27412CA500791ADC /* PBXTargetDependency */ = {
+            isa = PBXTargetDependency;
+            target = 2E16224727412CA100791ADC /* MusicalRooms */;
+            targetProxy = 2E16225927412CA500791ADC /* PBXContainerItemProxy */;
+        };
+        2E16226427412CA500791ADC /* PBXTargetDependency */ = {
+            isa = PBXTargetDependency;
+            target = 2E16224727412CA100791ADC /* MusicalRooms */;
+            targetProxy = 2E16226327412CA500791ADC /* PBXContainerItemProxy */;
+        };
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2E16226A27412CA500791ADC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		2E16226B27412CA500791ADC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		2E16226D27412CA500791ADC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MusicalRooms/Preview Content\"";
-				DEVELOPMENT_TEAM = F5NAQM5U75;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MusicalRooms/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "For RecorderRoom";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.MusicalRooms;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		2E16226E27412CA500791ADC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MusicalRooms/Preview Content\"";
-				DEVELOPMENT_TEAM = F5NAQM5U75;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MusicalRooms/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "For RecorderRoom";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.MusicalRooms;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		2E16227027412CA500791ADC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.MusicalRoomsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicalRooms.app/MusicalRooms";
-			};
-			name = Debug;
-		};
-		2E16227127412CA500791ADC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.MusicalRoomsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicalRooms.app/MusicalRooms";
-			};
-			name = Release;
-		};
-		2E16227327412CA500791ADC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.MusicalRoomsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MusicalRooms;
-			};
-			name = Debug;
-		};
-		2E16227427412CA500791ADC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.MusicalRoomsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MusicalRooms;
-			};
-			name = Release;
-		};
+        2E16226A27412CA500791ADC /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                CLANG_ANALYZER_NONNULL = YES;
+                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+                CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+                CLANG_CXX_LIBRARY = "libc++";
+                CLANG_ENABLE_MODULES = YES;
+                CLANG_ENABLE_OBJC_ARC = YES;
+                CLANG_ENABLE_OBJC_WEAK = YES;
+                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+                CLANG_WARN_BOOL_CONVERSION = YES;
+                CLANG_WARN_COMMA = YES;
+                CLANG_WARN_CONSTANT_CONVERSION = YES;
+                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+                CLANG_WARN_EMPTY_BODY = YES;
+                CLANG_WARN_ENUM_CONVERSION = YES;
+                CLANG_WARN_INFINITE_RECURSION = YES;
+                CLANG_WARN_INT_CONVERSION = YES;
+                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+                CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+                CLANG_WARN_STRICT_PROTOTYPES = YES;
+                CLANG_WARN_SUSPICIOUS_MOVE = YES;
+                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+                CLANG_WARN_UNREACHABLE_CODE = YES;
+                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+                COPY_PHASE_STRIP = NO;
+                DEBUG_INFORMATION_FORMAT = dwarf;
+                ENABLE_STRICT_OBJC_MSGSEND = YES;
+                ENABLE_TESTABILITY = YES;
+                GCC_C_LANGUAGE_STANDARD = gnu11;
+                GCC_DYNAMIC_NO_PIC = NO;
+                GCC_NO_COMMON_BLOCKS = YES;
+                GCC_OPTIMIZATION_LEVEL = 0;
+                GCC_PREPROCESSOR_DEFINITIONS = (
+                    "DEBUG=1",
+                    "$(inherited)",
+                );
+                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+                GCC_WARN_UNDECLARED_SELECTOR = YES;
+                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+                GCC_WARN_UNUSED_FUNCTION = YES;
+                GCC_WARN_UNUSED_VARIABLE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+                MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+                MTL_FAST_MATH = YES;
+                ONLY_ACTIVE_ARCH = YES;
+                SDKROOT = iphoneos;
+                SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+                SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+            };
+            name = Debug;
+        };
+        2E16226B27412CA500791ADC /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                CLANG_ANALYZER_NONNULL = YES;
+                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+                CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+                CLANG_CXX_LIBRARY = "libc++";
+                CLANG_ENABLE_MODULES = YES;
+                CLANG_ENABLE_OBJC_ARC = YES;
+                CLANG_ENABLE_OBJC_WEAK = YES;
+                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+                CLANG_WARN_BOOL_CONVERSION = YES;
+                CLANG_WARN_COMMA = YES;
+                CLANG_WARN_CONSTANT_CONVERSION = YES;
+                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+                CLANG_WARN_EMPTY_BODY = YES;
+                CLANG_WARN_ENUM_CONVERSION = YES;
+                CLANG_WARN_INFINITE_RECURSION = YES;
+                CLANG_WARN_INT_CONVERSION = YES;
+                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+                CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+                CLANG_WARN_STRICT_PROTOTYPES = YES;
+                CLANG_WARN_SUSPICIOUS_MOVE = YES;
+                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+                CLANG_WARN_UNREACHABLE_CODE = YES;
+                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+                COPY_PHASE_STRIP = NO;
+                DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+                ENABLE_NS_ASSERTIONS = NO;
+                ENABLE_STRICT_OBJC_MSGSEND = YES;
+                GCC_C_LANGUAGE_STANDARD = gnu11;
+                GCC_NO_COMMON_BLOCKS = YES;
+                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+                GCC_WARN_UNDECLARED_SELECTOR = YES;
+                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+                GCC_WARN_UNUSED_FUNCTION = YES;
+                GCC_WARN_UNUSED_VARIABLE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+                MTL_ENABLE_DEBUG_INFO = NO;
+                MTL_FAST_MATH = YES;
+                SDKROOT = iphoneos;
+                SWIFT_COMPILATION_MODE = wholemodule;
+                SWIFT_OPTIMIZATION_LEVEL = "-O";
+                VALIDATE_PRODUCT = YES;
+            };
+            name = Release;
+        };
+        2E16226D27412CA500791ADC /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                DEVELOPMENT_ASSET_PATHS = "\"MusicalRooms/Preview Content\"";
+                DEVELOPMENT_TEAM = F5NAQM5U75;
+                ENABLE_PREVIEWS = YES;
+                GENERATE_INFOPLIST_FILE = YES;
+                INFOPLIST_FILE = MusicalRooms/Info.plist;
+                INFOPLIST_KEY_LSApplicationCategoryType = "";
+                INFOPLIST_KEY_NSMicrophoneUsageDescription = "For RecorderRoom";
+                INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+                INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+                INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+                INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+                INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+                INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                );
+                MARKETING_VERSION = 1.0;
+                PRODUCT_BUNDLE_IDENTIFIER = sg.tk.MusicalRooms;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_EMIT_LOC_STRINGS = YES;
+                SWIFT_VERSION = 5.0;
+                TARGETED_DEVICE_FAMILY = 1;
+            };
+            name = Debug;
+        };
+        2E16226E27412CA500791ADC /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                DEVELOPMENT_ASSET_PATHS = "\"MusicalRooms/Preview Content\"";
+                DEVELOPMENT_TEAM = F5NAQM5U75;
+                ENABLE_PREVIEWS = YES;
+                GENERATE_INFOPLIST_FILE = YES;
+                INFOPLIST_FILE = MusicalRooms/Info.plist;
+                INFOPLIST_KEY_LSApplicationCategoryType = "";
+                INFOPLIST_KEY_NSMicrophoneUsageDescription = "For RecorderRoom";
+                INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+                INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+                INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+                INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+                INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+                INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                );
+                MARKETING_VERSION = 1.0;
+                PRODUCT_BUNDLE_IDENTIFIER = sg.tk.MusicalRooms;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_EMIT_LOC_STRINGS = YES;
+                SWIFT_VERSION = 5.0;
+                TARGETED_DEVICE_FAMILY = 1;
+            };
+            name = Release;
+        };
+        2E16227027412CA500791ADC /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+                BUNDLE_LOADER = "$(TEST_HOST)";
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                GENERATE_INFOPLIST_FILE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                    "@loader_path/Frameworks",
+                );
+                MARKETING_VERSION = 1.0;
+                PRODUCT_BUNDLE_IDENTIFIER = sg.tk.MusicalRoomsTests;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_EMIT_LOC_STRINGS = NO;
+                SWIFT_VERSION = 5.0;
+                TARGETED_DEVICE_FAMILY = "1,2";
+                TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicalRooms.app/MusicalRooms";
+            };
+            name = Debug;
+        };
+        2E16227127412CA500791ADC /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+                BUNDLE_LOADER = "$(TEST_HOST)";
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                GENERATE_INFOPLIST_FILE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                    "@loader_path/Frameworks",
+                );
+                MARKETING_VERSION = 1.0;
+                PRODUCT_BUNDLE_IDENTIFIER = sg.tk.MusicalRoomsTests;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_EMIT_LOC_STRINGS = NO;
+                SWIFT_VERSION = 5.0;
+                TARGETED_DEVICE_FAMILY = "1,2";
+                TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicalRooms.app/MusicalRooms";
+            };
+            name = Release;
+        };
+        2E16227327412CA500791ADC /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                GENERATE_INFOPLIST_FILE = YES;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                    "@loader_path/Frameworks",
+                );
+                MARKETING_VERSION = 1.0;
+                PRODUCT_BUNDLE_IDENTIFIER = sg.tk.MusicalRoomsUITests;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_EMIT_LOC_STRINGS = NO;
+                SWIFT_VERSION = 5.0;
+                TARGETED_DEVICE_FAMILY = "1,2";
+                TEST_TARGET_NAME = MusicalRooms;
+            };
+            name = Debug;
+        };
+        2E16227427412CA500791ADC /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                GENERATE_INFOPLIST_FILE = YES;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                    "@loader_path/Frameworks",
+                );
+                MARKETING_VERSION = 1.0;
+                PRODUCT_BUNDLE_IDENTIFIER = sg.tk.MusicalRoomsUITests;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_EMIT_LOC_STRINGS = NO;
+                SWIFT_VERSION = 5.0;
+                TARGETED_DEVICE_FAMILY = "1,2";
+                TEST_TARGET_NAME = MusicalRooms;
+            };
+            name = Release;
+        };
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2E16224327412CA100791ADC /* Build configuration list for PBXProject "MusicalRooms" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2E16226A27412CA500791ADC /* Debug */,
-				2E16226B27412CA500791ADC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2E16226C27412CA500791ADC /* Build configuration list for PBXNativeTarget "MusicalRooms" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2E16226D27412CA500791ADC /* Debug */,
-				2E16226E27412CA500791ADC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2E16226F27412CA500791ADC /* Build configuration list for PBXNativeTarget "MusicalRoomsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2E16227027412CA500791ADC /* Debug */,
-				2E16227127412CA500791ADC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2E16227227412CA500791ADC /* Build configuration list for PBXNativeTarget "MusicalRoomsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2E16227327412CA500791ADC /* Debug */,
-				2E16227427412CA500791ADC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
+        2E16224327412CA100791ADC /* Build configuration list for PBXProject "MusicalRooms" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                2E16226A27412CA500791ADC /* Debug */,
+                2E16226B27412CA500791ADC /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        2E16226C27412CA500791ADC /* Build configuration list for PBXNativeTarget "MusicalRooms" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                2E16226D27412CA500791ADC /* Debug */,
+                2E16226E27412CA500791ADC /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        2E16226F27412CA500791ADC /* Build configuration list for PBXNativeTarget "MusicalRoomsTests" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                2E16227027412CA500791ADC /* Debug */,
+                2E16227127412CA500791ADC /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        2E16227227412CA500791ADC /* Build configuration list for PBXNativeTarget "MusicalRoomsUITests" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                2E16227327412CA500791ADC /* Debug */,
+                2E16227427412CA500791ADC /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2E6B1441274B55CB00509406 /* XCRemoteSwiftPackageReference "Subsonic" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/twostraws/Subsonic";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-		FF7A9AC4274A1063003F3BC2 /* XCRemoteSwiftPackageReference "Subsonic" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/twostraws/Subsonic";
-		2E6B1444274B562200509406 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AudioKit/AudioKit";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
+        FF3FEC84274736EA0024DAD3 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+            isa = XCRemoteSwiftPackageReference;
+            repositoryURL = "https://github.com/AudioKit/AudioKit";
+            requirement = {
+                branch = main;
+                kind = branch;
+            };
+        };
+        FF7A9AC4274A1063003F3BC2 /* XCRemoteSwiftPackageReference "Subsonic" */ = {
+            isa = XCRemoteSwiftPackageReference;
+            repositoryURL = "https://github.com/twostraws/Subsonic";
+            requirement = {
+                branch = main;
+                kind = branch;
+            };
+        };
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2E6B1442274B55CB00509406 /* Subsonic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2E6B1441274B55CB00509406 /* XCRemoteSwiftPackageReference "Subsonic" */;
-			productName = Subsonic;
-		};
-		2E6B1445274B562200509406 /* AudioKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2E6B1444274B562200509406 /* XCRemoteSwiftPackageReference "AudioKit" */;
-			productName = AudioKit;
-		};
-		FF7A9AC5274A1063003F3BC2 /* Subsonic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FF7A9AC4274A1063003F3BC2 /* XCRemoteSwiftPackageReference "Subsonic" */;
-			productName = Subsonic;
-		};
+        FF3FEC85274736EA0024DAD3 /* AudioKit */ = {
+            isa = XCSwiftPackageProductDependency;
+            package = FF3FEC84274736EA0024DAD3 /* XCRemoteSwiftPackageReference "AudioKit" */;
+            productName = AudioKit;
+        };
+        FF7A9AC5274A1063003F3BC2 /* Subsonic */ = {
+            isa = XCSwiftPackageProductDependency;
+            package = FF7A9AC4274A1063003F3BC2 /* XCRemoteSwiftPackageReference "Subsonic" */;
+            productName = Subsonic;
+        };
 /* End XCSwiftPackageProductDependency section */
-	};
-	rootObject = 2E16224027412CA100791ADC /* Project object */;
+    };
+    rootObject = 2E16224027412CA100791ADC /* Project object */;
 }

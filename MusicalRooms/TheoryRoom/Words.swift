@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct Word: Identifiable {
+struct Word: Identifiable, Equatable {
     var id = UUID()
     
     var title: String
+    var altText: String?
+    var definition: String
     var isTapped = false
 }

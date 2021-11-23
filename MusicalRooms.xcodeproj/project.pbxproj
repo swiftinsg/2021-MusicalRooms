@@ -26,16 +26,6 @@
 		2E2A69C7274783E5002E5471 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69C6274783E5002E5471 /* AudioPlayer.swift */; };
 		2E2A69C927478B80002E5471 /* RecordingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69C827478B80002E5471 /* RecordingsList.swift */; };
 		2E2A69CB27478D0E002E5471 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A69CA27478D0E002E5471 /* Helpers.swift */; };
-		2E2A69D827481689002E5471 /* Dsharp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2A69CE27481689002E5471 /* Dsharp.mp3 */; };
-		2E2A69D927481689002E5471 /* C#.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2A69CF27481689002E5471 /* C#.mp3 */; };
-		2E2A69DA27481689002E5471 /* Csharp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2A69D027481689002E5471 /* Csharp.mp3 */; };
-		2E2A69DB27481689002E5471 /* D#.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2A69D127481689002E5471 /* D#.mp3 */; };
-		2E2A69DC27481689002E5471 /* F#.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2A69D227481689002E5471 /* F#.mp3 */; };
-		2E2A69DD27481689002E5471 /* Fsharp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2A69D327481689002E5471 /* Fsharp.mp3 */; };
-		2E2A69DE27481689002E5471 /* Gsharp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2A69D427481689002E5471 /* Gsharp.mp3 */; };
-		2E2A69DF27481689002E5471 /* G#.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2A69D527481689002E5471 /* G#.mp3 */; };
-		2E2A69E027481689002E5471 /* A#.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2A69D627481689002E5471 /* A#.mp3 */; };
-		2E2A69E127481689002E5471 /* Asharp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2A69D727481689002E5471 /* Asharp.mp3 */; };
 		2E6B1443274B55CB00509406 /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = 2E6B1442274B55CB00509406 /* Subsonic */; };
 		2E6B1446274B562200509406 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2E6B1445274B562200509406 /* AudioKit */; };
 		2E6F2CDC2746333F0010E515 /* metronome.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F2CDA2746333F0010E515 /* metronome.wav */; };
@@ -53,6 +43,7 @@
 		FF5B9B7E27465408005312EF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7A27465408005312EF /* Note.swift */; };
 		FF5B9B8027465408005312EF /* SelectKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9B7C27465408005312EF /* SelectKeyView.swift */; };
 		FF73401B2743C0F7001AC430 /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */; };
+		FF9D9D5A274A7CF500B25121 /* DefinitionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D9D59274A7CF500B25121 /* DefinitionModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,16 +86,6 @@
 		2E2A69C6274783E5002E5471 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		2E2A69C827478B80002E5471 /* RecordingsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingsList.swift; sourceTree = "<group>"; };
 		2E2A69CA27478D0E002E5471 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		2E2A69CE27481689002E5471 /* Dsharp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dsharp.mp3; sourceTree = "<group>"; };
-		2E2A69CF27481689002E5471 /* C#.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "C#.mp3"; sourceTree = "<group>"; };
-		2E2A69D027481689002E5471 /* Csharp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Csharp.mp3; sourceTree = "<group>"; };
-		2E2A69D127481689002E5471 /* D#.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "D#.mp3"; sourceTree = "<group>"; };
-		2E2A69D227481689002E5471 /* F#.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "F#.mp3"; sourceTree = "<group>"; };
-		2E2A69D327481689002E5471 /* Fsharp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fsharp.mp3; sourceTree = "<group>"; };
-		2E2A69D427481689002E5471 /* Gsharp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Gsharp.mp3; sourceTree = "<group>"; };
-		2E2A69D527481689002E5471 /* G#.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "G#.mp3"; sourceTree = "<group>"; };
-		2E2A69D627481689002E5471 /* A#.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "A#.mp3"; sourceTree = "<group>"; };
-		2E2A69D727481689002E5471 /* Asharp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Asharp.mp3; sourceTree = "<group>"; };
 		2E6F2CDA2746333F0010E515 /* metronome.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = metronome.wav; path = assets/metronome.wav; sourceTree = "<group>"; };
 		2E6F2CDB2746333F0010E515 /* metronomeUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = metronomeUp.wav; path = assets/metronomeUp.wav; sourceTree = "<group>"; };
 		2E6F2CDE274653210010E515 /* RecorderHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderHomeView.swift; sourceTree = "<group>"; };
@@ -121,6 +102,7 @@
 		FF5B9B7A27465408005312EF /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FF5B9B7C27465408005312EF /* SelectKeyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectKeyView.swift; sourceTree = "<group>"; };
 		FF73401A2743C0F7001AC430 /* GetEnharmonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEnharmonic.swift; sourceTree = "<group>"; };
+		FF9D9D59274A7CF500B25121 /* DefinitionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E6B1446274B562200509406 /* AudioKit in Frameworks */,
-				2E6B1443274B55CB00509406 /* Subsonic in Frameworks */,
+				FF7A9AC6274A1063003F3BC2 /* Subsonic in Frameworks */,
+				FF3FEC86274736EA0024DAD3 /* AudioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +211,7 @@
 				2E1622752741F26500791ADC /* TheoryHomeView.swift */,
 				C5809AC627464B1900EDAA9D /* Words.swift */,
 				C5809AC827464B8100EDAA9D /* OverviewView.swift */,
+				FF9D9D59274A7CF500B25121 /* DefinitionModalView.swift */,
 				C5AD267027474E6A00FC4447 /* FlashcardView.swift */,
 				1BBE21893CACBA742A275AC5 /* GradeStruct.swift */,
 			);
@@ -249,7 +232,6 @@
 		2E1622792741F2A400791ADC /* TunerRoom */ = {
 			isa = PBXGroup;
 			children = (
-				2E2A69CD27481689002E5471 /* SineWaves */,
 				2E16227F2741F2F700791ADC /* TunerHomeView.swift */,
 				FF3FEC7D2747214C0024DAD3 /* ActualTunerView.swift */,
 				FF5B9B7927465408005312EF /* BottomButtonView.swift */,
@@ -282,24 +264,6 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		2E2A69CD27481689002E5471 /* SineWaves */ = {
-			isa = PBXGroup;
-			children = (
-				2E2A69CE27481689002E5471 /* Dsharp.mp3 */,
-				2E2A69CF27481689002E5471 /* C#.mp3 */,
-				2E2A69D027481689002E5471 /* Csharp.mp3 */,
-				2E2A69D127481689002E5471 /* D#.mp3 */,
-				2E2A69D227481689002E5471 /* F#.mp3 */,
-				2E2A69D327481689002E5471 /* Fsharp.mp3 */,
-				2E2A69D427481689002E5471 /* Gsharp.mp3 */,
-				2E2A69D527481689002E5471 /* G#.mp3 */,
-				2E2A69D627481689002E5471 /* A#.mp3 */,
-				2E2A69D727481689002E5471 /* Asharp.mp3 */,
-			);
-			name = SineWaves;
-			path = MusicalRooms/SineWaves;
-			sourceTree = SOURCE_ROOT;
-		};
 		2E2A69E52748873D002E5471 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,8 +290,9 @@
 			);
 			name = MusicalRooms;
 			packageProductDependencies = (
-				2E6B1442274B55CB00509406 /* Subsonic */,
-				2E6B1445274B562200509406 /* AudioKit */,
+				FF3FEC85274736EA0024DAD3 /* AudioKit */,
+				FF7A9AC5274A1063003F3BC2 /* Subsonic */,
+
 			);
 			productName = MusicalRooms;
 			productReference = 2E16224827412CA100791ADC /* MusicalRooms.app */;
@@ -402,8 +367,8 @@
 			);
 			mainGroup = 2E16223F27412CA000791ADC;
 			packageReferences = (
-				2E6B1441274B55CB00509406 /* XCRemoteSwiftPackageReference "Subsonic" */,
-				2E6B1444274B562200509406 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				FF3FEC84274736EA0024DAD3 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				FF7A9AC4274A1063003F3BC2 /* XCRemoteSwiftPackageReference "Subsonic" */,
 			);
 			productRefGroup = 2E16224927412CA100791ADC /* Products */;
 			projectDirPath = "";
@@ -421,19 +386,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E2A69E027481689002E5471 /* A#.mp3 in Resources */,
-				2E2A69D927481689002E5471 /* C#.mp3 in Resources */,
 				2E16225327412CA500791ADC /* Preview Assets.xcassets in Resources */,
-				2E2A69DD27481689002E5471 /* Fsharp.mp3 in Resources */,
-				2E2A69DE27481689002E5471 /* Gsharp.mp3 in Resources */,
-				2E2A69E127481689002E5471 /* Asharp.mp3 in Resources */,
 				2E16225027412CA500791ADC /* Assets.xcassets in Resources */,
-				2E2A69DC27481689002E5471 /* F#.mp3 in Resources */,
-				2E2A69DB27481689002E5471 /* D#.mp3 in Resources */,
 				2E6F2CDC2746333F0010E515 /* metronome.wav in Resources */,
-				2E2A69D827481689002E5471 /* Dsharp.mp3 in Resources */,
-				2E2A69DA27481689002E5471 /* Csharp.mp3 in Resources */,
-				2E2A69DF27481689002E5471 /* G#.mp3 in Resources */,
 				2E6F2CDD2746333F0010E515 /* metronomeUp.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +419,7 @@
 				2E1622822741F30400791ADC /* MetronomeHomeView.swift in Sources */,
 				2E2A69CB27478D0E002E5471 /* Helpers.swift in Sources */,
 				2E1622802741F2F700791ADC /* TunerHomeView.swift in Sources */,
+				FF9D9D5A274A7CF500B25121 /* DefinitionModalView.swift in Sources */,
 				C541403827434A24003C1B30 /* SightreadingQuizView.swift in Sources */,
 				C541403A27435125003C1B30 /* SightreadingQuestions.swift in Sources */,
 				2E6F2CDF274653210010E515 /* RecorderHomeView.swift in Sources */,
@@ -667,7 +623,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -700,7 +656,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -846,6 +802,9 @@
 				kind = branch;
 			};
 		};
+		FF7A9AC4274A1063003F3BC2 /* XCRemoteSwiftPackageReference "Subsonic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/Subsonic";
 		2E6B1444274B562200509406 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AudioKit/AudioKit";
@@ -866,6 +825,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2E6B1444274B562200509406 /* XCRemoteSwiftPackageReference "AudioKit" */;
 			productName = AudioKit;
+		};
+		FF7A9AC5274A1063003F3BC2 /* Subsonic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF7A9AC4274A1063003F3BC2 /* XCRemoteSwiftPackageReference "Subsonic" */;
+			productName = Subsonic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

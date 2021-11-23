@@ -14,15 +14,19 @@ struct TheoryHomeView: View {
     @State var percentCorrect: Double = 50
     
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack {
-                    ForEach($grades) { $grade in
-                        NavigationLink {
-                            OverviewView(words: $grade.words)
-                        } label: {
-                            VStack(alignment: .leading) {
-                                HStack(alignment: .bottom) {
+        
+        VStack{
+            Text("Theory")
+                .font(Font.system(size: 28, weight: .bold))
+                .padding()
+
+            ScrollView(.vertical, showsIndicators: false) {
+                ForEach($grades) { $grade in
+                    NavigationLink {
+                        OverviewView(words: $grade.words)
+                    } label: {
+                        VStack(alignment: .leading) {
+                            HStack(alignment: .bottom) {
                                     Text("Grade \(grade.number)")
                                         .fontWeight(.semibold)
                                         .multilineTextAlignment(.leading)
@@ -62,6 +66,8 @@ struct TheoryHomeView: View {
                 .navigationBarTitle("Theory")
                 
             }
+            .frame(width: 400)
+            .padding(.bottom, 22)
         }
     }
 }

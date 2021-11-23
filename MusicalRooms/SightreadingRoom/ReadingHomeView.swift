@@ -16,10 +16,9 @@ struct ReadingHomeView: View {
     var body: some View {
         
         //Header
-        VStack(alignment: .leading) {
+        VStack{
             Text("Sightreading")
-                .font(Font.system(size: 32, weight: .bold))
-                .frame( alignment: .leading)
+                .font(Font.system(size: 28, weight: .bold))
                 .padding()
             
             ScrollView(.vertical, showsIndicators: false) {
@@ -115,12 +114,14 @@ struct ReadingHomeView: View {
                     }//END CARD
                     .padding()
                     
-                    Spacer().frame(height:20)
+                    Spacer().frame(height:5)
                     
                 }
                     
                     
             }
+            .padding(.bottom, 22)
+            
         }
         .offset(y:20)
     }

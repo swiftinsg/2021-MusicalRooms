@@ -37,19 +37,13 @@ struct MetronomeHomeView: View {
     var body: some View {
         
         VStack{
-            ZStack{
-                Text("Metronome")
-                    .font(Font.system(size: 32, weight: .bold))
-                    .multilineTextAlignment(.leading)
-                    .frame( alignment: .leading)
-                    .offset(x:-65, y:20)
-                    .padding()
-                /*RecorderHomeView(isMini: true)
-                    .offset(x: 115, y: 95)*/
-            }
+            
+            Text("Metronome")
+                .font(Font.system(size: 28, weight: .bold))
+                .padding()
             
             Spacer()
-                .frame(height: 30)
+                .frame(height: 20)
             
             // Arm
             ZStack {
@@ -81,7 +75,7 @@ struct MetronomeHomeView: View {
                 })
             
             
-            Spacer().frame(height:25)
+            Spacer().frame(height:20)
 
 
             // Tempo name
@@ -91,7 +85,7 @@ struct MetronomeHomeView: View {
                 .foregroundColor(lightBrown)
 
             Spacer()
-                .frame(height:45)
+                .frame(height:35)
 
             // BPM modifier
             ZStack {
@@ -112,6 +106,7 @@ struct MetronomeHomeView: View {
                         Image(systemName: "minus")
                     }
                 }
+                .background(Color.clear)
                 .foregroundColor(darkBrown)
                 .font(.title2.bold())
                 .offset(x: -95)
@@ -139,13 +134,14 @@ struct MetronomeHomeView: View {
                         Image(systemName: "plus")
                     }
                 }
+                .background(Color.clear)
                 .font(.title2.bold())
                 .foregroundColor(darkBrown)
                 .offset(x: 95)
             }
 
             Spacer()
-                .frame(height: 40)
+                .frame(height: 30)
 
             HStack {
                 //Play Button
@@ -165,6 +161,7 @@ struct MetronomeHomeView: View {
                         }
                     }
                 }
+                .background(Color.clear)
                 .font(.title2.bold())
                 .foregroundColor(darkBrown)
                 .onChange(of: isOn){ value in
@@ -195,16 +192,18 @@ struct MetronomeHomeView: View {
                                 .foregroundColor(darkBrown)
                         }
                     }
+                    .background(Color.clear)
+                    .frame(width: 60, alignment: .center).frame(width: 60, alignment: .center)
                     .onChange(of: sigIndex){index in
                         barNotes = sigNotes[sigIndex]
                     }
-                    .frame(width: 60, alignment: .center)
                     .sheet(isPresented: $displaySigSelect) {
                         TimeSigSelectView(selIndex:$sigIndex)
                     }
+                Spacer().frame(width: 15)
             }
         }
-        .offset(y:-20)
+        .offset(y: -15)
     }
     
     func updateOffsetFromBPM(){

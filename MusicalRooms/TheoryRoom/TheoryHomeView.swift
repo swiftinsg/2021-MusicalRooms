@@ -10,23 +10,23 @@ import SwiftUI
 struct TheoryHomeView: View {
     
     @Binding var grades: [Grade]
-    
     @State var percentCorrect: Double = 50
     
     var body: some View {
-        
-        VStack{
-            Text("Theory")
-                .font(Font.system(size: 28, weight: .bold))
-                .padding()
-
-            ScrollView(.vertical, showsIndicators: false) {
-                ForEach($grades) { $grade in
-                    NavigationLink {
-                        OverviewView(words: $grade.words)
-                    } label: {
-                        VStack(alignment: .leading) {
-                            HStack(alignment: .bottom) {
+        NavigationView {
+            VStack {
+                
+                Text("Theory")
+                    .font(Font.system(size: 28, weight: .bold))
+                    .padding()
+                
+                ScrollView {
+                    ForEach($grades) { $grade in
+                        NavigationLink {
+                            OverviewView(words: $grade.words)
+                        } label: {
+                            VStack(alignment: .leading) {
+                                HStack(alignment: .bottom) {
                                     Text("Grade \(grade.number)")
                                         .fontWeight(.semibold)
                                         .multilineTextAlignment(.leading)
@@ -64,14 +64,13 @@ struct TheoryHomeView: View {
                     .offset(y:20)
                 }
                 .navigationBarTitle("Theory")
-                
             }
-            .frame(width: 400)
-            .padding(.bottom, 22)
+            
         }
+        .frame(width: 400)
+        .padding(.bottom, 22)
     }
 }
-
 
 struct TheoryHomeView_Previews: PreviewProvider {
     static var previews: some View {

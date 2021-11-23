@@ -14,9 +14,9 @@
         "package": "Subsonic",
         "repositoryURL": "https://github.com/twostraws/Subsonic",
         "state": {
-          "branch": "main",
-          "revision": "b9ccab1c94294e2dd87b83d2c9cfb8da01629f84",
-          "version": null
+          "branch": null,
+          "revision": "156c5742279df5d2315e29534a2410f418c8a772",
+          "version": "0.2.0"
         }
       }
     ]

@@ -46,9 +46,9 @@ struct OverviewView: View {
                             .listRowBackground(Color("lightBrown"))
                         }
                     } else {
-                        ForEach(0 ..< 5) {
-                            word in NavigationLink {
-                                
+                        ForEach(0 ..< 5) { word in
+                            NavigationLink {
+                                DefinitionModalView(words: words, currentWord: word)
                             } label: {
                                 VStack {
                                     Text(words[word].title)
@@ -111,11 +111,11 @@ struct OverviewView: View {
                 .navigationTitle("Grade 1") //to do: link this to TheoryHomeView
                 
             }
-            
+            .offset(y: -100)
         }
-        
     }
 }
+
 struct OverviewView_Previews: PreviewProvider {
     static var previews: some View {
         OverviewView(words: .constant(

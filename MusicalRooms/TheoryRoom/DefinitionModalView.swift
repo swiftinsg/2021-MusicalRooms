@@ -13,7 +13,6 @@ struct DefinitionModalView: View {
     var currentWord: Int
     
     @State var isFlipped = false
-    @State var moveOnToNextWord = false
     @State var degrees: Angle = Angle(degrees: 0)
     
     @Environment(\.presentationMode) var presentationMode
@@ -24,6 +23,12 @@ struct DefinitionModalView: View {
                 RoundedRectangle(cornerRadius: 20)
                     .frame(width: 350, height: 300, alignment: .center)
                     .foregroundColor(Color("lightBrown"))
+                    .onTapGesture {
+                        withAnimation {
+                            degrees += Angle(degrees: 180)
+                        }
+                    }
+                    .rotation3DEffect(degrees, axis: (x: 0, y: 1, z: 0))
                 
                 RoundedRectangle(cornerRadius: 20)
                     .frame(width: 350, height: 50, alignment: .leading)
@@ -54,29 +59,13 @@ struct DefinitionModalView: View {
                 .frame(width: 350, height: 90)
                 .foregroundColor(Color("lightBrown"))
                 .overlay(
-                    HStack {
                         Button {
-                            
+                            presentationMode.wrappedValue.dismiss()
                         } label: {
-                            Image(systemName: "chevron.left.2")
+                            Image(systemName: isFlipped ? "checkmark" : "multiply")
                                 .foregroundColor(Color("darkerBrown"))
                                 .font(.system(size: 30))
                         }
-                        .offset(x: -60)
-                        
-                        Rectangle()
-                            .frame(width: 2)
-                            .foregroundColor(Color("darkBrown"))
-                        
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "chevron.right.2")
-                                .foregroundColor(Color("darkerBrown"))
-                                .font(.system(size: 30))
-                        }
-                        .offset(x: 60)
-                    }
                 )
                 .offset(y: 30)
         }

@@ -15,48 +15,52 @@ struct TheoryHomeView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                ForEach($grades) { $grade in
-                    NavigationLink {
-                        OverviewView(words: $grade.words)
-                    } label: {
-                        VStack(alignment: .leading) {
-                            HStack(alignment: .bottom) {
-                                Text("Grade \(grade.number)")
-                                    .fontWeight(.semibold)
-                                    .multilineTextAlignment(.leading)
-                                    .font(.system(size: 25, design: .rounded))
-                                    .lineLimit(3)
-                                    .foregroundColor(Color("darkerBrown"))
-                                
-                                Text(String(format: "%.2f", grade.percentageCorrect) + "%")
-                                    .fontWeight(.semibold)
-                                    .multilineTextAlignment(.leading)
-                                    .font(.system(size: 25, design: .rounded))
-                                    .lineLimit(3)
-                                    .foregroundColor(Color("darkerBrown"))
-                                    .offset(x: 100)
-                                
-                            }
-                            .offset(y: -20)
-                            
-                            RoundedRectangle(cornerRadius: 5)
-                                .foregroundColor(Color("darkLightBrown"))
-                                .frame(width: 300, height: 10, alignment: .leading)
-                                .overlay(alignment: .leading) {
-                                    RoundedRectangle(cornerRadius: 5)
-                                        .fill(Color("darkBrown"))
-                                        .frame(width: (grade.percentageCorrect / 100 * 300))
+            ScrollView {
+                VStack {
+                    ForEach($grades) { $grade in
+                        NavigationLink {
+                            OverviewView(words: $grade.words)
+                        } label: {
+                            VStack(alignment: .leading) {
+                                HStack(alignment: .bottom) {
+                                    Text("Grade \(grade.number)")
+                                        .fontWeight(.semibold)
+                                        .multilineTextAlignment(.leading)
+                                        .font(.system(size: 25, design: .rounded))
+                                        .lineLimit(3)
+                                        .foregroundColor(Color("darkerBrown"))
+                                    
+                                    Text(String(format: "%.2f", grade.percentageCorrect) + "%")
+                                        .fontWeight(.semibold)
+                                        .multilineTextAlignment(.leading)
+                                        .font(.system(size: 25, design: .rounded))
+                                        .lineLimit(3)
+                                        .foregroundColor(Color("darkerBrown"))
+                                        .offset(x: 100)
+                                    
                                 }
+                                .offset(y: -20)
+                                
+                                RoundedRectangle(cornerRadius: 5)
+                                    .foregroundColor(Color("darkLightBrown"))
+                                    .frame(width: 300, height: 10, alignment: .leading)
+                                    .overlay(alignment: .leading) {
+                                        RoundedRectangle(cornerRadius: 5)
+                                            .fill(Color("darkBrown"))
+                                            .frame(width: (grade.percentageCorrect / 100 * 300))
+                                    }
+                            }
+                            .padding()
+                            .frame(width: 330, height: 135, alignment: .leading)
+                            .background(Color("lightBrown"))
+                            .cornerRadius(10)
                         }
-                        .padding()
-                        .frame(width: 330, height: 135, alignment: .leading)
-                        .background(Color("lightBrown"))
-                        .cornerRadius(10)
+                        .frame(width: 400)
                     }
-                    .frame(width: 400)
+                    .offset(y:20)
                 }
-                .offset(y:20)
+                .navigationBarTitle("Theory")
+                
             }
         }
     }

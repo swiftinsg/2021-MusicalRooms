@@ -12,6 +12,7 @@
 		2E16226727412CA500791ADC /* MusicalRoomsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */; };
 		2E16226927412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */; };
 		2E58ADD5274E8C28000B1CFB /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58ADD4274E8C28000B1CFB /* GetEnharmonic.swift */; };
+		C5D98ADE274E89AD00A2A279 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D98ADD274E89AD00A2A279 /* ResultsView.swift */; };
 		FF4B7F4D274CE83E0047D8FD /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = FF4B7F4C274CE83E0047D8FD /* Subsonic */; };
 		FF4B7F50274CE8490047D8FD /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF4B7F4F274CE8490047D8FD /* AudioKit */; };
 		FF863047274E1034001086F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863046274E1034001086F8 /* ContentView.swift */; };
@@ -72,6 +73,7 @@
 		2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2E58ADD4274E8C28000B1CFB /* GetEnharmonic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetEnharmonic.swift; path = ../../../SightreadingRoom.backup/GetEnharmonic.swift; sourceTree = "<group>"; };
 		2EBE5DDC27494FD6006162BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C5D98ADD274E89AD00A2A279 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		FF863046274E1034001086F8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FF863048274E103E001086F8 /* MusicalRoomsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicalRoomsApp.swift; sourceTree = "<group>"; };
 		FF863051274E103E001086F8 /* TimeSigSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSigSelectView.swift; sourceTree = "<group>"; };
@@ -257,13 +259,13 @@
 		FF93C289274E287500EE2907 /* TheoryRoom */ = {
 			isa = PBXGroup;
 			children = (
-				2E58ADD4274E8C28000B1CFB /* GetEnharmonic.swift */,
+				FF93C28E274E287500EE2907 /* TheoryHomeView.swift */,
 				FF93C28A274E287500EE2907 /* FlashcardView.swift */,
 				FF93C28B274E287500EE2907 /* QuestionView.swift */,
 				FF93C28C274E287500EE2907 /* Words.swift */,
 				FF93C28D274E287500EE2907 /* GradeStruct.swift */,
-				FF93C28E274E287500EE2907 /* TheoryHomeView.swift */,
 				FF93C28F274E287500EE2907 /* OverviewView.swift */,
+				C5D98ADD274E89AD00A2A279 /* ResultsView.swift */,
 				FF93C290274E287500EE2907 /* GetWords.swift */,
 			);
 			name = TheoryRoom;
@@ -420,6 +422,7 @@
 				FF86307C274E103E001086F8 /* MusicalRoomsApp.swift in Sources */,
 				FF8630A3274E103E001086F8 /* RecordingsList.swift in Sources */,
 				FF863082274E103E001086F8 /* TimeSigSelectView.swift in Sources */,
+				C5D98ADE274E89AD00A2A279 /* ResultsView.swift in Sources */,
 				FF93C293274E287500EE2907 /* Words.swift in Sources */,
 				FF86309E274E103E001086F8 /* AudioPlayer.swift in Sources */,
 				FF863084274E103E001086F8 /* BpmNumpadView.swift in Sources */,

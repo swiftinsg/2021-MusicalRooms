@@ -53,11 +53,11 @@ struct FlashcardsView: View {
                         Text(words[duplicateCurrentWord].title)
                             .bold()
                             .font(.system(size: 30, design: .rounded))
-                        if let altText = words[currentWord].altText {
+                        if let altText = words[duplicateCurrentWord].altText {
                             Text(altText)
                                 .font(.system(size: 20, design: .rounded))
                         } else {
-                            Text("---")
+                            Text("  ")
                                 .font(.system(size: 20, design: .rounded))
                         }
                     }
@@ -72,6 +72,8 @@ struct FlashcardsView: View {
                         Button {
                             if duplicateCurrentWord != 0 {
                                 duplicateCurrentWord -= 1
+                            } else if duplicateCurrentWord == 0 {
+                                duplicateCurrentWord == words.count - 1
                             }
                         } label: {
                             Image(systemName: "chevron.left.2")
@@ -90,6 +92,8 @@ struct FlashcardsView: View {
                             } else {
                                 if duplicateCurrentWord + 1 != words.count {
                                     duplicateCurrentWord += 1
+                                } else if duplicateCurrentWord == words.count - 1 {
+                                    duplicateCurrentWord = 0
                                 }
                             }
                         } label: {
@@ -105,6 +109,7 @@ struct FlashcardsView: View {
         .onAppear {
             duplicateCurrentWord = currentWord
         }
+        .offset(y: -100)
     }
 }
 

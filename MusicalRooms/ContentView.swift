@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @Binding var grades: [Grade]
-    var lightBrown:Color = Color(red: 131/255, green: 78/255, blue: 44/255, opacity: 1.0)
+    var lightBrown:Color = Color(red: 180/255, green: 130/255, blue: 90/255, opacity: 1.0)
     var darkBrown:Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
 
     var body: some View {

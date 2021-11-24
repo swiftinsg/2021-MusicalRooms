@@ -57,7 +57,7 @@ struct FlashcardsView: View {
                             Text(altText)
                                 .font(.system(size: 20, design: .rounded))
                         } else {
-                            Text("---")
+                            Text("  ")
                                 .font(.system(size: 20, design: .rounded))
                         }
                     }

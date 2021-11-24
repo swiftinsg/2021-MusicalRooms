@@ -24,4 +24,3 @@ struct MusicalRoomsApp: App {
     }
 }
 
-//Ignore

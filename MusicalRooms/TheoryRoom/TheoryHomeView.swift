@@ -14,7 +14,6 @@ struct TheoryHomeView: View {
     
     var body: some View {
         VStack {
-
             Text("Theory")
                     .font(Font.system(size: 28, weight: .bold))
                     .padding()

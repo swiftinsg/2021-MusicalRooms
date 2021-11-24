@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FlashcardsView: View {
-
+    
     var words: [Word]
     var currentWord: Int
     
@@ -28,6 +28,7 @@ struct FlashcardsView: View {
                     .onTapGesture {
                         withAnimation {
                             degrees += Angle(degrees: 180)
+                            isFlipped.toggle()
                         }
                     }
                 
@@ -35,7 +36,7 @@ struct FlashcardsView: View {
                     .frame(width: 350, height: 50, alignment: .leading)
                     .foregroundColor(Color("darkBrown"))
                     .overlay(
-                        Text("\(duplicateCurrentWord) / \(words.count)")
+                        Text("\(duplicateCurrentWord + 1) / \(words.count)")
                             .font(.system(size: 19, design: .rounded))
                             .foregroundColor(Color("darkerBrown"))
                             .bold()
@@ -44,15 +45,21 @@ struct FlashcardsView: View {
                     .offset(y: -125)
                 
                 VStack {
-                    Text(words[duplicateCurrentWord].title)
-                        .bold()
-                        .font(.system(size: 30, design: .rounded))
-                    if let altText = words[currentWord].altText {
-                        Text(altText)
-                            .font(.system(size: 20, design: .rounded))
+                    if isFlipped {
+                        Text(words[duplicateCurrentWord].definition)
+                            .font(.system(size: 23, design: .rounded))
+                            .frame(width: 250, height: 300, alignment: .center)
                     } else {
-                        Text("---")
-                            .font(.system(size: 20, design: .rounded))
+                        Text(words[duplicateCurrentWord].title)
+                            .bold()
+                            .font(.system(size: 30, design: .rounded))
+                        if let altText = words[currentWord].altText {
+                            Text(altText)
+                                .font(.system(size: 20, design: .rounded))
+                        } else {
+                            Text("---")
+                                .font(.system(size: 20, design: .rounded))
+                        }
                     }
                 }
             }
@@ -61,13 +68,37 @@ struct FlashcardsView: View {
                 .frame(width: 350, height: 90)
                 .foregroundColor(Color("lightBrown"))
                 .overlay(
+                    HStack {
                         Button {
-                            presentationMode.wrappedValue.dismiss()
+                            if duplicateCurrentWord != 0 {
+                                duplicateCurrentWord -= 1
+                            }
                         } label: {
-                            Image(systemName: isFlipped ? "checkmark" : "multiply")
+                            Image(systemName: "chevron.left.2")
                                 .foregroundColor(Color("darkerBrown"))
                                 .font(.system(size: 30))
                         }
+                        .offset(x: -50)
+                        
+                        Rectangle()
+                            .frame(width: 2)
+                            .foregroundColor(Color("darkBrown"))
+                        
+                        Button {
+                            if isFlipped {
+                                presentationMode.wrappedValue.dismiss()
+                            } else {
+                                if duplicateCurrentWord + 1 != words.count {
+                                    duplicateCurrentWord += 1
+                                }
+                            }
+                        } label: {
+                            Image(systemName: isFlipped ? "checkmark" : "chevron.right.2")
+                                .foregroundColor(Color("darkerBrown"))
+                                .font(.system(size: 30))
+                        }
+                        .offset(x: 50)
+                    }
                 )
                 .offset(y: 30)
         }

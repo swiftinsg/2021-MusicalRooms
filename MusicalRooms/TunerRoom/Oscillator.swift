@@ -23,11 +23,7 @@ class OscillatorObject {
         osc.frequency = frequency + variance
         osc.amplitude = 0.6
         
-        do {
-            try engine.start()
-        } catch let err {
-            Log(err)
-        } 
+        try? engine.start()
         osc.start()
     }
     

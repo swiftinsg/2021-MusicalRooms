@@ -11,14 +11,11 @@
 		2E16225D27412CA500791ADC /* MusicalRoomsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16225C27412CA500791ADC /* MusicalRoomsTests.swift */; };
 		2E16226727412CA500791ADC /* MusicalRoomsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */; };
 		2E16226927412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */; };
-		2E58ADD3274E5918000B1CFB /* ReadingQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58ADD2274E5918000B1CFB /* ReadingQuestionView.swift */; };
+		2E58ADD5274E8C28000B1CFB /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58ADD4274E8C28000B1CFB /* GetEnharmonic.swift */; };
 		FF4B7F4D274CE83E0047D8FD /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = FF4B7F4C274CE83E0047D8FD /* Subsonic */; };
 		FF4B7F50274CE8490047D8FD /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF4B7F4F274CE8490047D8FD /* AudioKit */; };
 		FF863047274E1034001086F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863046274E1034001086F8 /* ContentView.swift */; };
 		FF86307C274E103E001086F8 /* MusicalRoomsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863048274E103E001086F8 /* MusicalRoomsApp.swift */; };
-		FF86307E274E103E001086F8 /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86304C274E103E001086F8 /* GetEnharmonic.swift */; };
-		FF86307F274E103E001086F8 /* ReadingHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86304D274E103E001086F8 /* ReadingHomeView.swift */; };
-		FF863080274E103E001086F8 /* SightreadingQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86304E274E103E001086F8 /* SightreadingQuizView.swift */; };
 		FF863082274E103E001086F8 /* TimeSigSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863051274E103E001086F8 /* TimeSigSelectView.swift */; };
 		FF863083274E103E001086F8 /* MetronomeHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863052274E103E001086F8 /* MetronomeHomeView.swift */; };
 		FF863084274E103E001086F8 /* BpmNumpadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863053274E103E001086F8 /* BpmNumpadView.swift */; };
@@ -73,13 +70,10 @@
 		2E16226227412CA500791ADC /* MusicalRoomsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicalRoomsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsUITests.swift; sourceTree = "<group>"; };
 		2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		2E58ADD2274E5918000B1CFB /* ReadingQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingQuestionView.swift; sourceTree = "<group>"; };
+		2E58ADD4274E8C28000B1CFB /* GetEnharmonic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetEnharmonic.swift; path = ../../../SightreadingRoom.backup/GetEnharmonic.swift; sourceTree = "<group>"; };
 		2EBE5DDC27494FD6006162BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF863046274E1034001086F8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FF863048274E103E001086F8 /* MusicalRoomsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicalRoomsApp.swift; sourceTree = "<group>"; };
-		FF86304C274E103E001086F8 /* GetEnharmonic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetEnharmonic.swift; sourceTree = "<group>"; };
-		FF86304D274E103E001086F8 /* ReadingHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingHomeView.swift; sourceTree = "<group>"; };
-		FF86304E274E103E001086F8 /* SightreadingQuizView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SightreadingQuizView.swift; sourceTree = "<group>"; };
 		FF863051274E103E001086F8 /* TimeSigSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSigSelectView.swift; sourceTree = "<group>"; };
 		FF863052274E103E001086F8 /* MetronomeHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetronomeHomeView.swift; sourceTree = "<group>"; };
 		FF863053274E103E001086F8 /* BpmNumpadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BpmNumpadView.swift; sourceTree = "<group>"; };
@@ -163,7 +157,6 @@
 				FF93C289274E287500EE2907 /* TheoryRoom */,
 				FF863050274E103E001086F8 /* MetronomeRoom */,
 				FF863071274E103E001086F8 /* RecorderRoom */,
-				FF86304B274E103E001086F8 /* SightreadingRoom */,
 				FF863057274E103E001086F8 /* TunerRoom */,
 				2EBE5DDC27494FD6006162BD /* Info.plist */,
 				2E16224F27412CA500791ADC /* Assets.xcassets */,
@@ -195,17 +188,6 @@
 				2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */,
 			);
 			path = MusicalRoomsUITests;
-			sourceTree = "<group>";
-		};
-		FF86304B274E103E001086F8 /* SightreadingRoom */ = {
-			isa = PBXGroup;
-			children = (
-				FF86304C274E103E001086F8 /* GetEnharmonic.swift */,
-				FF86304D274E103E001086F8 /* ReadingHomeView.swift */,
-				FF86304E274E103E001086F8 /* SightreadingQuizView.swift */,
-				2E58ADD2274E5918000B1CFB /* ReadingQuestionView.swift */,
-			);
-			path = SightreadingRoom;
 			sourceTree = "<group>";
 		};
 		FF863050274E103E001086F8 /* MetronomeRoom */ = {
@@ -275,6 +257,7 @@
 		FF93C289274E287500EE2907 /* TheoryRoom */ = {
 			isa = PBXGroup;
 			children = (
+				2E58ADD4274E8C28000B1CFB /* GetEnharmonic.swift */,
 				FF93C28A274E287500EE2907 /* FlashcardView.swift */,
 				FF93C28B274E287500EE2907 /* QuestionView.swift */,
 				FF93C28C274E287500EE2907 /* Words.swift */,
@@ -430,7 +413,6 @@
 				FF8630A4274E103E001086F8 /* MiniRecorderView.swift in Sources */,
 				FF8630A2274E103E001086F8 /* Extensions.swift in Sources */,
 				FF93C294274E287500EE2907 /* GradeStruct.swift in Sources */,
-				2E58ADD3274E5918000B1CFB /* ReadingQuestionView.swift in Sources */,
 				FF863087274E103E001086F8 /* TunerHomeView.swift in Sources */,
 				FF863092274E103E001086F8 /* BottomButtonView.swift in Sources */,
 				FF863047274E1034001086F8 /* ContentView.swift in Sources */,
@@ -443,20 +425,18 @@
 				FF863084274E103E001086F8 /* BpmNumpadView.swift in Sources */,
 				FF863097274E103E001086F8 /* Oscillator.swift in Sources */,
 				FF863083274E103E001086F8 /* MetronomeHomeView.swift in Sources */,
-				FF863080274E103E001086F8 /* SightreadingQuizView.swift in Sources */,
 				FF8630A5274E103E001086F8 /* RecorderHomeView.swift in Sources */,
 				FF93C295274E287500EE2907 /* TheoryHomeView.swift in Sources */,
 				FF863095274E103E001086F8 /* Note.swift in Sources */,
 				FF93C292274E287500EE2907 /* QuestionView.swift in Sources */,
 				FF863094274E103E001086F8 /* SelectKeyView.swift in Sources */,
-				FF86307F274E103E001086F8 /* ReadingHomeView.swift in Sources */,
 				FF86309F274E103E001086F8 /* Helpers.swift in Sources */,
-				FF86307E274E103E001086F8 /* GetEnharmonic.swift in Sources */,
 				FF863093274E103E001086F8 /* ActualTunerView.swift in Sources */,
 				FF93C297274E287500EE2907 /* GetWords.swift in Sources */,
 				FF8630A1274E103E001086F8 /* Recording.swift in Sources */,
 				FF93C291274E287500EE2907 /* FlashcardView.swift in Sources */,
 				FF93C296274E287500EE2907 /* OverviewView.swift in Sources */,
+				2E58ADD5274E8C28000B1CFB /* GetEnharmonic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

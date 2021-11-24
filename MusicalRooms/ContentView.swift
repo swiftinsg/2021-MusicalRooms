@@ -24,12 +24,6 @@ struct ContentView: View {
                     Text("Theory")
                 }
 
-            ReadingHomeView()
-                .tabItem{
-                    Image(systemName: "music.note.list")
-                    Text("Sightreading")
-                }
-
             TunerHomeView()
                 .tabItem{
                     Image(systemName: "tuningfork")

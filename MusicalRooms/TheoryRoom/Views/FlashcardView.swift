@@ -74,7 +74,7 @@ struct FlashcardsView: View {
                             if duplicateCurrentWord != 0 {
                                 duplicateCurrentWord -= 1
                             } else if duplicateCurrentWord == 0 {
-                                duplicateCurrentWord == words.count - 1
+                                duplicateCurrentWord = words.count - 1
                             }
                         } label: {
                             Image(systemName: "chevron.left.2")

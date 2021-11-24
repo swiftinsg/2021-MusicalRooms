@@ -10,7 +10,7 @@ import SwiftUI
 struct TheoryHomeView: View {
     
     @Binding var grades: [Grade]
-    @State var percentCorrect: Double = 50
+    @State var percentCorrect: Float = 50
     
     var body: some View {
         NavigationView {

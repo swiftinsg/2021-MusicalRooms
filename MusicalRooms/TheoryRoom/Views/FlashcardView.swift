@@ -79,7 +79,7 @@ struct FlashcardsView: View {
                         } label: {
                             Image(systemName: "chevron.left.2")
                                 .foregroundColor(Color("darkerBrown"))
-                                .font(.system(size: 30))
+                                .font(.system(size: 50))
                         }
                         .offset(x: -50)
                         
@@ -100,7 +100,7 @@ struct FlashcardsView: View {
                         } label: {
                             Image(systemName: isFlipped ? "checkmark" : "chevron.right.2")
                                 .foregroundColor(Color("darkerBrown"))
-                                .font(.system(size: 30))
+                                .font(.system(size: 50))
                         }
                         .offset(x: 50)
                     }

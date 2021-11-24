@@ -113,6 +113,11 @@ struct OverviewView: View {
                 .cornerRadius(10)
                 .navigationTitle("Grade \(grade)")
             }
+            .padding()
+            .frame(width:350, height: 50, alignment: .center)
+            .background( Color("darkBrown"))
+            .cornerRadius(10)
+            .navigationTitle("Grade \(grade)")
         }
     }
 }

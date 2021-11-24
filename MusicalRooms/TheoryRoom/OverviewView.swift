@@ -38,7 +38,7 @@ struct OverviewView: View {
                                             .fontWeight(.medium)
                                             .multilineTextAlignment(.leading)
                                     } else {
-                                        Text("---")
+                                        Text(" ")
                                             .foregroundColor(Color("darkerBrown"))
                                             .font(.system(size: 20, design: .rounded))
                                             .fontWeight(.medium)
@@ -66,7 +66,7 @@ struct OverviewView: View {
                                             .font(.system(size: 20, design: .rounded))
                                             .fontWeight(.medium)
                                     } else {
-                                        Text("---")
+                                        Text("  ")
                                             .foregroundColor(Color("darkerBrown"))
                                             .font(.system(size: 20, design: .rounded))
                                             .fontWeight(.medium)
@@ -90,7 +90,7 @@ struct OverviewView: View {
                         Text("Expand All")
                             .fontWeight(.heavy)
                     }
-                    .frame(width: 150, height: 80, alignment: .center)
+                    .frame(width: 150, height: 60, alignment: .center)
                     .font(.system(size: 19, design: .rounded))
                     .foregroundColor(Color(expandAll ? "lightBrown" : "darkBrown"))
                     .background(Color(expandAll ? "darkBrown" : "lightBrown"))

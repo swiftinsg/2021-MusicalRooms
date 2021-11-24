@@ -272,11 +272,11 @@
 		FF93C289274E287500EE2907 /* TheoryRoom */ = {
 			isa = PBXGroup;
 			children = (
+				FF93C28E274E287500EE2907 /* TheoryHomeView.swift */,
 				FF93C28A274E287500EE2907 /* FlashcardView.swift */,
 				FF93C28B274E287500EE2907 /* QuestionView.swift */,
 				FF93C28C274E287500EE2907 /* Words.swift */,
 				FF93C28D274E287500EE2907 /* GradeStruct.swift */,
-				FF93C28E274E287500EE2907 /* TheoryHomeView.swift */,
 				FF93C28F274E287500EE2907 /* OverviewView.swift */,
 				FF93C290274E287500EE2907 /* GetWords.swift */,
 			);

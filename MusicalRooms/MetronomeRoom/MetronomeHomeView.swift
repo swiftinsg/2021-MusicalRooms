@@ -152,7 +152,7 @@ struct MetronomeHomeView: View {
                     ZStack{
                         Rectangle()
                             .foregroundColor(backBrown)
-                            .frame(width: 205, height: 60, alignment: .center)
+                            .frame(width: 190, height: 60, alignment: .center)
                             .cornerRadius(10)
                         if isOn {
                             Image(systemName: "pause.fill")
@@ -185,12 +185,14 @@ struct MetronomeHomeView: View {
                                 .foregroundColor(backBrown)
                                 .frame(width: 70, height: 60, alignment: .center)
                                 .cornerRadius(10)
+                                
                             
                             Text(signatures[sigIndex])
                                 .bold()
                                 .font(.title2)
                                 .foregroundColor(darkBrown)
                         }
+                        .offset(x: 10)
                     }
                     .background(Color.clear)
                     .frame(width: 60, alignment: .center).frame(width: 60, alignment: .center)

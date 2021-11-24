@@ -1,9 +1,8 @@
 //
-//  GetEnharmonic.swift
+//  Enharmonic.swift
 //  MusicalRooms
 //
-//  Created by Isaac Lee Jing Zhi on 16/11/21.
-//
+//  Created by Isaac Lee Jing Zhi on 24/11/21
 
 import Foundation
 

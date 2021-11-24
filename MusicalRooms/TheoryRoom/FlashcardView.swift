@@ -62,6 +62,7 @@ struct FlashcardsView: View {
                         }
                     }
                 }
+                .offset(y: 15)
             }
             
             RoundedRectangle(cornerRadius: 20)

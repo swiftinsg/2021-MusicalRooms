@@ -11,6 +11,7 @@
 		2E16225D27412CA500791ADC /* MusicalRoomsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16225C27412CA500791ADC /* MusicalRoomsTests.swift */; };
 		2E16226727412CA500791ADC /* MusicalRoomsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */; };
 		2E16226927412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */; };
+		2E58ADD3274E5918000B1CFB /* ReadingQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58ADD2274E5918000B1CFB /* ReadingQuestionView.swift */; };
 		FF4B7F4D274CE83E0047D8FD /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = FF4B7F4C274CE83E0047D8FD /* Subsonic */; };
 		FF4B7F50274CE8490047D8FD /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF4B7F4F274CE8490047D8FD /* AudioKit */; };
 		FF863047274E1034001086F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863046274E1034001086F8 /* ContentView.swift */; };
@@ -72,6 +73,7 @@
 		2E16226227412CA500791ADC /* MusicalRoomsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicalRoomsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsUITests.swift; sourceTree = "<group>"; };
 		2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2E58ADD2274E5918000B1CFB /* ReadingQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingQuestionView.swift; sourceTree = "<group>"; };
 		2EBE5DDC27494FD6006162BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF863046274E1034001086F8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FF863048274E103E001086F8 /* MusicalRoomsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicalRoomsApp.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				FF86304C274E103E001086F8 /* GetEnharmonic.swift */,
 				FF86304D274E103E001086F8 /* ReadingHomeView.swift */,
 				FF86304E274E103E001086F8 /* SightreadingQuizView.swift */,
+				2E58ADD2274E5918000B1CFB /* ReadingQuestionView.swift */,
 			);
 			path = SightreadingRoom;
 			sourceTree = "<group>";
@@ -241,10 +244,10 @@
 		FF863071274E103E001086F8 /* RecorderRoom */ = {
 			isa = PBXGroup;
 			children = (
+				FF863078274E103E001086F8 /* Views */,
 				FF863072274E103E001086F8 /* Managers */,
 				FF863076274E103E001086F8 /* Recording.swift */,
 				FF863077274E103E001086F8 /* Extensions.swift */,
-				FF863078274E103E001086F8 /* Views */,
 			);
 			path = RecorderRoom;
 			sourceTree = "<group>";
@@ -253,8 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				FF863073274E103E001086F8 /* AudioPlayer.swift */,
-				FF863074274E103E001086F8 /* Helpers.swift */,
 				FF863075274E103E001086F8 /* AudioRecorder.swift */,
+				FF863074274E103E001086F8 /* Helpers.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -272,11 +275,11 @@
 		FF93C289274E287500EE2907 /* TheoryRoom */ = {
 			isa = PBXGroup;
 			children = (
+				FF93C28E274E287500EE2907 /* TheoryHomeView.swift */,
 				FF93C28A274E287500EE2907 /* FlashcardView.swift */,
 				FF93C28B274E287500EE2907 /* QuestionView.swift */,
 				FF93C28C274E287500EE2907 /* Words.swift */,
 				FF93C28D274E287500EE2907 /* GradeStruct.swift */,
-				FF93C28E274E287500EE2907 /* TheoryHomeView.swift */,
 				FF93C28F274E287500EE2907 /* OverviewView.swift */,
 				FF93C290274E287500EE2907 /* GetWords.swift */,
 			);
@@ -427,6 +430,7 @@
 				FF8630A4274E103E001086F8 /* MiniRecorderView.swift in Sources */,
 				FF8630A2274E103E001086F8 /* Extensions.swift in Sources */,
 				FF93C294274E287500EE2907 /* GradeStruct.swift in Sources */,
+				2E58ADD3274E5918000B1CFB /* ReadingQuestionView.swift in Sources */,
 				FF863087274E103E001086F8 /* TunerHomeView.swift in Sources */,
 				FF863092274E103E001086F8 /* BottomButtonView.swift in Sources */,
 				FF863047274E1034001086F8 /* ContentView.swift in Sources */,

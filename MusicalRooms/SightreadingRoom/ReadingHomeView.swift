@@ -74,7 +74,7 @@ struct ReadingHomeView: View {
                                     ForEach(types, id: \.self){type in
                                         
                                         let isTimed = type == "Timed"
-                                        HStack(spacing: 0){
+                                        HStack{
 
                                             Text(type)
                                                 .font(Font.system(size: 14, weight: .heavy, design: .default))

@@ -18,6 +18,11 @@ struct QuestionView: View {
     
     @State var randomElement = 0
     
+    @State var rectangleColor1: Color = Color("darkBrown")
+    @State var rectangleColor2: Color = Color("darkBrown")
+    @State var rectangleColor3: Color = Color("darkBrown")
+    @State var rectangleColor4: Color = Color("darkBrown")
+    
     var body: some View {
         VStack {
             ZStack {
@@ -28,7 +33,7 @@ struct QuestionView: View {
                 
                 RoundedRectangle(cornerRadius: 20)
                     .frame(width: 350, height: 50, alignment: .leading)
-                    .foregroundColor(Color("darkBrown"))
+                    .foregroundColor(Color("lightBrown"))
                     .offset(y: -125)
                     .overlay(
                         HStack {
@@ -56,17 +61,25 @@ struct QuestionView: View {
             
             VStack {
                 Button {
-                    
+                    if correctAnswer == 1 {
+                        
+                    }
                 } label: {
                     Rectangle()
-                        .frame(width: 350, height: 80, alignment: .center)
+                        .frame(width: 350, height: 90, alignment: .center)
                         .cornerRadius(20)
-                        .foregroundColor(Color("darkBrown"))
+                        .foregroundColor(rectangleColor1)
                         .overlay {
                             if correctAnswer == 1 {
                                Text(words[randomElement].definition)
+                                    .foregroundColor(Color("lightBrown"))
+                                    .font(.system(size: 20, design: .rounded))
+                                    .fontWeight(.bold)
                             } else {
                                 Text(words.randomElement()!.definition)
+                                    .foregroundColor(Color("lightBrown"))
+                                    .font(.system(size: 20, design: .rounded))
+                                    .fontWeight(.bold)
                             }
                         }
                 }
@@ -75,14 +88,20 @@ struct QuestionView: View {
                     
                 } label: {
                     Rectangle()
-                        .frame(width: 350, height: 80, alignment: .center)
+                        .frame(width: 350, height: 90, alignment: .center)
                         .cornerRadius(20)
-                        .foregroundColor(Color("darkBrown"))
+                        .foregroundColor(rectangleColor2)
                         .overlay {
                             if correctAnswer == 2 {
                                Text(words[randomElement].definition)
+                                    .foregroundColor(Color("lightBrown"))
+                                    .font(.system(size: 20, design: .rounded))
+                                    .fontWeight(.bold)
                             } else {
                                 Text(words.randomElement()!.definition)
+                                    .foregroundColor(Color("lightBrown"))
+                                    .font(.system(size: 20, design: .rounded))
+                                    .fontWeight(.bold)
                             }
                         }
                 }
@@ -91,29 +110,42 @@ struct QuestionView: View {
                     
                 } label: {
                     Rectangle()
-                        .frame(width: 350, height: 80, alignment: .center)
+                        .frame(width: 350, height: 90, alignment: .center)
                         .cornerRadius(20)
-                        .foregroundColor(Color("darkBrown"))
+                        .foregroundColor(rectangleColor3)
                         .overlay {
                             if correctAnswer == 3 {
                                Text(words[randomElement].definition)
+                                    .foregroundColor(Color("lightBrown"))
+                                    .font(.system(size: 20, design: .rounded))
+                                    .fontWeight(.bold)
                             } else {
                                 Text(words.randomElement()!.definition)
+                                    .foregroundColor(Color("lightBrown"))
+                                    .font(.system(size: 20, design: .rounded))
+                                    .fontWeight(.bold)
                             }
                         }
                 }
                 
                 Button {
+                    
                 } label: {
                     Rectangle()
-                        .frame(width: 350, height: 80, alignment: .center)
+                        .frame(width: 350, height: 90, alignment: .center)
                         .cornerRadius(20)
-                        .foregroundColor(Color("darkBrown"))
+                        .foregroundColor(Color(rectangleColor4 as! CGColor))
                         .overlay {
                             if correctAnswer == 4 {
                                 Text(words[randomElement].definition)
+                                    .foregroundColor(Color("lightBrown"))
+                                    .font(.system(size: 20, design: .rounded))
+                                    .fontWeight(.bold)
                             } else {
                                 Text(words.randomElement()!.definition)
+                                    .foregroundColor(Color("lightBrown"))
+                                    .font(.system(size: 20, design: .rounded))
+                                    .fontWeight(.bold)
                             }
                         }
                 }

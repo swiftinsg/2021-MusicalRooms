@@ -31,15 +31,25 @@ struct RecordingsList: View {
         .offset(x: 120, y: 20)
  
         
-        List {
-            ForEach(audioRecorder.recordings, id: \.createdAt) { recording in
-                RecordingRow(audioURL: recording.fileURL)
+        if(audioRecorder.recordings.count >= 1){
+            List {
+                ForEach(audioRecorder.recordings, id: \.createdAt) { recording in
+                    RecordingRow(audioURL: recording.fileURL)
+                }
+                .onDelete(perform: delete)
             }
-            .onDelete(perform: delete)
+            .environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive))
+            .listStyle(.plain)
+            .padding()
+        }else{
+            List{
+                Text("No recordings")
+                    .font(Font.system(size: 18, weight: .bold, design: .default))
+                    .foregroundColor(darkBrown)
+            }
+            .listStyle(.plain)
+            .padding()
         }
-        .environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive))
-        .listStyle(.plain)
-        .padding()
     }
     
     func delete(at offsets: IndexSet) {

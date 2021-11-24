@@ -13,28 +13,23 @@ struct SightreadingQuizView: View {
     @State var FtoB = ["F", "G", "A", "B"]
     @State var sharps = ["C#", "D#", "F#", "G#", "A#"]
     
+    @State var clefIndex = 0
+    @State var noteIndex = -2 //Notes in ascending order by tones from C3 (center of piano)
+    @State var isRaised = true //Note raised?
+    
+    @State var isTimed = false //If false then question-based
+    @State var timedLength = 30 //Length of timer
+    @State var elapsedTime = 0 //Time elapsed on timer
+    @State var questionAmt = 10 //Amt of questions
+    @State var questionNo = 0 //Current question
+    
+    
+    
+    
+    
     var body: some View {
         VStack (alignment: .center, spacing: 40) {
-            RoundedRectangle(cornerRadius: 20)
-                .frame(width:350, height: 250, alignment: .leading)
-                .foregroundColor(Color("lightBrown"))
-                .overlay(
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .foregroundColor(Color("darkBrown"))
-                            .frame(width: 350, height: 60, alignment: .leading)
-                        
-                        Text("1/10")
-                            .fontWeight(.semibold)
-                            .multilineTextAlignment(.leading)
-                            .font(.system(.title, design: .rounded))
-                            .lineLimit(3)
-                            .foregroundColor(Color("evenLighterBrown"))
-                            .frame(width: 350)
-                            .offset(x: -120)
-                    }
-                        .offset(y: -94)
-                )
+            ReadingQuestionView(clefIndex: $clefIndex, noteIndex: $noteIndex, isRaised: $isRaised, isTimed: $isTimed, timedLength: $timedLength, elapsedTime: $elapsedTime, questionAmt: $questionAmt, questionNo: $questionNo)
             
             VStack {
                 

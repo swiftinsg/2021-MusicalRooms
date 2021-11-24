@@ -15,10 +15,6 @@ struct TheoryHomeView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Theory")
-                    .font(Font.system(size: 28, weight: .bold))
-                    .padding()
-                
                 ForEach(grades) { grade in
                     NavigationLink {
                         OverviewView(grade: grade.number )
@@ -56,11 +52,12 @@ struct TheoryHomeView: View {
                         .frame(width: 330, height: 135, alignment: .leading)
                         .background(Color("lightBrown"))
                         .cornerRadius(10)
-                        
                     }.frame(width: 400)//END LABEL
                 }
             }.padding(.bottom, 22)
         }.offset(y:20)
+        
+            .navigationTitle("Theory")
     }
 }
 

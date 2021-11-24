@@ -1,5 +1,5 @@
 //
-//  Words.swift
+//  WordStruct.swift
 //  MusicalRooms
 //
 //  Created by Chelsea Ling on 18/11/21.

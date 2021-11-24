@@ -11,7 +11,8 @@
 		2E16225D27412CA500791ADC /* MusicalRoomsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16225C27412CA500791ADC /* MusicalRoomsTests.swift */; };
 		2E16226727412CA500791ADC /* MusicalRoomsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */; };
 		2E16226927412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */; };
-		2E58ADD3274E5918000B1CFB /* ReadingQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58ADD2274E5918000B1CFB /* ReadingQuestionView.swift */; };
+		2E58ADE7274E9767000B1CFB /* WordStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58ADE6274E9767000B1CFB /* WordStruct.swift */; };
+		2E58ADEA274E979E000B1CFB /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58ADE9274E979E000B1CFB /* GetEnharmonic.swift */; };
 		C5D98ADE274E89AD00A2A279 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D98ADD274E89AD00A2A279 /* ResultsView.swift */; };
 		C5D98AE0274E905A00A2A279 /* ActualResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D98ADF274E905A00A2A279 /* ActualResultsView.swift */; };
 		FF4B7F4D274CE83E0047D8FD /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = FF4B7F4C274CE83E0047D8FD /* Subsonic */; };
@@ -37,10 +38,8 @@
 		FF8630A3274E103E001086F8 /* RecordingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863079274E103E001086F8 /* RecordingsList.swift */; };
 		FF8630A4274E103E001086F8 /* MiniRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86307A274E103E001086F8 /* MiniRecorderView.swift */; };
 		FF8630A5274E103E001086F8 /* RecorderHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86307B274E103E001086F8 /* RecorderHomeView.swift */; };
-		FF920A37274E92BA009087D1 /* Enharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A36274E92BA009087D1 /* Enharmonic.swift */; };
 		FF93C291274E287500EE2907 /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93C28A274E287500EE2907 /* FlashcardView.swift */; };
 		FF93C292274E287500EE2907 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93C28B274E287500EE2907 /* QuestionView.swift */; };
-		FF93C293274E287500EE2907 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93C28C274E287500EE2907 /* Words.swift */; };
 		FF93C294274E287500EE2907 /* GradeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93C28D274E287500EE2907 /* GradeStruct.swift */; };
 		FF93C295274E287500EE2907 /* TheoryHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93C28E274E287500EE2907 /* TheoryHomeView.swift */; };
 		FF93C296274E287500EE2907 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93C28F274E287500EE2907 /* OverviewView.swift */; };
@@ -73,6 +72,8 @@
 		2E16226227412CA500791ADC /* MusicalRoomsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicalRoomsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsUITests.swift; sourceTree = "<group>"; };
 		2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalRoomsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2E58ADE6274E9767000B1CFB /* WordStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordStruct.swift; sourceTree = "<group>"; };
+		2E58ADE9274E979E000B1CFB /* GetEnharmonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEnharmonic.swift; sourceTree = "<group>"; };
 		2EBE5DDC27494FD6006162BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C5D98ADD274E89AD00A2A279 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		C5D98ADF274E905A00A2A279 /* ActualResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualResultsView.swift; sourceTree = "<group>"; };
@@ -97,10 +98,8 @@
 		FF863079274E103E001086F8 /* RecordingsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingsList.swift; sourceTree = "<group>"; };
 		FF86307A274E103E001086F8 /* MiniRecorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniRecorderView.swift; sourceTree = "<group>"; };
 		FF86307B274E103E001086F8 /* RecorderHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecorderHomeView.swift; sourceTree = "<group>"; };
-		FF920A36274E92BA009087D1 /* Enharmonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enharmonic.swift; sourceTree = "<group>"; };
 		FF93C28A274E287500EE2907 /* FlashcardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
 		FF93C28B274E287500EE2907 /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
-		FF93C28C274E287500EE2907 /* Words.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		FF93C28D274E287500EE2907 /* GradeStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeStruct.swift; sourceTree = "<group>"; };
 		FF93C28E274E287500EE2907 /* TheoryHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheoryHomeView.swift; sourceTree = "<group>"; };
 		FF93C28F274E287500EE2907 /* OverviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
@@ -141,7 +140,6 @@
 				2E16225B27412CA500791ADC /* MusicalRoomsTests */,
 				2E16226527412CA500791ADC /* MusicalRoomsUITests */,
 				2E16224927412CA100791ADC /* Products */,
-				FF920A35274E91B2009087D1 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,7 +158,6 @@
 			children = (
 				FF863046274E1034001086F8 /* ContentView.swift */,
 				FF863048274E103E001086F8 /* MusicalRoomsApp.swift */,
-				FF920A36274E92BA009087D1 /* Enharmonic.swift */,
 				FF93C289274E287500EE2907 /* TheoryRoom */,
 				FF863050274E103E001086F8 /* MetronomeRoom */,
 				FF863071274E103E001086F8 /* RecorderRoom */,
@@ -195,6 +192,37 @@
 				2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */,
 			);
 			path = MusicalRoomsUITests;
+			sourceTree = "<group>";
+		};
+		2E58ADE4274E972D000B1CFB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF93C28E274E287500EE2907 /* TheoryHomeView.swift */,
+				FF93C28A274E287500EE2907 /* FlashcardView.swift */,
+				FF93C28B274E287500EE2907 /* QuestionView.swift */,
+				C5D98ADD274E89AD00A2A279 /* ResultsView.swift */,
+				FF93C28F274E287500EE2907 /* OverviewView.swift */,
+				C5D98ADF274E905A00A2A279 /* ActualResultsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2E58ADE5274E9750000B1CFB /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				FF93C28D274E287500EE2907 /* GradeStruct.swift */,
+				2E58ADE6274E9767000B1CFB /* WordStruct.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		2E58ADE8274E978B000B1CFB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FF93C290274E287500EE2907 /* GetWords.swift */,
+				2E58ADE9274E979E000B1CFB /* GetEnharmonic.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		FF863050274E103E001086F8 /* MetronomeRoom */ = {
@@ -264,15 +292,9 @@
 		FF93C289274E287500EE2907 /* TheoryRoom */ = {
 			isa = PBXGroup;
 			children = (
-				FF93C28E274E287500EE2907 /* TheoryHomeView.swift */,
-				FF93C28A274E287500EE2907 /* FlashcardView.swift */,
-				FF93C28B274E287500EE2907 /* QuestionView.swift */,
-				FF93C28C274E287500EE2907 /* Words.swift */,
-				FF93C28D274E287500EE2907 /* GradeStruct.swift */,
-				FF93C28F274E287500EE2907 /* OverviewView.swift */,
-				C5D98ADD274E89AD00A2A279 /* ResultsView.swift */,
-				C5D98ADF274E905A00A2A279 /* ActualResultsView.swift */,
-				FF93C290274E287500EE2907 /* GetWords.swift */,
+				2E58ADE8274E978B000B1CFB /* Helpers */,
+				2E58ADE5274E9750000B1CFB /* Structs */,
+				2E58ADE4274E972D000B1CFB /* Views */,
 			);
 			name = TheoryRoom;
 			path = MusicalRooms/TheoryRoom;
@@ -425,12 +447,10 @@
 				FF863092274E103E001086F8 /* BottomButtonView.swift in Sources */,
 				FF863047274E1034001086F8 /* ContentView.swift in Sources */,
 				FF8630A0274E103E001086F8 /* AudioRecorder.swift in Sources */,
-				FF920A37274E92BA009087D1 /* Enharmonic.swift in Sources */,
 				FF86307C274E103E001086F8 /* MusicalRoomsApp.swift in Sources */,
 				FF8630A3274E103E001086F8 /* RecordingsList.swift in Sources */,
 				FF863082274E103E001086F8 /* TimeSigSelectView.swift in Sources */,
 				C5D98ADE274E89AD00A2A279 /* ResultsView.swift in Sources */,
-				FF93C293274E287500EE2907 /* Words.swift in Sources */,
 				FF86309E274E103E001086F8 /* AudioPlayer.swift in Sources */,
 				FF863084274E103E001086F8 /* BpmNumpadView.swift in Sources */,
 				FF863097274E103E001086F8 /* Oscillator.swift in Sources */,
@@ -439,12 +459,13 @@
 				FF93C295274E287500EE2907 /* TheoryHomeView.swift in Sources */,
 				FF863095274E103E001086F8 /* Note.swift in Sources */,
 				FF93C292274E287500EE2907 /* QuestionView.swift in Sources */,
+				2E58ADEA274E979E000B1CFB /* GetEnharmonic.swift in Sources */,
 				FF863094274E103E001086F8 /* SelectKeyView.swift in Sources */,
 				FF86309F274E103E001086F8 /* Helpers.swift in Sources */,
 				C5D98AE0274E905A00A2A279 /* ActualResultsView.swift in Sources */,
-				FF86307E274E103E001086F8 /* GetEnharmonic.swift in Sources */,
 				FF863093274E103E001086F8 /* ActualTunerView.swift in Sources */,
 				FF93C297274E287500EE2907 /* GetWords.swift in Sources */,
+				2E58ADE7274E9767000B1CFB /* WordStruct.swift in Sources */,
 				FF8630A1274E103E001086F8 /* Recording.swift in Sources */,
 				FF93C291274E287500EE2907 /* FlashcardView.swift in Sources */,
 				FF93C296274E287500EE2907 /* OverviewView.swift in Sources */,

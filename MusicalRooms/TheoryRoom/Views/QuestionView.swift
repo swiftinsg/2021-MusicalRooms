@@ -23,17 +23,46 @@ struct QuestionView: View {
     @State var rectangleColor3: Color = Color("darkBrown")
     @State var rectangleColor4: Color = Color("darkBrown")
     
+    @State var foregroundColor1: Color = Color("lightBrown")
+    @State var foregroundColor2: Color = Color("lightBrown")
+    @State var foregroundColor3: Color = Color("lightBrown")
+    @State var foregroundColor4: Color = Color("lightBrown")
+    
+    fileprivate func wrongOrCorrectAction() {
+        isContinueButtonHidden = false
+        if correctAnswer == 1 {
+            rectangleColor1 = .green
+            foregroundColor1 = .black
+            score += 1
+        } else {
+            rectangleColor1 = .red
+            foregroundColor1 = .black
+            if correctAnswer == 2 {
+                rectangleColor2 = .green
+                foregroundColor2 = .black
+            }
+            else if correctAnswer == 3 {
+                rectangleColor3 = .green
+                foregroundColor3 = .black
+            }
+            else {
+                rectangleColor4 = .green
+                foregroundColor4 = .black
+            }
+        }
+    }
+    
     var body: some View {
         VStack {
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
-                    .frame(width: 350, height: 300, alignment: .center)
+                    .frame(width: 350, height: 250, alignment: .center)
                     .foregroundColor(Color("lightBrown"))
                 
                 
                 RoundedRectangle(cornerRadius: 20)
                     .frame(width: 350, height: 50, alignment: .leading)
-                    .foregroundColor(Color("lightBrown"))
+                    .foregroundColor(Color("darkBrown"))
                     .offset(y: -125)
                     .overlay(
                         HStack {
@@ -52,102 +81,105 @@ struct QuestionView: View {
                     if let alt = words[randomElement].altText {
                      Text(alt)
                             .font(.system(size: 20, design: .rounded))
-                    } else {
-                        Text("---")
-                            .font(.system(size: 20, design: .rounded))
                     }
                 }
             }
             
             VStack {
                 Button {
-                    if correctAnswer == 1 {
-                        
-                    }
+                    wrongOrCorrectAction()
                 } label: {
                     Rectangle()
-                        .frame(width: 350, height: 90, alignment: .center)
-                        .cornerRadius(20)
                         .foregroundColor(rectangleColor1)
-                        .overlay {
-                            if correctAnswer == 1 {
-                               Text(words[randomElement].definition)
-                                    .foregroundColor(Color("lightBrown"))
-                                    .font(.system(size: 20, design: .rounded))
-                                    .fontWeight(.bold)
-                            } else {
-                                Text(words.randomElement()!.definition)
-                                    .foregroundColor(Color("lightBrown"))
-                                    .font(.system(size: 20, design: .rounded))
-                                    .fontWeight(.bold)
+                        .cornerRadius(20)
+                        .frame(width: 350, height: 80, alignment: .center)
+                        .overlay (
+                            VStack {
+                                if correctAnswer == 1 {
+                                    Text(words[randomElement].definition)
+                                        .foregroundColor(foregroundColor1)
+                                        .font(.system(size: 20, design: .rounded))
+                                        .fontWeight(.bold)
+                                } else {
+                                    Text(words.randomElement()!.definition)
+                                        .foregroundColor(foregroundColor1)
+                                        .font(.system(size: 20, design: .rounded))
+                                        .fontWeight(.bold)
+                                }                                
                             }
-                        }
+                        )
                 }
                 
                 Button {
-                    
+                    wrongOrCorrectAction()
                 } label: {
                     Rectangle()
-                        .frame(width: 350, height: 90, alignment: .center)
-                        .cornerRadius(20)
                         .foregroundColor(rectangleColor2)
-                        .overlay {
-                            if correctAnswer == 2 {
-                               Text(words[randomElement].definition)
-                                    .foregroundColor(Color("lightBrown"))
-                                    .font(.system(size: 20, design: .rounded))
-                                    .fontWeight(.bold)
-                            } else {
-                                Text(words.randomElement()!.definition)
-                                    .foregroundColor(Color("lightBrown"))
-                                    .font(.system(size: 20, design: .rounded))
-                                    .fontWeight(.bold)
+                        .cornerRadius(20)
+                        .frame(width: 350, height: 80, alignment: .center)
+                        .overlay (
+                            VStack {
+                                if correctAnswer == 2 {
+                                    Text(words[randomElement].definition)
+                                        .foregroundColor(foregroundColor2)
+                                        .font(.system(size: 20, design: .rounded))
+                                        .fontWeight(.bold)
+                                } else {
+                                    Text(words.randomElement()!.definition)
+                                        .foregroundColor(foregroundColor2)
+                                        .font(.system(size: 20, design: .rounded))
+                                        .fontWeight(.bold)
+                                }
                             }
-                        }
+                        )
                 }
                 
                 Button {
-                    
+                    wrongOrCorrectAction()
                 } label: {
                     Rectangle()
-                        .frame(width: 350, height: 90, alignment: .center)
-                        .cornerRadius(20)
                         .foregroundColor(rectangleColor3)
-                        .overlay {
-                            if correctAnswer == 3 {
-                               Text(words[randomElement].definition)
-                                    .foregroundColor(Color("lightBrown"))
-                                    .font(.system(size: 20, design: .rounded))
-                                    .fontWeight(.bold)
-                            } else {
-                                Text(words.randomElement()!.definition)
-                                    .foregroundColor(Color("lightBrown"))
-                                    .font(.system(size: 20, design: .rounded))
-                                    .fontWeight(.bold)
+                        .frame(width: 350, height: 80, alignment: .center)
+                        .cornerRadius(20)
+                        .overlay (
+                            VStack {
+                                if correctAnswer == 3 {
+                                    Text(words[randomElement].definition)
+                                        .foregroundColor(foregroundColor3)
+                                        .font(.system(size: 20, design: .rounded))
+                                        .fontWeight(.bold)
+                                } else {
+                                    Text(words.randomElement()!.definition)
+                                        .foregroundColor(foregroundColor3)
+                                        .font(.system(size: 20, design: .rounded))
+                                        .fontWeight(.bold)
+                                }
                             }
-                        }
+                        )
                 }
                 
                 Button {
-                    
+                    wrongOrCorrectAction()
                 } label: {
                     Rectangle()
-                        .frame(width: 350, height: 90, alignment: .center)
+                        .foregroundColor(rectangleColor4)
                         .cornerRadius(20)
-                        .foregroundColor(Color(rectangleColor4 as! CGColor))
-                        .overlay {
-                            if correctAnswer == 4 {
-                                Text(words[randomElement].definition)
-                                    .foregroundColor(Color("lightBrown"))
-                                    .font(.system(size: 20, design: .rounded))
-                                    .fontWeight(.bold)
-                            } else {
-                                Text(words.randomElement()!.definition)
-                                    .foregroundColor(Color("lightBrown"))
-                                    .font(.system(size: 20, design: .rounded))
-                                    .fontWeight(.bold)
+                        .frame(width: 350, height: 85, alignment: .center)
+                        .overlay (
+                            VStack {
+                                if correctAnswer == 4 {
+                                    Text(words[randomElement].definition)
+                                        .foregroundColor(foregroundColor4)
+                                        .font(.system(size: 20, design: .rounded))
+                                        .fontWeight(.bold)
+                                } else {
+                                    Text(words.randomElement()!.definition)
+                                        .foregroundColor(foregroundColor4)
+                                        .font(.system(size: 20, design: .rounded))
+                                        .fontWeight(.bold)
+                                }
                             }
-                        }
+                        )
                 }
             }
             .padding()

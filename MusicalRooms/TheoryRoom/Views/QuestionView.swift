@@ -321,7 +321,7 @@ struct QuestionView: View {
             randomIndex3 = Int.random(in: shuffledWords.count*2/4 ..< shuffledWords.count*3/4)
             randomIndex4 = Int.random(in: shuffledWords.count*3/4 ..< shuffledWords.count)
 
-            correctAnswer = Int.random(in: 1 ..< 5)
+            correctAnswer = Int.random(in: 1 ..< 4)
         }
     }
 }

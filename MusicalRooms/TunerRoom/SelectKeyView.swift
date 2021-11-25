@@ -11,73 +11,80 @@ struct SelectKeyView: View {
     
     @Binding var notes: [Note]
     @Binding var variance: Float
+    @State var noteFrequency = 440.0
+    @State var isOn = false
     
-    fileprivate func selectSelectedKey(_ note: Int) {
-        for num in 0 ..< notes.count {
-            notes[num].isSelected = false
-        }
-        notes[note].isSelected.toggle()
-    }
+    let osc = OscillatorObject()
     
     var body: some View {
         VStack {
-            
-            Spacer().frame(height: 55)
-            
             HStack {
+                Spacer()
+                    .frame(height: 55)
+                
                 ForEach(7 ..< notes.count) { note in
-                    
-                    if Int(note) == 9{
-                        Spacer().frame(width: 49)
+                    if note == 9 {
+                        Spacer()
+                            .frame(width: 50)
                     }
                     
                     Button {
-                        selectSelectedKey(note)
+                        playOscillator(note)
                     } label: {
                         VStack {
                             Text(conversion(notes[note].name))
                                 .fontWeight(.semibold)
                             Text(getEnharmonic(conversion(notes[note].name)))
-                                .fontWeight(.semibold)
                         }
+                        .frame(width: 49, height: 70, alignment: .center)
                         .font(.system(size: 18, design: .rounded))
                         .multilineTextAlignment(.center)
-                        .foregroundColor(!notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
+                        .foregroundColor(notes[note].isSelected ? Color("evenLighterBrown") : Color("darkBrown"))
+                        .background(notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
+                        .cornerRadius(12)
                     }
-                    .frame(width: 49, height: 70, alignment: .center    )
-                    .background(!notes[note].isSelected ? Color("evenLighterBrown") : Color("darkBrown"))
-                    .cornerRadius(12)
+                    .offset(x: -50)
                 }
             }
-            
             Spacer()
                 .frame(height: 10)
             
             HStack {
                 ForEach(0 ..< 7) { note in
                     Button {
-                        selectSelectedKey(note)
+                        playOscillator(note)
                     } label: {
                         Text(notes[note].name)
                             .bold()
                             .font(Font.system(size: 20, weight: .semibold, design: .rounded))
                             .multilineTextAlignment(.center)
-                            .foregroundColor(!notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
+                            .foregroundColor(notes[note].isSelected ? Color("evenLighterBrown") : Color("darkBrown"))
+                            .frame(width: 43, height: 70, alignment: .center)
+                            .background(notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
+                            .cornerRadius(12)
                     }
-                    .frame(width: 43, height: 70, alignment: .center)
-                    .background(!notes[note].isSelected ? Color("evenLighterBrown") : Color("darkBrown"))
-                    .cornerRadius(12)
                 }
             }
-            
             Spacer()
                 .frame(height: 35)
-            RoundedRectangle(cornerRadius: 20)
-                .frame(width: 350, height: 120)
-                .foregroundColor(Color("darkerBrown"))
-                .overlay(
-                    BottomButtonView(notes: $notes, variance: $variance)
-                )
+            
+            BottomButtonView()
+        }
+    }
+    func playOscillator(_ note: Int) {
+        if !isOn {
+            for num in 0 ..< notes.count {
+                notes[num].isSelected = false
+            }
+            notes[note].isSelected.toggle()
+            osc.start(frequency: notes[note].hertz, variance)
+            isOn = true
+        } else {
+            osc.stop()
+            isOn = false
+            for num in 0 ..< notes.count {
+                notes[num].isSelected = false
+            }
         }
     }
 }
@@ -99,3 +106,4 @@ struct SelectKeyView_Previews: PreviewProvider {
             Note(name: "Asharp", hertz: 466.16)]), variance: .constant(0))
     }
 }
+

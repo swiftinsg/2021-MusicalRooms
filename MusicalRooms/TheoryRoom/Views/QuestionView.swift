@@ -155,7 +155,7 @@ struct QuestionView: View {
                     Rectangle()
                         .foregroundColor(rectangleColor1)
                         .cornerRadius(20)
-                        .frame(width: 350, height: 80, alignment: .center)
+                        .frame(width: 330, height: 80, alignment: .center)
                         .overlay (
                             VStack {
                                 if correctAnswer == 1 {
@@ -180,7 +180,7 @@ struct QuestionView: View {
                     Rectangle()
                         .foregroundColor(rectangleColor2)
                         .cornerRadius(20)
-                        .frame(width: 350, height: 80, alignment: .center)
+                        .frame(width: 330, height: 80, alignment: .center)
                         .overlay (
                             VStack {
                                 if correctAnswer == 2 {
@@ -204,7 +204,7 @@ struct QuestionView: View {
                 } label: {
                     Rectangle()
                         .foregroundColor(rectangleColor3)
-                        .frame(width: 350, height: 80, alignment: .center)
+                        .frame(width: 330, height: 80, alignment: .center)
                         .cornerRadius(20)
                         .overlay(
                             VStack {
@@ -229,7 +229,7 @@ struct QuestionView: View {
                 } label: {
                     Rectangle()
                         .foregroundColor(rectangleColor4)
-                        .frame(width: 350, height: 80, alignment: .center)
+                        .frame(width: 330, height: 80, alignment: .center)
                         .cornerRadius(20)
                         .overlay(
                             VStack {
@@ -270,10 +270,10 @@ struct QuestionView: View {
                         
                         correctAnswer = Int.random(in: 1 ..< 5)
                         
-                        randomIndex1 = Int.random(in: 0 ..< shuffledWords.count*1/4)
-                        randomIndex2 = Int.random(in: shuffledWords.count*1/4 ..< shuffledWords.count*2/4)
-                        randomIndex3 = Int.random(in: shuffledWords.count*2/4 ..< shuffledWords.count*3/4)
-                        randomIndex4 = Int.random(in: shuffledWords.count*3/4 ..< shuffledWords.count)
+                        randomIndex1 = Int.random(in: 0 ..< 5)
+                        randomIndex2 = Int.random(in: 5 ..< 10)
+                        randomIndex3 = Int.random(in: 10 ..< 15)
+                        randomIndex4 = Int.random(in: 15 ..< shuffledWords.count)
                         
                     } label: {
                         ZStack {
@@ -313,10 +313,10 @@ struct QuestionView: View {
             shuffledWords = words
             shuffledWords.shuffle()
             
-            randomIndex1 = Int.random(in: 0 ..< shuffledWords.count*1/4)
-            randomIndex2 = Int.random(in: shuffledWords.count*1/4 ..< shuffledWords.count*2/4)
-            randomIndex3 = Int.random(in: shuffledWords.count*2/4 ..< shuffledWords.count*3/4)
-            randomIndex4 = Int.random(in: shuffledWords.count*3/4 ..< shuffledWords.count)
+            randomIndex1 = Int.random(in: 0 ..< 5)
+            randomIndex2 = Int.random(in: 5 ..< 10)
+            randomIndex3 = Int.random(in: 10 ..< 15)
+            randomIndex4 = Int.random(in: 15 ..< shuffledWords.count)
             
             correctAnswer = Int.random(in: 1 ..< 5)
         }

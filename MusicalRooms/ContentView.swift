@@ -13,36 +13,34 @@ struct ContentView: View {
     var lightBrown:Color = Color(red: 180/255, green: 130/255, blue: 90/255, opacity: 1.0)
     var darkBrown:Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
 
-    @AppStorage("selectedRoomTab") var selectedTabIndex:Int = 0
-
     var body: some View {
         
         let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { _ in print("") }
         
-        TabView (selection: $selectedTabIndex){
+        TabView{
             TheoryHomeView(grades: $grades)
                 .tabItem{
                     Image(systemName: "rectangle.and.pencil.and.ellipsis")
                     Text("Theory")
-                }.onAppear{ selectedTabIndex = 0 }
+                }
 
             TunerHomeView()
                 .tabItem{
                     Image(systemName: "tuningfork")
                     Text("Tuner")
-                }.onAppear{ selectedTabIndex = 1 }
+                }
 
             MetronomeHomeView()
                 .tabItem{
                     Image(systemName: "metronome")
                     Text("Metronome")
-                }.onAppear{ selectedTabIndex = 2 }
+                }
             
             RecorderHomeView(timer: timer)
                 .tabItem{
                     Image(systemName: "waveform")
                     Text("Recorder")
-                }.onAppear{ selectedTabIndex = 3 }
+                }
             
         }
         .accentColor(darkBrown)

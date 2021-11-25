@@ -16,7 +16,7 @@ struct QuestionView: View {
     @State var shuffledWords: [Word] = [Word(title: "placeholder", definition: "hi")]
     
     @State var correctAnswer = 0
-    @State var correctAnswerWords: [Int] = []
+    @State var correctAnswerWords: [Bool] = []
     @State var currentQuestion = 0
     @State var score: Double = 0
 
@@ -44,9 +44,8 @@ struct QuestionView: View {
     isContinueButtonHidden = false
     isDisabled = true
     if button == correctAnswer {
-        questionAnswers[currentQuestion] = true
+        correctAnswerWords[words.firstIndex(of: shuffledWords[currentQuestion])!] = true
         score += 1
-        correctAnswerWords.append(shuffledWords[currentQuestion])
         if button == 1 {
             rectangleColor1 = Color("lightGreen")
             foregroundColor1 = Color("darkerBrown")
@@ -61,6 +60,7 @@ struct QuestionView: View {
             foregroundColor4 = Color("darkerBrown")
         }
     } else {
+        
         if button == 1 {
             rectangleColor1 = Color("lightRed")
             foregroundColor1 = .white
@@ -115,7 +115,7 @@ struct QuestionView: View {
             }
         }
     }
-    print(correctAnswer, button)
+    print(correctAnswerWords)
 }
     
     var body: some View {
@@ -190,7 +190,7 @@ struct QuestionView: View {
                                     .font(.system(size: 20, design: .rounded))
                                     .fontWeight(.bold)
                         } else {
-                            Text(shuffledWords[randomIndex1].definition)
+                            Text(shuffledWords[randomIndex2].definition)
                                     .foregroundColor(foregroundColor2)
                                     .font(.system(size: 20, design: .rounded))
                                     .fontWeight(.bold)
@@ -217,7 +217,7 @@ struct QuestionView: View {
                                     .font(.system(size: 20, design: .rounded))
                                     .fontWeight(.bold)
                         } else {
-                            Text(shuffledWords[randomIndex1].definition)
+                            Text(shuffledWords[randomIndex3].definition)
                                     .foregroundColor(foregroundColor3)
                                     .font(.system(size: 20, design: .rounded))
                                     .fontWeight(.bold)
@@ -245,7 +245,7 @@ struct QuestionView: View {
                                     .font(.system(size: 20, design: .rounded))
                                     .fontWeight(.bold)
                         } else {
-                            Text(shuffledWords[randomIndex1].definition)
+                            Text(shuffledWords[randomIndex4].definition)
                                     .foregroundColor(foregroundColor4)
                                     .font(.system(size: 20, design: .rounded))
                                     .fontWeight(.bold)
@@ -282,10 +282,10 @@ struct QuestionView: View {
 
                         correctAnswer = Int.random(in: 1 ..< 5)
 
-                        randomIndex1 = Int.random(in: 0 ..< 5)
-                        randomIndex2 = Int.random(in: 5 ..< 10)
-                        randomIndex3 = Int.random(in: 10 ..< 15)
-                        randomIndex4 = Int.random(in: 15 ..< shuffledWords.count)
+                        randomIndex1 = Int.random(in: 0 ..< shuffledWords.count/2)
+                        randomIndex2 = Int.random(in: 0 ..< shuffledWords.count/2)
+                        randomIndex3 = Int.random(in: shuffledWords.count/2 ..< shuffledWords.count)
+                        randomIndex4 = Int.random(in: shuffledWords.count/2 ..< shuffledWords.count)
 
                     } label: {
                         ZStack {
@@ -302,7 +302,7 @@ struct QuestionView: View {
                     }
                 } else {
                     NavigationLink {
-                        ActualResultsView(grades: $grades, questionAnswers: questionAnswers, percentCorrect: score/Double(shuffledWords.count)*100, grade: grade)
+                        ActualResultsView(grades: $grades, questionAnswers: correctAnswerWords, percentCorrect: score/Double(shuffledWords.count)*100, grade: grade)
                     } label: {
                         ZStack {
                             Rectangle()
@@ -325,12 +325,14 @@ struct QuestionView: View {
             shuffledWords = words
             shuffledWords.shuffle()
 
-            randomIndex1 = Int.random(in: 0 ..< 5)
-            randomIndex2 = Int.random(in: 5 ..< 10)
-            randomIndex3 = Int.random(in: 10 ..< 15)
-            randomIndex4 = Int.random(in: 15 ..< shuffledWords.count)
+            randomIndex1 = Int.random(in: 0 ..< shuffledWords.count/2)
+            randomIndex2 = Int.random(in: 0 ..< shuffledWords.count/2)
+            randomIndex3 = Int.random(in: shuffledWords.count/2 ..< shuffledWords.count)
+            randomIndex4 = Int.random(in: shuffledWords.count/2 ..< shuffledWords.count)
 
             correctAnswer = Int.random(in: 1 ..< 5)
+            
+            correctAnswerWords = Array(repeating: false, count: words.count)
         }
     }
 }

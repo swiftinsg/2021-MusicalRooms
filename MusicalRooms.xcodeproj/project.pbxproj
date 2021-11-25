@@ -642,7 +642,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MusicalRooms/Preview Content\"";
-				DEVELOPMENT_TEAM = F5NAQM5U75;
+				DEVELOPMENT_TEAM = AVXAJ75DYV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MusicalRooms/Info.plist;
@@ -659,7 +659,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.MusicalRooms;
+				PRODUCT_BUNDLE_IDENTIFIER = yt.ss.MusicalRooms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -677,7 +677,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MusicalRooms/Preview Content\"";
-				DEVELOPMENT_TEAM = F5NAQM5U75;
+				DEVELOPMENT_TEAM = AVXAJ75DYV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MusicalRooms/Info.plist;
@@ -694,7 +694,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.MusicalRooms;
+				PRODUCT_BUNDLE_IDENTIFIER = yt.ss.MusicalRooms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

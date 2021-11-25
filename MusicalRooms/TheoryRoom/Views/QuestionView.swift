@@ -45,70 +45,70 @@ struct QuestionView: View {
     if button == correctAnswer {
         score += 1
         if button == 1 {
-            rectangleColor1 = pastelGreen
-            foregroundColor1 = .black
+            rectangleColor1 = Color("lightGreen")
+            foregroundColor1 = Color("darkerBrown")
         } else if button == 2 {
-            rectangleColor2 = pastelGreen
-            foregroundColor2 = .black
+            rectangleColor2 = Color("lightGreen")
+            foregroundColor2 = Color("darkerBrown")
         } else if button == 3 {
-            rectangleColor3 = pastelGreen
-            foregroundColor3 = .black
+            rectangleColor3 = Color("lightGreen")
+            foregroundColor3 = Color("darkerBrown")
         } else if button == 4 {
-            rectangleColor4 = pastelGreen
-            foregroundColor4 = .black
+            rectangleColor4 = Color("lightGreen")
+            foregroundColor4 = Color("darkerBrown")
         }
     } else {
         if button == 1 {
-            rectangleColor1 = pastelRed
-            foregroundColor1 = .black
+            rectangleColor1 = Color("lightRed")
+            foregroundColor1 = .white
             if correctAnswer == 2 {
-                rectangleColor2 = pastelGreen
-                foregroundColor2 = .black
+                rectangleColor2 = Color("lightGreen")
+                foregroundColor2 = Color("darkerBrown")
             } else if correctAnswer == 3 {
-                rectangleColor3 = pastelGreen
-                foregroundColor3 = .black
+                rectangleColor3 = Color("lightGreen")
+                foregroundColor3 = Color("darkerBrown")
             } else if correctAnswer == 4 {
-                rectangleColor4 = pastelGreen
-                foregroundColor4 = .black
+                rectangleColor4 = Color("lightGreen")
+                foregroundColor4 = Color("darkerBrown")
             }
         } else if button == 2 {
-            rectangleColor2 = pastelRed
-            foregroundColor2 = .black
+            rectangleColor2 = Color("lightRed")
+            foregroundColor2 = .white
             if correctAnswer == 1 {
-                rectangleColor1 = pastelGreen
-                foregroundColor1 = .black
+                rectangleColor1 = Color("lightGreen")
+                foregroundColor1 = Color("darkerBrown")
             } else if correctAnswer == 3 {
-                rectangleColor3 = pastelGreen
-                foregroundColor3 = .black
+                rectangleColor3 = Color("lightGreen")
+                foregroundColor3 = Color("darkerBrown")
             } else if correctAnswer == 4 {
-                rectangleColor4 = pastelGreen
-                foregroundColor4 = .black
+                rectangleColor4 = Color("lightGreen")
+                foregroundColor4 = Color("darkerBrown")
             }
         } else if button == 3 {
-            rectangleColor3 = pastelRed
-            foregroundColor3 = .black
+            rectangleColor3 = Color("lightRed")
+            foregroundColor3 = .white
             if correctAnswer == 1 {
-                rectangleColor1 = pastelGreen
-                foregroundColor1 = .black
+                rectangleColor1 = Color("lightGreen")
+                foregroundColor1 = Color("darkerBrown")
             } else if correctAnswer == 2 {
-                rectangleColor2 = pastelGreen
-                foregroundColor2 = .black
+                rectangleColor2 = Color("lightGreen")
+                foregroundColor2 = Color("darkerBrown")
             } else if correctAnswer == 4 {
-                rectangleColor4 = pastelGreen
-                foregroundColor4 = .black
+                rectangleColor4 = Color("lightGreen")
+                foregroundColor4 = Color("darkerBrown")
             }
         } else if button == 4 {
-            rectangleColor4 = pastelRed
-            foregroundColor4 = .black
+            rectangleColor4 = Color("lightRed")
+            foregroundColor4 = .white
             if correctAnswer == 1 {
-                rectangleColor1 = pastelGreen
-                foregroundColor1 = .black
+                rectangleColor1 = Color("lightGreen")
+                foregroundColor1 = Color("darkerBrown")
             } else if correctAnswer == 2 {
-                rectangleColor2 = pastelGreen
-                foregroundColor2 = .black
+                rectangleColor2 = Color("lightGreen")
+                foregroundColor2 = Color("darkerBrown")
             } else if correctAnswer == 3 {
-                rectangleColor3 = pastelGreen
-                foregroundColor3 = .black
+                rectangleColor3 = Color("lightGreen")
+                foregroundColor3 = Color("darkerBrown")
             }
         }
     }
@@ -279,7 +279,7 @@ struct QuestionView: View {
                         ZStack {
                             Rectangle()
                                 .frame(width: 350, height: 50, alignment: .center)
-                                .foregroundColor(Color("darkBrown"))
+                                .foregroundColor(Color("darkerBrown"))
                                 .cornerRadius(20)
                             
                             Text("Continue")

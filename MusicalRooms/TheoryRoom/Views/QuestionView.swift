@@ -18,6 +18,8 @@ struct QuestionView: View {
     @State var correctAnswer = 0
     @State var currentQuestion = 0
     @State var score: Double = 0
+
+    @State var questionAnswers = [Bool]()
     
     @State var isContinueButtonHidden = true
     @State var isDisabled = false
@@ -26,7 +28,6 @@ struct QuestionView: View {
     @State var randomIndex2 = 0
     @State var randomIndex3 = 0
     @State var randomIndex4 = 0
-    @State var randomIndexes = [1,2,3,4]
     
     @State var rectangleColor1 = Color("darkBrown")
     @State var rectangleColor2 = Color("darkBrown")
@@ -45,6 +46,7 @@ struct QuestionView: View {
         isDisabled = true
         withAnimation(.easeInOut(duration: 0.5)){
             if button == correctAnswer {
+                questionAnswers[currentQuestion] = true
                 score += 1
                 if button == 1 {
                     rectangleColor1 = pastelGreen
@@ -225,7 +227,7 @@ struct QuestionView: View {
                         }
                     } else {
                         NavigationLink {
-                            ActualResultsView(grades: $grades, percentCorrect: score / Double(shuffledWords.count) * 100, grade: grade)
+                            ActualResultsView(grades: $grades, questionAnswers: questionAnswers, percentCorrect: score / Double(shuffledWords.count) * 100, grade: grade)
                         } label: {
                             ZStack {
                                 Rectangle()
@@ -263,6 +265,9 @@ struct QuestionView: View {
 
                         correctAnswer = Int.random(in: 1..<5)
                     }
+        }
+        .onAppear {
+            questionAnswers = [Bool](repeating: false, count: words.count)
         }
     }
 

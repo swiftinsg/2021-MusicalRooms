@@ -19,7 +19,14 @@ struct OverviewView: View {
     
     var body: some View {
         VStack {
-            Spacer().frame(height:20)
+            Spacer().frame(height:30)
+
+            Text("Musical terms")
+                .font(Font.system(size: 26, weight: .bold, design: .rounded))
+                .padding(.top, 20)
+            Text("Click to open flashcard")
+                .font(Font.system(size: 12, weight: .medium, design: .rounded))
+
             List {
                 ForEach(0 ..< (expandAll ? words.count : 5), id:\.self) { word in
                     NavigationLink {
@@ -44,6 +51,8 @@ struct OverviewView: View {
                         .listRowBackground(Color("lightBrown"))
                     }
             }
+            .padding(.leading, 20)
+            .padding(.trailing, 20)
             .listStyle(.inset)
             Spacer().frame(height:30)
             
@@ -69,7 +78,7 @@ struct OverviewView: View {
             NavigationLink {
                 QuestionView(grades: $grades, grade: grade, words: words)
             } label: {
-                Text("Start")
+                Text("Start Quiz")
                     .foregroundColor(Color.white)
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
@@ -77,7 +86,7 @@ struct OverviewView: View {
             }
             .padding(.leading, 10)
             .padding(.trailing, 10)
-            .frame(width: 260, height: 60, alignment: .center)
+            .frame(width: 300, height: 60, alignment: .center)
             .background( Color("darkBrown"))
             .cornerRadius(10)
             .navigationTitle("Grade \(grade)")

@@ -63,9 +63,7 @@ class TunerConductor: ObservableObject {
             }
         }
 
-        withAnimation(.easeInOut(duration: 0.1)){
-            data.freqDistance = Float(noteFrequencies[index]) - frequency
-        }
+        data.freqDistance = Float(noteFrequencies[index]) - frequency
 
         let octave = Int(log2f(pitch / frequency))
         data.noteNameWithSharps = "\(noteNamesWithSharps[index])\(octave)"
@@ -90,7 +88,9 @@ class TunerConductor: ObservableObject {
 
         tracker = PitchTap(mic) { pitch, amp in
             DispatchQueue.main.async {
-                self.update(pitch[0], amp[0])
+                withAnimation(.easeInOut(duration: 0.05)){
+                    self.update(pitch[0], amp[0])
+                }
             }
         }
     }

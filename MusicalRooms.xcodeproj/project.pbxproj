@@ -27,7 +27,6 @@
 		FF863085274E103E001086F8 /* metronomeUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF863055274E103E001086F8 /* metronomeUp.wav */; };
 		FF863086274E103E001086F8 /* metronome.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF863056274E103E001086F8 /* metronome.wav */; };
 		FF863087274E103E001086F8 /* TunerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863058274E103E001086F8 /* TunerHomeView.swift */; };
-		FF863092274E103E001086F8 /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863064274E103E001086F8 /* BottomButtonView.swift */; };
 		FF863093274E103E001086F8 /* ActualTunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863065274E103E001086F8 /* ActualTunerView.swift */; };
 		FF863094274E103E001086F8 /* SelectKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863066274E103E001086F8 /* SelectKeyView.swift */; };
 		FF863095274E103E001086F8 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863067274E103E001086F8 /* Note.swift */; };
@@ -90,7 +89,6 @@
 		FF863055274E103E001086F8 /* metronomeUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeUp.wav; sourceTree = "<group>"; };
 		FF863056274E103E001086F8 /* metronome.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronome.wav; sourceTree = "<group>"; };
 		FF863058274E103E001086F8 /* TunerHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunerHomeView.swift; sourceTree = "<group>"; };
-		FF863064274E103E001086F8 /* BottomButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
 		FF863065274E103E001086F8 /* ActualTunerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActualTunerView.swift; sourceTree = "<group>"; };
 		FF863066274E103E001086F8 /* SelectKeyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectKeyView.swift; sourceTree = "<group>"; };
 		FF863067274E103E001086F8 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
@@ -258,7 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				FF863058274E103E001086F8 /* TunerHomeView.swift */,
-				FF863064274E103E001086F8 /* BottomButtonView.swift */,
 				FF94503F274F9508009155B4 /* Tuner.swift */,
 				FF863065274E103E001086F8 /* ActualTunerView.swift */,
 				FF863066274E103E001086F8 /* SelectKeyView.swift */,
@@ -458,7 +455,6 @@
 				FF8630A2274E103E001086F8 /* Extensions.swift in Sources */,
 				FF93C294274E287500EE2907 /* GradeStruct.swift in Sources */,
 				FF863087274E103E001086F8 /* TunerHomeView.swift in Sources */,
-				FF863092274E103E001086F8 /* BottomButtonView.swift in Sources */,
 				FF863047274E1034001086F8 /* ContentView.swift in Sources */,
 				FF8630A0274E103E001086F8 /* AudioRecorder.swift in Sources */,
 				FF86307C274E103E001086F8 /* MusicalRoomsApp.swift in Sources */,

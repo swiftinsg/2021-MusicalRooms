@@ -34,7 +34,7 @@ struct ActualTunerView: View {
 
                         Spacer().frame(height: 10)
                         HStack{
-                            let amplitude = String(format: "%.2f", 20 * log10(fabsf(conductor.data.amplitude))  )
+                            let amplitude = String(format: "%.2f", fabsf(20 * log10(fabsf(conductor.data.amplitude)))  )
                             Text("\(amplitude) dB")
                                 .frame(width: 110, alignment: .center)
 
@@ -52,7 +52,7 @@ struct ActualTunerView: View {
                                             height: (rectangle==4||rectangle==6) ? 40 : 25
                                     )
                                     .foregroundColor((rectangle==4||rectangle==6) ? .green : .black)
-                                    .offset(y: (rectangle==4||rectangle==6) ? 20 : 15)
+                                    .offset(y: (rectangle==4||rectangle==6) ? 5 : 12.5)
                                 
                             }
                             .frame(width: 23, height: 50, alignment: .center)
@@ -61,7 +61,7 @@ struct ActualTunerView: View {
                             Rectangle()
                                 .frame(width: 3, height: 50)
                                 .foregroundColor(bottomLineColor)
-                                .offset(x:freqOffset, y: 4.5)
+                                .offset(x:freqOffset, y: -1.5)
                         )
                     }
                 )

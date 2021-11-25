@@ -67,8 +67,6 @@ struct SelectKeyView: View {
             }
             Spacer()
                 .frame(height: 35)
-            
-            BottomButtonView()
         }
     }
     func playOscillator(_ note: Int) {

@@ -178,6 +178,7 @@ struct QuestionView: View {
                                     Rectangle()
                                             .foregroundColor(rectangleColor1)
                                             .cornerRadius(10)
+                                            .frame(width: .infinity)
                                 }
                         }
                     }
@@ -198,6 +199,7 @@ struct QuestionView: View {
                                     Rectangle()
                                             .foregroundColor(rectangleColor2)
                                             .cornerRadius(10)
+                                            .frame(width: .infinity)
                                 }
                         } else {
                             Text(shuffledWords[randomIndex2].definition)
@@ -229,6 +231,7 @@ struct QuestionView: View {
                                     Rectangle()
                                             .foregroundColor(rectangleColor3)
                                             .cornerRadius(10)
+                                            .frame(width: .infinity)
                                 }
                         } else {
                             Text(shuffledWords[randomIndex3].definition)
@@ -260,6 +263,7 @@ struct QuestionView: View {
                                     Rectangle()
                                             .foregroundColor(rectangleColor4)
                                             .cornerRadius(10)
+                                            .frame(width: .infinity)
                                 }
                         } else {
                             Text(shuffledWords[randomIndex4].definition)

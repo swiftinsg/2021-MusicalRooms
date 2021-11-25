@@ -32,10 +32,10 @@ struct QuestionView: View {
     @State var rectangleColor2 = Color("darkBrown")
     @State var rectangleColor3 = Color("darkBrown")
     @State var rectangleColor4 = Color("darkBrown")
-    @State var foregroundColor1 = Color("lightBrown")
-    @State var foregroundColor2 = Color("lightBrown")
-    @State var foregroundColor3 = Color("lightBrown")
-    @State var foregroundColor4 = Color("lightBrown")
+    @State var foregroundColor1 = Color.white
+    @State var foregroundColor2 = Color.white
+    @State var foregroundColor3 = Color.white
+    @State var foregroundColor4 = Color.white
     
     @State var pastelGreen = Color.init(red: 0.3764705882, green: 0.8392156863, blue: 0.462745098)
     @State var pastelRed = Color.init(red: 0.8392156863, green: 0.4, blue: 0.3764705882)
@@ -143,10 +143,10 @@ struct QuestionView: View {
                 VStack {
                     Text(shuffledWords[currentQuestion].title)
                         .bold()
-                        .font(.system(size: 30, design: .rounded))
+                        .font(.system(size: 28, design: .rounded))
                     if let alt = shuffledWords[currentQuestion].altText {
                         Text(alt)
-                            .font(.system(size: 20, design: .rounded))
+                            .font(.system(size: 28, design: .rounded))
                     }
                 }
             }
@@ -160,12 +160,12 @@ struct QuestionView: View {
                         if correctAnswer == 1 {
                             Text(shuffledWords[currentQuestion].definition)
                                     .foregroundColor(foregroundColor1)
-                                    .font(.system(size: 20, design: .rounded))
+                                    .font(.system(size: 18, design: .rounded))
                                     .fontWeight(.bold)
                         } else {
                             Text(shuffledWords[randomIndex1].definition)
                                     .foregroundColor(foregroundColor1)
-                                    .font(.system(size: 20, design: .rounded))
+                                    .font(.system(size: 18, design: .rounded))
                                     .fontWeight(.bold)
                         }
                     }
@@ -187,12 +187,12 @@ struct QuestionView: View {
                         if correctAnswer == 2 {
                             Text(shuffledWords[currentQuestion].definition)
                                     .foregroundColor(foregroundColor2)
-                                    .font(.system(size: 20, design: .rounded))
+                                    .font(.system(size: 18, design: .rounded))
                                     .fontWeight(.bold)
                         } else {
                             Text(shuffledWords[randomIndex2].definition)
                                     .foregroundColor(foregroundColor2)
-                                    .font(.system(size: 20, design: .rounded))
+                                    .font(.system(size: 18, design: .rounded))
                                     .fontWeight(.bold)
                         }
                     }
@@ -214,12 +214,12 @@ struct QuestionView: View {
                         if correctAnswer == 3 {
                             Text(shuffledWords[currentQuestion].definition)
                                     .foregroundColor(foregroundColor3)
-                                    .font(.system(size: 20, design: .rounded))
+                                    .font(.system(size: 18, design: .rounded))
                                     .fontWeight(.bold)
                         } else {
                             Text(shuffledWords[randomIndex3].definition)
                                     .foregroundColor(foregroundColor3)
-                                    .font(.system(size: 20, design: .rounded))
+                                    .font(.system(size: 18, design: .rounded))
                                     .fontWeight(.bold)
                         }
                     }
@@ -242,12 +242,12 @@ struct QuestionView: View {
                         if correctAnswer == 4 {
                             Text(shuffledWords[currentQuestion].definition)
                                     .foregroundColor(foregroundColor4)
-                                    .font(.system(size: 20, design: .rounded))
+                                    .font(.system(size: 18, design: .rounded))
                                     .fontWeight(.bold)
                         } else {
                             Text(shuffledWords[randomIndex4].definition)
                                     .foregroundColor(foregroundColor4)
-                                    .font(.system(size: 20, design: .rounded))
+                                    .font(.system(size: 18, design: .rounded))
                                     .fontWeight(.bold)
                         }
                     }
@@ -267,10 +267,10 @@ struct QuestionView: View {
                 if currentQuestion < shuffledWords.count - 1 {
                     Button {
                         isContinueButtonHidden = true
-                        foregroundColor1 = Color("lightBrown")
-                        foregroundColor2 = Color("lightBrown")
-                        foregroundColor3 = Color("lightBrown")
-                        foregroundColor4 = Color("lightBrown")
+                        foregroundColor1 = Color.white
+                        foregroundColor2 = Color.white
+                        foregroundColor3 = Color.white
+                        foregroundColor4 = Color.white
 
                         rectangleColor1 = Color("darkBrown")
                         rectangleColor2 = Color("darkBrown")
@@ -300,7 +300,7 @@ struct QuestionView: View {
                             Text("Continue")
                                 .foregroundColor(Color("evenLighterBrown"))
                                 .bold()
-                                .font(.system(size: 20, design: .rounded))
+                                .font(.system(size: 18, design: .rounded))
                         }
                     }
                 } else {

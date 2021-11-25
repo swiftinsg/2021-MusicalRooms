@@ -53,13 +53,13 @@ struct FlashcardsView: View {
                     } else {
                         Text(words[duplicateCurrentWord].title)
                             .bold()
-                            .font(.system(size: 30, design: .rounded))
+                            .font(.system(size: 25, design: .rounded))
                         if let altText = words[duplicateCurrentWord].altText {
                             Text(altText)
-                                .font(.system(size: 20, design: .rounded))
+                                .font(.system(size: 18, design: .rounded))
                         } else {
                             Text("  ")
-                                .font(.system(size: 20, design: .rounded))
+                                .font(.system(size: 18, design: .rounded))
                         }
                     }
                 }

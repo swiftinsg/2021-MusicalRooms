@@ -37,7 +37,7 @@ struct FlashcardsView: View {
                     .foregroundColor(Color("darkBrown"))
                     .overlay(
                         Text("\(duplicateCurrentWord + 1) / \(words.count)")
-                            .font(.system(size: 19, design: .rounded))
+                            .font(.system(size: 25, design: .rounded))
                             .foregroundColor(Color("evenLighterBrown"))
                             .bold()
                             .offset(x: -120)
@@ -82,10 +82,10 @@ struct FlashcardsView: View {
                             }
                         } label: {
                             Image(systemName: "chevron.left.2")
-                                .foregroundColor(Color("darkerBrown"))
-                                .font(.system(size: 35))
+                                .foregroundColor(Color("darkBrown"))
+                                .font(Font.system(size: 40, weight: .semibold))
                         }
-                        .offset(x: -50)
+                        .offset(x: -56)
                         
                         Rectangle()
                             .frame(width: 2)
@@ -105,10 +105,10 @@ struct FlashcardsView: View {
                             }
                         } label: {
                             Image(systemName: isFlipped ? "checkmark" : "chevron.right.2")
-                                .foregroundColor(Color("darkerBrown"))
-                                .font(.system(size: 35))
+                                .foregroundColor(Color("darkBrown"))
+                                .font(Font.system(size: 40, weight: .semibold))
                         }
-                        .offset(x: 50)
+                        .offset(x: 56)
                     }
                 )
                 .offset(y: 30)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BBE2239EC9A51D8033C471F /* DefinitionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE2465408F7C9E92E70CE5 /* DefinitionModalView.swift */; };
 		2E16225027412CA500791ADC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E16224F27412CA500791ADC /* Assets.xcassets */; };
 		2E16225D27412CA500791ADC /* MusicalRoomsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16225C27412CA500791ADC /* MusicalRoomsTests.swift */; };
 		2E16226727412CA500791ADC /* MusicalRoomsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */; };
@@ -64,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1BBE2465408F7C9E92E70CE5 /* DefinitionModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefinitionModalView.swift; sourceTree = "<group>"; };
 		2E16224827412CA100791ADC /* MusicalRooms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicalRooms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E16224F27412CA500791ADC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E16225227412CA500791ADC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				C5D98ADD274E89AD00A2A279 /* ResultsView.swift */,
 				FF93C28F274E287500EE2907 /* OverviewView.swift */,
 				C5D98ADF274E905A00A2A279 /* ActualResultsView.swift */,
+				1BBE2465408F7C9E92E70CE5 /* DefinitionModalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				FF8630A1274E103E001086F8 /* Recording.swift in Sources */,
 				FF93C291274E287500EE2907 /* FlashcardView.swift in Sources */,
 				FF93C296274E287500EE2907 /* OverviewView.swift in Sources */,
+				1BBE2239EC9A51D8033C471F /* DefinitionModalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

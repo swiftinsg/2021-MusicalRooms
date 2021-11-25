@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/2021-MusicalRooms.iml" filepath="$PROJECT_DIR$/.idea/2021-MusicalRooms.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/MusicalRooms.iml" filepath="$PROJECT_DIR$/.idea/MusicalRooms.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/MusicalRooms2.iml" filepath="$PROJECT_DIR$/.idea/MusicalRooms2.iml" />
     </modules>

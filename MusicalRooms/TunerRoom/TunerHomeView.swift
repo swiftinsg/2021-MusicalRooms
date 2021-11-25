@@ -19,19 +19,18 @@ struct TunerHomeView: View {
     @State var variance: Float = 0.0
     
     var body: some View {
-        VStack{
-            Text("Tuner")
-                .font(Font.system(size: 28, weight: .bold))
-                .padding()
-            
-            ActualTunerView(variance: $variance)
-                
-            Spacer().frame(height: 45)
-            
-            SelectKeyView(notes: $notes, variance: $variance)
-            
-            Spacer().frame(height: 15)
-            
+        NavigationView{
+            VStack{
+
+                ActualTunerView(variance: $variance)
+
+                Spacer().frame(height: 45)
+
+                SelectKeyView(notes: $notes, variance: $variance)
+
+                Spacer().frame(height: 15)
+
+            }.navigationBarTitle("Tuner")
         }
     }
 }

@@ -30,75 +30,65 @@ struct RecorderHomeView: View {
     @State var isMini: Bool = false
     
     var body: some View {
-        
-        VStack{
-            
-            Spacer().frame(height: 20)
-            
-            Text("Recorder")
-                .font(Font.system(size: 28, weight: .bold))
-                .padding()
-            
-            Spacer().frame(height: 20)
-            
-            
-            if !isMini{
-                // RECORDING LIST
-                RecordingsList(audioRecorder: audioRecorder)
-            }
-            
-            
-            if(lengthDisplayed){
-                Text("\(String(format: "%.2d", recordingLength / 60)):\(String(format: "%.2d", recordingLength % 60))")
-                    .foregroundColor(lightBrown)
-                    .font(Font.system(size: 18, weight: .semibold, design: .monospaced))
-                    .offset(y: -100)
-            }
-            
-            // Record button
-            Button{
-                if(self.audioRecorder.recording){
-                    stopRecorder()
-                }else{
-                    self.audioRecorder.startRecording()
-                    startRecorder()
+
+        NavigationView {
+            VStack{
+
+                Spacer().frame(height: 20)
+
+                if !isMini{
+                    // RECORDING LIST
+                    RecordingsList(audioRecorder: audioRecorder)
                 }
-                
-            } label: {
-                ZStack{
-                    Circle()
-                        .stroke(lightBrown, lineWidth: recordBorderWidth)
-                        .frame(width: 70, height: 70, alignment: .center)
-                    Rectangle()
-                        .fill(lightBrown)
-                        .frame(width: recordButtonSize, height: recordButtonSize, alignment: .center)
-                        .cornerRadius(recordButtonRadius)
+
+                if(lengthDisplayed){
+                    Text("\(String(format: "%.2d", recordingLength / 60)):\(String(format: "%.2d", recordingLength % 60))")
+                            .foregroundColor(lightBrown)
+                            .font(Font.system(size: 18, weight: .semibold, design: .monospaced))
+                            .offset(y: -100)
                 }
-            }.offset(y:-90)
-            .onChange(of: audioRecorder.recording, perform: {isRecording in //Button indicates recording or not
-                if(isRecording){
-                    withAnimation(.easeInOut(duration: 0.2)){
-                        recordButtonSize = 30
-                        recordBorderWidth = 5
-                        recordButtonBorder = 90
-                        recordButtonRadius = 8
+
+                // Record button
+                Button{
+                    if(self.audioRecorder.recording){
+                        stopRecorder()
+                    }else{
+                        self.audioRecorder.startRecording()
+                        startRecorder()
                     }
-                }else{
-                    withAnimation(.easeInOut(duration: 0.2)){
-                    recordButtonSize = 60
-                        recordBorderWidth = 3
-                        recordButtonBorder = 75
-                        recordButtonRadius = 30
+
+                } label: {
+                    ZStack{
+                        Circle()
+                                .stroke(lightBrown, lineWidth: recordBorderWidth)
+                                .frame(width: 70, height: 70, alignment: .center)
+                        Rectangle()
+                                .fill(lightBrown)
+                                .frame(width: recordButtonSize, height: recordButtonSize, alignment: .center)
+                                .cornerRadius(recordButtonRadius)
                     }
-                }
-            
-            })
-            
+                }.offset(y:-90)
+                        .onChange(of: audioRecorder.recording, perform: {isRecording in //Button indicates recording or not
+                            if(isRecording){
+                                withAnimation(.easeInOut(duration: 0.2)){
+                                    recordButtonSize = 30
+                                    recordBorderWidth = 5
+                                    recordButtonBorder = 90
+                                    recordButtonRadius = 8
+                                }
+                            }else{
+                                withAnimation(.easeInOut(duration: 0.2)){
+                                    recordButtonSize = 60
+                                    recordBorderWidth = 3
+                                    recordButtonBorder = 75
+                                    recordButtonRadius = 30
+                                }
+                            }
+
+                        })
+
+            }.navigationBarTitle("Recorder")
         }
-        
-        
-        
-        
     }
     
     

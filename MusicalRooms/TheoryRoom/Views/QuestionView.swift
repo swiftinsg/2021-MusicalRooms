@@ -11,14 +11,16 @@ struct QuestionView: View {
     
     var words: [Word]
     
+    @State var shuffledWords: [Word] = []
+    
     @State var correctAnswer = 0
     @State var currentQuestion = 0
     @State var score: Double = 0
     
     @State var isContinueButtonHidden = true
     @State var isDisabled = false
+    
     @State var randomElement = 0
-    @State var anotherRandomElement = 0
     
     @State var rectangleColor1 = Color("darkBrown")
     @State var rectangleColor2 = Color("darkBrown")
@@ -105,14 +107,8 @@ struct QuestionView: View {
             }
         }
     }
-    fileprivate func gettingRandomQoAndAns() {
-        randomElement = Int.random(in: 0 ..< words.count)
-        anotherRandomElement = Int.random(in: 0 ..< words.count)
-        correctAnswer = Int.random(in: 1 ..< 5)
-    }
     
     var body: some View {
-
             VStack {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
@@ -126,7 +122,7 @@ struct QuestionView: View {
                         .offset(y: -125)
                         .overlay(
                             HStack {
-                                Text("\(currentQuestion + 1)/\(words.count)")
+                                Text("\(currentQuestion + 1)/\(shuffledWords.count)")
                                     .font(.system(size: 19, design: .rounded))
                                     .foregroundColor(Color("darkerBrown"))
                                     .bold()
@@ -135,10 +131,10 @@ struct QuestionView: View {
                                 .offset(y: -125)
                         )
                     VStack {
-                        Text(words[randomElement].title)
+                        Text(shuffledWords[currentQuestion].title)
                             .bold()
                             .font(.system(size: 30, design: .rounded))
-                        if let alt = words[randomElement].altText {
+                        if let alt = shuffledWords[currentQuestion].altText {
                             Text(alt)
                                 .font(.system(size: 20, design: .rounded))
                         }
@@ -156,12 +152,12 @@ struct QuestionView: View {
                             .overlay (
                                 VStack {
                                     if correctAnswer == 1 {
-                                        Text(words[randomElement].definition)
+                                        Text(shuffledWords[currentQuestion].definition)
                                             .foregroundColor(foregroundColor1)
                                             .font(.system(size: 20, design: .rounded))
                                             .fontWeight(.bold)
                                     } else {
-                                        Text(words[anotherRandomElement].definition)
+                                        Text(shuffledWords.randomElement()!.definition)
                                             .foregroundColor(foregroundColor1)
                                             .font(.system(size: 20, design: .rounded))
                                             .fontWeight(.bold)
@@ -181,12 +177,12 @@ struct QuestionView: View {
                             .overlay (
                                 VStack {
                                     if correctAnswer == 2 {
-                                        Text(words[randomElement].definition)
+                                        Text(shuffledWords[currentQuestion].definition)
                                             .foregroundColor(foregroundColor2)
                                             .font(.system(size: 20, design: .rounded))
                                             .fontWeight(.bold)
                                     } else {
-                                        Text(words.randomElement()!.definition)
+                                        Text(shuffledWords.randomElement()!.definition)
                                             .foregroundColor(foregroundColor2)
                                             .font(.system(size: 20, design: .rounded))
                                             .fontWeight(.bold)
@@ -206,12 +202,12 @@ struct QuestionView: View {
                             .overlay (
                                 VStack {
                                     if correctAnswer == 3 {
-                                        Text(words[randomElement].definition)
+                                        Text(shuffledWords[currentQuestion].definition)
                                             .foregroundColor(foregroundColor3)
                                             .font(.system(size: 20, design: .rounded))
                                             .fontWeight(.bold)
                                     } else {
-                                        Text(words[anotherRandomElement].definition)
+                                        Text(shuffledWords.randomElement()!.definition)
                                             .foregroundColor(foregroundColor3)
                                             .font(.system(size: 20, design: .rounded))
                                             .fontWeight(.bold)
@@ -231,12 +227,12 @@ struct QuestionView: View {
                             .overlay (
                                 VStack {
                                     if correctAnswer == 4 {
-                                        Text(words[randomElement].definition)
+                                        Text(shuffledWords[currentQuestion].definition)
                                             .foregroundColor(foregroundColor4)
                                             .font(.system(size: 20, design: .rounded))
                                             .fontWeight(.bold)
                                     } else {
-                                        Text(words.randomElement()!.definition)
+                                        Text(shuffledWords.randomElement()!.definition)
                                             .foregroundColor(foregroundColor4)
                                             .font(.system(size: 20, design: .rounded))
                                             .fontWeight(.bold)
@@ -247,7 +243,6 @@ struct QuestionView: View {
                     .disabled(isDisabled)
                     if !isContinueButtonHidden {
                         Button {
-                            gettingRandomQoAndAns()
                             isContinueButtonHidden = true
                             foregroundColor1 = Color("lightBrown")
                             foregroundColor2 = Color("lightBrown")
@@ -262,6 +257,7 @@ struct QuestionView: View {
                             currentQuestion += 1
                             isDisabled = false
                             
+                            correctAnswer = Int.random(in: 1 ..< 5)
                             
                         } label: {
                             ZStack {
@@ -279,6 +275,11 @@ struct QuestionView: View {
                     }
                 }
                 .padding()
+            }
+            .onAppear {
+                shuffledWords = words
+                shuffledWords.shuffle()
+                correctAnswer = Int.random(in: 1 ..< 5)
             }
         }
     }

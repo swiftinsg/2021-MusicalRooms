@@ -17,7 +17,7 @@ struct ContentView: View {
         
         let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { _ in print("") }
         
-        TabView {
+        TabView{
             TheoryHomeView(grades: $grades)
                 .tabItem{
                     Image(systemName: "rectangle.and.pencil.and.ellipsis")

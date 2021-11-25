@@ -21,24 +21,24 @@ struct FlashcardsView: View {
     var body: some View {
         VStack {
             ZStack {
-                RoundedRectangle(cornerRadius: 20)
+                RoundedRectangle(cornerRadius: 10)
                     .frame(width: 350, height: 300, alignment: .center)
                     .foregroundColor(Color("lightBrown"))
                     .rotation3DEffect(degrees, axis: (x: 0, y: 1, z: 0))
                     .onTapGesture {
-                        withAnimation {
+                        withAnimation(.easeInOut(duration: 0.3)){
                             degrees += Angle(degrees: 180)
                             isFlipped.toggle()
                         }
                     }
                 
-                RoundedRectangle(cornerRadius: 20)
+                RoundedRectangle(cornerRadius: 10)
                     .frame(width: 350, height: 50, alignment: .leading)
                     .foregroundColor(Color("darkBrown"))
                     .overlay(
                         Text("\(duplicateCurrentWord + 1) / \(words.count)")
                             .font(.system(size: 19, design: .rounded))
-                            .foregroundColor(Color("darkerBrown"))
+                            .foregroundColor(Color("evenLighterBrown"))
                             .bold()
                             .offset(x: -120)
                     )
@@ -49,6 +49,7 @@ struct FlashcardsView: View {
                         Text(words[duplicateCurrentWord].definition)
                             .font(.system(size: 23, design: .rounded))
                             .frame(width: 250, height: 300, alignment: .center)
+                            .rotation3DEffect(.degrees(180), axis: (x:0, y:1, z:0))
                     } else {
                         Text(words[duplicateCurrentWord].title)
                             .bold()
@@ -63,23 +64,26 @@ struct FlashcardsView: View {
                     }
                 }
                 .offset(y: 15)
+                .rotation3DEffect(degrees, axis: (x: 0, y: 1, z: 0))
             }
             
-            RoundedRectangle(cornerRadius: 20)
-                .frame(width: 350, height: 90)
+            RoundedRectangle(cornerRadius: 10)
+                .frame(width: 350, height: 70)
                 .foregroundColor(Color("lightBrown"))
                 .overlay(
                     HStack {
                         Button {
-                            if duplicateCurrentWord != 0 {
-                                duplicateCurrentWord -= 1
-                            } else if duplicateCurrentWord == 0 {
-                                duplicateCurrentWord = words.count - 1
+                            withAnimation(.easeInOut(duration: 0.3)){
+                                if duplicateCurrentWord != 0 {
+                                    duplicateCurrentWord -= 1
+                                } else if duplicateCurrentWord == 0 {
+                                    duplicateCurrentWord = words.count - 1
+                                }
                             }
                         } label: {
                             Image(systemName: "chevron.left.2")
                                 .foregroundColor(Color("darkerBrown"))
-                                .font(.system(size: 50))
+                                .font(.system(size: 35))
                         }
                         .offset(x: -50)
                         
@@ -88,19 +92,21 @@ struct FlashcardsView: View {
                             .foregroundColor(Color("darkBrown"))
                         
                         Button {
-                            if isFlipped {
-                                presentationMode.wrappedValue.dismiss()
-                            } else {
-                                if duplicateCurrentWord + 1 != words.count {
-                                    duplicateCurrentWord += 1
-                                } else if duplicateCurrentWord == words.count - 1 {
-                                    duplicateCurrentWord = 0
+                            withAnimation(.easeInOut(duration: 0.3)){
+                                if isFlipped {
+                                    presentationMode.wrappedValue.dismiss()
+                                } else {
+                                    if duplicateCurrentWord + 1 != words.count {
+                                        duplicateCurrentWord += 1
+                                    } else if duplicateCurrentWord == words.count - 1 {
+                                        duplicateCurrentWord = 0
+                                    }
                                 }
                             }
                         } label: {
                             Image(systemName: isFlipped ? "checkmark" : "chevron.right.2")
                                 .foregroundColor(Color("darkerBrown"))
-                                .font(.system(size: 50))
+                                .font(.system(size: 35))
                         }
                         .offset(x: 50)
                     }

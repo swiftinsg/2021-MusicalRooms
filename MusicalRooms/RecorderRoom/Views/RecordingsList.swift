@@ -18,17 +18,27 @@ struct RecordingsList: View {
     
     var body: some View {
         
-        Button{
-            withAnimation(.easeInOut){
-                isEditing.toggle()
-            }
-        }label: {
-            Text(isEditing ? "Done" : "Edit")
-                .font(Font.system(size: 18, weight: .semibold, design: .default))
+        HStack{
+            Text("Recordings")
+                .font(Font.system(size: 18, weight: .semibold, design: .rounded))
                 .foregroundColor(darkBrown)
-                .multilineTextAlignment(.trailing)
+                .offset(y:30)
+
+            Spacer()
+
+            Button{
+                withAnimation(.easeInOut){
+                    isEditing.toggle()
+                }
+            }label: {
+                Text(isEditing ? "Done" : "Edit")
+                        .font(Font.system(size: 18, weight: .semibold, design: .default))
+                        .foregroundColor(darkBrown)
+                        .multilineTextAlignment(.trailing)
+            }
         }
-        .offset(x: 120, y: 20)
+        .padding(.leading, 35)
+        .padding(.trailing, 40)
  
         
         if(audioRecorder.recordings.count >= 1){

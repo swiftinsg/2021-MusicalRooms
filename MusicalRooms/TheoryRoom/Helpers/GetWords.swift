@@ -17,7 +17,7 @@ func getWords(_ grade: Int) -> [Word] {
                 Word(title:"allegro", definition: "brisk or rapid in tempo"),
                 Word(title:"andante", definition: "moderately slow and even"),
                 Word(title:"cantabile", definition: "songlike and flowing in style"),
-                Word(title:"crescendo", altText: "cresc.", definition: "force"),
+                Word(title:"crescendo", altText: "cresc.", definition: "a gradual increase in loudness"),
                 Word(title:"da capo", altText: "D.C.", definition: "(from the) beginning"),
                 Word(title:"decrescendo", altText: "decresc.", definition: "gradually reducing force or loudness; diminuendo "),
                 Word(title:"diminuendo", altText: "dimin. / dim.", definition: "gradually reducing in force or loudness; decrescendo"),

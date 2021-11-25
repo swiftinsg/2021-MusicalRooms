@@ -54,10 +54,11 @@ struct TheoryHomeView: View {
                         .cornerRadius(10)
                     }.frame(width: 400)//END LABEL
                 }
-            }.padding(.bottom, 22)
-        }.offset(y:20)
-        
+            }
+            .padding(.bottom, 22)
             .navigationTitle("Theory")
+        }
+        .offset(y:20)
     }
 }
 

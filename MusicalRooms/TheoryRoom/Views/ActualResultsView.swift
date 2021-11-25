@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ActualResultsView: View {
     
-
     @Binding var grades: [Grade]
     @State var percentCorrect: Int = 50
+    
     var grade: Int
     var words: [Word] {
         return getWords(grade)

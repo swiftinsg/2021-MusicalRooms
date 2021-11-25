@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OverviewView: View {
     
+    @Binding var grades: [Grade]
     var grade: Int
     var words: [Word] {
         return getWords(grade)
@@ -38,7 +39,7 @@ struct OverviewView: View {
                                         .multilineTextAlignment(.leading)
                                 }
                             }
-                            .frame(width: 150, height: 42, alignment: .leading)
+                            .frame(width: 250, height: 42, alignment: .leading)
                         }
                         .listRowBackground(Color("lightBrown"))
                     }
@@ -86,7 +87,7 @@ struct OverviewView: View {
             .offset(y: -50)
             
             NavigationLink {
-                QuestionView(words: words)
+                QuestionView(grades: $grades, grade: grade, words: words)
             } label: {
                 Text("Start")
                     .foregroundColor(Color.white)
@@ -106,6 +107,6 @@ struct OverviewView: View {
 
 struct OverviewView_Previews: PreviewProvider {
     static var previews: some View {
-        OverviewView(grade: 1)
+        OverviewView(grades: .constant([Grade(number: 1, percentageCorrect: 0)]), grade: 1)
     }
 }

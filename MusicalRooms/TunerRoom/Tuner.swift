@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import AudioKit
 import AudioKit
 import AudioKitEX
@@ -17,6 +18,7 @@ struct TunerData {
     var amplitude: Float = 0.0
     var noteNameWithSharps = "-"
     var noteNameWithFlats = "-"
+    var freqDistance: Float = 0.0
 }
 
 class TunerConductor: ObservableObject {
@@ -38,6 +40,7 @@ class TunerConductor: ObservableObject {
     @Published var data = TunerData()
 
     func update(_ pitch: AUValue, _ amp: AUValue) {
+        if(amp < 0.05){ return }
         data.pitch = pitch
         data.amplitude = amp
 
@@ -59,6 +62,11 @@ class TunerConductor: ObservableObject {
                 minDistance = distance
             }
         }
+
+        withAnimation(.easeInOut(duration: 0.1)){
+            data.freqDistance = Float(noteFrequencies[index]) - frequency
+        }
+
         let octave = Int(log2f(pitch / frequency))
         data.noteNameWithSharps = "\(noteNamesWithSharps[index])\(octave)"
         data.noteNameWithFlats = "\(noteNamesWithFlats[index])\(octave)"
@@ -78,6 +86,7 @@ class TunerConductor: ObservableObject {
         tappableNodeC = Fader(tappableNodeB)
         silence = Fader(tappableNodeC, gain: 0)
         engine.output = silence
+        data.freqDistance = 0.0
 
         tracker = PitchTap(mic) { pitch, amp in
             DispatchQueue.main.async {

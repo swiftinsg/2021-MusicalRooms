@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import AudioKit
+import AVFoundation
 
 class OscillatorObject {
     
@@ -16,9 +17,11 @@ class OscillatorObject {
     
     init() {
         engine.output = osc
+        overrideSpeaker()
     }
     
     func start(frequency: Float = 440) {
+        overrideSpeaker()
         
         osc.frequency = frequency 
         osc.amplitude = 0.6
@@ -29,6 +32,12 @@ class OscillatorObject {
     
     func stop() {
         engine.stop()
+    }
+
+    func overrideSpeaker(){
+        do{
+            try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
+        }catch{ print(error) }
     }
 }
 

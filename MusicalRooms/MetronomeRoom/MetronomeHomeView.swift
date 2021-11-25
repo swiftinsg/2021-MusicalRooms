@@ -252,8 +252,8 @@ struct MetronomeHomeView: View {
     }
     
     func sound(){
-        var isPulse = false
-        if(barNotes != 1 && note == 1){ isPulse = true }
+        var isOne = barNotes==1
+        var isPulse = isOne && note == 1
         
         let metrUrl = Bundle.main.url(forResource: "metronome", withExtension: ".wav")!
         let metrUpUrl = Bundle.main.url(forResource: "metronomeUp", withExtension: ".wav")!

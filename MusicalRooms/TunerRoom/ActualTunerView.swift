@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ActualTunerView: View {
-    
+
+    @StateObject var conductor = TunerConductor()
+
     @State var frequency = 440
     let topLineColor: Color = Color("topLineColor")
     let bottomLineColor: Color = Color("bottomLineColor")
@@ -20,32 +22,55 @@ struct ActualTunerView: View {
                 .foregroundColor(Color("evenLighterBrown"))
                 .overlay(
                     VStack {
+                        let freqOffset = CGFloat(max(min(conductor.data.freqDistance*150, 150), -150))
                         Rectangle()
-                            .frame(width: 2, height: 35)
+                            .frame(width: 3, height: 35)
                             .foregroundColor(topLineColor)
-                        
-                        Text("A") //Placeholder text
+                            .offset(x: freqOffset)
+
+                        Text((conductor.data.noteNameWithSharps).contains("♯") ? "\(conductor.data.noteNameWithSharps) / \(conductor.data.noteNameWithFlats)" : conductor.data.noteNameWithSharps)
                             .fontWeight(.heavy)
                             .font(Font.system(size: 30))
-                        Text(String(frequency) + "Hz")
-                            .fontWeight(.bold)
-                            .font(Font.system(size: 10))
-                            .foregroundColor(Color("darkerBrown"))
+
+                        Spacer().frame(height: 10)
+                        HStack{
+                            let amplitude = String(format: "%.2f", 20 * log10(fabsf(conductor.data.amplitude))  )
+                            Text("\(amplitude) dB")
+                                .frame(width: 110, alignment: .center)
+
+                            let frequency = String(format: "%.2f", conductor.data.pitch)
+                            Text("\(frequency) Hz")
+                                .frame(width: 110, alignment: .center)
+                        }
+
+
                         HStack {
                             ForEach(0 ..< 11) { rectangle in
                                 Rectangle()
                                     .frame(
-                                        width: 2,
-                                        height: rectangle == 5 ? 50 : 25
+                                            width: (rectangle==4||rectangle==6) ? 3 : 2,
+                                            height: (rectangle==4||rectangle==6) ? 40 : 25
                                     )
-                                    .foregroundColor(rectangle == 5 ? bottomLineColor : .black )
-                                    .offset(y: rectangle != 5 ? 15 : 3)
+                                    .foregroundColor((rectangle==4||rectangle==6) ? .green : .black)
+                                    .offset(y: (rectangle==4||rectangle==6) ? 20 : 15)
                                 
                             }
                             .frame(width: 23, height: 50, alignment: .center)
                         }
+                        .overlay(
+                            Rectangle()
+                                .frame(width: 3, height: 50)
+                                .foregroundColor(bottomLineColor)
+                                .offset(x:freqOffset, y: 4.5)
+                        )
                     }
                 )
+        }
+        .onAppear{
+            self.conductor.start()
+        }
+        .onDisappear{
+            self.conductor.stop()
         }
     }
 }

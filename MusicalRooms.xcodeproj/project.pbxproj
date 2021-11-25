@@ -14,6 +14,7 @@
 		2E16226927412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226827412CA500791ADC /* MusicalRoomsUITestsLaunchTests.swift */; };
 		2E58ADE7274E9767000B1CFB /* WordStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58ADE6274E9767000B1CFB /* WordStruct.swift */; };
 		2E58ADEA274E979E000B1CFB /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58ADE9274E979E000B1CFB /* GetEnharmonic.swift */; };
+		2E9EF866274FA68C00704AE3 /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2E9EF865274FA68C00704AE3 /* AudioKitUI */; };
 		C5D98ADE274E89AD00A2A279 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D98ADD274E89AD00A2A279 /* ResultsView.swift */; };
 		C5D98AE0274E905A00A2A279 /* ActualResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D98ADF274E905A00A2A279 /* ActualResultsView.swift */; };
 		FF4B7F4D274CE83E0047D8FD /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = FF4B7F4C274CE83E0047D8FD /* Subsonic */; };
@@ -117,6 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF4B7F50274CE8490047D8FD /* AudioKit in Frameworks */,
+				2E9EF866274FA68C00704AE3 /* AudioKitUI in Frameworks */,
 				FF4B7F4D274CE83E0047D8FD /* Subsonic in Frameworks */,
 				FF945043274F9815009155B4 /* SoundpipeAudioKit in Frameworks */,
 			);
@@ -327,6 +329,7 @@
 			packageProductDependencies = (
 				FF4B7F4C274CE83E0047D8FD /* Subsonic */,
 				FF4B7F4F274CE8490047D8FD /* AudioKit */,
+				2E9EF865274FA68C00704AE3 /* AudioKitUI */,
 				FF945042274F9815009155B4 /* SoundpipeAudioKit */,
 			);
 			productName = MusicalRooms;
@@ -406,6 +409,7 @@
 				FF4B7F4B274CE83E0047D8FD /* XCRemoteSwiftPackageReference "Subsonic" */,
 				FF4B7F4E274CE8490047D8FD /* XCRemoteSwiftPackageReference "AudioKit" */,
 				FF945041274F9815009155B4 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
+				2E9EF864274FA68C00704AE3 /* XCRemoteSwiftPackageReference "AudioKitUI" */,
 			);
 			productRefGroup = 2E16224927412CA100791ADC /* Products */;
 			projectDirPath = "";
@@ -642,7 +646,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MusicalRooms/Preview Content\"";
-				DEVELOPMENT_TEAM = AVXAJ75DYV;
+				DEVELOPMENT_TEAM = F5NAQM5U75;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MusicalRooms/Info.plist;
@@ -659,7 +663,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yt.ss.MusicalRooms;
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.MusicalRooms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -677,7 +681,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MusicalRooms/Preview Content\"";
-				DEVELOPMENT_TEAM = AVXAJ75DYV;
+				DEVELOPMENT_TEAM = F5NAQM5U75;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MusicalRooms/Info.plist;
@@ -694,7 +698,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yt.ss.MusicalRooms;
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.MusicalRooms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -836,6 +840,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2E9EF864274FA68C00704AE3 /* XCRemoteSwiftPackageReference "AudioKitUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKitUI";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		FF4B7F4B274CE83E0047D8FD /* XCRemoteSwiftPackageReference "Subsonic" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/Subsonic";
@@ -863,6 +875,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2E9EF865274FA68C00704AE3 /* AudioKitUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E9EF864274FA68C00704AE3 /* XCRemoteSwiftPackageReference "AudioKitUI" */;
+			productName = AudioKitUI;
+		};
 		FF4B7F4C274CE83E0047D8FD /* Subsonic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FF4B7F4B274CE83E0047D8FD /* XCRemoteSwiftPackageReference "Subsonic" */;

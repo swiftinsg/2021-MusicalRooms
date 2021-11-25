@@ -55,7 +55,7 @@ struct TheoryHomeView: View {
                     }
                 }.padding(.bottom, 22)
             }
-            .navigationTitle("Theory")
+            .navigationTitle("Theory Quiz")
             .offset(y:20)
         }
 

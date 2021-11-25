@@ -343,7 +343,7 @@ struct QuestionView: View {
                 }
             }
         }
-        .offset(y: -30)
+        .offset(y: -10)
         .padding()
         .onAppear {
             shuffledWords = words

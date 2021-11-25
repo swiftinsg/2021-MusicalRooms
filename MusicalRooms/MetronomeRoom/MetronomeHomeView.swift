@@ -253,12 +253,12 @@ struct MetronomeHomeView: View {
     
     func sound(){
         var isOne = barNotes==1
-        var isPulse = isOne && note == 1
+        var isPulse = !isOne && note==1
         
         let metrUrl = Bundle.main.url(forResource: "metronome", withExtension: ".wav")!
         let metrUpUrl = Bundle.main.url(forResource: "metronomeUp", withExtension: ".wav")!
         
-        isPulse ? metrUpSound.startPlayback(audio: metrUrl) : metrSound.startPlayback(audio: metrUpUrl)
+        isPulse ? metrSound.startPlayback(audio: metrUpUrl) : metrUpSound.startPlayback(audio: metrUrl)
     }
     
     func swing(delay: Double){

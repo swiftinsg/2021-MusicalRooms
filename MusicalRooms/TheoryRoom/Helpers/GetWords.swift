@@ -60,7 +60,7 @@ func getWords(_ grade: Int) -> [Word] {
                 Word(title: "senza", definition: "\"without\""),
                 Word(title: "vivace, vivo", definition: "to play quickly, lively")]
     } else if grade == 3 {
-        words = [Word(title: "agitato", definition: "in a restless and agotated manner"),
+        words = [Word(title: "agitato", definition: "in a restless and agitated manner"),
                 Word(title: "andantino", definition: "slightly fater than andante"),
                 Word(title: "animato", definition: "with animation"),
                 Word(title: "ben", definition: "well; good"),
@@ -68,7 +68,7 @@ func getWords(_ grade: Int) -> [Word] {
                 Word(title: "energico", definition: "with energy; energetically"),
                 Word(title: "giocoso", definition: "graceful; smooth or elegant"),
                 Word(title: "leggiero", definition: "lightfully; gracefully"),
-                Word(title: "maestoso", definition: ""),
+                Word(title: "maestoso", definition: "performed in a majestic manner"),
                 Word(title: "marcato", altText: "marc.", definition: "to play in a majestic an steadily manner"),
                 Word(title: "pesante", definition: "to play in a heavy, ponderous fashion"),
                 Word(title: "prestissimo", definition: "faster than presto"),

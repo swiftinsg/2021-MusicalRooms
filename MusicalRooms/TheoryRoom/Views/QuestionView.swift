@@ -281,12 +281,15 @@ struct QuestionView: View {
                         isDisabled = false
 
                         correctAnswer = Int.random(in: 1 ..< 5)
-
-                        randomIndex1 = Int.random(in: 0 ..< shuffledWords.count/2)
-                        randomIndex2 = Int.random(in: 0 ..< shuffledWords.count/2)
-                        randomIndex3 = Int.random(in: shuffledWords.count/2 ..< shuffledWords.count)
-                        randomIndex4 = Int.random(in: shuffledWords.count/2 ..< shuffledWords.count)
-
+                        
+                        let shuffledWords = Array(Set(0..<shuffledWords.count)).prefix(4)
+                        
+                        randomIndex1 = shuffledWords[0]
+                        randomIndex2 = shuffledWords[1]
+                        randomIndex3 = shuffledWords[2]
+                        randomIndex4 = shuffledWords[3]
+                        
+                        print(shuffledWords)
                     } label: {
                         ZStack {
                             Rectangle()

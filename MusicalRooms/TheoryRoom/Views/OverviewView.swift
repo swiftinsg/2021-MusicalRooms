@@ -48,7 +48,9 @@ struct OverviewView: View {
             Spacer().frame(height:30)
             
             Button {
-                expandAll.toggle()
+                withAnimation(.easeInOut(duration: 0.5)){
+                    expandAll.toggle()
+                }
             } label: {
                 HStack {
                     Image(systemName: !expandAll ? "chevron.down" : "chevron.up")
@@ -75,7 +77,7 @@ struct OverviewView: View {
             }
             .padding(.leading, 10)
             .padding(.trailing, 10)
-            .frame(width:180, height: 50, alignment: .center)
+            .frame(width: 260, height: 60, alignment: .center)
             .background( Color("darkBrown"))
             .cornerRadius(10)
             .navigationTitle("Grade \(grade)")

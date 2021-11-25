@@ -77,7 +77,7 @@ struct ActualResultsView: View {
                         .overlay(
                             Text("Save your Score")
                                 .font(Font.system(size: 20, design: .rounded))
-                                .foregroundColor(Color("lightBrown"))
+                                .foregroundColor(Color("evenLighterBrown"))
                                 .fontWeight(.heavy)
                         )
                 }

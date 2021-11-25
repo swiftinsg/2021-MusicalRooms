@@ -109,7 +109,7 @@ func getWords(_ grade: Int) -> [Word] {
     } else if grade == 5 {
         words = [
             Word(title: "a niente", definition: "to fade the music down to a little more than a bare whisper"),
-            Word(title: "ad libitum", altText: "ad lib.", definition: "to play in free time \n to improvise a melodic line; \n to repeat the passage an arbitrary number of times"),
+            Word(title: "ad libitum", altText: "ad lib.", definition: "to play in free time;\n to improvise a melodic line;\n to repeat the passage an arbitrary number of times"),
             Word(title: "attacca", definition: "attack at once, to beign the next movement without a pause"),
             Word(title: "cantando", definition: "to play in a singable, songlike manner"),
             Word(title: "con dolore", definition: "in a sad manner"),

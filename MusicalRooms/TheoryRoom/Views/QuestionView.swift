@@ -40,103 +40,103 @@ struct QuestionView: View {
     @State var pastelRed = Color.init(red: 0.8392156863, green: 0.4, blue: 0.3764705882)
     
     fileprivate func wrongOrCorrectAction(_ button: Int, _ correctAnswer: Int) {
-        isContinueButtonHidden = false
-        isDisabled = true
-        if button == correctAnswer {
-            score += 1
-            if button == 1 {
-                rectangleColor1 = pastelGreen
-                foregroundColor1 = .black
-            } else if button == 2 {
+    isContinueButtonHidden = false
+    isDisabled = true
+    if button == correctAnswer {
+        score += 1
+        if button == 1 {
+            rectangleColor1 = pastelGreen
+            foregroundColor1 = .black
+        } else if button == 2 {
+            rectangleColor2 = pastelGreen
+            foregroundColor2 = .black
+        } else if button == 3 {
+            rectangleColor3 = pastelGreen
+            foregroundColor3 = .black
+        } else if button == 4 {
+            rectangleColor4 = pastelGreen
+            foregroundColor4 = .black
+        }
+    } else {
+        if button == 1 {
+            rectangleColor1 = pastelRed
+            foregroundColor1 = .black
+            if correctAnswer == 2 {
                 rectangleColor2 = pastelGreen
                 foregroundColor2 = .black
-            } else if button == 3 {
+            } else if correctAnswer == 3 {
                 rectangleColor3 = pastelGreen
                 foregroundColor3 = .black
-            } else if button == 4 {
+            } else if correctAnswer == 4 {
                 rectangleColor4 = pastelGreen
                 foregroundColor4 = .black
             }
-        } else {
-            if button == 1 {
-                rectangleColor1 = pastelRed
+        } else if button == 2 {
+            rectangleColor2 = pastelRed
+            foregroundColor2 = .black
+            if correctAnswer == 1 {
+                rectangleColor1 = pastelGreen
                 foregroundColor1 = .black
-                if correctAnswer == 2 {
-                    rectangleColor2 = pastelGreen
-                    foregroundColor2 = .black
-                } else if correctAnswer == 3 {
-                    rectangleColor3 = pastelGreen
-                    foregroundColor3 = .black
-                } else if correctAnswer == 4 {
-                    rectangleColor4 = pastelGreen
-                    foregroundColor4 = .black
-                }
-            } else if button == 2 {
-                rectangleColor2 = pastelRed
-                foregroundColor2 = .black
-                if correctAnswer == 1 {
-                    rectangleColor1 = pastelGreen
-                    foregroundColor1 = .black
-                } else if correctAnswer == 3 {
-                    rectangleColor3 = pastelGreen
-                    foregroundColor3 = .black
-                } else if correctAnswer == 4 {
-                    rectangleColor4 = pastelGreen
-                    foregroundColor4 = .black
-                }
-            } else if button == 3 {
-                rectangleColor3 = pastelRed
+            } else if correctAnswer == 3 {
+                rectangleColor3 = pastelGreen
                 foregroundColor3 = .black
-                if correctAnswer == 1 {
-                    rectangleColor1 = pastelGreen
-                    foregroundColor1 = .black
-                } else if correctAnswer == 2 {
-                    rectangleColor2 = pastelGreen
-                    foregroundColor2 = .black
-                } else if correctAnswer == 4 {
-                    rectangleColor4 = pastelGreen
-                    foregroundColor4 = .black
-                }
-            } else if button == 4 {
-                rectangleColor4 = pastelRed
+            } else if correctAnswer == 4 {
+                rectangleColor4 = pastelGreen
                 foregroundColor4 = .black
-                if correctAnswer == 1 {
-                    rectangleColor1 = pastelGreen
-                    foregroundColor1 = .black
-                } else if correctAnswer == 2 {
-                    rectangleColor2 = pastelGreen
-                    foregroundColor2 = .black
-                } else if correctAnswer == 3 {
-                    rectangleColor3 = pastelGreen
-                    foregroundColor3 = .black
-                }
+            }
+        } else if button == 3 {
+            rectangleColor3 = pastelRed
+            foregroundColor3 = .black
+            if correctAnswer == 1 {
+                rectangleColor1 = pastelGreen
+                foregroundColor1 = .black
+            } else if correctAnswer == 2 {
+                rectangleColor2 = pastelGreen
+                foregroundColor2 = .black
+            } else if correctAnswer == 4 {
+                rectangleColor4 = pastelGreen
+                foregroundColor4 = .black
+            }
+        } else if button == 4 {
+            rectangleColor4 = pastelRed
+            foregroundColor4 = .black
+            if correctAnswer == 1 {
+                rectangleColor1 = pastelGreen
+                foregroundColor1 = .black
+            } else if correctAnswer == 2 {
+                rectangleColor2 = pastelGreen
+                foregroundColor2 = .black
+            } else if correctAnswer == 3 {
+                rectangleColor3 = pastelGreen
+                foregroundColor3 = .black
             }
         }
-        print(correctAnswer, button)
     }
+    print(correctAnswer, button)
+}
     
     var body: some View {
         VStack {
             ZStack {
-                RoundedRectangle(cornerRadius: 20)
+                RoundedRectangle(cornerRadius: 10)
                     .frame(width: 350, height: 250, alignment: .center)
                     .foregroundColor(Color("lightBrown"))
                 
                 
-                RoundedRectangle(cornerRadius: 20)
+                RoundedRectangle(cornerRadius: 10)
                     .frame(width: 350, height: 50, alignment: .leading)
                     .foregroundColor(Color("darkBrown"))
-                    .offset(y: -125)
                     .overlay(
                         HStack {
                             Text("\(currentQuestion + 1)/\(shuffledWords.count)")
                                 .font(.system(size: 19, design: .rounded))
-                                .foregroundColor(Color("darkerBrown"))
+                                .foregroundColor(Color("lightBrown"))
                                 .bold()
-                                .offset(x: -120)
+                                .offset(x: -130)
                         }
-                            .offset(y: -125)
                     )
+                    .offset(y: -115)
+                
                 VStack {
                     Text(shuffledWords[currentQuestion].title)
                         .bold()
@@ -270,11 +270,10 @@ struct QuestionView: View {
                         
                         correctAnswer = Int.random(in: 1 ..< 5)
                         
-                        randomIndex1 = Int.random(in: 0 ..< shuffledWords.count)
-                        randomIndex2 = Int.random(in: 0 ..< shuffledWords.count)
-                        randomIndex3 = Int.random(in: 0 ..< shuffledWords.count)
-                        randomIndex4 = Int.random(in: 0 ..< shuffledWords.count)
-                        
+                        randomIndex1 = Int.random(in: 0 ..< shuffledWords.count*1/4)
+                        randomIndex2 = Int.random(in: shuffledWords.count*1/4 ..< shuffledWords.count*2/4)
+                        randomIndex3 = Int.random(in: shuffledWords.count*2/4 ..< shuffledWords.count*3/4)
+                        randomIndex4 = Int.random(in: shuffledWords.count*3/4 ..< shuffledWords.count)
                         
                     } label: {
                         ZStack {
@@ -291,7 +290,7 @@ struct QuestionView: View {
                     }
                 } else {
                     NavigationLink {
-                        ActualResultsView(grades: $grades, grade: grade)
+                        ActualResultsView(grades: $grades, percentCorrect: score/Double(shuffledWords.count)*100, grade: grade)
                     } label: {
                         ZStack {
                             Rectangle()
@@ -314,10 +313,10 @@ struct QuestionView: View {
             shuffledWords = words
             shuffledWords.shuffle()
             
-            randomIndex1 = Int.random(in: 0 ..< shuffledWords.count)
-            randomIndex2 = Int.random(in: 0 ..< shuffledWords.count)
-            randomIndex3 = Int.random(in: 0 ..< shuffledWords.count)
-            randomIndex4 = Int.random(in: 0 ..< shuffledWords.count)
+            randomIndex1 = Int.random(in: 0 ..< shuffledWords.count*1/4)
+            randomIndex2 = Int.random(in: shuffledWords.count*1/4 ..< shuffledWords.count*2/4)
+            randomIndex3 = Int.random(in: shuffledWords.count*2/4 ..< shuffledWords.count*3/4)
+            randomIndex4 = Int.random(in: shuffledWords.count*3/4 ..< shuffledWords.count)
             
             correctAnswer = Int.random(in: 1 ..< 5)
         }

@@ -43,29 +43,6 @@ struct OverviewView: View {
                         }
                         .listRowBackground(Color("lightBrown"))
                     }
-                } else {
-                    ForEach(0 ..< 5) { word in
-                        NavigationLink {
-                            FlashcardsView(words: words, currentWord: word)
-                        } label: {
-                            VStack {
-                                Text(words[word].title)
-                                    .foregroundColor(Color("darkerBrown"))
-                                    .font(.system(size: 25, design: .rounded))
-                                    .fontWeight(.semibold)
-                                
-                                if let altText = words[word].altText {
-                                    Text(altText)
-                                        .foregroundColor(Color("darkerBrown"))
-                                        .font(.system(size: 20, design: .rounded))
-                                        .fontWeight(.medium)
-                                }
-                            }
-                            .frame(width: 150, height: 42, alignment: .leading)
-                        }
-                        .listRowBackground(Color("lightBrown"))
-                    }
-                }
             }
             .listStyle(.inset)
             Spacer().frame(height:30)
@@ -106,7 +83,6 @@ struct OverviewView: View {
         }.offset(y:-40)
     }
 }
-
 
 struct OverviewView_Previews: PreviewProvider {
     static var previews: some View {

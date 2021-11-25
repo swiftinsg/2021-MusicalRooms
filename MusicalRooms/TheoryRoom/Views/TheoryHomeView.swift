@@ -17,7 +17,7 @@ struct TheoryHomeView: View {
                 VStack {
                     ForEach(grades) { grade in
                         NavigationLink {
-                            OverviewView(grade: grade.number )
+                            OverviewView(grades: $grades, grade: grade.number)
                         } label: {
                             VStack(alignment: .leading) {
                                 HStack(alignment: .bottom) {

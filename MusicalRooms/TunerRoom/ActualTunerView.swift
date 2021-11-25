@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ActualTunerView: View {
     
-    @State var AFrequency = 440
-    @Binding var variance: Float
+    @State var frequency = 440
     let topLineColor: Color = Color("topLineColor")
     let bottomLineColor: Color = Color("bottomLineColor")
     
@@ -24,58 +23,28 @@ struct ActualTunerView: View {
                         Rectangle()
                             .frame(width: 2, height: 35)
                             .foregroundColor(topLineColor)
-                        HStack {
-                            Button {
-                                AFrequency -= 5; variance -= 5
-                            } label: {
-                                Circle()
-                                    .frame(width: 25, height: 25, alignment: .center)
-                                    .foregroundColor(Color("darkBrown"))
-                                    .overlay(
-                                        Image(systemName: "minus")
-                                            .foregroundColor(Color("evenLighterBrown"))
-                                        )
-                            }
-                            
-                            VStack {
-                                Text("A") //Placeholder text
-                                    .fontWeight(.heavy)
-                                    .font(Font.system(size: 30))
-                                Text(String(AFrequency) + "Hz")
-                                    .fontWeight(.bold)
-                                    .font(Font.system(size: 10))
-                                    .foregroundColor(Color("darkerBrown"))
-                            }
-                            
-                            Button {
-                                AFrequency += 5; variance += 5
-                            } label: {
-                                Circle()
-                                    .frame(width: 25, height: 25, alignment: .center)
-                                    .foregroundColor(Color("darkBrown"))
-                                    .overlay(
-                                        Image(systemName: "plus")
-                                            .foregroundColor(Color("evenLighterBrown"))
-                                        )
-                            }
-                            
-                            
-                        }
+                        
+                        Text("A") //Placeholder text
+                            .fontWeight(.heavy)
+                            .font(Font.system(size: 30))
+                        Text(String(frequency) + "Hz")
+                            .fontWeight(.bold)
+                            .font(Font.system(size: 10))
+                            .foregroundColor(Color("darkerBrown"))
                         HStack {
                             ForEach(0 ..< 11) { rectangle in
                                 Rectangle()
                                     .frame(
-                                    width: 2,
-                                    height: rectangle == 5 ? 50 : 25
+                                        width: 2,
+                                        height: rectangle == 5 ? 50 : 25
                                     )
                                     .foregroundColor(rectangle == 5 ? bottomLineColor : .black )
                                     .offset(y: rectangle != 5 ? 15 : 3)
-                                    
+                                
                             }
                             .frame(width: 23, height: 50, alignment: .center)
                         }
                     }
-                        
                 )
         }
     }
@@ -83,6 +52,6 @@ struct ActualTunerView: View {
 
 struct TunerView_Previews: PreviewProvider {
     static var previews: some View {
-        ActualTunerView(variance: .constant(0))
+        ActualTunerView()
     }
 }

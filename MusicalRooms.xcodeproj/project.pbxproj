@@ -45,6 +45,8 @@
 		FF93C295274E287500EE2907 /* TheoryHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93C28E274E287500EE2907 /* TheoryHomeView.swift */; };
 		FF93C296274E287500EE2907 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93C28F274E287500EE2907 /* OverviewView.swift */; };
 		FF93C297274E287500EE2907 /* GetWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93C290274E287500EE2907 /* GetWords.swift */; };
+		FF945040274F9508009155B4 /* Tuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF94503F274F9508009155B4 /* Tuner.swift */; };
+		FF945043274F9815009155B4 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF945042274F9815009155B4 /* SoundpipeAudioKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,7 @@
 		FF93C28E274E287500EE2907 /* TheoryHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheoryHomeView.swift; sourceTree = "<group>"; };
 		FF93C28F274E287500EE2907 /* OverviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		FF93C290274E287500EE2907 /* GetWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetWords.swift; sourceTree = "<group>"; };
+		FF94503F274F9508009155B4 /* Tuner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tuner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,7 @@
 			files = (
 				FF4B7F50274CE8490047D8FD /* AudioKit in Frameworks */,
 				FF4B7F4D274CE83E0047D8FD /* Subsonic in Frameworks */,
+				FF945043274F9815009155B4 /* SoundpipeAudioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +257,7 @@
 			children = (
 				FF863058274E103E001086F8 /* TunerHomeView.swift */,
 				FF863064274E103E001086F8 /* BottomButtonView.swift */,
+				FF94503F274F9508009155B4 /* Tuner.swift */,
 				FF863065274E103E001086F8 /* ActualTunerView.swift */,
 				FF863066274E103E001086F8 /* SelectKeyView.swift */,
 				FF863067274E103E001086F8 /* Note.swift */,
@@ -322,6 +327,7 @@
 			packageProductDependencies = (
 				FF4B7F4C274CE83E0047D8FD /* Subsonic */,
 				FF4B7F4F274CE8490047D8FD /* AudioKit */,
+				FF945042274F9815009155B4 /* SoundpipeAudioKit */,
 			);
 			productName = MusicalRooms;
 			productReference = 2E16224827412CA100791ADC /* MusicalRooms.app */;
@@ -399,6 +405,7 @@
 			packageReferences = (
 				FF4B7F4B274CE83E0047D8FD /* XCRemoteSwiftPackageReference "Subsonic" */,
 				FF4B7F4E274CE8490047D8FD /* XCRemoteSwiftPackageReference "AudioKit" */,
+				FF945041274F9815009155B4 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
 			);
 			productRefGroup = 2E16224927412CA100791ADC /* Products */;
 			projectDirPath = "";
@@ -457,6 +464,7 @@
 				FF86309E274E103E001086F8 /* AudioPlayer.swift in Sources */,
 				FF863084274E103E001086F8 /* BpmNumpadView.swift in Sources */,
 				FF863097274E103E001086F8 /* Oscillator.swift in Sources */,
+				FF945040274F9508009155B4 /* Tuner.swift in Sources */,
 				FF863083274E103E001086F8 /* MetronomeHomeView.swift in Sources */,
 				FF8630A5274E103E001086F8 /* RecorderHomeView.swift in Sources */,
 				FF93C295274E287500EE2907 /* TheoryHomeView.swift in Sources */,
@@ -844,6 +852,14 @@
 				kind = branch;
 			};
 		};
+		FF945041274F9815009155B4 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/SoundpipeAudioKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -856,6 +872,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF4B7F4E274CE8490047D8FD /* XCRemoteSwiftPackageReference "AudioKit" */;
 			productName = AudioKit;
+		};
+		FF945042274F9815009155B4 /* SoundpipeAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF945041274F9815009155B4 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */;
+			productName = SoundpipeAudioKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

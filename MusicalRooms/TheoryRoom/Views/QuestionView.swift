@@ -16,10 +16,9 @@ struct QuestionView: View {
     @State var shuffledWords: [Word] = [Word(title: "placeholder", definition: "hi")]
     
     @State var correctAnswer = 0
+    @State var correctAnswerWords: [Int] = []
     @State var currentQuestion = 0
     @State var score: Double = 0
-
-    @State var questionAnswers = [Bool]()
 
     @State var isContinueButtonHidden = true
     @State var isDisabled = false
@@ -47,6 +46,7 @@ struct QuestionView: View {
     if button == correctAnswer {
         questionAnswers[currentQuestion] = true
         score += 1
+        correctAnswerWords.append(shuffledWords[currentQuestion])
         if button == 1 {
             rectangleColor1 = Color("lightGreen")
             foregroundColor1 = Color("darkerBrown")
@@ -256,7 +256,6 @@ struct QuestionView: View {
             if !isContinueButtonHidden {
                 if currentQuestion < shuffledWords.count - 1 {
                     Button {
-                        print(score)
                         isContinueButtonHidden = true
                         foregroundColor1 = Color("lightBrown")
                         foregroundColor2 = Color("lightBrown")
@@ -277,7 +276,6 @@ struct QuestionView: View {
                         randomIndex2 = Int.random(in: 5 ..< 10)
                         randomIndex3 = Int.random(in: 10 ..< 15)
                         randomIndex4 = Int.random(in: 15 ..< shuffledWords.count)
-                        
                     } label: {
                         ZStack {
                             Rectangle()
@@ -293,7 +291,7 @@ struct QuestionView: View {
                     }
                 } else {
                     NavigationLink {
-                        ActualResultsView(grades: $grades, percentCorrect: score/Double(shuffledWords.count)*100, grade: grade)
+                        ActualResultsView(grades: $grades, questionAnswers: <#[Bool]#>, percentCorrect: score/Double(shuffledWords.count)*100, grade: grade)
                     } label: {
                         ZStack {
                             Rectangle()

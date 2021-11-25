@@ -18,9 +18,9 @@ class OscillatorObject {
         engine.output = osc
     }
     
-    func start(frequency: Float = 440, _ variance: Float = 0) {
+    func start(frequency: Float = 440) {
         
-        osc.frequency = frequency + variance
+        osc.frequency = frequency 
         osc.amplitude = 0.6
         
         try? engine.start()

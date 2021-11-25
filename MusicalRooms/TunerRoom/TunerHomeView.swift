@@ -22,11 +22,11 @@ struct TunerHomeView: View {
         NavigationView{
             VStack{
 
-                ActualTunerView(variance: $variance)
+                ActualTunerView()
 
                 Spacer().frame(height: 45)
 
-                SelectKeyView(notes: $notes, variance: $variance)
+                SelectKeyView(notes: $notes)
 
                 Spacer().frame(height: 15)
 

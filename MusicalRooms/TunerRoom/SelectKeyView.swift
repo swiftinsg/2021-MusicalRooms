@@ -10,7 +10,6 @@ import SwiftUI
 struct SelectKeyView: View {
     
     @Binding var notes: [Note]
-    @Binding var variance: Float
     @State var noteFrequency = 440.0
     @State var isOn = false
     
@@ -77,7 +76,7 @@ struct SelectKeyView: View {
                 notes[num].isSelected = false
             }
             notes[note].isSelected.toggle()
-            osc.start(frequency: notes[note].hertz, variance)
+            osc.start(frequency: notes[note].hertz)
             isOn = true
         } else {
             osc.stop()
@@ -103,7 +102,7 @@ struct SelectKeyView_Previews: PreviewProvider {
             Note(name: "Dsharp", hertz: 311.13),
             Note(name: "Fsharp", hertz: 369.99),
             Note(name: "Gsharp", hertz: 415.30),
-            Note(name: "Asharp", hertz: 466.16)]), variance: .constant(0))
+            Note(name: "Asharp", hertz: 466.16)]))
     }
 }
 

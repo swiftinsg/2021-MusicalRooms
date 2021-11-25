@@ -61,7 +61,7 @@ struct OverviewView: View {
                 .background(Color(expandAll ? "darkerBrown" : "lightBrown"))
                 .cornerRadius(15)
             }
-            
+
             Spacer().frame(height:30)
             
             NavigationLink {
@@ -79,7 +79,7 @@ struct OverviewView: View {
             .background( Color("darkBrown"))
             .cornerRadius(10)
             .navigationTitle("Grade \(grade)")
-            
+
         }.offset(y:-40)
     }
 }

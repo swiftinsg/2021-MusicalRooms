@@ -1,3 +1,10 @@
+//
+//  QuestionView.swift
+//  MusicalRooms
+//
+//  Created by Isaac Lee Jing Zhi on 24/11/21.
+//
+
 import SwiftUI
 
 struct QuestionView: View {
@@ -11,7 +18,9 @@ struct QuestionView: View {
     @State var correctAnswer = 0
     @State var currentQuestion = 0
     @State var score: Double = 0
-    
+
+    @State var questionAnswers = [Bool]()
+
     @State var isContinueButtonHidden = true
     @State var isDisabled = false
     
@@ -36,6 +45,7 @@ struct QuestionView: View {
     isContinueButtonHidden = false
     isDisabled = true
     if button == correctAnswer {
+        questionAnswers[currentQuestion] = true
         score += 1
         if button == 1 {
             rectangleColor1 = Color("lightGreen")
@@ -114,8 +124,8 @@ struct QuestionView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width: 350, height: 250, alignment: .center)
                     .foregroundColor(Color("lightBrown"))
-                
-                
+
+
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width: 350, height: 50, alignment: .leading)
                     .foregroundColor(Color("darkBrown"))
@@ -129,7 +139,7 @@ struct QuestionView: View {
                         }
                     )
                     .offset(y: -115)
-                
+
                 VStack {
                     Text(shuffledWords[currentQuestion].title)
                         .bold()
@@ -140,7 +150,7 @@ struct QuestionView: View {
                     }
                 }
             }
-            
+
             VStack {
                 Button {
                     wrongOrCorrectAction(1, correctAnswer)
@@ -166,7 +176,7 @@ struct QuestionView: View {
                         )
                 }
                 .disabled(isDisabled)
-                
+
                 Button {
                     wrongOrCorrectAction(2, correctAnswer)
                 } label: {
@@ -191,7 +201,7 @@ struct QuestionView: View {
                         )
                 }
                 .disabled(isDisabled)
-                
+
                 Button {
                     wrongOrCorrectAction(3, correctAnswer)
                 } label: {
@@ -216,7 +226,7 @@ struct QuestionView: View {
                         )
                 }
                 .disabled(isDisabled)
-                
+
                 Button {
                     wrongOrCorrectAction(4, correctAnswer)
                 } label: {
@@ -242,7 +252,7 @@ struct QuestionView: View {
                 }
                 .disabled(isDisabled)
             }
-            
+
             if !isContinueButtonHidden {
                 if currentQuestion < shuffledWords.count - 1 {
                     Button {
@@ -252,29 +262,29 @@ struct QuestionView: View {
                         foregroundColor2 = Color("lightBrown")
                         foregroundColor3 = Color("lightBrown")
                         foregroundColor4 = Color("lightBrown")
-                        
+
                         rectangleColor1 = Color("darkBrown")
                         rectangleColor2 = Color("darkBrown")
                         rectangleColor3 = Color("darkBrown")
                         rectangleColor4 = Color("darkBrown")
-                        
+
                         currentQuestion += 1
                         isDisabled = false
-                        
+
                         correctAnswer = Int.random(in: 1 ..< 4)
-                        
+
                         randomIndex1 = Int.random(in: 0 ..< shuffledWords.count*1/4)
                         randomIndex2 = Int.random(in: shuffledWords.count*1/4 ..< shuffledWords.count*2/4)
                         randomIndex3 = Int.random(in: shuffledWords.count*2/4 ..< shuffledWords.count*3/4)
                         randomIndex4 = Int.random(in: shuffledWords.count*3/4 ..< shuffledWords.count)
-                        
+
                     } label: {
                         ZStack {
                             Rectangle()
                                 .frame(width: 350, height: 50, alignment: .center)
                                 .foregroundColor(Color("darkerBrown"))
                                 .cornerRadius(20)
-                            
+
                             Text("Continue")
                                 .foregroundColor(Color("evenLighterBrown"))
                                 .bold()
@@ -290,7 +300,7 @@ struct QuestionView: View {
                                 .frame(width: 350, height: 50, alignment: .center)
                                 .foregroundColor(Color("darkBrown"))
                                 .cornerRadius(20)
-                            
+
                             Text("End")
                                 .foregroundColor(Color("lightBrown"))
                                 .bold()
@@ -305,12 +315,12 @@ struct QuestionView: View {
         .onAppear {
             shuffledWords = words
             shuffledWords.shuffle()
-            
+
             randomIndex1 = Int.random(in: 0 ..< shuffledWords.count*1/4)
             randomIndex2 = Int.random(in: shuffledWords.count*1/4 ..< shuffledWords.count*2/4)
             randomIndex3 = Int.random(in: shuffledWords.count*2/4 ..< shuffledWords.count*3/4)
             randomIndex4 = Int.random(in: shuffledWords.count*3/4 ..< shuffledWords.count)
-            
+
             correctAnswer = Int.random(in: 1 ..< 5)
         }
     }

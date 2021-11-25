@@ -19,10 +19,7 @@ struct RecordingsList: View {
     var body: some View {
         
         HStack{
-            Text("Recordings")
-                .font(Font.system(size: 18, weight: .semibold, design: .rounded))
-                .foregroundColor(darkBrown)
-                .offset(y:30)
+           
 
             Spacer()
 
@@ -35,6 +32,7 @@ struct RecordingsList: View {
                         .font(Font.system(size: 18, weight: .semibold, design: .default))
                         .foregroundColor(darkBrown)
                         .multilineTextAlignment(.trailing)
+                        .offset(x:-6)
             }
         }
         .padding(.leading, 35)

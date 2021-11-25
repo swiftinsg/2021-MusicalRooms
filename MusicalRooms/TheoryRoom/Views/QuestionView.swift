@@ -18,7 +18,9 @@ struct QuestionView: View {
     @State var correctAnswer = 0
     @State var currentQuestion = 0
     @State var score: Double = 0
-    
+
+    @State var questionAnswers = [Bool]()
+
     @State var isContinueButtonHidden = true
     @State var isDisabled = false
     
@@ -43,72 +45,73 @@ struct QuestionView: View {
     isContinueButtonHidden = false
     isDisabled = true
     if button == correctAnswer {
+        questionAnswers[currentQuestion] = true
         score += 1
         if button == 1 {
-            rectangleColor1 = pastelGreen
-            foregroundColor1 = .black
+            rectangleColor1 = Color("lightGreen")
+            foregroundColor1 = Color("darkerBrown")
         } else if button == 2 {
-            rectangleColor2 = pastelGreen
-            foregroundColor2 = .black
+            rectangleColor2 = Color("lightGreen")
+            foregroundColor2 = Color("darkerBrown")
         } else if button == 3 {
-            rectangleColor3 = pastelGreen
-            foregroundColor3 = .black
+            rectangleColor3 = Color("lightGreen")
+            foregroundColor3 = Color("darkerBrown")
         } else if button == 4 {
-            rectangleColor4 = pastelGreen
-            foregroundColor4 = .black
+            rectangleColor4 = Color("lightGreen")
+            foregroundColor4 = Color("darkerBrown")
         }
     } else {
         if button == 1 {
-            rectangleColor1 = pastelRed
-            foregroundColor1 = .black
+            rectangleColor1 = Color("lightRed")
+            foregroundColor1 = .white
             if correctAnswer == 2 {
-                rectangleColor2 = pastelGreen
-                foregroundColor2 = .black
+                rectangleColor2 = Color("lightGreen")
+                foregroundColor2 = Color("darkerBrown")
             } else if correctAnswer == 3 {
-                rectangleColor3 = pastelGreen
-                foregroundColor3 = .black
+                rectangleColor3 = Color("lightGreen")
+                foregroundColor3 = Color("darkerBrown")
             } else if correctAnswer == 4 {
-                rectangleColor4 = pastelGreen
-                foregroundColor4 = .black
+                rectangleColor4 = Color("lightGreen")
+                foregroundColor4 = Color("darkerBrown")
             }
         } else if button == 2 {
-            rectangleColor2 = pastelRed
-            foregroundColor2 = .black
+            rectangleColor2 = Color("lightRed")
+            foregroundColor2 = .white
             if correctAnswer == 1 {
-                rectangleColor1 = pastelGreen
-                foregroundColor1 = .black
+                rectangleColor1 = Color("lightGreen")
+                foregroundColor1 = Color("darkerBrown")
             } else if correctAnswer == 3 {
-                rectangleColor3 = pastelGreen
-                foregroundColor3 = .black
+                rectangleColor3 = Color("lightGreen")
+                foregroundColor3 = Color("darkerBrown")
             } else if correctAnswer == 4 {
-                rectangleColor4 = pastelGreen
-                foregroundColor4 = .black
+                rectangleColor4 = Color("lightGreen")
+                foregroundColor4 = Color("darkerBrown")
             }
         } else if button == 3 {
-            rectangleColor3 = pastelRed
-            foregroundColor3 = .black
+            rectangleColor3 = Color("lightRed")
+            foregroundColor3 = .white
             if correctAnswer == 1 {
-                rectangleColor1 = pastelGreen
-                foregroundColor1 = .black
+                rectangleColor1 = Color("lightGreen")
+                foregroundColor1 = Color("darkerBrown")
             } else if correctAnswer == 2 {
-                rectangleColor2 = pastelGreen
-                foregroundColor2 = .black
+                rectangleColor2 = Color("lightGreen")
+                foregroundColor2 = Color("darkerBrown")
             } else if correctAnswer == 4 {
-                rectangleColor4 = pastelGreen
-                foregroundColor4 = .black
+                rectangleColor4 = Color("lightGreen")
+                foregroundColor4 = Color("darkerBrown")
             }
         } else if button == 4 {
-            rectangleColor4 = pastelRed
-            foregroundColor4 = .black
+            rectangleColor4 = Color("lightRed")
+            foregroundColor4 = .white
             if correctAnswer == 1 {
-                rectangleColor1 = pastelGreen
-                foregroundColor1 = .black
+                rectangleColor1 = Color("lightGreen")
+                foregroundColor1 = Color("darkerBrown")
             } else if correctAnswer == 2 {
-                rectangleColor2 = pastelGreen
-                foregroundColor2 = .black
+                rectangleColor2 = Color("lightGreen")
+                foregroundColor2 = Color("darkerBrown")
             } else if correctAnswer == 3 {
-                rectangleColor3 = pastelGreen
-                foregroundColor3 = .black
+                rectangleColor3 = Color("lightGreen")
+                foregroundColor3 = Color("darkerBrown")
             }
         }
     }
@@ -121,22 +124,22 @@ struct QuestionView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width: 350, height: 250, alignment: .center)
                     .foregroundColor(Color("lightBrown"))
-                
-                
+
+
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width: 350, height: 50, alignment: .leading)
                     .foregroundColor(Color("darkBrown"))
                     .overlay(
                         HStack {
                             Text("\(currentQuestion + 1)/\(shuffledWords.count)")
-                                .font(.system(size: 19, design: .rounded))
-                                .foregroundColor(Color("lightBrown"))
+                                .font(.system(size: 22, design: .rounded))
+                                .foregroundColor(Color("evenLighterBrown"))
                                 .bold()
                                 .offset(x: -130)
                         }
                     )
                     .offset(y: -115)
-                
+
                 VStack {
                     Text(shuffledWords[currentQuestion].title)
                         .bold()
@@ -147,7 +150,7 @@ struct QuestionView: View {
                     }
                 }
             }
-            
+
             VStack {
                 Button {
                     wrongOrCorrectAction(1, correctAnswer)
@@ -173,7 +176,7 @@ struct QuestionView: View {
                         )
                 }
                 .disabled(isDisabled)
-                
+
                 Button {
                     wrongOrCorrectAction(2, correctAnswer)
                 } label: {
@@ -198,7 +201,7 @@ struct QuestionView: View {
                         )
                 }
                 .disabled(isDisabled)
-                
+
                 Button {
                     wrongOrCorrectAction(3, correctAnswer)
                 } label: {
@@ -223,7 +226,7 @@ struct QuestionView: View {
                         )
                 }
                 .disabled(isDisabled)
-                
+
                 Button {
                     wrongOrCorrectAction(4, correctAnswer)
                 } label: {
@@ -249,7 +252,7 @@ struct QuestionView: View {
                 }
                 .disabled(isDisabled)
             }
-            
+
             if !isContinueButtonHidden {
                 if currentQuestion < shuffledWords.count - 1 {
                     Button {
@@ -259,12 +262,12 @@ struct QuestionView: View {
                         foregroundColor2 = Color("lightBrown")
                         foregroundColor3 = Color("lightBrown")
                         foregroundColor4 = Color("lightBrown")
-                        
+
                         rectangleColor1 = Color("darkBrown")
                         rectangleColor2 = Color("darkBrown")
                         rectangleColor3 = Color("darkBrown")
                         rectangleColor4 = Color("darkBrown")
-                        
+
                         currentQuestion += 1
                         isDisabled = false
                         
@@ -279,11 +282,11 @@ struct QuestionView: View {
                         ZStack {
                             Rectangle()
                                 .frame(width: 350, height: 50, alignment: .center)
-                                .foregroundColor(Color("darkBrown"))
+                                .foregroundColor(Color("darkerBrown"))
                                 .cornerRadius(20)
-                            
+
                             Text("Continue")
-                                .foregroundColor(Color("lightBrown"))
+                                .foregroundColor(Color("evenLighterBrown"))
                                 .bold()
                                 .font(.system(size: 20, design: .rounded))
                         }
@@ -297,7 +300,7 @@ struct QuestionView: View {
                                 .frame(width: 350, height: 50, alignment: .center)
                                 .foregroundColor(Color("darkBrown"))
                                 .cornerRadius(20)
-                            
+
                             Text("End")
                                 .foregroundColor(Color("lightBrown"))
                                 .bold()

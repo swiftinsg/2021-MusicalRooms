@@ -87,7 +87,7 @@ struct RecorderHomeView: View {
 
                         })
 
-            }.navigationBarTitle("Recorder")
+            }.navigationBarTitle("Recordings")
         }
     }
     

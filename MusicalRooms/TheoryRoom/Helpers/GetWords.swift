@@ -23,7 +23,7 @@ func getWords(_ grade: Int) -> [Word] {
                 Word(title:"diminuendo", altText: "dimin. / dim.", definition: "gradually reducing in force or loudness; decrescendo"),
                 Word(title:"dolce", definition: "sweet; soft"),
                 Word(title:"forte", altText: "f", definition: "to play loudly"),
-                Word(title:"fortissimo", altText: "ff", definition: "to play loudly (louder than forte"),
+                Word(title:"fortissimo", altText: "ff", definition: "to play loudly (louder than forte)"),
                 Word(title:"fine, al fine", definition: "to repeat sections of a composition either from the beginning (D.C), or the dal segno sign, until the \"Fine\" symbol"),
                 Word(title:"legato", definition: "a smooth, graceful style"),
                 Word(title:"mezzo forte", altText: "mf", definition: "softer than forte"),
@@ -85,9 +85,51 @@ func getWords(_ grade: Int) -> [Word] {
                 Word(title: "triste, tristamente", definition: "sad, mournful")
                ]
     } else if grade == 4 {
-        
+        words = [Word(title: "affetuoso", definition: "tenderly"),
+        Word(title: "alla breve", definition: "cut time; common time (2/2)"),
+        Word(title: "amabile", definition: "tender; gentle"),
+        Word(title: "appassionato", definition: "deeply emotional, impassioned"),
+        Word(title: "assai", definition: "\"very\""),
+        Word(title: "come prima", definition: "in the same manner as the first time"),
+        Word(title: "comodo, tempo comodo", definition: "in a comfortable tempo"),
+        Word(title: "con brio", definition: "in a vigourous or brisk manner"),
+        Word(title: "deciso", definition: "decisively"),
+        Word(title: "larghetto", definition: "slower than adagio, but not as slow as largo"),
+        Word(title: "mesto", definition: "sad and pensive"),
+        Word(title: "misterioso", definition: "in a mysterious manner"),
+        Word(title: "ritmico", definition: "rhythmic"),
+        Word(title: "rubato, tempo rubato", definition: "the flexibility/ freedom in the performance of a rhythm; not strict in the tempo"),
+        Word(title: "stringendo", definition: "with quickening of the tempo (usually until the climax)"),
+        Word(title: "animé", definition: "to perform in a lively and animated manner"),
+        Word(title: "douce", definition: "sweetly; to reduce the speed"),
+        Word(title: "lent", definition: "to perform the passage at a slower tempo"),
+        Word(title: "modéré", definition: "to play at a reasonable tempo (usually moderato)"),
+        Word(title: "retenu", definition: "held back; to gently decrease the tempo"),
+        Word(title: "vite", definition: "lively")]
     } else if grade == 5 {
-        
+        words = [
+            Word(title: "a niente", definition: "to fade the music down to a little more than a bare whisper"),
+            Word(title: "ad libitum", altText: "ad lib.", definition: "to play in free time \n to improvise a melodic line; \n to repeat the passage an arbitrary number of times"),
+            Word(title: "attacca", definition: "attack at once, to beign the next movement without a pause"),
+            Word(title: "cantando", definition: "to play in a singable, songlike manner"),
+            Word(title: "con dolore", definition: "in a sad manner"),
+            Word(title: "con spirito", definition: "with spirit or animation"),
+            Word(title: "doloroso", definition: "sorrowful"),
+            Word(title: "largamente", definition: "with slowness and breadth"),
+            Word(title: "morendo", definition: "dying away"),
+            Word(title: "perdendosi", definition: "dying away"),
+            Word(title: "quasi", definition: "in the style of; in the manner of"),
+            Word(title: "rinforzando", altText: "rf / rfz/ rinf", definition: "played with a sudden increase of force"),
+            Word(title: "smorzando", altText: "smorz.", definition: "growing slower and softer; dying away"),
+            Word(title: "sonoro", definition: "melodious; giving out a deep, resonant sound"),
+            Word(title: "sotto voce", definition: "a dramatic lowering of the vocal. instrument sound"),
+            Word(title: "langsam", definition: "slow, slowly"),
+            Word(title: "lebhaft", definition: "lively, similar to vivacw"),
+            Word(title: "mässig", definition: "in an animated manner, with motion"),
+            Word(title: "ruhig", definition: "to play in a calm and peaceful manner"),
+            Word(title: "schnell", definition: "in a rapid manner; quickly"),
+            Word(title: "traurig", definition: "mournful, sad")
+        ]
     }
     return words
 }

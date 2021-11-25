@@ -33,7 +33,7 @@ func getWords(_ grade: Int) -> [Word] {
                 Word(title:"pianissimo", altText: "pp", definition: "very softly, even more softly than piano"),
                 Word(title:"rallentando", altText: "rall.", definition: "a gradual slowing of the tempo"),
                 Word(title:"ritardando", altText: "ritard. / rit.", definition: "a gradual slowing of the tempo, or a delay"),
-                Word(title:"staccato", altText: "stacc.", definition: "to play in a detached, seperate manner ")]
+                Word(title:"staccato", altText: "stacc.", definition: "to play in a detached, separate manner ")]
     } else if grade == 2 {
         words = [Word(title: "alla marcia", definition: "like a march"),
                 Word(title: "allargando", definition: "in a slower and broader manner"),

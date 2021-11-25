@@ -15,20 +15,18 @@ struct OverviewView: View {
         getWords(grade)
     }
     
-    @State var expandAll = false
-    
     var body: some View {
         VStack {
             Spacer().frame(height:30)
 
             Text("Musical terms")
-                .font(Font.system(size: 26, weight: .bold, design: .rounded))
+                .font(Font.system(size: 24, weight: .semibold, design: .rounded))
                 .padding(.top, 20)
             Text("Click to open flashcard")
                 .font(Font.system(size: 12, weight: .medium, design: .rounded))
 
             List {
-                ForEach(0 ..< (expandAll ? words.count : 5), id:\.self) { word in
+                ForEach(0 ..< (words.count), id:\.self) { word in
                     NavigationLink {
                         FlashcardsView(words: words, currentWord: word)
                     } label: {
@@ -53,26 +51,8 @@ struct OverviewView: View {
             }
             .padding(.leading, 20)
             .padding(.trailing, 20)
+            .cornerRadius(15)
             .listStyle(.inset)
-            Spacer().frame(height:30)
-            
-            Button {
-                withAnimation(.easeInOut(duration: 0.5)){
-                    expandAll.toggle()
-                }
-            } label: {
-                HStack {
-                    Image(systemName: !expandAll ? "chevron.down" : "chevron.up")
-                    Text(expandAll ? "Collapse All" : "Expand All")
-                        .fontWeight(.heavy)
-                }
-                .frame(width: 150, height: 60, alignment: .center)
-                .font(.system(size: 19, design: .rounded))
-                .foregroundColor(Color(expandAll ? "lightBrown" : "darkerBrown"))
-                .background(Color(expandAll ? "darkerBrown" : "lightBrown"))
-                .cornerRadius(15)
-            }
-
             Spacer().frame(height:30)
             
             NavigationLink {

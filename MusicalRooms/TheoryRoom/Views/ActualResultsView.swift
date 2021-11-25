@@ -62,7 +62,7 @@ struct ActualResultsView: View {
                             }
                             .frame(width: 150, height: 42, alignment: .leading)
                         }
-                        .listRowBackground(questionAnswers[word] ? pastelGreen : pastelRed)
+                        .listRowBackground(questionAnswers[word] ? Color("lightGreen") : Color("lightRed"))
                     }
                 }.listStyle(.inset)
                 .cornerRadius(10)
@@ -81,7 +81,7 @@ struct ActualResultsView: View {
                         .padding(.trailing, 30)
                         .frame(height: 50)
                         .foregroundColor(Color("darkBrown"))
-                        .cornerRadius(10)
+                        .cornerRadius(20)
                         .overlay(
                             Text("Finish")
                                 .font(Font.system(size: 20, design: .rounded))

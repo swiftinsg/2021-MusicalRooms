@@ -9,9 +9,8 @@ import SwiftUI
 
 struct ActualTunerView: View {
     
-    @State var AFrequency = 440.0
+    @State var AFrequency = 440
     @Binding var variance: Float
-    
     let topLineColor: Color = Color("topLineColor")
     let bottomLineColor: Color = Color("bottomLineColor")
     

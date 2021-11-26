@@ -43,7 +43,7 @@ struct SelectKeyView: View {
                         .background(notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
                         .cornerRadius(12)
                     }
-                    .offset(x: -50)
+                    .offset(x: 50)
                 }
             }
             Spacer()
@@ -66,7 +66,7 @@ struct SelectKeyView: View {
                 }
             }
             Spacer()
-                .frame(height: 35)
+                
         }
     }
     func playOscillator(_ note: Int) {

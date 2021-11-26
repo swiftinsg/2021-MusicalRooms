@@ -16,9 +16,8 @@ struct OverviewView: View {
     }
     
     var body: some View {
+        NavigationView{
         VStack {
-            Spacer().frame(height:30)
-
             Text("Musical terms")
                 .font(Font.system(size: 24, weight: .semibold, design: .rounded))
                 .padding(.top, 20)
@@ -44,8 +43,7 @@ struct OverviewView: View {
                                         .multilineTextAlignment(.leading)
                                 }
                             }
-                            .frame(width: 250, height: 45, alignment: .leading)
-                        }
+                                                }
                         .listRowBackground(Color("lightBrown"))
                     }
             }
@@ -53,7 +51,7 @@ struct OverviewView: View {
             .padding(.trailing, 20)
             .cornerRadius(15)
             .listStyle(.inset)
-            Spacer().frame(height:30)
+          
             
             NavigationLink {
                 QuestionView(grades: $grades, grade: grade, words: words)
@@ -64,14 +62,16 @@ struct OverviewView: View {
                     .multilineTextAlignment(.center)
                     .font(.system(size: 30, design: .rounded))
             }
-            .padding(.leading, 10)
-            .padding(.trailing, 10)
-            .frame(width: 300, height: 60, alignment: .center)
+            .frame(width:300, height: 60, alignment: .center)
+            .padding(.leading, 20)
+            .padding(.trailing, 20)
             .background(Color("darkBrown"))
             .cornerRadius(10)
             .navigationTitle("Grade \(grade)")
-
-        }.offset(y:-40)
+           
+        }
+        }
+        
     }
 }
 

@@ -41,82 +41,82 @@ struct QuestionView: View {
     @State var pastelRed = Color.init(red: 0.8392156863, green: 0.4, blue: 0.3764705882)
     
     fileprivate func wrongOrCorrectAction(_ button: Int, _ correctAnswer: Int) {
-    isContinueButtonHidden = false
-    isDisabled = true
-    if button == correctAnswer {
-        correctAnswerWords[words.firstIndex(of: shuffledWords[currentQuestion])!] = true
-        score += 1
-        if button == 1 {
-            rectangleColor1 = Color("lightGreen")
-            foregroundColor1 = Color("darkerBrown")
-        } else if button == 2 {
-            rectangleColor2 = Color("lightGreen")
-            foregroundColor2 = Color("darkerBrown")
-        } else if button == 3 {
-            rectangleColor3 = Color("lightGreen")
-            foregroundColor3 = Color("darkerBrown")
-        } else if button == 4 {
-            rectangleColor4 = Color("lightGreen")
-            foregroundColor4 = Color("darkerBrown")
+        isContinueButtonHidden = false
+        isDisabled = true
+        if button == correctAnswer {
+            correctAnswerWords[words.firstIndex(of: shuffledWords[currentQuestion])!] = true
+            score += 1
+            if button == 1 {
+                rectangleColor1 = Color("lightGreen")
+                foregroundColor1 = Color("darkerBrown")
+            } else if button == 2 {
+                rectangleColor2 = Color("lightGreen")
+                foregroundColor2 = Color("darkerBrown")
+            } else if button == 3 {
+                rectangleColor3 = Color("lightGreen")
+                foregroundColor3 = Color("darkerBrown")
+            } else if button == 4 {
+                rectangleColor4 = Color("lightGreen")
+                foregroundColor4 = Color("darkerBrown")
+            }
+        } else {
+
+            if button == 1 {
+                rectangleColor1 = Color("lightRed")
+                foregroundColor1 = .white
+                if correctAnswer == 2 {
+                    rectangleColor2 = Color("lightGreen")
+                    foregroundColor2 = Color("darkerBrown")
+                } else if correctAnswer == 3 {
+                    rectangleColor3 = Color("lightGreen")
+                    foregroundColor3 = Color("darkerBrown")
+                } else if correctAnswer == 4 {
+                    rectangleColor4 = Color("lightGreen")
+                    foregroundColor4 = Color("darkerBrown")
+                }
+            } else if button == 2 {
+                rectangleColor2 = Color("lightRed")
+                foregroundColor2 = .white
+                if correctAnswer == 1 {
+                    rectangleColor1 = Color("lightGreen")
+                    foregroundColor1 = Color("darkerBrown")
+                } else if correctAnswer == 3 {
+                    rectangleColor3 = Color("lightGreen")
+                    foregroundColor3 = Color("darkerBrown")
+                } else if correctAnswer == 4 {
+                    rectangleColor4 = Color("lightGreen")
+                    foregroundColor4 = Color("darkerBrown")
+                }
+            } else if button == 3 {
+                rectangleColor3 = Color("lightRed")
+                foregroundColor3 = .white
+                if correctAnswer == 1 {
+                    rectangleColor1 = Color("lightGreen")
+                    foregroundColor1 = Color("darkerBrown")
+                } else if correctAnswer == 2 {
+                    rectangleColor2 = Color("lightGreen")
+                    foregroundColor2 = Color("darkerBrown")
+                } else if correctAnswer == 4 {
+                    rectangleColor4 = Color("lightGreen")
+                    foregroundColor4 = Color("darkerBrown")
+                }
+            } else if button == 4 {
+                rectangleColor4 = Color("lightRed")
+                foregroundColor4 = .white
+                if correctAnswer == 1 {
+                    rectangleColor1 = Color("lightGreen")
+                    foregroundColor1 = Color("darkerBrown")
+                } else if correctAnswer == 2 {
+                    rectangleColor2 = Color("lightGreen")
+                    foregroundColor2 = Color("darkerBrown")
+                } else if correctAnswer == 3 {
+                    rectangleColor3 = Color("lightGreen")
+                    foregroundColor3 = Color("darkerBrown")
+                }
+            }
         }
-    } else {
-        
-        if button == 1 {
-            rectangleColor1 = Color("lightRed")
-            foregroundColor1 = .white
-            if correctAnswer == 2 {
-                rectangleColor2 = Color("lightGreen")
-                foregroundColor2 = Color("darkerBrown")
-            } else if correctAnswer == 3 {
-                rectangleColor3 = Color("lightGreen")
-                foregroundColor3 = Color("darkerBrown")
-            } else if correctAnswer == 4 {
-                rectangleColor4 = Color("lightGreen")
-                foregroundColor4 = Color("darkerBrown")
-            }
-        } else if button == 2 {
-            rectangleColor2 = Color("lightRed")
-            foregroundColor2 = .white
-            if correctAnswer == 1 {
-                rectangleColor1 = Color("lightGreen")
-                foregroundColor1 = Color("darkerBrown")
-            } else if correctAnswer == 3 {
-                rectangleColor3 = Color("lightGreen")
-                foregroundColor3 = Color("darkerBrown")
-            } else if correctAnswer == 4 {
-                rectangleColor4 = Color("lightGreen")
-                foregroundColor4 = Color("darkerBrown")
-            }
-        } else if button == 3 {
-            rectangleColor3 = Color("lightRed")
-            foregroundColor3 = .white
-            if correctAnswer == 1 {
-                rectangleColor1 = Color("lightGreen")
-                foregroundColor1 = Color("darkerBrown")
-            } else if correctAnswer == 2 {
-                rectangleColor2 = Color("lightGreen")
-                foregroundColor2 = Color("darkerBrown")
-            } else if correctAnswer == 4 {
-                rectangleColor4 = Color("lightGreen")
-                foregroundColor4 = Color("darkerBrown")
-            }
-        } else if button == 4 {
-            rectangleColor4 = Color("lightRed")
-            foregroundColor4 = .white
-            if correctAnswer == 1 {
-                rectangleColor1 = Color("lightGreen")
-                foregroundColor1 = Color("darkerBrown")
-            } else if correctAnswer == 2 {
-                rectangleColor2 = Color("lightGreen")
-                foregroundColor2 = Color("darkerBrown")
-            } else if correctAnswer == 3 {
-                rectangleColor3 = Color("lightGreen")
-                foregroundColor3 = Color("darkerBrown")
-            }
-        }
+        print(correctAnswerWords)
     }
-    print(correctAnswerWords)
-}
     
     var body: some View {
         VStack {

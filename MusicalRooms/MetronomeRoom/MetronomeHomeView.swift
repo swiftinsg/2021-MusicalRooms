@@ -139,7 +139,9 @@ struct MetronomeHomeView: View {
                     HStack {
                         //Play Button
                         Button {
-                            isOn.toggle()
+                            withAnimation(.easeInOut(duration: 0.1)){
+                                isOn.toggle()
+                            }
                             print("Toggle metronome")
                         } label: {
                             HStack{

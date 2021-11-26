@@ -35,10 +35,10 @@ struct TheoryHomeView: View {
                                         .foregroundColor(Color("darkerBrown"))
                                         .padding(.trailing, 15)
                                         .overlay(
-                                            Text("Last score")
+                                            Text("Last Score")
                                                 .foregroundColor(Color("darkerBrown"))
-                                                .font(Font.system(size: 14, weight: .medium, design: .rounded))
-                                                .offset(x: -10, y:20)
+                                                .font(Font.system(size: 14, weight: .light, design: .rounded))
+                                                .offset(x: -10, y:22)
                                         )
 
                                 }.offset(y: -20)

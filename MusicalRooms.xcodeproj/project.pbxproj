@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1BBE2239EC9A51D8033C471F /* DefinitionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE2465408F7C9E92E70CE5 /* DefinitionModalView.swift */; };
+		1BBE226102D4003B5F3379A9 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE2777264C3E8EE6CB1ABA /* Note.swift */; };
+		1BBE280E5B2EAC87FFCE21EA /* Tuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE2B6787EA1D435BD76644 /* Tuner.swift */; };
+		1BBE2DC106680678763F45E6 /* Oscillator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE2D1A1124F826598A7C24 /* Oscillator.swift */; };
 		2E16225027412CA500791ADC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E16224F27412CA500791ADC /* Assets.xcassets */; };
 		2E16225D27412CA500791ADC /* MusicalRoomsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16225C27412CA500791ADC /* MusicalRoomsTests.swift */; };
 		2E16226727412CA500791ADC /* MusicalRoomsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */; };
@@ -31,8 +34,6 @@
 		FF863087274E103E001086F8 /* TunerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863058274E103E001086F8 /* TunerHomeView.swift */; };
 		FF863093274E103E001086F8 /* ActualTunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863065274E103E001086F8 /* ActualTunerView.swift */; };
 		FF863094274E103E001086F8 /* SelectKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863066274E103E001086F8 /* SelectKeyView.swift */; };
-		FF863095274E103E001086F8 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863067274E103E001086F8 /* Note.swift */; };
-		FF863097274E103E001086F8 /* Oscillator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863069274E103E001086F8 /* Oscillator.swift */; };
 		FF86309E274E103E001086F8 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863073274E103E001086F8 /* AudioPlayer.swift */; };
 		FF86309F274E103E001086F8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863074274E103E001086F8 /* Helpers.swift */; };
 		FF8630A0274E103E001086F8 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863075274E103E001086F8 /* AudioRecorder.swift */; };
@@ -47,7 +48,6 @@
 		FF93C295274E287500EE2907 /* TheoryHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93C28E274E287500EE2907 /* TheoryHomeView.swift */; };
 		FF93C296274E287500EE2907 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93C28F274E287500EE2907 /* OverviewView.swift */; };
 		FF93C297274E287500EE2907 /* GetWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93C290274E287500EE2907 /* GetWords.swift */; };
-		FF945040274F9508009155B4 /* Tuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF94503F274F9508009155B4 /* Tuner.swift */; };
 		FF945043274F9815009155B4 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF945042274F9815009155B4 /* SoundpipeAudioKit */; };
 		FFD659E727509D9600F7AD55 /* GetTempoName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD659E627509D9600F7AD55 /* GetTempoName.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +71,9 @@
 
 /* Begin PBXFileReference section */
 		1BBE2465408F7C9E92E70CE5 /* DefinitionModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefinitionModalView.swift; sourceTree = "<group>"; };
+		1BBE2777264C3E8EE6CB1ABA /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		1BBE2B6787EA1D435BD76644 /* Tuner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tuner.swift; sourceTree = "<group>"; };
+		1BBE2D1A1124F826598A7C24 /* Oscillator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oscillator.swift; sourceTree = "<group>"; };
 		2E16224827412CA100791ADC /* MusicalRooms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicalRooms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E16224F27412CA500791ADC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E16225227412CA500791ADC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -96,8 +99,6 @@
 		FF863058274E103E001086F8 /* TunerHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunerHomeView.swift; sourceTree = "<group>"; };
 		FF863065274E103E001086F8 /* ActualTunerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActualTunerView.swift; sourceTree = "<group>"; };
 		FF863066274E103E001086F8 /* SelectKeyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectKeyView.swift; sourceTree = "<group>"; };
-		FF863067274E103E001086F8 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
-		FF863069274E103E001086F8 /* Oscillator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oscillator.swift; sourceTree = "<group>"; };
 		FF863073274E103E001086F8 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		FF863074274E103E001086F8 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		FF863075274E103E001086F8 /* AudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
@@ -112,7 +113,6 @@
 		FF93C28E274E287500EE2907 /* TheoryHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheoryHomeView.swift; sourceTree = "<group>"; };
 		FF93C28F274E287500EE2907 /* OverviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		FF93C290274E287500EE2907 /* GetWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetWords.swift; sourceTree = "<group>"; };
-		FF94503F274F9508009155B4 /* Tuner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tuner.swift; sourceTree = "<group>"; };
 		FFD659E627509D9600F7AD55 /* GetTempoName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTempoName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +145,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BBE21943A8F637EEFEACF34 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1BBE2D1A1124F826598A7C24 /* Oscillator.swift */,
+				1BBE2777264C3E8EE6CB1ABA /* Note.swift */,
+				1BBE2B6787EA1D435BD76644 /* Tuner.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		2E16223F27412CA000791ADC = {
 			isa = PBXGroup;
 			children = (
@@ -265,11 +275,9 @@
 				FF863058274E103E001086F8 /* TunerHomeView.swift */,
 				C57AFE13275092CE00B630A9 /* CommonTuningsView.swift */,
 				C57AFE15275094DF00B630A9 /* Tunings.swift */,
-				FF94503F274F9508009155B4 /* Tuner.swift */,
 				FF863065274E103E001086F8 /* ActualTunerView.swift */,
 				FF863066274E103E001086F8 /* SelectKeyView.swift */,
-				FF863067274E103E001086F8 /* Note.swift */,
-				FF863069274E103E001086F8 /* Oscillator.swift */,
+				1BBE21943A8F637EEFEACF34 /* Managers */,
 			);
 			path = TunerRoom;
 			sourceTree = "<group>";
@@ -473,13 +481,10 @@
 				C5D98ADE274E89AD00A2A279 /* ResultsView.swift in Sources */,
 				FF86309E274E103E001086F8 /* AudioPlayer.swift in Sources */,
 				FF863084274E103E001086F8 /* BpmNumpadView.swift in Sources */,
-				FF863097274E103E001086F8 /* Oscillator.swift in Sources */,
-				FF945040274F9508009155B4 /* Tuner.swift in Sources */,
 				FF863083274E103E001086F8 /* MetronomeHomeView.swift in Sources */,
 				FF8630A5274E103E001086F8 /* RecorderHomeView.swift in Sources */,
 				C57AFE16275094DF00B630A9 /* Tunings.swift in Sources */,
 				FF93C295274E287500EE2907 /* TheoryHomeView.swift in Sources */,
-				FF863095274E103E001086F8 /* Note.swift in Sources */,
 				FF93C292274E287500EE2907 /* QuestionView.swift in Sources */,
 				2E58ADEA274E979E000B1CFB /* GetEnharmonic.swift in Sources */,
 				FF863094274E103E001086F8 /* SelectKeyView.swift in Sources */,
@@ -493,6 +498,9 @@
 				FF93C291274E287500EE2907 /* FlashcardView.swift in Sources */,
 				FF93C296274E287500EE2907 /* OverviewView.swift in Sources */,
 				1BBE2239EC9A51D8033C471F /* DefinitionModalView.swift in Sources */,
+				1BBE2DC106680678763F45E6 /* Oscillator.swift in Sources */,
+				1BBE226102D4003B5F3379A9 /* Note.swift in Sources */,
+				1BBE280E5B2EAC87FFCE21EA /* Tuner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,7 +671,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -676,7 +685,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -698,7 +707,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -710,7 +720,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

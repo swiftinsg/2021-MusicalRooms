@@ -21,37 +21,37 @@ struct TunerHomeView: View {
     
     var body: some View {
         NavigationView{
-            VStack{
-                Spacer().frame(height: 60)
-                
-                ActualTunerView()
+            ScrollView(.vertical) {
+                VStack{
+                    ActualTunerView()
+                    
+                    SelectKeyView(notes: $notes)
+                        .padding(.vertical)
+                    
+                    Spacer().frame(height: 20)
+                    
+                    Button {
+                        displaySheetSelect.toggle()
+                    } label: {
 
-                Spacer().frame(height: 70)
-
-                SelectKeyView(notes: $notes)
-
-                Spacer().frame(height: 20)
-
-                Button {
-                    displaySheetSelect.toggle()
-                } label: {
-                    ZStack {
-                        Rectangle()
-                                .foregroundColor(Color("darkerBrown"))
-                                .frame(width: 200, height: 50, alignment: .center)
-                                .cornerRadius(20)
-
-
-                        Text("Common Tunings")
+                            
+                            Text("Common Tunings")
                                 .bold()
                                 .font(.title2)
                                 .foregroundColor(Color("lightBrown"))
-                    }.offset(x: -75)
-                }
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color("darkerBrown"))
+                                .cornerRadius(20)
+                    }
+                    .padding(.horizontal)
                     
-                
-                Spacer().frame(width: 15)
-            }.navigationBarTitle("Tuner")
+                    
+                    Spacer().frame(width: 15)
+                }
+                .frame(width: UIScreen.main.bounds.width)
+            }
+            .navigationBarTitle("Tuner")
         }
         .sheet(isPresented: $displaySheetSelect,
                      content: {

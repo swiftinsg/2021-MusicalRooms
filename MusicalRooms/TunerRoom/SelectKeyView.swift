@@ -16,17 +16,9 @@ struct SelectKeyView: View {
     let osc = OscillatorObject()
     
     var body: some View {
-        VStack {
-            HStack{
-                Spacer()
-                    .frame(height: 55)
-                
+        VStack(alignment: .leading) {
+            HStack(spacing: 8) {
                 ForEach(7 ..< notes.count) { note in
-                    if note == 7 {
-                        Spacer()
-                            .frame(width: 50)
-                    }
-                    
                     Button {
                         playOscillator(note)
                     } label: {
@@ -36,20 +28,20 @@ struct SelectKeyView: View {
                             Text(getEnharmonic(conversion(notes[note].name)))
                                 .fontWeight(.semibold)
                         }
-                        .frame(width: 35, height: 70, alignment: .center)
+                        .frame(maxWidth: .infinity)
                         .font(.system(size: 18, design: .rounded))
                         .multilineTextAlignment(.center)
                         .foregroundColor(notes[note].isSelected ? Color("lightBrown") : Color("darkBrown"))
+                        .padding(.vertical)
                         .background(notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
                         .cornerRadius(12)
                     }
-                    .offset(x: 50)
                 }
             }
             Spacer()
                 .frame(height: 10)
             
-            HStack {
+            HStack(spacing: 8) {
                 ForEach(0 ..< 7) { note in
                     Button {
                         playOscillator(note)
@@ -59,7 +51,8 @@ struct SelectKeyView: View {
                             .font(Font.system(size: 20, weight: .semibold, design: .rounded))
                             .multilineTextAlignment(.center)
                             .foregroundColor(notes[note].isSelected ? Color("evenLighterBrown") : Color("darkBrown"))
-                            .frame(width: 43, height: 70, alignment: .center)
+                            .frame(maxWidth: .infinity)
+                            .padding(8)
                             .background(notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
                             .cornerRadius(12)
                     }
@@ -68,6 +61,7 @@ struct SelectKeyView: View {
             Spacer()
                 
         }
+        .padding(.horizontal)
     }
     func playOscillator(_ note: Int) {
         if !isOn {

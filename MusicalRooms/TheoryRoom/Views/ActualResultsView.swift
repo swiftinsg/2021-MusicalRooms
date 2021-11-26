@@ -24,12 +24,7 @@ struct ActualResultsView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        VStack {
-            Text("Results")
-                .font(Font.system(size: 28, weight: .bold))
-                .padding()
-                .multilineTextAlignment(.leading)
-                .offset(y:-60)
+        ScrollView {
             
             VStack {
                 Text(String(format: "%.2f", percentCorrect) + "%")
@@ -38,10 +33,12 @@ struct ActualResultsView: View {
                     .lineLimit(3)
                     .foregroundColor(Color("darkerBrown"))
                     .overlay(
-                        ResultsView(progress: CGFloat(percentCorrect)/100)
+                        ResultsView(progress: CGFloat(percentCorrect) / 100)
                             .frame(width: 200, height: 200)
                     )
-                    .offset(y:-80)
+                    .frame(width: 200, height: 200)
+                    .padding()
+                
                 List {
                     ForEach(0 ..< words.count) { word in
                         NavigationLink {
@@ -65,34 +62,29 @@ struct ActualResultsView: View {
                         }
                         .listRowBackground(questionAnswers[word] ? Color("lightGreen") : Color("lightRed"))
                     }
-                }.listStyle(.inset)
-                    .cornerRadius(10)
+                }
+                .listStyle(.inset)
+                .cornerRadius(10)
+                .frame(height: 350, alignment: .center)
+                .padding(.horizontal)
+                
+                Button {
+                    grades[grade-1].percentageCorrect = percentCorrect
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Text("Finish")
+                        .font(Font.system(size: 20, design: .rounded))
+                        .foregroundColor(Color("evenLighterBrown"))
+                        .fontWeight(.heavy)
+                        .padding(.vertical)
+                        .frame(maxWidth: .infinity)
+                        .background(Color("darkBrown"))
+                        .cornerRadius(10)
+                }
+                .padding()
             }
-            .frame(height: 350, alignment: .center)
-            .padding(.leading, 30)
-            .padding(.trailing, 30)
-            .offset(y: 123)
-            
-            Button {
-                grades[grade-1].percentageCorrect = percentCorrect
-                presentationMode.wrappedValue.dismiss()
-            } label: {
-                RoundedRectangle(cornerRadius: 10)
-                        .padding(.leading,30)
-                        .padding(.trailing, 30)
-                        .frame(width: 250, height: 45)
-                    .foregroundColor(Color("darkBrown"))
-                        .overlay(
-                            Text("Finish")
-                                .font(Font.system(size: 20, design: .rounded))
-                                .foregroundColor(Color("evenLighterBrown"))
-                                .fontWeight(.heavy)
-                        )
-            }
-            .offset(y: 150)                       
-            Spacer().frame(height:50)
         }
-        .offset(y: -80)
+        .navigationTitle("Results")
     }
 }
 

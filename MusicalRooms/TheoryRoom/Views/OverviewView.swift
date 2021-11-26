@@ -22,7 +22,7 @@ struct OverviewView: View {
             Text("Musical terms")
                 .font(Font.system(size: 24, weight: .semibold, design: .rounded))
                 .padding(.top, 20)
-            Text("Click to open flashcard")
+            Text("Click to open a flashcard")
                 .font(Font.system(size: 12, weight: .medium, design: .rounded))
 
             List {
@@ -44,7 +44,7 @@ struct OverviewView: View {
                                         .multilineTextAlignment(.leading)
                                 }
                             }
-                            .frame(width: 250, height: 42, alignment: .leading)
+                            .frame(width: 250, height: 45, alignment: .leading)
                         }
                         .listRowBackground(Color("lightBrown"))
                     }
@@ -59,7 +59,7 @@ struct OverviewView: View {
                 QuestionView(grades: $grades, grade: grade, words: words)
             } label: {
                 Text("Start Quiz")
-                    .foregroundColor(Color.white)
+                    .foregroundColor(Color("lightBrown"))
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
                     .font(.system(size: 30, design: .rounded))
@@ -67,7 +67,7 @@ struct OverviewView: View {
             .padding(.leading, 10)
             .padding(.trailing, 10)
             .frame(width: 300, height: 60, alignment: .center)
-            .background( Color("darkBrown"))
+            .background(Color("darkBrown"))
             .cornerRadius(10)
             .navigationTitle("Grade \(grade)")
 

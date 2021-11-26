@@ -49,6 +49,7 @@
 		FF93C297274E287500EE2907 /* GetWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93C290274E287500EE2907 /* GetWords.swift */; };
 		FF945040274F9508009155B4 /* Tuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF94503F274F9508009155B4 /* Tuner.swift */; };
 		FF945043274F9815009155B4 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF945042274F9815009155B4 /* SoundpipeAudioKit */; };
+		FFD659E727509D9600F7AD55 /* GetTempoName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD659E627509D9600F7AD55 /* GetTempoName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		FF93C28F274E287500EE2907 /* OverviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		FF93C290274E287500EE2907 /* GetWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetWords.swift; sourceTree = "<group>"; };
 		FF94503F274F9508009155B4 /* Tuner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tuner.swift; sourceTree = "<group>"; };
+		FFD659E627509D9600F7AD55 /* GetTempoName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTempoName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				FF863051274E103E001086F8 /* TimeSigSelectView.swift */,
+				FFD659E627509D9600F7AD55 /* GetTempoName.swift */,
 				FF863052274E103E001086F8 /* MetronomeHomeView.swift */,
 				FF863053274E103E001086F8 /* BpmNumpadView.swift */,
 				FF863054274E103E001086F8 /* assets */,
@@ -457,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFD659E727509D9600F7AD55 /* GetTempoName.swift in Sources */,
 				FF8630A4274E103E001086F8 /* MiniRecorderView.swift in Sources */,
 				FF8630A2274E103E001086F8 /* Extensions.swift in Sources */,
 				FF93C294274E287500EE2907 /* GradeStruct.swift in Sources */,

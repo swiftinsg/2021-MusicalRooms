@@ -19,7 +19,7 @@ struct QuestionView: View {
     @State var correctAnswerWords: [Bool] = []
     @State var currentQuestion = 0
     @State var score: Double = 0
-    
+
     @State var isContinueButtonHidden = true
     @State var isDisabled = false
     
@@ -60,7 +60,7 @@ struct QuestionView: View {
                 foregroundColor4 = Color("darkerBrown")
             }
         } else {
-            
+
             if button == 1 {
                 rectangleColor1 = Color("lightRed")
                 foregroundColor1 = .white
@@ -122,12 +122,12 @@ struct QuestionView: View {
         VStack {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
-                    .frame(width: 350, height: 170, alignment: .center)
+                    .frame(height: 140, alignment: .center)
                     .foregroundColor(Color("lightBrown"))
-                
-                
+
+
                 RoundedRectangle(cornerRadius: 10)
-                    .frame(width: 350, height: 50, alignment: .leading)
+                    .frame(height: 50, alignment: .leading)
                     .foregroundColor(Color("darkBrown"))
                     .overlay(
                         HStack {
@@ -139,7 +139,7 @@ struct QuestionView: View {
                         }
                     )
                     .offset(y: -115)
-                
+
                 VStack {
                     Text(shuffledWords[currentQuestion].title)
                         .bold()
@@ -151,135 +151,152 @@ struct QuestionView: View {
                 }
             }
             Spacer().frame(height:20)
-            
+
             VStack {
                 Button {
                     wrongOrCorrectAction(1, correctAnswer)
                 } label: {
                     VStack {
                         if correctAnswer == 1 {
-                            Text(shuffledWords[currentQuestion].definition)
-                                .foregroundColor(foregroundColor1)
-                                .font(.system(size: 20, design: .rounded))
-                                .fontWeight(.bold)
-                                .padding(10)
-                                .background{
-                                    Rectangle()
-                                        .frame(maxWidth: .infinity)
-                                        .foregroundColor(rectangleColor1)
-                                        .cornerRadius(10)
-                                }
+                            Rectangle()
+                                    .foregroundColor(rectangleColor1)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                            Text(shuffledWords[currentQuestion].definition)
+                                                    .foregroundColor(foregroundColor1)
+                                                    .font(.system(size: 20, design: .rounded))
+                                                    .fontWeight(.bold)
+                                                    .padding(5)
+                                    )
                         } else {
-                            Text(shuffledWords[randomIndex1].definition)
-                                .foregroundColor(foregroundColor1)
-                                .font(.system(size: 20, design: .rounded))
-                                .fontWeight(.bold)
-                                .padding(10)
-                                .background{
-                                    Rectangle()
-                                        .frame(maxWidth: .infinity)
-                                        .foregroundColor(rectangleColor1)
-                                        .cornerRadius(10)
-                                }
+                            Rectangle()
+                                    .foregroundColor(rectangleColor1)
+                                    .cornerRadius(10)
+                                    .overlay {
+                                        Text(shuffledWords[randomIndex1].definition)
+                                                .foregroundColor(foregroundColor1)
+                                                .font(.system(size: 20, design: .rounded))
+                                                .fontWeight(.bold)
+                                                .padding(5)
+                                    }
                         }
+                    }
+                    .padding(.top, 30)
+                    .padding(.bottom, 30)
+                    .background{
+                        Rectangle()
+                                .foregroundColor(rectangleColor1)
+                                .cornerRadius(20)
+                                .frame(width: 350, alignment: .center)
                     }
                 }
                 .disabled(isDisabled)
-                
+
                 Button {
                     wrongOrCorrectAction(2, correctAnswer)
                 } label: {
                     VStack {
                         if correctAnswer == 2 {
-                            Text(shuffledWords[currentQuestion].definition)
-                                .foregroundColor(foregroundColor2)
-                                .font(.system(size: 20, design: .rounded))
-                                .fontWeight(.bold)
-                                .padding(10)
-                                .background{
-                                    Rectangle()
-                                        .frame(maxWidth: .infinity)
-                                        .foregroundColor(rectangleColor2)
-                                        .cornerRadius(10)
-                                }
+                            Rectangle()
+                                    .foregroundColor(rectangleColor2)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                            Text(shuffledWords[currentQuestion].definition)
+                                                    .foregroundColor(foregroundColor2)
+                                                    .font(.system(size: 20, design: .rounded))
+                                                    .fontWeight(.bold)
+                                                    .padding(5)
+                                    )
                         } else {
-                            Text(shuffledWords[randomIndex2].definition)
-                                .foregroundColor(foregroundColor2)
-                                .font(.system(size: 20, design: .rounded))
-                                .fontWeight(.bold)
-                                .padding(10)
-                                .background{
-                                    Rectangle()
-                                        .frame(maxWidth: .infinity)
-                                        .foregroundColor(rectangleColor2)
-                                        .cornerRadius(10)
-                                }
+                            Rectangle()
+                                    .foregroundColor(rectangleColor2)
+                                    .cornerRadius(10)
+                                    .overlay {
+                                        Text(shuffledWords[randomIndex2].definition)
+                                                .foregroundColor(foregroundColor2)
+                                                .font(.system(size: 20, design: .rounded))
+                                                .fontWeight(.bold)
+                                                .padding(5)
+                                    }
                         }
+                    }
+                    .padding(.top, 30)
+                    .padding(.bottom, 30)
+                    .background{
+                        Rectangle()
+                            .foregroundColor(rectangleColor2)
+                            .cornerRadius(20)
+                            .frame(width: 350, alignment: .center)
                     }
                 }
                 .disabled(isDisabled)
-                
+
                 Button {
                     wrongOrCorrectAction(3, correctAnswer)
                 } label: {
                     VStack {
                         if correctAnswer == 3 {
-                            Text(shuffledWords[currentQuestion].definition)
-                                .foregroundColor(foregroundColor3)
-                                .font(.system(size: 20, design: .rounded))
-                                .fontWeight(.bold)
-                                .padding(10)
-                                .background{
-                                    Rectangle()
-                                        .frame(maxWidth: .infinity)
-                                        .foregroundColor(rectangleColor3)
-                                        .cornerRadius(10)
-                                }
+                            Rectangle()
+                                    .foregroundColor(rectangleColor3)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                            Text(shuffledWords[currentQuestion].definition)
+                                                    .foregroundColor(foregroundColor3)
+                                                    .font(.system(size: 20, design: .rounded))
+                                                    .fontWeight(.bold)
+                                                    .padding(5)
+                                    )
                         } else {
-                            Text(shuffledWords[randomIndex3].definition)
-                                .foregroundColor(foregroundColor3)
-                                .font(.system(size: 20, design: .rounded))
-                                .fontWeight(.bold)
-                                .padding(10)
-                                .background{
-                                    Rectangle()
-                                        .frame(maxWidth: .infinity)
-                                        .foregroundColor(rectangleColor3)
-                                        .cornerRadius(10)
-                                }
+                            Rectangle()
+                                    .foregroundColor(rectangleColor3)
+                                    .cornerRadius(10)
+                                    .overlay {
+                                        Text(shuffledWords[randomIndex3].definition)
+                                                .foregroundColor(foregroundColor3)
+                                                .font(.system(size: 20, design: .rounded))
+                                                .fontWeight(.bold)
+                                                .padding(5)
+                                    }
                         }
                     }
+                    .padding(.top, 30)
+                    .padding(.bottom, 30)
+                    .background{
+                        Rectangle()
+                                .foregroundColor(rectangleColor3)
+                                .cornerRadius(20)
+                                .frame(width: 350, alignment: .center)
+                    }
+
                 }
                 .disabled(isDisabled)
-                
+
                 Button {
                     wrongOrCorrectAction(4, correctAnswer)
                 } label: {
                     VStack {
                         if correctAnswer == 4 {
-                            Text(shuffledWords[currentQuestion].definition)
-                                .foregroundColor(foregroundColor4)
-                                .font(.system(size: 20, design: .rounded))
-                                .fontWeight(.bold)
-                                .padding(10)
-                                .background{
-                                    Rectangle()
-                                        .frame(maxWidth: .infinity)
-                                        .foregroundColor(rectangleColor4)
-                                        .cornerRadius(10)
-                                }
+                            Rectangle()
+                            .foregroundColor(rectangleColor4)
+                            .cornerRadius(10)
+                            .overlay(
+                                Text(shuffledWords[currentQuestion].definition)
+                                    .foregroundColor(foregroundColor4)
+                                    .font(.system(size: 20, design: .rounded))
+                                    .fontWeight(.bold)
+                                    .padding(5)
+                            )
                         } else {
-                            Text(shuffledWords[randomIndex4].definition)
-                                .foregroundColor(foregroundColor4)
-                                .font(.system(size: 20, design: .rounded))
-                                .fontWeight(.bold)
-                                .padding(10)
-                                .background{
-                                    Rectangle()
-                                        .frame(maxWidth: .infinity)
-                                        .foregroundColor(rectangleColor4)
-                                        .cornerRadius(10)
-                                }
+                            Rectangle()
+                                    .foregroundColor(rectangleColor4)
+                                    .cornerRadius(10)
+                                    .overlay {
+                                        Text(shuffledWords[randomIndex4].definition)
+                                                .foregroundColor(foregroundColor4)
+                                                .font(.system(size: 20, design: .rounded))
+                                                .fontWeight(.bold)
+                                                .padding(5)
+                                    }
                         }
                     }
                     .padding(.top, 10)
@@ -287,7 +304,7 @@ struct QuestionView: View {
                 }
                 .disabled(isDisabled)
             }
-            
+
             if !isContinueButtonHidden {
                 if currentQuestion < shuffledWords.count - 1 {
                     Button {
@@ -296,24 +313,24 @@ struct QuestionView: View {
                         foregroundColor2 = Color.white
                         foregroundColor3 = Color.white
                         foregroundColor4 = Color.white
-                        
+
                         rectangleColor1 = Color("darkBrown")
                         rectangleColor2 = Color("darkBrown")
                         rectangleColor3 = Color("darkBrown")
                         rectangleColor4 = Color("darkBrown")
-                        
+
                         currentQuestion += 1
                         isDisabled = false
-                        
+
                         correctAnswer = Int.random(in: 1 ..< 5)
-                        
-                        let shuffledWords = Array(Set(0..<shuffledWords.count)).prefix(4)
-                        
+
+                        let shuffledWords = Array(Set(0..<shuffledWords.count)).prefix(4).shuffled()
+
                         randomIndex1 = shuffledWords[0]
                         randomIndex2 = shuffledWords[1]
                         randomIndex3 = shuffledWords[2]
                         randomIndex4 = shuffledWords[3]
-                        
+
                         print(shuffledWords)
                     } label: {
                         ZStack {
@@ -321,7 +338,7 @@ struct QuestionView: View {
                                 .frame(width: 350, height: 50, alignment: .center)
                                 .foregroundColor(Color("darkerBrown"))
                                 .cornerRadius(20)
-                            
+
                             Text("Continue")
                                 .foregroundColor(Color("evenLighterBrown"))
                                 .bold()
@@ -337,7 +354,7 @@ struct QuestionView: View {
                                 .frame(width: 350, height: 50, alignment: .center)
                                 .foregroundColor(Color("darkBrown"))
                                 .cornerRadius(20)
-                            
+
                             Text("End")
                                 .foregroundColor(Color("lightBrown"))
                                 .bold()
@@ -352,12 +369,12 @@ struct QuestionView: View {
         .onAppear {
             shuffledWords = words
             shuffledWords.shuffle()
-            
+
             randomIndex1 = Int.random(in: 0 ..< shuffledWords.count/2)
             randomIndex2 = Int.random(in: 0 ..< shuffledWords.count/2)
             randomIndex3 = Int.random(in: shuffledWords.count/2 ..< shuffledWords.count)
             randomIndex4 = Int.random(in: shuffledWords.count/2 ..< shuffledWords.count)
-            
+
             correctAnswer = Int.random(in: 1 ..< 5)
             
             correctAnswerWords = Array(repeating: false, count: words.count)

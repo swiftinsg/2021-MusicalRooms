@@ -169,8 +169,8 @@ struct QuestionView: View {
                                     .fontWeight(.bold)
                         }
                     }
-                    .padding(.top, 20)
-                    .padding(.bottom, 20)
+                    .padding(.top, 30)
+                    .padding(.bottom, 30)
                     .background{
                         Rectangle()
                                 .foregroundColor(rectangleColor1)
@@ -196,8 +196,8 @@ struct QuestionView: View {
                                     .fontWeight(.bold)
                         }
                     }
-                    .padding(.top, 20)
-                    .padding(.bottom, 20)
+                    .padding(.top, 30)
+                    .padding(.bottom, 30)
                     .background{
                         Rectangle()
                             .foregroundColor(rectangleColor2)
@@ -223,8 +223,8 @@ struct QuestionView: View {
                                     .fontWeight(.bold)
                         }
                     }
-                    .padding(.top, 20)
-                    .padding(.bottom, 20)
+                    .padding(.top, 30)
+                    .padding(.bottom, 30)
                     .background{
                         Rectangle()
                                 .foregroundColor(rectangleColor3)
@@ -251,8 +251,8 @@ struct QuestionView: View {
                                     .fontWeight(.bold)
                         }
                     }
-                            .padding(.top, 20)
-                            .padding(.bottom, 20)
+                            .padding(.top, 30)
+                            .padding(.bottom, 30)
                             .background{
                                 Rectangle()
                                         .foregroundColor(rectangleColor4)

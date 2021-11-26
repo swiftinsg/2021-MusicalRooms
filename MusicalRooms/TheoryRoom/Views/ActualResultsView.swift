@@ -22,6 +22,7 @@ struct ActualResultsView: View {
     }
     
     @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack {
             Text("Results")
@@ -76,12 +77,11 @@ struct ActualResultsView: View {
                 grades[grade-1].percentageCorrect = percentCorrect
                 presentationMode.wrappedValue.dismiss()
             } label: {
-                    Rectangle()
+                RoundedRectangle(cornerRadius: 10.0)
                         .padding(.leading,30)
                         .padding(.trailing, 30)
-                        .frame(height: 50)
-                        .foregroundColor(Color("darkBrown"))
-                        .cornerRadius(10)
+                        .frame(width: 250, height: 45)
+                    .foregroundColor(Color("darkBrown"))
                         .overlay(
                             Text("Finish")
                                 .font(Font.system(size: 20, design: .rounded))
@@ -89,18 +89,18 @@ struct ActualResultsView: View {
                                 .fontWeight(.heavy)
                         )
             }
-            .offset(y: 150)
+            .offset(y: 150)                       
             Spacer().frame(height:50)
         }
         .offset(y: -80)
     }
 }
 
-/*struct ActualResultsView_Previews: PreviewProvider {
+struct ActualResultsView_Previews: PreviewProvider {
     static var previews: some View {
         ActualResultsView(grades: .constant([
             Grade(number: 1, percentageCorrect: 0),
             Grade(number: 4, percentageCorrect: 0),
-            Grade(number: 5, percentageCorrect: 0)]), percentCorrect: 10, grade:1)
+            Grade(number: 5, percentageCorrect: 0)]), questionAnswers: [false], percentCorrect: 10, grade:1)
     }
-}*/
+}

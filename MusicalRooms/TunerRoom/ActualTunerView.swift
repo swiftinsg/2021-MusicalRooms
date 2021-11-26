@@ -13,6 +13,8 @@ struct ActualTunerView: View {
     let topLineColor: Color = Color("topLineColor")
     let bottomLineColor: Color = Color("bottomLineColor")
     
+    var tuner = TunerData()
+    
     var body: some View {
         VStack {
             RoundedRectangle(cornerRadius: 20)

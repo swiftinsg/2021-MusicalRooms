@@ -34,7 +34,7 @@ struct ActualTunerView: View {
 
                         Spacer().frame(height: 10)
                         HStack{
-                            let amplitude = String(format: "%.2f", fabsf(20 * log10(fabsf(conductor.data.amplitude)))  )
+                            let amplitude = String(format: "%.2f", fabsf(20 * log10(fabsf(1/conductor.data.amplitude)))  )
                             Text("\(amplitude) dB")
                                 .frame(width: 110, alignment: .center)
 

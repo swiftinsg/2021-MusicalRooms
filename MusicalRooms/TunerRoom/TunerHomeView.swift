@@ -24,7 +24,7 @@ struct TunerHomeView: View {
 
                 ActualTunerView()
 
-                Spacer().frame(height: 45)
+                Spacer().frame(height: 70)
 
                 SelectKeyView(notes: $notes)
 

@@ -62,16 +62,15 @@ struct OverviewView: View {
                     .multilineTextAlignment(.center)
                     .font(.system(size: 30, design: .rounded))
             }
-            .frame(width:300, height: 60, alignment: .center)
-            .padding(.leading, 20)
-            .padding(.trailing, 20)
+            .padding(.leading, 10)
+            .padding(.trailing, 10)
             .background(Color("darkBrown"))
             .cornerRadius(10)
             .navigationTitle("Grade \(grade)")
-           
+
         }
-        }
-        
+        .offset(y:-40)
+        .padding()
     }
 }
 

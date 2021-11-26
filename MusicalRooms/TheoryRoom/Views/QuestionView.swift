@@ -152,6 +152,8 @@ struct QuestionView: View {
             }
             Spacer().frame(height:20)
 
+
+            //---------- BUTTONS -----------
             VStack {
                 Button {
                     wrongOrCorrectAction(1, correctAnswer)
@@ -159,7 +161,7 @@ struct QuestionView: View {
                     VStack {
                         if correctAnswer == 1 {
                             Rectangle()
-                                    .foregroundColor(rectangleColor1)
+                                    .foregroundColor(.clear)
                                     .cornerRadius(10)
                                     .overlay(
                                             Text(shuffledWords[currentQuestion].definition)
@@ -170,7 +172,7 @@ struct QuestionView: View {
                                     )
                         } else {
                             Rectangle()
-                                    .foregroundColor(rectangleColor1)
+                                    .foregroundColor(.clear)
                                     .cornerRadius(10)
                                     .overlay {
                                         Text(shuffledWords[randomIndex1].definition)
@@ -181,13 +183,12 @@ struct QuestionView: View {
                                     }
                         }
                     }
-                    .padding(.top, 30)
-                    .padding(.bottom, 30)
+                    .padding(.top, 20)
+                    .padding(.bottom, 20)
                     .background{
                         Rectangle()
                                 .foregroundColor(rectangleColor1)
-                                .cornerRadius(20)
-                                .frame(width: 350, alignment: .center)
+                                .cornerRadius(10)
                     }
                 }
                 .disabled(isDisabled)
@@ -198,7 +199,7 @@ struct QuestionView: View {
                     VStack {
                         if correctAnswer == 2 {
                             Rectangle()
-                                    .foregroundColor(rectangleColor2)
+                                    .foregroundColor(.clear)
                                     .cornerRadius(10)
                                     .overlay(
                                             Text(shuffledWords[currentQuestion].definition)
@@ -209,7 +210,7 @@ struct QuestionView: View {
                                     )
                         } else {
                             Rectangle()
-                                    .foregroundColor(rectangleColor2)
+                                    .foregroundColor(.clear)
                                     .cornerRadius(10)
                                     .overlay {
                                         Text(shuffledWords[randomIndex2].definition)
@@ -220,13 +221,12 @@ struct QuestionView: View {
                                     }
                         }
                     }
-                    .padding(.top, 30)
-                    .padding(.bottom, 30)
+                    .padding(.top, 20)
+                    .padding(.bottom, 20)
                     .background{
                         Rectangle()
                             .foregroundColor(rectangleColor2)
-                            .cornerRadius(20)
-                            .frame(width: 350, alignment: .center)
+                            .cornerRadius(10)
                     }
                 }
                 .disabled(isDisabled)
@@ -237,7 +237,7 @@ struct QuestionView: View {
                     VStack {
                         if correctAnswer == 3 {
                             Rectangle()
-                                    .foregroundColor(rectangleColor3)
+                                    .foregroundColor(.clear)
                                     .cornerRadius(10)
                                     .overlay(
                                             Text(shuffledWords[currentQuestion].definition)
@@ -248,7 +248,7 @@ struct QuestionView: View {
                                     )
                         } else {
                             Rectangle()
-                                    .foregroundColor(rectangleColor3)
+                                    .foregroundColor(.clear)
                                     .cornerRadius(10)
                                     .overlay {
                                         Text(shuffledWords[randomIndex3].definition)
@@ -259,13 +259,12 @@ struct QuestionView: View {
                                     }
                         }
                     }
-                    .padding(.top, 30)
-                    .padding(.bottom, 30)
+                    .padding(.top, 20)
+                    .padding(.bottom, 20)
                     .background{
                         Rectangle()
                                 .foregroundColor(rectangleColor3)
-                                .cornerRadius(20)
-                                .frame(width: 350, alignment: .center)
+                                .cornerRadius(10)
                     }
 
                 }
@@ -277,7 +276,7 @@ struct QuestionView: View {
                     VStack {
                         if correctAnswer == 4 {
                             Rectangle()
-                            .foregroundColor(rectangleColor4)
+                            .foregroundColor(.clear)
                             .cornerRadius(10)
                             .overlay(
                                 Text(shuffledWords[currentQuestion].definition)
@@ -288,7 +287,7 @@ struct QuestionView: View {
                             )
                         } else {
                             Rectangle()
-                                    .foregroundColor(rectangleColor4)
+                                    .foregroundColor(.clear)
                                     .cornerRadius(10)
                                     .overlay {
                                         Text(shuffledWords[randomIndex4].definition)
@@ -301,8 +300,17 @@ struct QuestionView: View {
                     }
                     .padding(.top, 10)
                     .padding(.bottom, 10)
+                    .background{
+                        Rectangle()
+                                .foregroundColor(rectangleColor3)
+                                .cornerRadius(10)
+                    }
                 }
                 .disabled(isDisabled)
+
+                //---------- END BUTTONS -----------
+
+
             }
 
             if !isContinueButtonHidden {
@@ -335,7 +343,6 @@ struct QuestionView: View {
                     } label: {
                         ZStack {
                             Rectangle()
-                                .frame(width: 350, height: 50, alignment: .center)
                                 .foregroundColor(Color("darkerBrown"))
                                 .cornerRadius(20)
 
@@ -351,7 +358,6 @@ struct QuestionView: View {
                     } label: {
                         ZStack {
                             Rectangle()
-                                .frame(width: 350, height: 50, alignment: .center)
                                 .foregroundColor(Color("darkBrown"))
                                 .cornerRadius(20)
 
@@ -367,13 +373,12 @@ struct QuestionView: View {
         .offset(y: -10)
         .padding()
         .onAppear {
-            shuffledWords = words
-            shuffledWords.shuffle()
+            let shuffledWords = Array(Set(0..<shuffledWords.count)).prefix(4).shuffled()
 
-            randomIndex1 = Int.random(in: 0 ..< shuffledWords.count/2)
-            randomIndex2 = Int.random(in: 0 ..< shuffledWords.count/2)
-            randomIndex3 = Int.random(in: shuffledWords.count/2 ..< shuffledWords.count)
-            randomIndex4 = Int.random(in: shuffledWords.count/2 ..< shuffledWords.count)
+            randomIndex1 = shuffledWords[0]
+            randomIndex2 = shuffledWords[1]
+            randomIndex3 = shuffledWords[2]
+            randomIndex4 = shuffledWords[3]
 
             correctAnswer = Int.random(in: 1 ..< 5)
             

@@ -88,7 +88,7 @@ struct MetronomeHomeView: View {
 
                     // BPM modifier
                     HStack {
-                        Spacer()
+                        Spacer().frame(height:1)
 
                         Button {
                             if (bpm > 1) { bpm -= 1 }
@@ -139,7 +139,9 @@ struct MetronomeHomeView: View {
                     HStack {
                         //Play Button
                         Button {
-                            isOn.toggle()
+                            withAnimation(.easeInOut(duration: 0.1)){
+                                isOn.toggle()
+                            }
                             print("Toggle metronome")
                         } label: {
                             HStack{

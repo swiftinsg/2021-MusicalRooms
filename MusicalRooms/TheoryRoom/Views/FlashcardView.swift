@@ -19,59 +19,66 @@ struct FlashcardsView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        VStack {
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .frame(width: 350, height: 300, alignment: .center)
-                    .foregroundColor(Color("lightBrown"))
-                    .rotation3DEffect(degrees, axis: (x: 0, y: 1, z: 0))
-                    .onTapGesture {
-                        withAnimation(.easeInOut(duration: 0.3)){
-                            degrees += Angle(degrees: 180)
-                            isFlipped.toggle()
-                        }
-                    }
-                
-                RoundedRectangle(cornerRadius: 10)
-                    .frame(width: 350, height: 50, alignment: .leading)
+        Spacer()
+        VStack(spacing:0){
+            Spacer()
+
+            RoundedRectangle(cornerRadius: 10)
+                    .frame(height: 50, alignment: .leading)
                     .foregroundColor(Color("darkBrown"))
                     .overlay(
-                        Text("\(duplicateCurrentWord + 1) / \(words.count)")
-                            .font(.system(size: 25, design: .rounded))
-                            .foregroundColor(Color("evenLighterBrown"))
-                            .bold()
-                            .offset(x: -120)
+                            VStack(alignment:.leading){
+                                Text("\(duplicateCurrentWord + 1) / \(words.count)")
+                                        .font(.system(size: 25, design: .rounded))
+                                        .foregroundColor(Color("evenLighterBrown"))
+                                        .bold()
+                                        .offset(x: -120)
+                            }
                     )
-                    .offset(y: -125)
-                
-                VStack {
-                    if isFlipped {
-                        Text(words[duplicateCurrentWord].definition)
+
+            VStack {
+                if isFlipped {
+                    Text(words[duplicateCurrentWord].definition)
                             .font(.system(size: 23, design: .rounded))
-                            .frame(width: 250, height: 300, alignment: .center)
+                            .padding()
                             .rotation3DEffect(.degrees(180), axis: (x:0, y:1, z:0))
-                    } else {
-                        Text(words[duplicateCurrentWord].title)
+                } else {
+                    Text(words[duplicateCurrentWord].title)
                             .bold()
                             .font(.system(size: 25, design: .rounded))
-                        if let altText = words[duplicateCurrentWord].altText {
-                            Text(altText)
+                    if let altText = words[duplicateCurrentWord].altText {
+                        Text(altText)
                                 .font(.system(size: 18, design: .rounded))
-                        } else {
-                            Text("  ")
+                    } else {
+                        Text("  ")
                                 .font(.system(size: 18, design: .rounded))
-                        }
                     }
                 }
-                .offset(y: 15)
-                .rotation3DEffect(degrees, axis: (x: 0, y: 1, z: 0))
             }
-            
-            RoundedRectangle(cornerRadius: 10)
-                .frame(width: 350, height: 70)
-                .foregroundColor(Color("lightBrown"))
-                .overlay(
-                    HStack {
+            .padding(.top)
+            .rotation3DEffect(degrees, axis: (x: 0, y: 1, z: 0))
+            .frame(maxWidth: .infinity)
+            .background(
+                    Color("lightBrown")
+                            .rotation3DEffect(degrees, axis: (x: 0, y: 1, z: 0))
+                            .onTapGesture {
+                                withAnimation(.easeInOut(duration: 0.3)){
+                                    degrees += Angle(degrees: 180)
+                                    isFlipped.toggle()
+                                }
+                            }
+            )
+            .cornerRadius(15)
+
+            Spacer()
+
+            Rectangle()
+            .frame(height: 60)
+            .cornerRadius(15)
+            .foregroundColor(Color("lightBrown"))
+            .overlay(
+                    HStack{
+                        //LEFT BT
                         Button {
                             withAnimation(.easeInOut(duration: 0.3)){
                                 if duplicateCurrentWord != 0 {
@@ -82,15 +89,15 @@ struct FlashcardsView: View {
                             }
                         } label: {
                             Image(systemName: "chevron.left.2")
-                                .foregroundColor(Color("darkBrown"))
-                                .font(Font.system(size: 40, weight: .semibold))
-                        }
-                        .offset(x: -56)
-                        
+                                    .foregroundColor(Color("darkBrown"))
+                                    .font(Font.system(size: 40, weight: .semibold))
+                        }.padding()
+
                         Rectangle()
-                            .frame(width: 2)
-                            .foregroundColor(Color("darkBrown"))
-                        
+                                .frame(width: 2)
+                                .foregroundColor(Color("darkBrown"))
+
+                        //RIGHT BT
                         Button {
                             withAnimation(.easeInOut(duration: 0.3)){
                                 if isFlipped {
@@ -105,18 +112,19 @@ struct FlashcardsView: View {
                             }
                         } label: {
                             Image(systemName: isFlipped ? "checkmark" : "chevron.right.2")
-                                .foregroundColor(Color("darkBrown"))
-                                .font(Font.system(size: 40, weight: .semibold))
-                        }
-                        .offset(x: 56)
+                                    .foregroundColor(Color("darkBrown"))
+                                    .font(Font.system(size: 40, weight: .semibold))
+                        }.padding()
                     }
-                )
-                .offset(y: 30)
+            )
+            Spacer()
+
         }
+        .padding()
         .onAppear {
             duplicateCurrentWord = currentWord
         }
-        .offset(y: -100)
+        Spacer()
     }
 }
 

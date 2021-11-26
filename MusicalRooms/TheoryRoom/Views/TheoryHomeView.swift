@@ -20,6 +20,7 @@ struct TheoryHomeView: View {
                             OverviewView(grades: $grades, grade: grade.number)
                         } label: {
                             VStack(alignment: .leading) {
+
                                 HStack(alignment: .bottom) {
                                     Text("Grade \(grade.number)")
                                         .multilineTextAlignment(.leading)
@@ -35,13 +36,15 @@ struct TheoryHomeView: View {
                                         .foregroundColor(Color("darkerBrown"))
                                         .padding(.trailing, 15)
                                         .overlay(
-                                            Text("Last score")
+                                            Text("Last Score")
                                                 .foregroundColor(Color("darkerBrown"))
-                                                .font(Font.system(size: 14, weight: .medium, design: .rounded))
-                                                .offset(x: -10, y:20)
+                                                .font(Font.system(size: 14, weight: .light, design: .rounded))
+                                                .offset(x: -10, y:22)
                                         )
 
-                                }.offset(y: -20)
+                                }
+                                .offset(y: -20)
+                                .padding(.top)
 
                                 //PROGRESS BAR
                                 RoundedRectangle(cornerRadius: 5)
@@ -52,15 +55,15 @@ struct TheoryHomeView: View {
                                                 ]), startPoint: .leading, endPoint: .trailing)
                                         )
                                         .foregroundColor(Color("darkLightBrown"))
-                                        .frame(width: 300, height: 10, alignment: .leading)
                             }
                             .padding()
-                            .frame(width: 330, height: 135, alignment: .leading)
                             .background(Color("lightBrown"))
                             .cornerRadius(10)
-                        }.frame(width: 400)//END LABEL
+                        }//END LABEL
                     }
-                }.padding(.bottom, 22)
+                }
+                .padding(.bottom, 22)
+                .padding(.horizontal)
             }
             .navigationTitle("Theory")
             .offset(y:20)

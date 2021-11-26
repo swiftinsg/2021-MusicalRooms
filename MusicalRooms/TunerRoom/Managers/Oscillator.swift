@@ -27,6 +27,7 @@ class OscillatorObject {
         osc.amplitude = 0.6
         
         try? engine.start()
+        overrideSpeaker()
         osc.start()
     }
     
@@ -35,9 +36,14 @@ class OscillatorObject {
     }
 
     func overrideSpeaker(){
-        do{
-            try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
-        }catch{ print(error) }
+        let playbackSession = AVAudioSession.sharedInstance()
+
+        do {
+            try playbackSession.setCategory(.playAndRecord, mode: .default)
+            try playbackSession.overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
+        } catch {
+            print("Playing over the device's speakers failed")
+        }
     }
 }
 

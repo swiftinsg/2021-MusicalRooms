@@ -88,7 +88,7 @@ struct MetronomeHomeView: View {
 
                     // BPM modifier
                     HStack {
-                        Spacer()
+                        Spacer().frame(height:1)
 
                         Button {
                             if (bpm > 1) { bpm -= 1 }

@@ -44,7 +44,7 @@ struct OverviewView: View {
                                         .multilineTextAlignment(.leading)
                                 }
                             }
-                            .frame(width: 250, height: 45, alignment: .leading)
+                            .frame(height: 45, alignment: .leading)
                         }
                         .listRowBackground(Color("lightBrown"))
                     }
@@ -66,12 +66,13 @@ struct OverviewView: View {
             }
             .padding(.leading, 10)
             .padding(.trailing, 10)
-            .frame(width: 300, height: 60, alignment: .center)
             .background(Color("darkBrown"))
             .cornerRadius(10)
             .navigationTitle("Grade \(grade)")
 
-        }.offset(y:-40)
+        }
+        .offset(y:-40)
+        .padding()
     }
 }
 

@@ -20,7 +20,6 @@ struct ActualTunerView: View {
     var body: some View {
         VStack {
             RoundedRectangle(cornerRadius: 20)
-                .frame(width: 350, height: 180, alignment: .center)
                 .foregroundColor(Color("evenLighterBrown"))
                 .overlay(
                     VStack {
@@ -38,11 +37,9 @@ struct ActualTunerView: View {
                         HStack{
                             let amplitude = String(format: "%.2f", fabsf(20 * log10(fabsf(1/conductor.data.amplitude)))  )
                             Text("\(amplitude) dB")
-                                .frame(width: 110, alignment: .center)
 
                             let frequency = String(format: "%.2f", conductor.data.pitch)
                             Text("\(frequency) Hz")
-                                .frame(width: 110, alignment: .center)
                         }
 
 
@@ -68,6 +65,8 @@ struct ActualTunerView: View {
                     }
                 )
         }
+        .padding(.leading, 30)
+        .padding(.trailing, 30)
         .onAppear{
             self.conductor.start()
         }

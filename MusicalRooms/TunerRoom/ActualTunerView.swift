@@ -20,6 +20,7 @@ struct ActualTunerView: View {
     var body: some View {
         VStack {
             RoundedRectangle(cornerRadius: 20)
+                .frame(width: 350, height: 180, alignment: .center)
                 .foregroundColor(Color("evenLighterBrown"))
                 .overlay(
                     VStack {

@@ -32,7 +32,6 @@ struct FlashcardsView: View {
                                         .font(.system(size: 25, design: .rounded))
                                         .foregroundColor(Color("evenLighterBrown"))
                                         .bold()
-                                        .offset(x: -120)
                             }
                     )
 
@@ -56,6 +55,7 @@ struct FlashcardsView: View {
                 }
             }
             .padding(.top)
+            .padding(.vertical, 45)
             .rotation3DEffect(degrees, axis: (x: 0, y: 1, z: 0))
             .frame(maxWidth: .infinity)
             .background(
@@ -70,7 +70,7 @@ struct FlashcardsView: View {
             )
             .cornerRadius(15)
 
-            Spacer()
+            Spacer().frame(height:25)
 
             Rectangle()
             .frame(height: 60)
@@ -78,6 +78,7 @@ struct FlashcardsView: View {
             .foregroundColor(Color("lightBrown"))
             .overlay(
                     HStack{
+                        Spacer()
                         //LEFT BT
                         Button {
                             withAnimation(.easeInOut(duration: 0.3)){
@@ -92,11 +93,13 @@ struct FlashcardsView: View {
                                     .foregroundColor(Color("darkBrown"))
                                     .font(Font.system(size: 40, weight: .semibold))
                         }.padding()
+                        Spacer()
 
                         Rectangle()
                                 .frame(width: 2)
                                 .foregroundColor(Color("darkBrown"))
 
+                        Spacer()
                         //RIGHT BT
                         Button {
                             withAnimation(.easeInOut(duration: 0.3)){
@@ -115,6 +118,7 @@ struct FlashcardsView: View {
                                     .foregroundColor(Color("darkBrown"))
                                     .font(Font.system(size: 40, weight: .semibold))
                         }.padding()
+                        Spacer()
                     }
             )
             Spacer()

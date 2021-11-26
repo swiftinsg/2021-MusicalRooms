@@ -17,12 +17,12 @@ struct SelectKeyView: View {
     
     var body: some View {
         VStack {
-            HStack {
+            HStack{
                 Spacer()
                     .frame(height: 55)
                 
                 ForEach(7 ..< notes.count) { note in
-                    if note == 9 {
+                    if note == 7 {
                         Spacer()
                             .frame(width: 50)
                     }

@@ -17,21 +17,46 @@ struct TunerHomeView: View {
         Note(name: "Asharp", hertz: 466.16)]
     
     @State var variance: Float = 0.0
+    @State var displaySheetSelect: Bool = false
     
     var body: some View {
         NavigationView{
             VStack{
-
+                Spacer().frame(height: 60)
+                
                 ActualTunerView()
 
-                Spacer().frame(height: 45)
+                Spacer().frame(height: 60)
 
                 SelectKeyView(notes: $notes)
 
-                Spacer().frame(height: 15)
+                Spacer().frame(height: 20)
 
+                Button {
+                    displaySheetSelect.toggle()
+                } label: {
+                    ZStack {
+                        Rectangle()
+                                .foregroundColor(Color("darkerBrown"))
+                                .frame(width: 200, height: 50, alignment: .center)
+                                .cornerRadius(20)
+
+
+                        Text("Common Tunings")
+                                .bold()
+                                .font(.title2)
+                                .foregroundColor(Color("lightBrown"))
+                    }.offset(x: -75)
+                }
+                    
+                
+                Spacer().frame(width: 15)
             }.navigationBarTitle("Tuner")
         }
+        .sheet(isPresented: $displaySheetSelect,
+                     content: {
+                  CommonTuningsView()
+              })
     }
 }
 

@@ -15,6 +15,8 @@
 		2E58ADE7274E9767000B1CFB /* WordStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58ADE6274E9767000B1CFB /* WordStruct.swift */; };
 		2E58ADEA274E979E000B1CFB /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58ADE9274E979E000B1CFB /* GetEnharmonic.swift */; };
 		2E9EF866274FA68C00704AE3 /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2E9EF865274FA68C00704AE3 /* AudioKitUI */; };
+		C57AFE14275092CE00B630A9 /* CommonTuningsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57AFE13275092CE00B630A9 /* CommonTuningsView.swift */; };
+		C57AFE16275094DF00B630A9 /* Tunings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57AFE15275094DF00B630A9 /* Tunings.swift */; };
 		C5D98ADE274E89AD00A2A279 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D98ADD274E89AD00A2A279 /* ResultsView.swift */; };
 		C5D98AE0274E905A00A2A279 /* ActualResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D98ADF274E905A00A2A279 /* ActualResultsView.swift */; };
 		FF4B7F4D274CE83E0047D8FD /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = FF4B7F4C274CE83E0047D8FD /* Subsonic */; };
@@ -79,6 +81,8 @@
 		2E58ADE6274E9767000B1CFB /* WordStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordStruct.swift; sourceTree = "<group>"; };
 		2E58ADE9274E979E000B1CFB /* GetEnharmonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEnharmonic.swift; sourceTree = "<group>"; };
 		2EBE5DDC27494FD6006162BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C57AFE13275092CE00B630A9 /* CommonTuningsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTuningsView.swift; sourceTree = "<group>"; };
+		C57AFE15275094DF00B630A9 /* Tunings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tunings.swift; sourceTree = "<group>"; };
 		C5D98ADD274E89AD00A2A279 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		C5D98ADF274E905A00A2A279 /* ActualResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualResultsView.swift; sourceTree = "<group>"; };
 		FF863046274E1034001086F8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -256,6 +260,8 @@
 			isa = PBXGroup;
 			children = (
 				FF863058274E103E001086F8 /* TunerHomeView.swift */,
+				C57AFE13275092CE00B630A9 /* CommonTuningsView.swift */,
+				C57AFE15275094DF00B630A9 /* Tunings.swift */,
 				FF94503F274F9508009155B4 /* Tuner.swift */,
 				FF863065274E103E001086F8 /* ActualTunerView.swift */,
 				FF863066274E103E001086F8 /* SelectKeyView.swift */,
@@ -467,6 +473,7 @@
 				FF945040274F9508009155B4 /* Tuner.swift in Sources */,
 				FF863083274E103E001086F8 /* MetronomeHomeView.swift in Sources */,
 				FF8630A5274E103E001086F8 /* RecorderHomeView.swift in Sources */,
+				C57AFE16275094DF00B630A9 /* Tunings.swift in Sources */,
 				FF93C295274E287500EE2907 /* TheoryHomeView.swift in Sources */,
 				FF863095274E103E001086F8 /* Note.swift in Sources */,
 				FF93C292274E287500EE2907 /* QuestionView.swift in Sources */,
@@ -478,6 +485,7 @@
 				FF93C297274E287500EE2907 /* GetWords.swift in Sources */,
 				2E58ADE7274E9767000B1CFB /* WordStruct.swift in Sources */,
 				FF8630A1274E103E001086F8 /* Recording.swift in Sources */,
+				C57AFE14275092CE00B630A9 /* CommonTuningsView.swift in Sources */,
 				FF93C291274E287500EE2907 /* FlashcardView.swift in Sources */,
 				FF93C296274E287500EE2907 /* OverviewView.swift in Sources */,
 				1BBE2239EC9A51D8033C471F /* DefinitionModalView.swift in Sources */,

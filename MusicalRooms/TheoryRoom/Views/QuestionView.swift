@@ -32,102 +32,102 @@ struct QuestionView: View {
     @State var rectangleColor2 = Color("darkBrown")
     @State var rectangleColor3 = Color("darkBrown")
     @State var rectangleColor4 = Color("darkBrown")
-    @State var foregroundColor1 = Color("lightBrown")
-    @State var foregroundColor2 = Color("lightBrown")
-    @State var foregroundColor3 = Color("lightBrown")
-    @State var foregroundColor4 = Color("lightBrown")
+    @State var foregroundColor1 = Color.white
+    @State var foregroundColor2 = Color.white
+    @State var foregroundColor3 = Color.white
+    @State var foregroundColor4 = Color.white
     
     @State var pastelGreen = Color.init(red: 0.3764705882, green: 0.8392156863, blue: 0.462745098)
     @State var pastelRed = Color.init(red: 0.8392156863, green: 0.4, blue: 0.3764705882)
     
     fileprivate func wrongOrCorrectAction(_ button: Int, _ correctAnswer: Int) {
-    isContinueButtonHidden = false
-    isDisabled = true
-    if button == correctAnswer {
-        correctAnswerWords[words.firstIndex(of: shuffledWords[currentQuestion])!] = true
-        score += 1
-        if button == 1 {
-            rectangleColor1 = Color("lightGreen")
-            foregroundColor1 = Color("darkerBrown")
-        } else if button == 2 {
-            rectangleColor2 = Color("lightGreen")
-            foregroundColor2 = Color("darkerBrown")
-        } else if button == 3 {
-            rectangleColor3 = Color("lightGreen")
-            foregroundColor3 = Color("darkerBrown")
-        } else if button == 4 {
-            rectangleColor4 = Color("lightGreen")
-            foregroundColor4 = Color("darkerBrown")
+        isContinueButtonHidden = false
+        isDisabled = true
+        if button == correctAnswer {
+            correctAnswerWords[words.firstIndex(of: shuffledWords[currentQuestion])!] = true
+            score += 1
+            if button == 1 {
+                rectangleColor1 = Color("lightGreen")
+                foregroundColor1 = Color("darkerBrown")
+            } else if button == 2 {
+                rectangleColor2 = Color("lightGreen")
+                foregroundColor2 = Color("darkerBrown")
+            } else if button == 3 {
+                rectangleColor3 = Color("lightGreen")
+                foregroundColor3 = Color("darkerBrown")
+            } else if button == 4 {
+                rectangleColor4 = Color("lightGreen")
+                foregroundColor4 = Color("darkerBrown")
+            }
+        } else {
+
+            if button == 1 {
+                rectangleColor1 = Color("lightRed")
+                foregroundColor1 = .white
+                if correctAnswer == 2 {
+                    rectangleColor2 = Color("lightGreen")
+                    foregroundColor2 = Color("darkerBrown")
+                } else if correctAnswer == 3 {
+                    rectangleColor3 = Color("lightGreen")
+                    foregroundColor3 = Color("darkerBrown")
+                } else if correctAnswer == 4 {
+                    rectangleColor4 = Color("lightGreen")
+                    foregroundColor4 = Color("darkerBrown")
+                }
+            } else if button == 2 {
+                rectangleColor2 = Color("lightRed")
+                foregroundColor2 = .white
+                if correctAnswer == 1 {
+                    rectangleColor1 = Color("lightGreen")
+                    foregroundColor1 = Color("darkerBrown")
+                } else if correctAnswer == 3 {
+                    rectangleColor3 = Color("lightGreen")
+                    foregroundColor3 = Color("darkerBrown")
+                } else if correctAnswer == 4 {
+                    rectangleColor4 = Color("lightGreen")
+                    foregroundColor4 = Color("darkerBrown")
+                }
+            } else if button == 3 {
+                rectangleColor3 = Color("lightRed")
+                foregroundColor3 = .white
+                if correctAnswer == 1 {
+                    rectangleColor1 = Color("lightGreen")
+                    foregroundColor1 = Color("darkerBrown")
+                } else if correctAnswer == 2 {
+                    rectangleColor2 = Color("lightGreen")
+                    foregroundColor2 = Color("darkerBrown")
+                } else if correctAnswer == 4 {
+                    rectangleColor4 = Color("lightGreen")
+                    foregroundColor4 = Color("darkerBrown")
+                }
+            } else if button == 4 {
+                rectangleColor4 = Color("lightRed")
+                foregroundColor4 = .white
+                if correctAnswer == 1 {
+                    rectangleColor1 = Color("lightGreen")
+                    foregroundColor1 = Color("darkerBrown")
+                } else if correctAnswer == 2 {
+                    rectangleColor2 = Color("lightGreen")
+                    foregroundColor2 = Color("darkerBrown")
+                } else if correctAnswer == 3 {
+                    rectangleColor3 = Color("lightGreen")
+                    foregroundColor3 = Color("darkerBrown")
+                }
+            }
         }
-    } else {
-        
-        if button == 1 {
-            rectangleColor1 = Color("lightRed")
-            foregroundColor1 = .white
-            if correctAnswer == 2 {
-                rectangleColor2 = Color("lightGreen")
-                foregroundColor2 = Color("darkerBrown")
-            } else if correctAnswer == 3 {
-                rectangleColor3 = Color("lightGreen")
-                foregroundColor3 = Color("darkerBrown")
-            } else if correctAnswer == 4 {
-                rectangleColor4 = Color("lightGreen")
-                foregroundColor4 = Color("darkerBrown")
-            }
-        } else if button == 2 {
-            rectangleColor2 = Color("lightRed")
-            foregroundColor2 = .white
-            if correctAnswer == 1 {
-                rectangleColor1 = Color("lightGreen")
-                foregroundColor1 = Color("darkerBrown")
-            } else if correctAnswer == 3 {
-                rectangleColor3 = Color("lightGreen")
-                foregroundColor3 = Color("darkerBrown")
-            } else if correctAnswer == 4 {
-                rectangleColor4 = Color("lightGreen")
-                foregroundColor4 = Color("darkerBrown")
-            }
-        } else if button == 3 {
-            rectangleColor3 = Color("lightRed")
-            foregroundColor3 = .white
-            if correctAnswer == 1 {
-                rectangleColor1 = Color("lightGreen")
-                foregroundColor1 = Color("darkerBrown")
-            } else if correctAnswer == 2 {
-                rectangleColor2 = Color("lightGreen")
-                foregroundColor2 = Color("darkerBrown")
-            } else if correctAnswer == 4 {
-                rectangleColor4 = Color("lightGreen")
-                foregroundColor4 = Color("darkerBrown")
-            }
-        } else if button == 4 {
-            rectangleColor4 = Color("lightRed")
-            foregroundColor4 = .white
-            if correctAnswer == 1 {
-                rectangleColor1 = Color("lightGreen")
-                foregroundColor1 = Color("darkerBrown")
-            } else if correctAnswer == 2 {
-                rectangleColor2 = Color("lightGreen")
-                foregroundColor2 = Color("darkerBrown")
-            } else if correctAnswer == 3 {
-                rectangleColor3 = Color("lightGreen")
-                foregroundColor3 = Color("darkerBrown")
-            }
-        }
+        print(correctAnswerWords)
     }
-    print(correctAnswerWords)
-}
     
     var body: some View {
         VStack {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
-                    .frame(width: 350, height: 170, alignment: .center)
+                    .frame(height: 140, alignment: .center)
                     .foregroundColor(Color("lightBrown"))
 
 
                 RoundedRectangle(cornerRadius: 10)
-                    .frame(width: 350, height: 50, alignment: .leading)
+                    .frame(height: 50, alignment: .leading)
                     .foregroundColor(Color("darkBrown"))
                     .overlay(
                         HStack {
@@ -143,10 +143,10 @@ struct QuestionView: View {
                 VStack {
                     Text(shuffledWords[currentQuestion].title)
                         .bold()
-                        .font(.system(size: 30, design: .rounded))
+                        .font(.system(size: 28, design: .rounded))
                     if let alt = shuffledWords[currentQuestion].altText {
                         Text(alt)
-                            .font(.system(size: 20, design: .rounded))
+                            .font(.system(size: 28, design: .rounded))
                     }
                 }
             }
@@ -158,15 +158,27 @@ struct QuestionView: View {
                 } label: {
                     VStack {
                         if correctAnswer == 1 {
-                            Text(shuffledWords[currentQuestion].definition)
-                                    .foregroundColor(foregroundColor1)
-                                    .font(.system(size: 20, design: .rounded))
-                                    .fontWeight(.bold)
+                            Rectangle()
+                                    .foregroundColor(rectangleColor1)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                            Text(shuffledWords[currentQuestion].definition)
+                                                    .foregroundColor(foregroundColor1)
+                                                    .font(.system(size: 20, design: .rounded))
+                                                    .fontWeight(.bold)
+                                                    .padding(5)
+                                    )
                         } else {
-                            Text(shuffledWords[randomIndex1].definition)
-                                    .foregroundColor(foregroundColor1)
-                                    .font(.system(size: 20, design: .rounded))
-                                    .fontWeight(.bold)
+                            Rectangle()
+                                    .foregroundColor(rectangleColor1)
+                                    .cornerRadius(10)
+                                    .overlay {
+                                        Text(shuffledWords[randomIndex1].definition)
+                                                .foregroundColor(foregroundColor1)
+                                                .font(.system(size: 20, design: .rounded))
+                                                .fontWeight(.bold)
+                                                .padding(5)
+                                    }
                         }
                     }
                     .padding(.top, 30)
@@ -185,15 +197,27 @@ struct QuestionView: View {
                 } label: {
                     VStack {
                         if correctAnswer == 2 {
-                            Text(shuffledWords[currentQuestion].definition)
-                                    .foregroundColor(foregroundColor2)
-                                    .font(.system(size: 20, design: .rounded))
-                                    .fontWeight(.bold)
+                            Rectangle()
+                                    .foregroundColor(rectangleColor2)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                            Text(shuffledWords[currentQuestion].definition)
+                                                    .foregroundColor(foregroundColor2)
+                                                    .font(.system(size: 20, design: .rounded))
+                                                    .fontWeight(.bold)
+                                                    .padding(5)
+                                    )
                         } else {
-                            Text(shuffledWords[randomIndex2].definition)
-                                    .foregroundColor(foregroundColor2)
-                                    .font(.system(size: 20, design: .rounded))
-                                    .fontWeight(.bold)
+                            Rectangle()
+                                    .foregroundColor(rectangleColor2)
+                                    .cornerRadius(10)
+                                    .overlay {
+                                        Text(shuffledWords[randomIndex2].definition)
+                                                .foregroundColor(foregroundColor2)
+                                                .font(.system(size: 20, design: .rounded))
+                                                .fontWeight(.bold)
+                                                .padding(5)
+                                    }
                         }
                     }
                     .padding(.top, 30)
@@ -212,15 +236,27 @@ struct QuestionView: View {
                 } label: {
                     VStack {
                         if correctAnswer == 3 {
-                            Text(shuffledWords[currentQuestion].definition)
-                                    .foregroundColor(foregroundColor3)
-                                    .font(.system(size: 20, design: .rounded))
-                                    .fontWeight(.bold)
+                            Rectangle()
+                                    .foregroundColor(rectangleColor3)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                            Text(shuffledWords[currentQuestion].definition)
+                                                    .foregroundColor(foregroundColor3)
+                                                    .font(.system(size: 20, design: .rounded))
+                                                    .fontWeight(.bold)
+                                                    .padding(5)
+                                    )
                         } else {
-                            Text(shuffledWords[randomIndex3].definition)
-                                    .foregroundColor(foregroundColor3)
-                                    .font(.system(size: 20, design: .rounded))
-                                    .fontWeight(.bold)
+                            Rectangle()
+                                    .foregroundColor(rectangleColor3)
+                                    .cornerRadius(10)
+                                    .overlay {
+                                        Text(shuffledWords[randomIndex3].definition)
+                                                .foregroundColor(foregroundColor3)
+                                                .font(.system(size: 20, design: .rounded))
+                                                .fontWeight(.bold)
+                                                .padding(5)
+                                    }
                         }
                     }
                     .padding(.top, 30)
@@ -240,25 +276,31 @@ struct QuestionView: View {
                 } label: {
                     VStack {
                         if correctAnswer == 4 {
-                            Text(shuffledWords[currentQuestion].definition)
+                            Rectangle()
+                            .foregroundColor(rectangleColor4)
+                            .cornerRadius(10)
+                            .overlay(
+                                Text(shuffledWords[currentQuestion].definition)
                                     .foregroundColor(foregroundColor4)
                                     .font(.system(size: 20, design: .rounded))
                                     .fontWeight(.bold)
+                                    .padding(5)
+                            )
                         } else {
-                            Text(shuffledWords[randomIndex4].definition)
-                                    .foregroundColor(foregroundColor4)
-                                    .font(.system(size: 20, design: .rounded))
-                                    .fontWeight(.bold)
+                            Rectangle()
+                                    .foregroundColor(rectangleColor4)
+                                    .cornerRadius(10)
+                                    .overlay {
+                                        Text(shuffledWords[randomIndex4].definition)
+                                                .foregroundColor(foregroundColor4)
+                                                .font(.system(size: 20, design: .rounded))
+                                                .fontWeight(.bold)
+                                                .padding(5)
+                                    }
                         }
                     }
-                            .padding(.top, 30)
-                            .padding(.bottom, 30)
-                            .background{
-                                Rectangle()
-                                        .foregroundColor(rectangleColor4)
-                                        .cornerRadius(20)
-                                        .frame(width: 350, alignment: .center)
-                            }
+                    .padding(.top, 10)
+                    .padding(.bottom, 10)
                 }
                 .disabled(isDisabled)
             }
@@ -267,10 +309,10 @@ struct QuestionView: View {
                 if currentQuestion < shuffledWords.count - 1 {
                     Button {
                         isContinueButtonHidden = true
-                        foregroundColor1 = Color("lightBrown")
-                        foregroundColor2 = Color("lightBrown")
-                        foregroundColor3 = Color("lightBrown")
-                        foregroundColor4 = Color("lightBrown")
+                        foregroundColor1 = Color.white
+                        foregroundColor2 = Color.white
+                        foregroundColor3 = Color.white
+                        foregroundColor4 = Color.white
 
                         rectangleColor1 = Color("darkBrown")
                         rectangleColor2 = Color("darkBrown")
@@ -282,11 +324,14 @@ struct QuestionView: View {
 
                         correctAnswer = Int.random(in: 1 ..< 5)
 
-                        randomIndex1 = Int.random(in: 0 ..< shuffledWords.count/2)
-                        randomIndex2 = Int.random(in: 0 ..< shuffledWords.count/2)
-                        randomIndex3 = Int.random(in: shuffledWords.count/2 ..< shuffledWords.count)
-                        randomIndex4 = Int.random(in: shuffledWords.count/2 ..< shuffledWords.count)
+                        let shuffledWords = Array(Set(0..<shuffledWords.count)).prefix(4).shuffled()
 
+                        randomIndex1 = shuffledWords[0]
+                        randomIndex2 = shuffledWords[1]
+                        randomIndex3 = shuffledWords[2]
+                        randomIndex4 = shuffledWords[3]
+
+                        print(shuffledWords)
                     } label: {
                         ZStack {
                             Rectangle()
@@ -297,7 +342,7 @@ struct QuestionView: View {
                             Text("Continue")
                                 .foregroundColor(Color("evenLighterBrown"))
                                 .bold()
-                                .font(.system(size: 20, design: .rounded))
+                                .font(.system(size: 18, design: .rounded))
                         }
                     }
                 } else {
@@ -319,7 +364,7 @@ struct QuestionView: View {
                 }
             }
         }
-        .offset(y: -30)
+        .offset(y: -10)
         .padding()
         .onAppear {
             shuffledWords = words

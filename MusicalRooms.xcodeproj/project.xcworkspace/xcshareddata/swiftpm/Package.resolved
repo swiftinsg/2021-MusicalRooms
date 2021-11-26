@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "AudioKitUI",
+        "repositoryURL": "https://github.com/AudioKit/AudioKitUI",
+        "state": {
+          "branch": "main",
+          "revision": "5f04c0590141027ea1fc43fb60fd31e9a2f1b456",
+          "version": null
+        }
+      },
+      {
         "package": "KissFFT",
         "repositoryURL": "https://github.com/AudioKit/KissFFT",
         "state": {

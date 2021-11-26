@@ -22,17 +22,23 @@ struct TheoryHomeView: View {
                             VStack(alignment: .leading) {
                                 HStack(alignment: .bottom) {
                                     Text("Grade \(grade.number)")
-                                            .multilineTextAlignment(.leading)
-                                            .font(Font.system(size: 25, weight: .semibold, design: .rounded))
-                                            .lineLimit(3)
-                                            .foregroundColor(Color("darkerBrown"))
+                                        .multilineTextAlignment(.leading)
+                                        .font(Font.system(size: 25, weight: .semibold, design: .rounded))
+                                        .lineLimit(3)
+                                        .foregroundColor(Color("darkerBrown"))
+                                    Spacer()
 
                                     Text(String(format: "%.2f", grade.percentageCorrect) + "%")
-                                            .multilineTextAlignment(.leading)
-                                            .font(Font.system(size: 25, weight: .semibold, design: .rounded))
-                                            .lineLimit(3)
-                                            .foregroundColor(Color("darkerBrown"))
-                                            .offset(x: 100)
+                                        .multilineTextAlignment(.leading)
+                                        .font(Font.system(size: 25, weight: .semibold, design: .rounded))
+                                        .lineLimit(3)
+                                        .foregroundColor(Color("darkerBrown"))
+                                        .padding(.trailing, 15)
+                                        .overlay(
+                                            Text("High Score")
+                                                .font(Font.system(size: 14, weight: .medium, design: .rounded))
+                                                .offset(y:15)
+                                        )
 
                                 }.offset(y: -20)
 
@@ -47,10 +53,10 @@ struct TheoryHomeView: View {
                                         .foregroundColor(Color("darkLightBrown"))
                                         .frame(width: 300, height: 10, alignment: .leading)
                             }
-                                    .padding()
-                                    .frame(width: 330, height: 135, alignment: .leading)
-                                    .background(Color("lightBrown"))
-                                    .cornerRadius(10)
+                            .padding()
+                            .frame(width: 330, height: 135, alignment: .leading)
+                            .background(Color("lightBrown"))
+                            .cornerRadius(10)
                         }.frame(width: 400)//END LABEL
                     }
                 }.padding(.bottom, 22)

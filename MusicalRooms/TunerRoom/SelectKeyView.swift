@@ -34,11 +34,12 @@ struct SelectKeyView: View {
                             Text(conversion(notes[note].name))
                                 .fontWeight(.semibold)
                             Text(getEnharmonic(conversion(notes[note].name)))
+                                .fontWeight(.semibold)
                         }
-                        .frame(width: 49, height: 70, alignment: .center)
+                        .frame(width: 35, height: 70, alignment: .center)
                         .font(.system(size: 18, design: .rounded))
                         .multilineTextAlignment(.center)
-                        .foregroundColor(notes[note].isSelected ? Color("evenLighterBrown") : Color("darkBrown"))
+                        .foregroundColor(notes[note].isSelected ? Color("lightBrown") : Color("darkBrown"))
                         .background(notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
                         .cornerRadius(12)
                     }
@@ -66,8 +67,6 @@ struct SelectKeyView: View {
             }
             Spacer()
                 .frame(height: 35)
-            
-            BottomButtonView()
         }
     }
     func playOscillator(_ note: Int) {

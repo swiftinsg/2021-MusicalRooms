@@ -43,9 +43,9 @@ struct TheoryHomeView: View {
                                         )
 
                                 }
-                                .offset(y: -20)
                                 .padding(.top)
 
+                                Spacer().frame(height:40)
                                 //PROGRESS BAR
                                 RoundedRectangle(cornerRadius: 5)
                                         .fill(

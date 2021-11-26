@@ -59,7 +59,7 @@ struct OverviewView: View {
                 QuestionView(grades: $grades, grade: grade, words: words)
             } label: {
                 Text("Start Quiz")
-                    .foregroundColor(Color("lightBrown"))
+                    .foregroundColor(Color("evenLighterBrown"))
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
                     .font(.system(size: 30, design: .rounded))

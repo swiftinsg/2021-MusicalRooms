@@ -71,15 +71,15 @@ struct CommonTuningsView: View {
                             .font(.system(size: 25, design: .rounded))
                             .fontWeight(.medium)
                             .multilineTextAlignment(.leading)
+                            .padding()
                     }
-                    .frame(width: 320, height: 70)                    .listRowBackground(Color("lightBrown"))
+                 .listRowBackground(Color("lightBrown"))
                 }
                     
                 .padding(.leading, 20)
                 .padding(.trailing, 20)
                 .cornerRadius(15)
                 .listStyle(.inset)
-                Spacer().frame(height:30)
                     
                 .navigationTitle("Common Tunings")
                     

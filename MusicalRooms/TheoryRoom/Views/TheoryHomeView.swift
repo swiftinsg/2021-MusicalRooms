@@ -35,7 +35,7 @@ struct TheoryHomeView: View {
                                         .foregroundColor(Color("darkerBrown"))
                                         .padding(.trailing, 15)
                                         .overlay(
-                                            Text("High Score")
+                                            Text("Last score")
                                                 .foregroundColor(Color("darkerBrown"))
                                                 .font(Font.system(size: 14, weight: .medium, design: .rounded))
                                                 .offset(x: -10, y:20)

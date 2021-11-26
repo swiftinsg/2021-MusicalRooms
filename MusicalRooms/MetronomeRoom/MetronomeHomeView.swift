@@ -207,9 +207,6 @@ struct MetronomeHomeView: View {
         weightOffset = CGFloat( -bpm*280/200 + 160)
     }
 
-
-
-
     // *********** Metronome tick & sound functions ********
 
     @State var soundDelayTimer: Timer
@@ -228,30 +225,30 @@ struct MetronomeHomeView: View {
     }
 
     func tick(){
-        if(!isOn){return}
+        if !isOn {return}
 
         var delay:Double = Double(60)/Double(bpm)
         if armAngle == 0 {
-            delay = delay*0.55
+            delay = delay * 0.55
         }
         swing(delay: delay)
 
         let soundDelay = armAngle != 0 ? delay*0.72 : 0.0
-        soundDelayTimer = Timer.scheduledTimer(withTimeInterval: soundDelay, repeats: false, block: {timer in
+        soundDelayTimer = Timer.scheduledTimer(withTimeInterval: soundDelay, repeats: false) { timer in
             sound()
-        })
+        }
 
         if(note < barNotes){note+=1}
         else{ note = 1 }
 
-        timer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false, block: {timer in
+        timer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) { timer in
             self.tick()
-        })
+        }
     }
 
     func sound(){
-        var isOne = barNotes==1
-        var isPulse = !isOne && note==1
+        let isOne = barNotes==1
+        let isPulse = !isOne && note==1
 
         let metrUrl = Bundle.main.url(forResource: "metronome", withExtension: ".wav")!
         let metrUpUrl = Bundle.main.url(forResource: "metronomeUp", withExtension: ".wav")!
@@ -259,51 +256,30 @@ struct MetronomeHomeView: View {
         isPulse ? metrSound.startPlayback(audio: metrUpUrl) : metrUpSound.startPlayback(audio: metrUrl)
     }
 
-    func swing(delay: Double){
+    func swing(delay: Double) {
         let nextAngle = armAngle == 0 ? 30 : -armAngle
-        withAnimation(.easeInOut(duration: delay)){
+        withAnimation(.easeInOut(duration: delay)) {
             armAngle = nextAngle
         }
     }
 
-    func endSwing(){
+    func endSwing() {
         withAnimation(.easeInOut(duration: 2.0)){
             armAngle = 0
         }
     }
 
     // Just a value to fill the timer var first
-    init(){
-        self.timer = Timer(timeInterval: 0.1, repeats: false, block: {timer in
+    init() {
+        self.timer = Timer(timeInterval: 0.1, repeats: false) { timer in
             print("Metronome initialised")
-        })
-        self.soundDelayTimer = Timer(timeInterval: 0.01, repeats: false, block: {timer in
+        }
+        self.soundDelayTimer = Timer(timeInterval: 0.01, repeats: false) { timer in
             print("")
-        })
+        }
+        
         barNotes = sigNotes[sigIndex]
     }
-
-
-}
-
-
-
-
-
-func tempoName(bpm: Int) -> String {
-    if(bpm < 20){ return "Larghissimo" }
-    else if(bpm < 40){ return "Gravo" }
-    else if(bpm < 50){ return "Lento" }
-    else if(bpm < 55){ return "Largo" }
-    else if(bpm < 65){ return "Adagio" }
-    else if(bpm < 70){ return "Adagietto" }
-    else if(bpm < 80){ return "Andante" }
-    else if(bpm < 100){ return "Moderato" }
-    else if(bpm < 110){ return "Allegretto" }
-    else if(bpm < 130){ return "Allegro" }
-    else if(bpm < 140){ return "Vivace" }
-    else if(bpm < 180){ return "Presto" }
-    else { return "Prestissimo" }
 }
 
 struct MetronomeHomeView_Previews: PreviewProvider {

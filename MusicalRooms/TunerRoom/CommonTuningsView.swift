@@ -51,43 +51,45 @@ struct CommonTuningsView: View {
     var body: some View {
             NavigationView {
                 VStack (alignment: .leading){
+                    List{
+                        Section{
+                            ForEach(tunings){tuning in
+                                HStack{
+                                    Text(tuning.name)
+                                            .foregroundColor(Color("darkerBrown"))
+                                            .font(.system(size: 18, design: .rounded))
+                                            .fontWeight(.bold)
+                                            .padding(.leading, 5)
+                                    Spacer()
 
-                    Text("Guitar 🎸")
-                        .foregroundColor(Color("darkerBrown"))
-                        .font(Font.system(size: 23, weight: .semibold, design: .rounded))
-                        .padding(.top, 10)
-                        .offset(x:23)
-                List(tunings) { tuning in
-                    HStack{
-                        Text(tuning.name)
-                            .foregroundColor(Color("darkerBrown"))
-                            .font(.system(size: 25, design: .rounded))
-                            .fontWeight(.bold)
-                        
-                        Spacer()
-                        
-                        Text(tuning.notes)
-                            .foregroundColor(Color("darkBrown"))
-                            .font(.system(size: 25, design: .rounded))
-                            .fontWeight(.medium)
-                            .multilineTextAlignment(.leading)
-                            .padding()
+                                    Text(tuning.notes)
+                                            .foregroundColor(Color("darkBrown"))
+                                            .font(.system(size: 20, design: .rounded))
+                                            .fontWeight(.medium)
+                                            .multilineTextAlignment(.leading)
+                                            .padding(.trailing, 5)
+                                }.padding(10)
+                            }
+                        } header: {
+                            Text("Guitar 🎸")
+                                    .foregroundColor(Color("darkerBrown"))
+                                    .font(Font.system(size: 18, weight: .semibold, design: .rounded))
+                        }.listRowBackground(Color("lightBrown"))
                     }
-                 .listRowBackground(Color("lightBrown"))
-                }
-                    
-                .padding(.leading, 20)
-                .padding(.trailing, 20)
-                .cornerRadius(15)
-                .listStyle(.inset)
-                    
-                .navigationTitle("Common Tunings")
-                    
+                    .listStyle(.automatic)
+                    .padding(.horizontal, 5)
+                    .cornerRadius(15)
+                    .listStyle(.inset)
+                    .navigationTitle("Common Tunings")
+                    .offset(y: 10)
                 }
         }
+        .onAppear{
+            UITableView.appearance().backgroundColor = .clear
+        }
             
-}
     }
+}
 
 struct CommonTuningsView_Previews: PreviewProvider {
     static var previews: some View {

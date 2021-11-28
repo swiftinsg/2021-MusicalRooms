@@ -34,8 +34,7 @@ struct RecordingsList: View {
                         .offset(x:-6)
             }
         }
-        .padding(.leading, 35)
-        .padding(.trailing, 40)
+        .padding(.horizontal, 35)
  
         
         if(audioRecorder.recordings.count >= 1){

@@ -19,10 +19,10 @@ struct OverviewView: View {
             Spacer().frame(height:30)
 
             Text("Musical terms")
-                .font(Font.system(size: 24, weight: .semibold, design: .rounded))
+                .font(Font.system(size: 24, weight: .semibold))
                 .padding(.top, 20)
-            Text("Click to open a flashcard")
-                .font(Font.system(size: 12, weight: .medium, design: .rounded))
+            Text("Click to open as flashcards")
+                .font(Font.system(size: 12, weight: .medium))
 
             List {
                 ForEach(0 ..< (words.count), id:\.self) { word in
@@ -48,10 +48,12 @@ struct OverviewView: View {
                         .listRowBackground(Color("lightBrown"))
                     }
             }
-            .padding(.leading, 20)
-            .padding(.trailing, 20)
+            .padding(.horizontal, 20)
             .cornerRadius(15)
-            .listStyle(.inset)
+            .listStyle(.automatic)
+            .onAppear{
+                UITableView.appearance().backgroundColor = .clear
+            }
             Spacer().frame(height:30)
             
             NavigationLink {
@@ -63,8 +65,7 @@ struct OverviewView: View {
                     .multilineTextAlignment(.center)
                     .font(.system(size: 30, design: .rounded))
             }
-            .padding(.leading, 10)
-            .padding(.trailing, 10)
+            .padding(.horizontal, 10)
             .frame(width: 300, height: 60, alignment: .center)
             .background(Color("darkBrown"))
             .cornerRadius(10)

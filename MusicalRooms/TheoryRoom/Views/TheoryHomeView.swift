@@ -55,15 +55,17 @@ struct TheoryHomeView: View {
                                                 ]), startPoint: .leading, endPoint: .trailing)
                                         )
                                         .foregroundColor(Color("darkLightBrown"))
+                                        .padding(.bottom, 10)
                             }
                             .padding()
                             .background(Color("lightBrown"))
                             .cornerRadius(10)
                         }
+                        .padding(.bottom, 5)
                         //END LABEL
                     }
                 }
-                .padding(.bottom, 22)
+                .padding(.bottom, 14)
                 .padding(.horizontal)
             }
             .navigationTitle("Theory")

@@ -11,6 +11,7 @@
 		1BBE226102D4003B5F3379A9 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE2777264C3E8EE6CB1ABA /* Note.swift */; };
 		1BBE280E5B2EAC87FFCE21EA /* Tuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE2B6787EA1D435BD76644 /* Tuner.swift */; };
 		1BBE2DC106680678763F45E6 /* Oscillator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE2D1A1124F826598A7C24 /* Oscillator.swift */; };
+		1BBE2F8F21AF620E721CE2F3 /* TunerIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE245F2AF1A362E82CC855 /* TunerIndicatorView.swift */; };
 		2E16225027412CA500791ADC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E16224F27412CA500791ADC /* Assets.xcassets */; };
 		2E16225D27412CA500791ADC /* MusicalRoomsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16225C27412CA500791ADC /* MusicalRoomsTests.swift */; };
 		2E16226727412CA500791ADC /* MusicalRoomsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E16226627412CA500791ADC /* MusicalRoomsUITests.swift */; };
@@ -32,7 +33,6 @@
 		FF863085274E103E001086F8 /* metronomeUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF863055274E103E001086F8 /* metronomeUp.wav */; };
 		FF863086274E103E001086F8 /* metronome.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF863056274E103E001086F8 /* metronome.wav */; };
 		FF863087274E103E001086F8 /* TunerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863058274E103E001086F8 /* TunerHomeView.swift */; };
-		FF863093274E103E001086F8 /* ActualTunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863065274E103E001086F8 /* ActualTunerView.swift */; };
 		FF863094274E103E001086F8 /* SelectKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863066274E103E001086F8 /* SelectKeyView.swift */; };
 		FF86309E274E103E001086F8 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863073274E103E001086F8 /* AudioPlayer.swift */; };
 		FF86309F274E103E001086F8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863074274E103E001086F8 /* Helpers.swift */; };
@@ -69,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1BBE245F2AF1A362E82CC855 /* TunerIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunerIndicatorView.swift; sourceTree = "<group>"; };
 		1BBE2465408F7C9E92E70CE5 /* DefinitionModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefinitionModalView.swift; sourceTree = "<group>"; };
 		1BBE2777264C3E8EE6CB1ABA /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		1BBE2B6787EA1D435BD76644 /* Tuner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tuner.swift; sourceTree = "<group>"; };
@@ -96,7 +97,6 @@
 		FF863055274E103E001086F8 /* metronomeUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeUp.wav; sourceTree = "<group>"; };
 		FF863056274E103E001086F8 /* metronome.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronome.wav; sourceTree = "<group>"; };
 		FF863058274E103E001086F8 /* TunerHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunerHomeView.swift; sourceTree = "<group>"; };
-		FF863065274E103E001086F8 /* ActualTunerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActualTunerView.swift; sourceTree = "<group>"; };
 		FF863066274E103E001086F8 /* SelectKeyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectKeyView.swift; sourceTree = "<group>"; };
 		FF863073274E103E001086F8 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		FF863074274E103E001086F8 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -149,6 +149,7 @@
 				1BBE2D1A1124F826598A7C24 /* Oscillator.swift */,
 				1BBE2777264C3E8EE6CB1ABA /* Note.swift */,
 				1BBE2B6787EA1D435BD76644 /* Tuner.swift */,
+				1BBE245F2AF1A362E82CC855 /* TunerIndicatorView.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -273,7 +274,6 @@
 				FF863058274E103E001086F8 /* TunerHomeView.swift */,
 				C57AFE13275092CE00B630A9 /* CommonTuningsView.swift */,
 				C57AFE15275094DF00B630A9 /* Tunings.swift */,
-				FF863065274E103E001086F8 /* ActualTunerView.swift */,
 				FF863066274E103E001086F8 /* SelectKeyView.swift */,
 				1BBE21943A8F637EEFEACF34 /* Managers */,
 			);
@@ -486,7 +486,6 @@
 				FF863094274E103E001086F8 /* SelectKeyView.swift in Sources */,
 				FF86309F274E103E001086F8 /* Helpers.swift in Sources */,
 				C5D98AE0274E905A00A2A279 /* ActualResultsView.swift in Sources */,
-				FF863093274E103E001086F8 /* ActualTunerView.swift in Sources */,
 				FF93C297274E287500EE2907 /* GetWords.swift in Sources */,
 				2E58ADE7274E9767000B1CFB /* WordStruct.swift in Sources */,
 				FF8630A1274E103E001086F8 /* Recording.swift in Sources */,
@@ -497,6 +496,7 @@
 				1BBE2DC106680678763F45E6 /* Oscillator.swift in Sources */,
 				1BBE226102D4003B5F3379A9 /* Note.swift in Sources */,
 				1BBE280E5B2EAC87FFCE21EA /* Tuner.swift in Sources */,
+				1BBE2F8F21AF620E721CE2F3 /* TunerIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

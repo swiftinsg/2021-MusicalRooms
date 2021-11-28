@@ -37,7 +37,6 @@ struct MetronomeHomeView: View {
     var body: some View {
         NavigationView{
             ScrollView {
-                
                 VStack {
                     
                     Spacer().frame(height: 15)
@@ -130,7 +129,7 @@ struct MetronomeHomeView: View {
                         .font(.title2.bold())
                         .foregroundColor(darkBrown)
                         
-                        Spacer().frame(height:1)
+                        Spacer()
                     }
                     .frame(maxWidth: .infinity)
                     .background(backBrown)
@@ -160,7 +159,7 @@ struct MetronomeHomeView: View {
                             }
                             .background(backBrown)
                             .cornerRadius(10)
-                            
+                            .padding(.vertical)
                         }
                         .font(.title2.bold())
                         .foregroundColor(darkBrown)
@@ -187,6 +186,7 @@ struct MetronomeHomeView: View {
                                     .background(backBrown)
                                     .cornerRadius(10)
                             }.offset(x: 10)
+                            .padding(.vertical)
                         }
                         .background(Color.clear)
                         .onChange(of: sigIndex){index in

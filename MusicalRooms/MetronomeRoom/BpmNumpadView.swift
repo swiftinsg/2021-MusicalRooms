@@ -26,10 +26,8 @@ struct BpmNumpadView: View {
         Text("\(newBpm)")
             .font(.system(size: 32, design: .rounded).bold())
             .foregroundColor(lightBrown)
-            .padding(.top, 5)
-            .padding(.bottom, 5)
-            .padding(.leading, 30)
-            .padding(.trailing, 30)
+            .padding(.vertical, 5)
+            .padding(.horizontal, 30)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(lightBrown, lineWidth: 4)

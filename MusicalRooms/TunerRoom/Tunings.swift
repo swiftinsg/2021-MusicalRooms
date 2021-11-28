@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Tuning: Identifiable {
+struct Tuning: Identifiable, Hashable {
     var id = UUID()
     
     var name: String

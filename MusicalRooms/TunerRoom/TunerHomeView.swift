@@ -23,14 +23,14 @@ struct TunerHomeView: View {
         NavigationView{
             ScrollView(.vertical) {
                 VStack{
-                    ActualTunerView()
+                    TunerIndicatorView(variance: $variance)
 
-                    Spacer()
+                    Spacer().frame(height:30)
                     
                     SelectKeyView(notes: $notes)
                         .padding(.vertical)
                     
-                    Spacer().frame(height: 20)
+                    Spacer().frame(height:25)
                     
                     Button {
                         displaySheetSelect.toggle()
@@ -42,12 +42,10 @@ struct TunerHomeView: View {
                                 .padding()
                                 .frame(maxWidth: .infinity)
                                 .background(Color("darkerBrown"))
-                                .cornerRadius(20)
+                                .cornerRadius(15)
                     }
                     .padding(.horizontal)
-                    
-                    
-                    Spacer()
+
                 }
                 .frame(width: UIScreen.main.bounds.width)
             }

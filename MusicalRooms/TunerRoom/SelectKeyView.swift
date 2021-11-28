@@ -16,8 +16,16 @@ struct SelectKeyView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            HStack(spacing: 8) {
+            HStack(spacing: 4) {
                 ForEach(7 ..< notes.count) { note in
+                    if(note == 9){
+                        Button{}
+                        label: {
+                            Text("  ")
+                                    .frame(maxWidth: .infinity)
+                        }
+                    }
+
                     Button {
                         playOscillator(note)
                     } label: {
@@ -27,20 +35,21 @@ struct SelectKeyView: View {
                             Text(getEnharmonic(conversion(notes[note].name)))
                                     .fontWeight(.semibold)
                         }
-                                .frame(maxWidth: .infinity)
-                                .font(.system(size: 18, design: .rounded))
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(notes[note].isSelected ? Color("lightBrown") : Color("darkBrown"))
-                                .padding(.vertical)
-                                .background(notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
-                                .cornerRadius(12)
+                        .frame(maxWidth: .infinity)
+                        .font(.system(size: 18, design: .rounded))
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(notes[note].isSelected ? Color("lightBrown") : Color("darkBrown"))
+                        .padding(.vertical)
+                        .background(notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
+                        .cornerRadius(12)
                     }
                 }
-            }
-            Spacer()
-                    .frame(height: 10)
 
-            HStack(spacing: 8) {
+            }
+                    .padding(.horizontal, 20)
+            Spacer().frame(height: 13)
+
+            HStack(spacing: 4) {
                 ForEach(0 ..< 7) { note in
                     Button {
                         playOscillator(note)
@@ -52,6 +61,7 @@ struct SelectKeyView: View {
                                 .foregroundColor(notes[note].isSelected ? Color("evenLighterBrown") : Color("darkBrown"))
                                 .frame(maxWidth: .infinity)
                                 .padding(8)
+                                .padding(.vertical, 18)
                                 .background(notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
                                 .cornerRadius(12)
                     }

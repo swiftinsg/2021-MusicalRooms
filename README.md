@@ -8,7 +8,6 @@ We’re aware that music theory apps these days either are of poor quality, have
 
 All in all, we hope that MusicalRooms can provide all its users with a much-needed break from the bad interfaces and paid apps. Just a simple click and you’re unlocking a whole new dimension of learning, which comes with a new perspective of enjoying music, free of cost. 
 
-This app was created by Faith Yang, Tang Xuyuan, Chelsea Ling and Isaac Lee under the 2021 Swift Accelerator Programme.
 
 
 <br></br>
@@ -27,6 +26,8 @@ The tuner page of the app has 2 parts:
 If the indicator is between the 2 green lines, it means you're in tune (at least to the human ear)
 
 2. The pseudo-keyboard, which plays a singular note at a time. Click the note for it to start playing, and again to stop.
+
+The A-frequency adjustment (- & + buttons) adjusts the set frequency of A4
 
 
 ## Metronome

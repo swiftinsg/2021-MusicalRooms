@@ -4,17 +4,16 @@
 //
 //  Created by Isaac Lee Jing Zhi on 18/11/21.
 //
-
 import SwiftUI
 
 struct SelectKeyView: View {
-    
+
     @Binding var notes: [Note]
     @State var noteFrequency = 440.0
     @State var isOn = false
-    
+
     let osc = OscillatorObject()
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             HStack(spacing: 8) {
@@ -24,44 +23,44 @@ struct SelectKeyView: View {
                     } label: {
                         VStack {
                             Text(conversion(notes[note].name))
-                                .fontWeight(.semibold)
+                                    .fontWeight(.semibold)
                             Text(getEnharmonic(conversion(notes[note].name)))
-                                .fontWeight(.semibold)
+                                    .fontWeight(.semibold)
                         }
-                        .frame(maxWidth: .infinity)
-                        .font(.system(size: 18, design: .rounded))
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(notes[note].isSelected ? Color("lightBrown") : Color("darkBrown"))
-                        .padding(.vertical)
-                        .background(notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
-                        .cornerRadius(12)
+                                .frame(maxWidth: .infinity)
+                                .font(.system(size: 18, design: .rounded))
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(notes[note].isSelected ? Color("lightBrown") : Color("darkBrown"))
+                                .padding(.vertical)
+                                .background(notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
+                                .cornerRadius(12)
                     }
                 }
             }
             Spacer()
-                .frame(height: 10)
-            
+                    .frame(height: 10)
+
             HStack(spacing: 8) {
                 ForEach(0 ..< 7) { note in
                     Button {
                         playOscillator(note)
                     } label: {
                         Text(notes[note].name)
-                            .bold()
-                            .font(Font.system(size: 20, weight: .semibold, design: .rounded))
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(notes[note].isSelected ? Color("evenLighterBrown") : Color("darkBrown"))
-                            .frame(maxWidth: .infinity)
-                            .padding(8)
-                            .background(notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
-                            .cornerRadius(12)
+                                .bold()
+                                .font(Font.system(size: 20, weight: .semibold, design: .rounded))
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(notes[note].isSelected ? Color("evenLighterBrown") : Color("darkBrown"))
+                                .frame(maxWidth: .infinity)
+                                .padding(8)
+                                .background(notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
+                                .cornerRadius(12)
                     }
                 }
             }
             Spacer()
-                
+
         }
-        .padding(.horizontal)
+                .padding(.horizontal)
     }
     func playOscillator(_ note: Int) {
         if !isOn {
@@ -98,4 +97,3 @@ struct SelectKeyView_Previews: PreviewProvider {
             Note(name: "Asharp", hertz: 466.16)]))
     }
 }
-

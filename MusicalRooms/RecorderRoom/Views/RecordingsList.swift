@@ -20,7 +20,6 @@ struct RecordingsList: View {
         
         HStack{
            
-
             Spacer()
 
             Button{

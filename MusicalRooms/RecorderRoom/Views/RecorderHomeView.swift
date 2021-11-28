@@ -27,8 +27,6 @@ struct RecorderHomeView: View {
     @State var lengthDisplayed = false
     @State var timer: Timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: {timer in print("")})
     
-    @State var isMini: Bool = false
-    
     var body: some View {
 
         NavigationView {
@@ -36,10 +34,7 @@ struct RecorderHomeView: View {
 
                 Spacer().frame(height: 20)
 
-                if !isMini{
-                    // RECORDING LIST
-                    RecordingsList(audioRecorder: audioRecorder)
-                }
+                RecordingsList(audioRecorder: audioRecorder)
 
                 if(lengthDisplayed){
                     Text("\(String(format: "%.2d", recordingLength / 60)):\(String(format: "%.2d", recordingLength % 60))")
@@ -56,7 +51,6 @@ struct RecorderHomeView: View {
                         self.audioRecorder.startRecording()
                         startRecorder()
                     }
-
                 } label: {
                     ZStack{
                         Circle()
@@ -84,7 +78,6 @@ struct RecorderHomeView: View {
                                     recordButtonRadius = 30
                                 }
                             }
-
                         })
 
             }.navigationBarTitle("Recordings")

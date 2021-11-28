@@ -57,7 +57,7 @@ struct MetronomeHomeView: View {
                                 DragGesture(minimumDistance: 0.1)
                                     .onChanged({value in
                                         weightOffset = CGFloat(min(max(lastWeightOffset + value.translation.height, -120), 158.6))
-                                        
+
                                         let newBpm: Double = -(Double(weightOffset)-160)*200/280
                                         withAnimation(.easeInOut(duration: 0.1)){
                                             bpm = Int(newBpm)
@@ -71,11 +71,10 @@ struct MetronomeHomeView: View {
                     }
                     .rotationEffect(Angle.degrees(armAngle), anchor: .bottom)
                     .onChange(of: bpm, perform: {bpm in
-                        withAnimation(.easeInOut(duration: 0.1)){
+                        withAnimation(.easeInOut(duration: 0.2)){
                             weightOffset = CGFloat( -bpm*280/200 + 160)
                         }
                     })
-                    //.scaleEffect( min(1, (geometry.size.width*0.6)/300) )
                     
                     // Tempo name
                     Text(tempoName(bpm: bpm))
@@ -90,11 +89,12 @@ struct MetronomeHomeView: View {
                     // BPM modifier
                     HStack {
                         Spacer()
-                            .frame(height:1)
                         
                         Button {
-                            if bpm > 1 { bpm -= 1 }
-                            updateOffsetFromBPM()
+                            withAnimation(.easeInOut(duration: 0.2)){
+                                if bpm > 1 { bpm -= 1 }
+                                updateOffsetFromBPM()
+                            }
                         } label: {
                             Image(systemName: "minus")
                         }
@@ -102,7 +102,7 @@ struct MetronomeHomeView: View {
                         .foregroundColor(darkBrown)
                         .font(.title2.bold())
                         
-                        Spacer().frame(height:1)
+                        Spacer()
                         
                         Text("\(bpm)")
                             .frame(width: 70)
@@ -117,11 +117,12 @@ struct MetronomeHomeView: View {
                             .padding(.vertical)
                         
                         Spacer()
-                            .frame(height: 1)
                         
                         Button {
-                            if bpm < 230 { bpm += 1 }
-                            updateOffsetFromBPM()
+                            withAnimation(.easeInOut(duration: 0.2)){
+                                if bpm < 230 { bpm += 1 }
+                                updateOffsetFromBPM()
+                            }
                         } label: {
                             Image(systemName: "plus")
                         }
@@ -139,13 +140,13 @@ struct MetronomeHomeView: View {
                     HStack {
                         //Play Button
                         Button {
-                            withAnimation(.easeInOut(duration: 0.1)){
+                            withAnimation(.easeInOut(duration: 0.2)){
                                 isOn.toggle()
                             }
                             print("Toggle metronome")
                         } label: {
                             HStack{
-                                Spacer().frame(height:1)
+                                Spacer()
                                 if isOn{
                                     Image(systemName: "stop.fill")
                                         .foregroundColor(darkBrown)
@@ -155,7 +156,7 @@ struct MetronomeHomeView: View {
                                         .foregroundColor(darkBrown)
                                         .padding()
                                 }
-                                Spacer().frame(height:1)
+                                Spacer()
                             }
                             .background(backBrown)
                             .cornerRadius(10)
@@ -201,7 +202,6 @@ struct MetronomeHomeView: View {
                 .padding()
             }
             .navigationBarTitle("Metronome")
-            .navigationBarTitleDisplayMode(.inline)
 
         }
     }
@@ -209,6 +209,8 @@ struct MetronomeHomeView: View {
     func updateOffsetFromBPM(){
         weightOffset = CGFloat( -bpm*280/200 + 160)
     }
+    
+    
     
     // *********** Metronome tick & sound functions ********
     

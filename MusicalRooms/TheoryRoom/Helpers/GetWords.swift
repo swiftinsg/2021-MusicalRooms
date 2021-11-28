@@ -28,7 +28,7 @@ func getWords(_ grade: Int) -> [Word] {
                 Word(title:"legato", definition: "a smooth, graceful style"),
                 Word(title:"mezzo forte", altText: "mf", definition: "softer than forte"),
                 Word(title:"moderato", definition: "in a moderate tempo"),
-                Word(title:"mezzo piano", altText: "mf", definition: "slightly softer than mezzo forte"),
+                Word(title:"mezzo piano", altText: "mp", definition: "slightly softer than mezzo forte"),
                 Word(title:"piano", altText: "p", definition: "quietly /   softly"),
                 Word(title:"pianissimo", altText: "pp", definition: "very softly, even more softly than piano"),
                 Word(title:"rallentando", altText: "rall.", definition: "a gradual slowing of the tempo"),

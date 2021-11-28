@@ -40,7 +40,6 @@
 		FF8630A1274E103E001086F8 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863076274E103E001086F8 /* Recording.swift */; };
 		FF8630A2274E103E001086F8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863077274E103E001086F8 /* Extensions.swift */; };
 		FF8630A3274E103E001086F8 /* RecordingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF863079274E103E001086F8 /* RecordingsList.swift */; };
-		FF8630A4274E103E001086F8 /* MiniRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86307A274E103E001086F8 /* MiniRecorderView.swift */; };
 		FF8630A5274E103E001086F8 /* RecorderHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86307B274E103E001086F8 /* RecorderHomeView.swift */; };
 		FF93C291274E287500EE2907 /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93C28A274E287500EE2907 /* FlashcardView.swift */; };
 		FF93C292274E287500EE2907 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93C28B274E287500EE2907 /* QuestionView.swift */; };
@@ -105,7 +104,6 @@
 		FF863076274E103E001086F8 /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		FF863077274E103E001086F8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FF863079274E103E001086F8 /* RecordingsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingsList.swift; sourceTree = "<group>"; };
-		FF86307A274E103E001086F8 /* MiniRecorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniRecorderView.swift; sourceTree = "<group>"; };
 		FF86307B274E103E001086F8 /* RecorderHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecorderHomeView.swift; sourceTree = "<group>"; };
 		FF93C28A274E287500EE2907 /* FlashcardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
 		FF93C28B274E287500EE2907 /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
@@ -307,7 +305,6 @@
 			isa = PBXGroup;
 			children = (
 				FF863079274E103E001086F8 /* RecordingsList.swift */,
-				FF86307A274E103E001086F8 /* MiniRecorderView.swift */,
 				FF86307B274E103E001086F8 /* RecorderHomeView.swift */,
 			);
 			path = Views;
@@ -469,7 +466,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFD659E727509D9600F7AD55 /* GetTempoName.swift in Sources */,
-				FF8630A4274E103E001086F8 /* MiniRecorderView.swift in Sources */,
 				FF8630A2274E103E001086F8 /* Extensions.swift in Sources */,
 				FF93C294274E287500EE2907 /* GradeStruct.swift in Sources */,
 				FF863087274E103E001086F8 /* TunerHomeView.swift in Sources */,
@@ -662,7 +658,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"MusicalRooms/Preview Content\"";
-				DEVELOPMENT_TEAM = XL5JK4F896;
+				DEVELOPMENT_TEAM = F5NAQM5U75;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MusicalRooms/Info.plist;
@@ -680,12 +676,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.musicalrooms2;
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.musicalrooms3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -698,7 +694,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"MusicalRooms/Preview Content\"";
-				DEVELOPMENT_TEAM = XL5JK4F896;
+				DEVELOPMENT_TEAM = F5NAQM5U75;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MusicalRooms/Info.plist;
@@ -716,11 +712,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.musicalrooms2;
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.musicalrooms3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

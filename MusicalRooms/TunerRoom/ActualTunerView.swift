@@ -36,10 +36,10 @@ struct ActualTunerView: View {
 
                         Spacer().frame(height: 10)
                         HStack{
-                            let amplitude = String(format: "%.2f", fabsf(20 * log10(fabsf(1/conductor.data.amplitude)))  )
+                            let amplitude = String(format: "%.1f", conductor.data.amplitude  )
                             Text("\(amplitude) dB")
 
-                            let frequency = String(format: "%.2f", conductor.data.pitch)
+                            let frequency = String(format: "%.1f", conductor.data.pitch)
                             Text("\(frequency) Hz")
                         }
 
@@ -66,6 +66,7 @@ struct ActualTunerView: View {
                     }
                 )
         }
+        .scaleEffect(min(1, 370/UIScreen.main.bounds.width))
         .padding(.leading, 30)
         .padding(.trailing, 30)
         .onAppear{

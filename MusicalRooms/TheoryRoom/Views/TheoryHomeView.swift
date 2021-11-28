@@ -59,7 +59,8 @@ struct TheoryHomeView: View {
                             .padding()
                             .background(Color("lightBrown"))
                             .cornerRadius(10)
-                        }//END LABEL
+                        }
+                        //END LABEL
                     }
                 }
                 .padding(.bottom, 22)

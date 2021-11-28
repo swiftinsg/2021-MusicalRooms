@@ -24,6 +24,8 @@ struct TunerHomeView: View {
             ScrollView(.vertical) {
                 VStack{
                     ActualTunerView()
+
+                    Spacer()
                     
                     SelectKeyView(notes: $notes)
                         .padding(.vertical)
@@ -33,8 +35,6 @@ struct TunerHomeView: View {
                     Button {
                         displaySheetSelect.toggle()
                     } label: {
-
-                            
                             Text("Common Tunings")
                                 .bold()
                                 .font(.title2)
@@ -47,7 +47,7 @@ struct TunerHomeView: View {
                     .padding(.horizontal)
                     
                     
-                    Spacer().frame(width: 15)
+                    Spacer()
                 }
                 .frame(width: UIScreen.main.bounds.width)
             }

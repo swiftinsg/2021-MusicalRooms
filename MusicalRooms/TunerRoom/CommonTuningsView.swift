@@ -73,7 +73,7 @@ struct CommonTuningsView: View {
                         } header: {
                             Text("Guitar 🎸")
                                     .foregroundColor(Color("darkerBrown"))
-                                    .font(Font.system(size: 18, weight: .semibold, design: .rounded))
+                                    .font(.system(size: 18, weight: .semibold, design: .rounded))
                         }.listRowBackground(Color("lightBrown"))
                     }
                     .listStyle(.automatic)

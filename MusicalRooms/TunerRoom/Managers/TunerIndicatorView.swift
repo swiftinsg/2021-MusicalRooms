@@ -34,7 +34,7 @@ struct TunerIndicatorView: View {
 
                                     Text((conductor.data.noteNameWithSharps).contains("♯") ? "\(conductor.data.noteNameWithSharps) / \(conductor.data.noteNameWithFlats)" : conductor.data.noteNameWithSharps)
                                             .fontWeight(.heavy)
-                                            .font(Font.system(size: 30))
+                                            .font(.system(size: 30))
                                             .multilineTextAlignment(.center)
 
                                     FrequencyAdjusterView(variance: $variance)

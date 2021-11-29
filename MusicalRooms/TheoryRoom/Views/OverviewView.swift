@@ -19,10 +19,10 @@ struct OverviewView: View {
             Spacer().frame(height:30)
 
             Text("Musical terms")
-                .font(Font.system(size: 24, weight: .semibold))
+                .font(.system(size: 24, weight: .semibold))
                 .padding(.top, 20)
             Text("Click to open as flashcards")
-                .font(Font.system(size: 12, weight: .medium))
+                .font(.system(size: 12, weight: .medium))
 
             List {
                 ForEach(0 ..< (words.count), id:\.self) { word in

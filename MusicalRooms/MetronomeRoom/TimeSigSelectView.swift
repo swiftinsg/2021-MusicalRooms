@@ -36,7 +36,7 @@ struct TimeSigSelectView: View {
                                 .cornerRadius(10)
                                 .padding(4)
                             Text(sig)
-                                .font(Font.system(size: 24, weight: .bold, design: .rounded))
+                                .font(.system(size: 24, weight: .bold, design: .rounded))
                                 .foregroundColor(.white)
                         }
                         .frame(width: 65, height: 50, alignment: .center)
@@ -58,7 +58,7 @@ struct TimeSigSelectView: View {
                     .frame(width: 270, height: 60, alignment: .center)
                     .cornerRadius(10)
                 Text("OK")
-                    .font(Font.system(size: 32, weight: .bold, design: .rounded))
+                    .font(.system(size: 32, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
             }
         }

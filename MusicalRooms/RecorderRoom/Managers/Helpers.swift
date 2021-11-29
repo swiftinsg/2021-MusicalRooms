@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 func getCreationDate(for file: URL) -> Date {
     if let attributes = try? FileManager.default.attributesOfItem(atPath: file.path) as [FileAttributeKey: Any],
@@ -14,5 +15,10 @@ func getCreationDate(for file: URL) -> Date {
     } else {
         return Date()
     }
+}
+
+func getAudioLength(for file: URL) -> TimeInterval {
+    let audioAsset = AVURLAsset(url: file)
+    return audioAsset.duration.seconds
 }
 

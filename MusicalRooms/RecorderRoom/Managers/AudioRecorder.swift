@@ -39,7 +39,7 @@ class AudioRecorder: NSObject,ObservableObject {
         }
         
         let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let audioFilename = documentPath.appendingPathComponent("\(Date().toString(dateFormat: "HH:mm:ss_'on'_dd-MM-YY")).m4a")
+        let audioFilename = documentPath.appendingPathComponent("\(Date()).m4a")
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),

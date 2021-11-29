@@ -39,7 +39,7 @@ struct RecorderHomeView: View {
                 if(lengthDisplayed){
                     Text("\(String(format: "%.2d", recordingLength / 60)):\(String(format: "%.2d", recordingLength % 60))")
                             .foregroundColor(lightBrown)
-                            .font(Font.system(size: 18, weight: .semibold, design: .monospaced))
+                            .font(.system(size: 18, weight: .semibold, design: .monospaced))
                             .offset(y: -100)
                 }
 

@@ -47,7 +47,7 @@ struct BpmNumpadView: View {
                                 .foregroundColor(backBrown)
                                 .frame(width: 60, height: 60, alignment: .center)
                             Text("\(num)")
-                                .font(Font.system(size: 24, weight: .bold, design: .rounded))
+                                .font(.system(size: 24, weight: .bold, design: .rounded))
                                 .foregroundColor(.white)
                         }
                         
@@ -64,7 +64,7 @@ struct BpmNumpadView: View {
                     .foregroundColor(backBrown)
                     .frame(width: 60, height: 60, alignment: .center)
                 Text("0")
-                    .font(Font.system(size: 24, weight: .bold, design: .rounded))
+                    .font(.system(size: 24, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
             }
             
@@ -86,7 +86,7 @@ struct BpmNumpadView: View {
                     .frame(width: 270, height: 60, alignment: .center)
                     .cornerRadius(10)
                 Text("OK")
-                    .font(Font.system(size: 32, weight: .bold, design: .rounded))
+                    .font(.system(size: 32, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
             }
         }

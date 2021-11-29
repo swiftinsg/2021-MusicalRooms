@@ -20,12 +20,9 @@ class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
         }
     }
     
-    var audioPlayer: AVAudioPlayer!
-    
-    
+    @State var audioPlayer: AVAudioPlayer!
     
     func startPlayback (audio: URL) {
-        
         let playbackSession = AVAudioSession.sharedInstance()
         
         do {
@@ -55,6 +52,14 @@ class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
             isPlaying = false
         }
     }
-    
-}
 
+    func getCurrentTime() -> TimeInterval{
+        (audioPlayer != nil && audioPlayer.currentTime != nil) ? audioPlayer.currentTime : 0.0
+    }
+    func getDuration() -> TimeInterval{
+        (audioPlayer != nil && audioPlayer.duration != nil) ? audioPlayer.duration : 0.0
+    }
+    func setCurrentTime(_ time: TimeInterval){
+        audioPlayer.currentTime = time
+    }
+}

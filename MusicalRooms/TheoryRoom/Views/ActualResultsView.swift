@@ -29,7 +29,7 @@ struct ActualResultsView: View {
             VStack {
                 Text(String(format: "%.2f", percentCorrect) + "%")
                     .multilineTextAlignment(.leading)
-                    .font(Font.system(size: 32, weight: .semibold, design: .rounded))
+                    .font(.system(size: 32, weight: .semibold, design: .rounded))
                     .lineLimit(3)
                     .foregroundColor(Color("darkerBrown"))
                     .overlay(
@@ -73,7 +73,7 @@ struct ActualResultsView: View {
                     presentationMode.wrappedValue.dismiss()
                 } label: {
                     Text("Finish")
-                        .font(Font.system(size: 20, design: .rounded))
+                        .font(.system(size: 20, design: .rounded))
                         .foregroundColor(Color("evenLighterBrown"))
                         .fontWeight(.heavy)
                         .padding(.vertical)

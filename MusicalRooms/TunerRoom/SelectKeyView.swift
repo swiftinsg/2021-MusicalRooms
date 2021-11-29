@@ -56,7 +56,7 @@ struct SelectKeyView: View {
                     } label: {
                         Text(notes[note].name)
                                 .bold()
-                                .font(Font.system(size: 20, weight: .semibold, design: .rounded))
+                                .font(.system(size: 20, weight: .semibold, design: .rounded))
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(notes[note].isSelected ? Color("evenLighterBrown") : Color("darkBrown"))
                                 .frame(maxWidth: .infinity)
@@ -86,6 +86,7 @@ struct SelectKeyView: View {
             for num in 0 ..< notes.count {
                 notes[num].isSelected = false
             }
+            playOscillator(note)
         }
     }
 }

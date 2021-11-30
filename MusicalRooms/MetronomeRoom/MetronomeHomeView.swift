@@ -9,10 +9,6 @@ import SwiftUI
 
 struct MetronomeHomeView: View {
     
-    let lightBrown: Color = Color(red: 131/255, green: 78/255, blue: 44/255, opacity: 1.0)
-    let darkBrown: Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
-    let backBrown: Color = Color(red: 211/255, green: 165/255, blue: 109/255)
-    
     @State var bpm: Int = 60
     @State var barNotes: Int = 1
     @State var isOn: Bool = false
@@ -35,51 +31,52 @@ struct MetronomeHomeView: View {
     @State var playButtonSize: CGFloat = 1.0
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             ScrollView {
                 VStack {
                     
-                    Spacer().frame(height: 15)
+                    Spacer()
+                        .frame(height: 15)
                     
                     // Arm
                     ZStack {
                         Rectangle()
-                            .foregroundColor(lightBrown)
+                            .foregroundColor(Color("darkBrown"))
                             .frame(width: 7, height: 300, alignment: .center)
                             .cornerRadius(2)
                         
                         Circle()
-                            .foregroundColor(lightBrown)
+                            .foregroundColor(Color("darkBrown"))
                             .frame(width: 20, height: 20, alignment: .center)
                             .offset(y: weightOffset)
                             .gesture(
                                 DragGesture(minimumDistance: 0.1)
-                                    .onChanged({value in
+                                    .onChanged{value in
                                         weightOffset = CGFloat(min(max(lastWeightOffset + value.translation.height, -120), 158.6))
 
                                         let newBpm: Double = -(Double(weightOffset)-160)*200/280
                                         withAnimation(.easeInOut(duration: 0.1)){
                                             bpm = Int(newBpm)
                                         }
-                                    })
-                                    .onEnded({value in
+                                    }
+                                    .onEnded{value in
                                         lastWeightOffset = weightOffset
-                                    })
+                                    }
                             )
                         
                     }
                     .rotationEffect(Angle.degrees(armAngle), anchor: .bottom)
-                    .onChange(of: bpm, perform: {bpm in
+                    .onChange(of: bpm) { bpm in
                         withAnimation(.easeInOut(duration: 0.2)){
                             weightOffset = CGFloat( -bpm*280/200 + 160)
                         }
-                    })
+                    }
                     
                     // Tempo name
                     Text(tempoName(bpm: bpm))
                         .bold()
                         .font(.title3)
-                        .foregroundColor(lightBrown)
+                        .foregroundColor(Color("darkBrown"))
                         .padding(.bottom)
                     
                     Spacer()
@@ -94,11 +91,12 @@ struct MetronomeHomeView: View {
                                 if bpm > 1 { bpm -= 1 }
                                 updateOffsetFromBPM()
                             }
+                            
                         } label: {
                             Image(systemName: "minus")
                         }
                         .padding(.leading)
-                        .foregroundColor(darkBrown)
+                        .foregroundColor(Color("darkerBrown"))
                         .font(.title2.bold())
                         
                         Spacer()
@@ -106,7 +104,7 @@ struct MetronomeHomeView: View {
                         Text("\(bpm)")
                             .frame(width: 70)
                             .font(.title.bold())
-                            .foregroundColor(darkBrown)
+                            .foregroundColor(Color("darkerBrown"))
                             .onTapGesture{
                                 displayNumpad.toggle()
                             }
@@ -127,12 +125,12 @@ struct MetronomeHomeView: View {
                         }
                         .padding(.trailing)
                         .font(.title2.bold())
-                        .foregroundColor(darkBrown)
+                        .foregroundColor(Color("darkerBrown"))
                         
                         Spacer()
                     }
                     .frame(maxWidth: .infinity)
-                    .background(backBrown)
+                    .background(Color("lightBrown"))
                     .cornerRadius(10)
                     .padding(.bottom)
                     
@@ -146,31 +144,32 @@ struct MetronomeHomeView: View {
                         } label: {
                             HStack{
                                 Spacer()
-                                if isOn{
+                                if isOn {
                                     Image(systemName: "stop.fill")
-                                        .foregroundColor(darkBrown)
+                                        .foregroundColor(Color("darkerBrown"))
                                         .padding()
                                 } else {
                                     Image(systemName: "play.fill")
-                                        .foregroundColor(darkBrown)
+                                        .foregroundColor(Color("darkerBrown"))
                                         .padding()
                                 }
                                 Spacer()
                             }
-                            .background(backBrown)
+                            .background(Color("lightBrown"))
                             .cornerRadius(10)
                             .padding(.vertical)
                         }
                         .font(.title2.bold())
-                        .foregroundColor(darkBrown)
-                        .onChange(of: isOn){ value in
-                            if(isOn){start()}
+                        .foregroundColor(Color("darkerkBrown"))
+                        .onChange(of: isOn) { value in
+                            if isOn { start() }
                             else {
                                 timer.invalidate()
                                 soundDelayTimer.invalidate()
                                 endSwing()
                             }
                         }
+                        
                         Spacer()
                         
                         //Time Signature Selector
@@ -181,15 +180,15 @@ struct MetronomeHomeView: View {
                                 Text(signatures[sigIndex])
                                     .bold()
                                     .font(.title2)
-                                    .foregroundColor(darkBrown)
+                                    .foregroundColor(Color("darkerBrown"))
                                     .padding()
-                                    .background(backBrown)
+                                    .background(Color("lightBrown"))
                                     .cornerRadius(10)
                             }.offset(x: 10)
                             .padding(.vertical)
                         }
                         .background(Color.clear)
-                        .onChange(of: sigIndex){index in
+                        .onChange(of: sigIndex){ index in
                             barNotes = sigNotes[sigIndex]
                         }
                         .sheet(isPresented: $displaySigSelect) {
@@ -216,12 +215,12 @@ struct MetronomeHomeView: View {
     
     @State var soundDelayTimer: Timer
     @State var timer: Timer
-    @State var note:Int = 1
+    @State var note: Int = 1
     
     @State var metrSound = AudioPlayer()
     @StateObject var metrUpSound = AudioPlayer()
     
-    func start(){
+    func start() {
         barNotes = sigNotes[sigIndex]
         note = 1
         
@@ -230,30 +229,31 @@ struct MetronomeHomeView: View {
     }
     
     func tick(){
-        if !isOn {return}
+        if !isOn { return }
         
-        var delay:Double = Double(60)/Double(bpm)
+        var delay: Double = Double(60)/Double(bpm)
         if armAngle == 0 {
             delay = delay * 0.55
         }
+        
         swing(delay: delay)
         
-        let soundDelay = armAngle != 0 ? delay*0.72 : 0.0
+        let soundDelay = armAngle != 0 ? delay * 0.72 : 0.0
         soundDelayTimer = Timer.scheduledTimer(withTimeInterval: soundDelay, repeats: false) { timer in
             sound()
         }
         
-        if(note < barNotes){note+=1}
-        else{ note = 1 }
+        if note < barNotes { note += 1 }
+        else { note = 1 }
         
         timer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) { timer in
             self.tick()
         }
     }
     
-    func sound(){
-        let isOne = barNotes==1
-        let isPulse = !isOne && note==1
+    func sound() {
+        let isOne = barNotes == 1
+        let isPulse = !isOne && note == 1
         
         let metrUrl = Bundle.main.url(forResource: "metronome", withExtension: ".wav")!
         let metrUpUrl = Bundle.main.url(forResource: "metronomeUp", withExtension: ".wav")!

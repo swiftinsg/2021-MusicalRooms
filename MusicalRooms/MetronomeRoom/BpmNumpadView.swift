@@ -3,10 +3,6 @@ import SwiftUI
 struct BpmNumpadView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    
-    var lightBrown: Color = Color(red: 131/255, green: 78/255, blue: 44/255, opacity: 1.0)
-    var darkBrown: Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
-    var backBrown: Color = Color(red: 211/255, green: 165/255, blue: 109/255)
         
     @Binding var bpm: Int
     @State var newBpm: Int
@@ -25,12 +21,12 @@ struct BpmNumpadView: View {
         
         Text("\(newBpm)")
             .font(.system(size: 32, design: .rounded).bold())
-            .foregroundColor(lightBrown)
+            .foregroundColor(Color("lightBrown"))
             .padding(.vertical, 5)
             .padding(.horizontal, 30)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(lightBrown, lineWidth: 4)
+                    .stroke(Color("lightBrown"), lineWidth: 4)
             )
         
         Spacer().frame(height: 30)
@@ -44,7 +40,7 @@ struct BpmNumpadView: View {
                     } label: {
                         ZStack {
                             Circle()
-                                .foregroundColor(backBrown)
+                                .foregroundColor(Color("darkBrown"))
                                 .frame(width: 60, height: 60, alignment: .center)
                             Text("\(num)")
                                 .font(Font.system(size: 24, weight: .bold, design: .rounded))
@@ -61,7 +57,7 @@ struct BpmNumpadView: View {
         } label: {
             ZStack{
                 Circle()
-                    .foregroundColor(backBrown)
+                    .foregroundColor(Color("darkBrown"))
                     .frame(width: 60, height: 60, alignment: .center)
                 Text("0")
                     .font(Font.system(size: 24, weight: .bold, design: .rounded))
@@ -82,7 +78,7 @@ struct BpmNumpadView: View {
         } label: {
             ZStack{
                 Rectangle()
-                    .fill(lightBrown)
+                    .fill(Color("lightBrown"))
                     .frame(width: 270, height: 60, alignment: .center)
                     .cornerRadius(10)
                 Text("OK")
@@ -94,10 +90,10 @@ struct BpmNumpadView: View {
     
     func appendDigit(digit: Int) {
         if hasChanged {
-            if(newBpm < 100){
+            if newBpm < 100{
                 let joinStr = "\(newBpm)\(digit)"
                 newBpm = Int(joinStr) ?? 0
-            } else {return}
+            } else { return }
         } else {
             newBpm = digit
             self.hasChanged = true

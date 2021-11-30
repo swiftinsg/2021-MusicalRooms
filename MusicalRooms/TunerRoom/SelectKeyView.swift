@@ -18,7 +18,7 @@ struct SelectKeyView: View {
         VStack(alignment: .leading) {
             HStack(spacing: 4) {
                 ForEach(7 ..< notes.count) { note in
-                    if(note == 9){
+                    if note == 9{
                         Button{}
                         label: {
                             Text("  ")

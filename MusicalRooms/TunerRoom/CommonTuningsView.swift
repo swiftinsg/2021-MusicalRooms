@@ -15,22 +15,16 @@ struct CommonTuningsView: View {
                           notes: "D A D G B E"),
                    Tuning(name:"Drop C#",
                           notes: "C♯ A D G B E"),
-                   
                    Tuning(name:"Drop C",
                           notes: "C G C F A D"),
-                   
                    Tuning(name:"Drop B",
                           notes: "B G♭ B E A♭ D♭"),
-                   
                    Tuning(name:"Drop A",
                           notes: "A E A D G♭ B"),
-                   
                    Tuning(name:"DADGAD",
                           notes: "D A D G A D"),
-                   
                    Tuning(name:"Half Step Down",
                           notes: "E♭ A♭ D♭ G♭ B♭ E♭"),
-                   
                    Tuning(name:"Full Step Down",
                           notes: "D G C F A D"),
                    Tuning(name:"Half Step Up",
@@ -53,7 +47,7 @@ struct CommonTuningsView: View {
                 VStack (alignment: .leading){
                     List{
                         Section{
-                            ForEach(tunings){tuning in
+                            ForEach(tunings){ tuning in
                                 HStack{
                                     Text(tuning.name)
                                             .foregroundColor(Color("darkerBrown"))

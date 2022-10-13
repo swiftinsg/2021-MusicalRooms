@@ -27,6 +27,27 @@ class AudioRecorder: NSObject,ObservableObject {
         }
     }
     
+    func getNewRecordingName() -> String{
+        let prefix = "Recording "
+        let newRecordingNames = recordings.map {
+            $0.fileURL.lastPathComponent
+        }.filter {
+            $0.starts(with: prefix)
+        }
+        
+        var iIndex = 1
+        var availNameFound = false
+        while (!availNameFound) {
+            if !newRecordingNames.contains("\(prefix)\(iIndex)") {
+                availNameFound = true
+            } else {
+                iIndex += 1
+            }
+        }
+        
+        return "\(prefix)\(iIndex)"
+    }
+    
     func startRecording() {
         
         let recordingSession = AVAudioSession.sharedInstance()
@@ -39,7 +60,7 @@ class AudioRecorder: NSObject,ObservableObject {
         }
         
         let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let audioFilename = documentPath.appendingPathComponent("\(Date()).m4a")
+        let audioFilename = documentPath.appendingPathComponent("\(getNewRecordingName()).m4a")
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),

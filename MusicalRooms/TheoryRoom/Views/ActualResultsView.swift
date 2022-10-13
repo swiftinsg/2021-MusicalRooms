@@ -31,7 +31,7 @@ struct ActualResultsView: View {
                     .multilineTextAlignment(.leading)
                     .font(.system(size: 32, weight: .semibold, design: .rounded))
                     .lineLimit(3)
-                    .foregroundColor(Color("darkerBrown"))
+                    .foregroundColor(Color("fg"))
                     .overlay(
                         ResultsView(progress: CGFloat(percentCorrect) / 100)
                             .frame(width: 200, height: 200)
@@ -46,13 +46,13 @@ struct ActualResultsView: View {
                         } label: {
                             VStack {
                                 Text(words[word].title)
-                                    .foregroundColor(Color("darkerBrown"))
+                                    .foregroundColor(Color("fg"))
                                     .font(.system(size: 25, design: .rounded))
                                     .fontWeight(.semibold)
                                 
                                 if let altText = words[word].altText {
                                     Text(altText)
-                                        .foregroundColor(Color("darkerBrown"))
+                                        .foregroundColor(Color("fg"))
                                         .font(.system(size: 20, design: .rounded))
                                         .fontWeight(.medium)
                                         .multilineTextAlignment(.leading)
@@ -74,11 +74,11 @@ struct ActualResultsView: View {
                 } label: {
                     Text("Finish")
                         .font(.system(size: 20, design: .rounded))
-                        .foregroundColor(Color("evenLighterBrown"))
+                        .foregroundColor(Color("secondary"))
                         .fontWeight(.heavy)
                         .padding(.vertical)
                         .frame(maxWidth: .infinity)
-                        .background(Color("darkBrown"))
+                        .background(Color("primary"))
                         .cornerRadius(10)
                 }
                 .padding()

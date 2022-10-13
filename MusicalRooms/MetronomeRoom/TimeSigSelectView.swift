@@ -11,9 +11,6 @@ struct TimeSigSelectView: View {
 
     @Environment(\.presentationMode) var presentationMode
     
-    var lightBrown: Color = Color(red: 131/255, green: 78/255, blue: 44/255, opacity: 1.0)
-    var darkBrown: Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
-    var backBrown: Color = Color(red: 211/255, green: 165/255, blue: 109/255)
 
     var signatures:[String] = ["1/4", "2/4", "3/4", "4/4", "5/4", "6/4", "3/8", "5/8", "6/8", "7/8", "9/8", "12/8"]
     @Binding var selIndex: Int
@@ -31,7 +28,7 @@ struct TimeSigSelectView: View {
                     } label: {
                         ZStack{
                             Rectangle()
-                                .foregroundColor(selIndex == index ? lightBrown : backBrown)
+                                .foregroundColor(selIndex == index ? Color("fg") : Color("secondary"))
                                 .frame(width: 75, height: 50, alignment: .center)
                                 .cornerRadius(10)
                                 .padding(4)
@@ -54,7 +51,7 @@ struct TimeSigSelectView: View {
         } label: {
             ZStack{
                 Rectangle()
-                    .fill(lightBrown)
+                    .fill(Color("fg"))
                     .frame(width: 270, height: 60, alignment: .center)
                     .cornerRadius(10)
                 Text("OK")

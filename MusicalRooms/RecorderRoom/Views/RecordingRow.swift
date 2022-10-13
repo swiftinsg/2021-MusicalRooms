@@ -11,10 +11,6 @@ import AVFoundation
 
 struct RecordingRow: View {
 
-    let lightBrown: Color = Color(red: 131/255, green: 78/255, blue: 44/255, opacity: 1.0)
-    let darkBrown: Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
-    let backBrown: Color = Color(red: 211/255, green: 165/255, blue: 109/255)
-
     @State var audioURL: URL
     @ObservedObject var audioPlayer = AudioPlayer()
 
@@ -27,20 +23,18 @@ struct RecordingRow: View {
 
     var body: some View {
 
-        VStack (spacing:4){
+        VStack {
             HStack{
                 VStack(alignment: .leading){
                     let fileName = String(audioURL.lastPathComponent)
-                    TextEditor(text: $nameEditorText)
-                            .font(.system(size: 18, weight: .bold, design: .rounded))
-                            .foregroundColor(darkBrown)
-                            .onChange(of: nameEditorText){text in
-                                //renameAudioFile(nameEditorText)
-                            }
+                    Text(nameEditorText)
+                        .font(.system(size: 18, weight: .bold, design: .rounded))
+                        .foregroundColor(Color("fg"))
+                        .padding(.vertical, 3)
 
                     Text(getCreationDate(for: audioURL), style: .date)
                             .font(.system(size: 12, weight: .semibold, design: .default))
-                            .foregroundColor(lightBrown)
+                            .foregroundColor(Color("fg"))
                 }
 
                 Spacer()
@@ -51,81 +45,46 @@ struct RecordingRow: View {
                         shareAudioFile(audioURL)
                     } label: {
                         Image(systemName: "square.and.arrow.up")
-                                .foregroundColor(darkBrown)
+                                .foregroundColor(Color("fg"))
                     }
                 }else{
-                    Text("\(getAudioLength(for: audioURL))")
+                    Text(String(format: "%.1f", getAudioLength(for: audioURL)) + "s")
                             .font(.system(size: 12, weight: .semibold, design: .default))
-                            .foregroundColor(lightBrown)
+                            .foregroundColor(Color("fg"))
                 }
             }
-
-            Spacer().frame(height:25)
-
 
 
             // ----- CONTROLS -----
             let timestamp: TimeInterval = audioPlayer.getCurrentTime()
             let duration: TimeInterval = audioPlayer.getDuration()
             let trackPercentage: TimeInterval = audioPlayer.getCurrentTime()/audioPlayer.getDuration()
-
+            let timeStampStr = String(format: "%.1f", timestamp)
+            let durationStr = String(format: "%.1f", duration)
+            
             if (isExpanded){
-
-                ZStack{ //SLIDER
-                    RoundedRectangle(cornerRadius: 3)
-                            .fill(LinearGradient(gradient: Gradient(stops: [
-                                .init(color: darkBrown, location: trackPercentage),
-                                .init(color: lightBrown, location: trackPercentage)
-                            ]), startPoint: .leading, endPoint: .trailing))
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 6)
-                    Circle()
-                            .frame(height: 10)
-                            .foregroundColor(darkBrown)
-                            .offset(x: -(UIScreen.main.bounds.width/2-30) + sliderOffset)
-                            .gesture(DragGesture()
-                                    .onChanged{value in
-                                        sliderOffset = CGFloat(max(0, min( UIScreen.main.bounds.width-60, lastSliderOffset+value.translation.width )))
-                                        let newTrack = max(0, min(1, sliderOffset / UIScreen.main.bounds.width-60 ))
-                                        withAnimation(.easeInOut(duration: 0.2)){
-                                            audioPlayer.setCurrentTime(newTrack * audioPlayer.getDuration())
-                                        }
-                                    }
-                                    .onEnded{value in
-                                        lastSliderOffset = sliderOffset
-                                    }
-                            )
-                }
-
-                HStack{
-                    let formatter = DateComponentsFormatter()
-                    Text(formatter.string(from: timestamp)!)
-                            .font(.system(size: 12, weight: .semibold, design: .default))
-                            .foregroundColor(lightBrown)
-
-                    Spacer().frame(maxWidth: .infinity)
-
-                    let timeToEnd = duration-timestamp
-                    Text("-\(formatter.string(from: timeToEnd)!)")
-                            .font(.system(size: 12, weight: .semibold, design: .default))
-                            .foregroundColor(lightBrown)
-                }
-                Spacer().frame(height:10)
 
                 HStack{
                     Spacer()
+                    
+                    Text( "\(timeStampStr)/\(durationStr)")
+                        .font(.system(size: 12, weight: .semibold, design: .default))
+                        .foregroundColor(Color("fg"))
+                    
+                    Spacer()
+                    
                     Button{
                         audioPlayer.setCurrentTime(timestamp-15)
                     } label: {
                         Image(systemName: "gobackward.15")
-                        .foregroundColor(darkBrown)
+                        .foregroundColor(Color("fg"))
                     }
 
                     Button{
                         (audioPlayer.isPlaying ? self.audioPlayer.stopPlayback() : self.audioPlayer.startPlayback(audio: audioURL))
                     } label: {
                         (audioPlayer.isPlaying ? Image(systemName: "pause.fill") : Image(systemName: "play.fill"))
-                        .foregroundColor(darkBrown)
+                        .foregroundColor(Color("fg"))
                     }
                     .padding(.horizontal)
 
@@ -133,10 +92,14 @@ struct RecordingRow: View {
                         audioPlayer.setCurrentTime(timestamp+15)
                     } label: {
                         Image(systemName: "goforward.15")
-                                .foregroundColor(darkBrown)
+                                .foregroundColor(Color("fg"))
                     }
+                    Spacer()
 
                 }
+                    .padding(5)
+                    .background(Color("secondary"))
+                    .cornerRadius(7.5)
 
             }
 
@@ -145,7 +108,9 @@ struct RecordingRow: View {
             self.nameEditorText = String(audioURL.lastPathComponent).replacingOccurrences(of: ".m4a", with: "")
         }
         .onTapGesture{
-            isExpanded.toggle()
+            withAnimation {
+                isExpanded = true
+            }
         }
     }
 
@@ -167,8 +132,11 @@ struct RecordingRow: View {
 
     func shareAudioFile(_ url: URL){
         let avc = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-        UIApplication.shared.windows.first?
-        .rootViewController?.present(avc, animated: true, completion: nil)
+        
+        let scenes = UIApplication.shared.connectedScenes
+        let windowScene = scenes.first as? UIWindowScene
+            
+        windowScene?.keyWindow?.rootViewController?.present(avc, animated: true, completion: nil)
     }
 
 }

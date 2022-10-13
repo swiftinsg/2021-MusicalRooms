@@ -16,7 +16,6 @@ struct OverviewView: View {
     
     var body: some View {
         VStack {
-            Spacer().frame(height:30)
 
             Text("Musical terms")
                 .font(.system(size: 24, weight: .semibold))
@@ -31,13 +30,13 @@ struct OverviewView: View {
                     } label: {
                         VStack {
                             Text(words[word].title)
-                                    .foregroundColor(Color("darkerBrown"))
+                                    .foregroundColor(Color("fg"))
                                     .font(.system(size: 25, design: .rounded))
                                     .fontWeight(.semibold)
 
                             if let altText = words[word].altText {
                                 Text(altText)
-                                        .foregroundColor(Color("darkerBrown"))
+                                        .foregroundColor(Color("fg"))
                                         .font(.system(size: 20, design: .rounded))
                                         .fontWeight(.medium)
                                         .multilineTextAlignment(.leading)
@@ -45,33 +44,35 @@ struct OverviewView: View {
                             }
                             .frame(width: 250, height: 45, alignment: .leading)
                         }
-                        .listRowBackground(Color("lightBrown"))
+                        .listRowBackground(Color("secondary"))
                     }
             }
-            .padding(.horizontal, 20)
-            .cornerRadius(15)
-            .listStyle(.automatic)
+            .scaledToFill()
+            .padding(.vertical, 0)
+            .cornerRadius(5)
+            .listStyle(.plain)
             .onAppear{
                 UITableView.appearance().backgroundColor = .clear
             }
-            Spacer().frame(height:30)
             
             NavigationLink {
                 QuestionView(grades: $grades, grade: grade, words: words)
             } label: {
                 Text("Start Quiz")
-                    .foregroundColor(Color("evenLighterBrown"))
+                    .foregroundColor(Color("secondary"))
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
-                    .font(.system(size: 30, design: .rounded))
+                    .font(.system(size: 24))
+                    .padding()
             }
-            .padding(.horizontal, 10)
-            .frame(width: 300, height: 60, alignment: .center)
-            .background(Color("darkBrown"))
+            .padding(.horizontal)
+            .background(Color("primary"))
             .cornerRadius(10)
             .navigationTitle("Grade \(grade)")
 
-        }.offset(y:-40)
+        }
+        .offset(y:-15)
+            .padding(20)
     }
 }
 

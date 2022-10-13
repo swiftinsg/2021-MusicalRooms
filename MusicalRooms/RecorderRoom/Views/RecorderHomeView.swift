@@ -11,10 +11,7 @@ import Combine
 import Subsonic
 
 struct RecorderHomeView: View {
-    
-    let lightBrown: Color = Color(red: 131/255, green: 78/255, blue: 44/255, opacity: 1.0)
-    let darkBrown: Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
-    let backBrown: Color = Color(red: 211/255, green: 165/255, blue: 109/255)
+
     
     @State var recordButtonSize: CGFloat = 60
     @State var recordBorderWidth: CGFloat = 3
@@ -38,7 +35,7 @@ struct RecorderHomeView: View {
 
                 if(lengthDisplayed){
                     Text("\(String(format: "%.2d", recordingLength / 60)):\(String(format: "%.2d", recordingLength % 60))")
-                            .foregroundColor(lightBrown)
+                            .foregroundColor(Color("fg"))
                             .font(.system(size: 18, weight: .semibold, design: .monospaced))
                             .offset(y: -100)
                 }
@@ -54,10 +51,10 @@ struct RecorderHomeView: View {
                 } label: {
                     ZStack{
                         Circle()
-                                .stroke(lightBrown, lineWidth: recordBorderWidth)
+                                .stroke(Color("primary"), lineWidth: recordBorderWidth)
                                 .frame(width: 70, height: 70, alignment: .center)
                         Rectangle()
-                                .fill(lightBrown)
+                                .fill(Color("primary"))
                                 .frame(width: recordButtonSize, height: recordButtonSize, alignment: .center)
                                 .cornerRadius(recordButtonRadius)
                     }

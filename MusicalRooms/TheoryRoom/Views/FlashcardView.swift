@@ -25,12 +25,12 @@ struct FlashcardsView: View {
 
             RoundedRectangle(cornerRadius: 10)
                     .frame(height: 50, alignment: .leading)
-                    .foregroundColor(Color("darkBrown"))
+                    .foregroundColor(Color("primary"))
                     .overlay(
                             VStack(alignment:.leading){
                                 Text("\(duplicateCurrentWord + 1) / \(words.count)")
                                         .font(.system(size: 25, design: .rounded))
-                                        .foregroundColor(Color("evenLighterBrown"))
+                                        .foregroundColor(Color("secondary"))
                                         .bold()
                             }
                     )
@@ -59,7 +59,7 @@ struct FlashcardsView: View {
             .rotation3DEffect(degrees, axis: (x: 0, y: 1, z: 0))
             .frame(maxWidth: .infinity)
             .background(
-                    Color("lightBrown")
+                    Color("secondary")
                             .rotation3DEffect(degrees, axis: (x: 0, y: 1, z: 0))
                             .onTapGesture {
                                 withAnimation(.easeInOut(duration: 0.3)){
@@ -75,7 +75,7 @@ struct FlashcardsView: View {
             Rectangle()
             .frame(height: 60)
             .cornerRadius(15)
-            .foregroundColor(Color("lightBrown"))
+            .foregroundColor(Color("secondary"))
             .overlay(
                     HStack{
                         Spacer()
@@ -90,14 +90,14 @@ struct FlashcardsView: View {
                             }
                         } label: {
                             Image(systemName: "chevron.left.2")
-                                    .foregroundColor(Color("darkBrown"))
+                                    .foregroundColor(Color("primary"))
                                     .font(.system(size: 40, weight: .semibold))
                         }.padding()
                         Spacer()
 
                         Rectangle()
                                 .frame(width: 2)
-                                .foregroundColor(Color("darkBrown"))
+                                .foregroundColor(Color("primary"))
 
                         Spacer()
                         //RIGHT BT
@@ -115,7 +115,7 @@ struct FlashcardsView: View {
                             }
                         } label: {
                             Image(systemName: isFlipped ? "checkmark" : "chevron.right.2")
-                                    .foregroundColor(Color("darkBrown"))
+                                    .foregroundColor(Color("primary"))
                                     .font(.system(size: 40, weight: .semibold))
                         }.padding()
                         Spacer()

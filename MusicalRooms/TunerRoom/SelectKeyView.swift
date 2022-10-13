@@ -38,9 +38,9 @@ struct SelectKeyView: View {
                         .frame(maxWidth: .infinity)
                         .font(.system(size: 18, design: .rounded))
                         .multilineTextAlignment(.center)
-                        .foregroundColor(notes[note].isSelected ? Color("lightBrown") : Color("darkBrown"))
+                        .foregroundColor(notes[note].isSelected ? Color("secondary") : Color("primary"))
                         .padding(.vertical)
-                        .background(notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
+                        .background(notes[note].isSelected ? Color("primary") : Color("secondary"))
                         .cornerRadius(12)
                     }
                 }
@@ -58,11 +58,11 @@ struct SelectKeyView: View {
                                 .bold()
                                 .font(.system(size: 20, weight: .semibold, design: .rounded))
                                 .multilineTextAlignment(.center)
-                                .foregroundColor(notes[note].isSelected ? Color("evenLighterBrown") : Color("darkBrown"))
+                                .foregroundColor(notes[note].isSelected ? Color("secondary") : Color("primary"))
                                 .frame(maxWidth: .infinity)
                                 .padding(8)
                                 .padding(.vertical, 18)
-                                .background(notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
+                                .background(notes[note].isSelected ? Color("primary") : Color("secondary"))
                                 .cornerRadius(12)
                     }
                 }

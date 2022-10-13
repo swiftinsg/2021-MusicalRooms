@@ -88,7 +88,7 @@
 		C57AFE15275094DF00B630A9 /* Tunings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tunings.swift; sourceTree = "<group>"; };
 		C5D98ADD274E89AD00A2A279 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		C5D98ADF274E905A00A2A279 /* ActualResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualResultsView.swift; sourceTree = "<group>"; };
-		FF863046274E1034001086F8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF863046274E1034001086F8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		FF863048274E103E001086F8 /* MusicalRoomsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicalRoomsApp.swift; sourceTree = "<group>"; };
 		FF863051274E103E001086F8 /* TimeSigSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSigSelectView.swift; sourceTree = "<group>"; };
 		FF863052274E103E001086F8 /* MetronomeHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetronomeHomeView.swift; sourceTree = "<group>"; };
@@ -147,7 +147,6 @@
 				1BBE2D1A1124F826598A7C24 /* Oscillator.swift */,
 				1BBE2777264C3E8EE6CB1ABA /* Note.swift */,
 				1BBE2B6787EA1D435BD76644 /* Tuner.swift */,
-				1BBE245F2AF1A362E82CC855 /* TunerIndicatorView.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -189,6 +188,7 @@
 				FF863071274E103E001086F8 /* RecorderRoom */,
 				FF863057274E103E001086F8 /* TunerRoom */,
 				2EBE5DDC27494FD6006162BD /* Info.plist */,
+				FF863054274E103E001086F8 /* assets */,
 				2E16224F27412CA500791ADC /* Assets.xcassets */,
 				2E16225127412CA500791ADC /* Preview Content */,
 			);
@@ -242,7 +242,6 @@
 				FFD659E627509D9600F7AD55 /* GetTempoName.swift */,
 				FF863052274E103E001086F8 /* MetronomeHomeView.swift */,
 				FF863053274E103E001086F8 /* BpmNumpadView.swift */,
-				FF863054274E103E001086F8 /* assets */,
 			);
 			path = MetronomeRoom;
 			sourceTree = "<group>";
@@ -263,6 +262,7 @@
 				C57AFE13275092CE00B630A9 /* CommonTuningsView.swift */,
 				C57AFE15275094DF00B630A9 /* Tunings.swift */,
 				FF863066274E103E001086F8 /* SelectKeyView.swift */,
+				1BBE245F2AF1A362E82CC855 /* TunerIndicatorView.swift */,
 				1BBE21943A8F637EEFEACF34 /* Managers */,
 			);
 			path = TunerRoom;

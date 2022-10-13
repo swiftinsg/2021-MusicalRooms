@@ -20,7 +20,7 @@ class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
         }
     }
     
-    @State var audioPlayer: AVAudioPlayer!
+    var audioPlayer: AVAudioPlayer!
     
     func startPlayback (audio: URL) {
         let playbackSession = AVAudioSession.sharedInstance()

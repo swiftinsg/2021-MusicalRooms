@@ -22,7 +22,7 @@ struct DefinitionModalView: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
                     .frame(width: 350, height: 300, alignment: .center)
-                    .foregroundColor(Color("lightBrown"))
+                    .foregroundColor(Color("secondary"))
                     .onTapGesture {
                         withAnimation {
                             degrees += Angle(degrees: 180)
@@ -32,11 +32,11 @@ struct DefinitionModalView: View {
                 
                 RoundedRectangle(cornerRadius: 20)
                     .frame(width: 350, height: 50, alignment: .leading)
-                    .foregroundColor(Color("darkBrown"))
+                    .foregroundColor(Color("primary"))
                     .overlay(
                         Text("\(currentWord) / \(words.count)")
                             .font(.system(size: 19, design: .rounded))
-                            .foregroundColor(Color("darkerBrown"))
+                            .foregroundColor(Color("fg"))
                             .bold()
                             .offset(x: -120)
                     )
@@ -57,13 +57,13 @@ struct DefinitionModalView: View {
             }
             RoundedRectangle(cornerRadius: 20)
                 .frame(width: 350, height: 90)
-                .foregroundColor(Color("lightBrown"))
+                .foregroundColor(Color("secondary"))
                 .overlay(
                         Button {
                             presentationMode.wrappedValue.dismiss()
                         } label: {
                             Image(systemName: isFlipped ? "checkmark" : "multiply")
-                                .foregroundColor(Color("darkerBrown"))
+                                .foregroundColor(Color("fg"))
                                 .font(.system(size: 30))
                         }
                 )

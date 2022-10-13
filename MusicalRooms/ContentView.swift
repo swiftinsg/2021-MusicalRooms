@@ -11,7 +11,6 @@ struct ContentView: View {
     
     @Binding var grades: [Grade]
     var lightBrown:Color = Color(red: 180/255, green: 130/255, blue: 90/255, opacity: 1.0)
-    var darkBrown:Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
 
     var body: some View {
         
@@ -43,7 +42,7 @@ struct ContentView: View {
                 }
             
         }
-        .accentColor(darkBrown)
+        .accentColor(Color("primary"))
         .font(Font.body)
         .onAppear{
             UITabBar.appearance().unselectedItemTintColor = UIColor.init(lightBrown)

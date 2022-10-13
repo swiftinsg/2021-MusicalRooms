@@ -22,7 +22,7 @@ struct TunerIndicatorView: View {
             VStack {
                 RoundedRectangle(cornerRadius: 20)
                         .frame(width: 370, height: 270, alignment: .center)
-                        .foregroundColor(Color("evenLighterBrown"))
+                        .foregroundColor(Color("secondary"))
                         .overlay(
                                 VStack(spacing: 1){
                                     let freqOffset = CGFloat(max(min(conductor.data.freqDistance*150, 150), -150))
@@ -96,7 +96,7 @@ struct FrequencyAdjusterView: View{
                 }
             } label: {
                 Text("\(Image(systemName: "minus.rectangle.fill"))")
-                    .foregroundColor(Color("darkBrown"))
+                    .foregroundColor(Color("primary"))
                     .font(.system(size: 26, weight: .semibold))
             }
 
@@ -109,7 +109,7 @@ struct FrequencyAdjusterView: View{
                 }
             } label: {
                 Text("\(Image(systemName: "plus.rectangle.fill"))")
-                        .foregroundColor(Color("darkBrown"))
+                        .foregroundColor(Color("primary"))
                         .font(.system(size: 26, weight: .semibold))
             }
 

@@ -24,16 +24,16 @@ struct TheoryHomeView: View {
                                 HStack(alignment: .bottom) {
                                     Text("Grade \(grade.number)")
                                         .font(.system(size: 25, weight: .semibold, design: .rounded))
-                                        .foregroundColor(Color("darkerBrown"))
+                                        .foregroundColor(Color("fg"))
                                     Spacer()
 
                                     Text(String(format: "%.2f", grade.percentageCorrect) + "%")
                                         .font(.system(size: 25, weight: .semibold, design: .rounded))
-                                        .foregroundColor(Color("darkerBrown"))
+                                        .foregroundColor(Color("fg"))
                                         .padding(.trailing, 15)
                                         .overlay(
                                             Text("Last Score")
-                                                .foregroundColor(Color("darkerBrown"))
+                                                .foregroundColor(Color("fg"))
                                                 .font(.system(size: 14, weight: .light, design: .rounded))
                                                 .offset(x: -10, y:22)
                                         )
@@ -46,15 +46,15 @@ struct TheoryHomeView: View {
                                 RoundedRectangle(cornerRadius: 5)
                                         .fill(
                                                 LinearGradient(gradient: Gradient(stops: [
-                                                    .init(color: Color("darkBrown"), location: grade.percentageCorrect/100),
-                                                    .init(color: Color("darkLightBrown"), location: grade.percentageCorrect/100)
+                                                    .init(color: Color("fg"), location: grade.percentageCorrect/100),
+                                                    .init(color: Color("primary"), location: grade.percentageCorrect/100)
                                                 ]), startPoint: .leading, endPoint: .trailing)
                                         )
-                                        .foregroundColor(Color("darkLightBrown"))
+                                        .foregroundColor(Color("primary"))
                                         .padding(.bottom, 10)
                             }
                             .padding()
-                            .background(Color("lightBrown"))
+                            .background(Color("secondary"))
                             .cornerRadius(10)
                         }
                         .padding(.bottom, 5)

@@ -56,14 +56,14 @@ struct CommonTuningsView: View {
                             ForEach(tunings){tuning in
                                 HStack{
                                     Text(tuning.name)
-                                            .foregroundColor(Color("darkerBrown"))
+                                            .foregroundColor(Color("fg"))
                                             .font(.system(size: 18, design: .rounded))
                                             .fontWeight(.bold)
                                             .padding(.leading, 5)
                                     Spacer()
 
                                     Text(tuning.notes)
-                                            .foregroundColor(Color("darkBrown"))
+                                            .foregroundColor(Color("fg"))
                                             .font(.system(size: 20, design: .rounded))
                                             .fontWeight(.medium)
                                             .multilineTextAlignment(.leading)
@@ -72,9 +72,9 @@ struct CommonTuningsView: View {
                             }
                         } header: {
                             Text("Guitar 🎸")
-                                    .foregroundColor(Color("darkerBrown"))
+                                    .foregroundColor(Color("fg"))
                                     .font(.system(size: 18, weight: .semibold, design: .rounded))
-                        }.listRowBackground(Color("lightBrown"))
+                        }.listRowBackground(Color("secondary"))
                     }
                     .listStyle(.automatic)
                     .padding(.horizontal, 5)

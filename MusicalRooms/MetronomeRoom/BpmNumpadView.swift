@@ -4,9 +4,6 @@ struct BpmNumpadView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    var lightBrown: Color = Color(red: 131/255, green: 78/255, blue: 44/255, opacity: 1.0)
-    var darkBrown: Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
-    var backBrown: Color = Color(red: 211/255, green: 165/255, blue: 109/255)
         
     @Binding var bpm: Int
     @State var newBpm: Int
@@ -25,12 +22,12 @@ struct BpmNumpadView: View {
         
         Text("\(newBpm)")
             .font(.system(size: 32, design: .rounded).bold())
-            .foregroundColor(lightBrown)
+            .foregroundColor(Color("fg"))
             .padding(.vertical, 5)
             .padding(.horizontal, 30)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(lightBrown, lineWidth: 4)
+                    .stroke(Color("fg"), lineWidth: 4)
             )
         
         Spacer().frame(height: 30)
@@ -44,7 +41,7 @@ struct BpmNumpadView: View {
                     } label: {
                         ZStack {
                             Circle()
-                                .foregroundColor(backBrown)
+                                .foregroundColor(Color("secondary"))
                                 .frame(width: 60, height: 60, alignment: .center)
                             Text("\(num)")
                                 .font(.system(size: 24, weight: .bold, design: .rounded))
@@ -61,7 +58,7 @@ struct BpmNumpadView: View {
         } label: {
             ZStack{
                 Circle()
-                    .foregroundColor(backBrown)
+                    .foregroundColor(Color("secondary"))
                     .frame(width: 60, height: 60, alignment: .center)
                 Text("0")
                     .font(.system(size: 24, weight: .bold, design: .rounded))
@@ -82,7 +79,7 @@ struct BpmNumpadView: View {
         } label: {
             ZStack{
                 Rectangle()
-                    .fill(lightBrown)
+                    .fill(Color("fg"))
                     .frame(width: 270, height: 60, alignment: .center)
                     .cornerRadius(10)
                 Text("OK")

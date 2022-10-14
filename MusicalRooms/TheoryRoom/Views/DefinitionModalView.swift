@@ -22,7 +22,7 @@ struct DefinitionModalView: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
                     .frame(width: 350, height: 300, alignment: .center)
-                    .foregroundColor(Color("secondary"))
+                    .foregroundColor(Color("lightBrown"))
                     .onTapGesture {
                         withAnimation {
                             degrees += Angle(degrees: 180)
@@ -32,11 +32,11 @@ struct DefinitionModalView: View {
                 
                 RoundedRectangle(cornerRadius: 20)
                     .frame(width: 350, height: 50, alignment: .leading)
-                    .foregroundColor(Color("primary"))
+                    .foregroundColor(Color("darkBrown"))
                     .overlay(
                         Text("\(currentWord) / \(words.count)")
-                            .font(.system(size: 19))
-                            .foregroundColor(Color("fg"))
+                            .font(.system(size: 19, design: .rounded))
+                            .foregroundColor(Color("darkerBrown"))
                             .bold()
                             .offset(x: -120)
                     )
@@ -45,25 +45,25 @@ struct DefinitionModalView: View {
                 VStack {
                     Text(words[currentWord].title)
                         .bold()
-                        .font(.system(size: 30))
+                        .font(.system(size: 30, design: .rounded))
                     if let altText = words[currentWord].altText {
                         Text(altText)
-                            .font(.system(size: 20))
+                            .font(.system(size: 20, design: .rounded))
                     } else {
                         Text("---")
-                            .font(.system(size: 20))
+                            .font(.system(size: 20, design: .rounded))
                     }
                 }
             }
             RoundedRectangle(cornerRadius: 20)
                 .frame(width: 350, height: 90)
-                .foregroundColor(Color("secondary"))
+                .foregroundColor(Color("lightBrown"))
                 .overlay(
                         Button {
                             presentationMode.wrappedValue.dismiss()
                         } label: {
                             Image(systemName: isFlipped ? "checkmark" : "multiply")
-                                .foregroundColor(Color("fg"))
+                                .foregroundColor(Color("darkerBrown"))
                                 .font(.system(size: 30))
                         }
                 )

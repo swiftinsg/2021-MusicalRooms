@@ -11,11 +11,14 @@ import Combine
 import Subsonic
 
 struct RecorderHomeView: View {
-
     
-    @State var recordButtonSize: CGFloat = 48
-    @State var recordBorderWidth: CGFloat = 2
-    @State var recordButtonBorder: CGFloat = 65
+    let lightBrown: Color = Color(red: 131/255, green: 78/255, blue: 44/255, opacity: 1.0)
+    let darkBrown: Color = Color(red: 70/255, green: 27/255, blue: 0, opacity: 1.0)
+    let backBrown: Color = Color(red: 211/255, green: 165/255, blue: 109/255)
+    
+    @State var recordButtonSize: CGFloat = 60
+    @State var recordBorderWidth: CGFloat = 3
+    @State var recordButtonBorder: CGFloat = 75
     @State var recordButtonRadius: CGFloat = 30
     
     @ObservedObject var audioRecorder = AudioRecorder()
@@ -29,16 +32,16 @@ struct RecorderHomeView: View {
         NavigationView {
             VStack{
 
+                Spacer().frame(height: 20)
+
                 RecordingsList(audioRecorder: audioRecorder)
-                    .padding(.bottom, 20)
 
                 if(lengthDisplayed){
                     Text("\(String(format: "%.2d", recordingLength / 60)):\(String(format: "%.2d", recordingLength % 60))")
-                            .foregroundColor(Color("fg"))
-                            .font(.system(size: 16, weight: .semibold))
-                            .offset(y: -20)
+                            .foregroundColor(lightBrown)
+                            .font(Font.system(size: 18, weight: .semibold, design: .monospaced))
+                            .offset(y: -100)
                 }
-
 
                 // Record button
                 Button{
@@ -51,32 +54,31 @@ struct RecorderHomeView: View {
                 } label: {
                     ZStack{
                         Circle()
-                                .stroke(Color("primary"), lineWidth: recordBorderWidth)
-                                .frame(width: 55, height: 55, alignment: .center)
+                                .stroke(lightBrown, lineWidth: recordBorderWidth)
+                                .frame(width: 70, height: 70, alignment: .center)
                         Rectangle()
-                                .fill(Color("primary"))
+                                .fill(lightBrown)
                                 .frame(width: recordButtonSize, height: recordButtonSize, alignment: .center)
                                 .cornerRadius(recordButtonRadius)
                     }
-                }
-                .offset(y: -15)
-                .onChange(of: audioRecorder.recording, perform: {isRecording in //Button indicates recording or not
-                    if(isRecording){
-                        withAnimation(.easeInOut(duration: 0.2)){
-                            recordButtonSize = 30
-                            recordBorderWidth = 3
-                            recordButtonBorder = 90
-                            recordButtonRadius = 8
-                        }
-                    }else{
-                        withAnimation(.easeInOut(duration: 0.2)){
-                            recordButtonSize = 48
-                            recordBorderWidth = 2
-                            recordButtonBorder = 65
-                            recordButtonRadius = 30
-                        }
-                    }
-                })
+                }.offset(y:-90)
+                        .onChange(of: audioRecorder.recording, perform: {isRecording in //Button indicates recording or not
+                            if(isRecording){
+                                withAnimation(.easeInOut(duration: 0.2)){
+                                    recordButtonSize = 30
+                                    recordBorderWidth = 5
+                                    recordButtonBorder = 90
+                                    recordButtonRadius = 8
+                                }
+                            }else{
+                                withAnimation(.easeInOut(duration: 0.2)){
+                                    recordButtonSize = 60
+                                    recordBorderWidth = 3
+                                    recordButtonBorder = 75
+                                    recordButtonRadius = 30
+                                }
+                            }
+                        })
 
             }.navigationBarTitle("Recordings")
         }
@@ -86,6 +88,15 @@ struct RecorderHomeView: View {
     
     
     //funcs
+    
+    func delete(at offsets: IndexSet) {
+        
+        var urlsToDelete = [URL]()
+        for index in offsets {
+            urlsToDelete.append(audioRecorder.recordings[index].fileURL)
+        }
+        audioRecorder.deleteRecording(urlsToDelete: urlsToDelete)
+    }
     
     func startRecorder(){
         self.audioRecorder.startRecording()

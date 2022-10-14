@@ -25,12 +25,12 @@ struct FlashcardsView: View {
 
             RoundedRectangle(cornerRadius: 10)
                     .frame(height: 50, alignment: .leading)
-                    .foregroundColor(Color("primary"))
+                    .foregroundColor(Color("darkBrown"))
                     .overlay(
                             VStack(alignment:.leading){
                                 Text("\(duplicateCurrentWord + 1) / \(words.count)")
-                                        .font(.system(size: 25))
-                                        .foregroundColor(Color("secondary"))
+                                        .font(.system(size: 25, design: .rounded))
+                                        .foregroundColor(Color("evenLighterBrown"))
                                         .bold()
                             }
                     )
@@ -38,19 +38,19 @@ struct FlashcardsView: View {
             VStack {
                 if isFlipped {
                     Text(words[duplicateCurrentWord].definition)
-                            .font(.system(size: 23))
+                            .font(.system(size: 23, design: .rounded))
                             .padding()
                             .rotation3DEffect(.degrees(180), axis: (x:0, y:1, z:0))
                 } else {
                     Text(words[duplicateCurrentWord].title)
                             .bold()
-                            .font(.system(size: 25))
+                            .font(.system(size: 25, design: .rounded))
                     if let altText = words[duplicateCurrentWord].altText {
                         Text(altText)
-                                .font(.system(size: 18))
+                                .font(.system(size: 18, design: .rounded))
                     } else {
                         Text("  ")
-                                .font(.system(size: 18))
+                                .font(.system(size: 18, design: .rounded))
                     }
                 }
             }
@@ -59,7 +59,7 @@ struct FlashcardsView: View {
             .rotation3DEffect(degrees, axis: (x: 0, y: 1, z: 0))
             .frame(maxWidth: .infinity)
             .background(
-                    Color("secondary")
+                    Color("lightBrown")
                             .rotation3DEffect(degrees, axis: (x: 0, y: 1, z: 0))
                             .onTapGesture {
                                 withAnimation(.easeInOut(duration: 0.3)){
@@ -75,7 +75,7 @@ struct FlashcardsView: View {
             Rectangle()
             .frame(height: 60)
             .cornerRadius(15)
-            .foregroundColor(Color("secondary"))
+            .foregroundColor(Color("lightBrown"))
             .overlay(
                     HStack{
                         Spacer()
@@ -90,14 +90,14 @@ struct FlashcardsView: View {
                             }
                         } label: {
                             Image(systemName: "chevron.left.2")
-                                    .foregroundColor(Color("primary"))
-                                    .font(.system(size: 40, weight: .semibold))
+                                    .foregroundColor(Color("darkBrown"))
+                                    .font(Font.system(size: 40, weight: .semibold))
                         }.padding()
                         Spacer()
 
                         Rectangle()
                                 .frame(width: 2)
-                                .foregroundColor(Color("primary"))
+                                .foregroundColor(Color("darkBrown"))
 
                         Spacer()
                         //RIGHT BT
@@ -115,8 +115,8 @@ struct FlashcardsView: View {
                             }
                         } label: {
                             Image(systemName: isFlipped ? "checkmark" : "chevron.right.2")
-                                    .foregroundColor(Color("primary"))
-                                    .font(.system(size: 40, weight: .semibold))
+                                    .foregroundColor(Color("darkBrown"))
+                                    .font(Font.system(size: 40, weight: .semibold))
                         }.padding()
                         Spacer()
                     }

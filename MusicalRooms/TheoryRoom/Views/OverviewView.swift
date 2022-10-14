@@ -16,12 +16,13 @@ struct OverviewView: View {
     
     var body: some View {
         VStack {
+            Spacer().frame(height:30)
 
             Text("Musical terms")
-                .font(.system(size: 24, weight: .semibold))
+                .font(Font.system(size: 24, weight: .semibold))
                 .padding(.top, 20)
             Text("Click to open as flashcards")
-                .font(.system(size: 12, weight: .medium))
+                .font(Font.system(size: 12, weight: .medium))
 
             List {
                 ForEach(0 ..< (words.count), id:\.self) { word in
@@ -30,49 +31,47 @@ struct OverviewView: View {
                     } label: {
                         VStack {
                             Text(words[word].title)
-                                    .foregroundColor(Color("fg"))
-                                    .font(.system(size: 25))
+                                    .foregroundColor(Color("darkerBrown"))
+                                    .font(.system(size: 25, design: .rounded))
                                     .fontWeight(.semibold)
 
                             if let altText = words[word].altText {
                                 Text(altText)
-                                        .foregroundColor(Color("fg"))
-                                        .font(.system(size: 20))
+                                        .foregroundColor(Color("darkerBrown"))
+                                        .font(.system(size: 20, design: .rounded))
                                         .fontWeight(.medium)
                                         .multilineTextAlignment(.leading)
                                 }
                             }
                             .frame(width: 250, height: 45, alignment: .leading)
                         }
-                        .listRowBackground(Color("secondary"))
+                        .listRowBackground(Color("lightBrown"))
                     }
             }
-            .scaledToFill()
-            .padding(.vertical, 0)
-            .cornerRadius(5)
-            .listStyle(.plain)
+            .padding(.horizontal, 20)
+            .cornerRadius(15)
+            .listStyle(.automatic)
             .onAppear{
                 UITableView.appearance().backgroundColor = .clear
             }
+            Spacer().frame(height:30)
             
             NavigationLink {
                 QuestionView(grades: $grades, grade: grade, words: words)
             } label: {
                 Text("Start Quiz")
-                    .foregroundColor(Color("secondary"))
+                    .foregroundColor(Color("evenLighterBrown"))
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
-                    .font(.system(size: 24))
-                    .padding()
+                    .font(.system(size: 30, design: .rounded))
             }
-            .padding(.horizontal)
-            .background(Color("primary"))
+            .padding(.horizontal, 10)
+            .frame(width: 300, height: 60, alignment: .center)
+            .background(Color("darkBrown"))
             .cornerRadius(10)
             .navigationTitle("Grade \(grade)")
 
-        }
-        .offset(y:-15)
-            .padding(20)
+        }.offset(y:-40)
     }
 }
 

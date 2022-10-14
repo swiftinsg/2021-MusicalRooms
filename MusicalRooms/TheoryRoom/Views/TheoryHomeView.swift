@@ -23,18 +23,22 @@ struct TheoryHomeView: View {
 
                                 HStack(alignment: .bottom) {
                                     Text("Grade \(grade.number)")
-                                        .font(.system(size: 25, weight: .semibold))
-                                        .foregroundColor(Color("fg"))
+                                        .multilineTextAlignment(.leading)
+                                        .font(Font.system(size: 25, weight: .semibold, design: .rounded))
+                                        .lineLimit(3)
+                                        .foregroundColor(Color("darkerBrown"))
                                     Spacer()
 
                                     Text(String(format: "%.2f", grade.percentageCorrect) + "%")
-                                        .font(.system(size: 25, weight: .semibold))
-                                        .foregroundColor(Color("fg"))
+                                        .multilineTextAlignment(.leading)
+                                        .font(Font.system(size: 25, weight: .semibold, design: .rounded))
+                                        .lineLimit(3)
+                                        .foregroundColor(Color("darkerBrown"))
                                         .padding(.trailing, 15)
                                         .overlay(
                                             Text("Last Score")
-                                                .foregroundColor(Color("fg"))
-                                                .font(.system(size: 14, weight: .light))
+                                                .foregroundColor(Color("darkerBrown"))
+                                                .font(Font.system(size: 14, weight: .light, design: .rounded))
                                                 .offset(x: -10, y:22)
                                         )
 
@@ -46,15 +50,15 @@ struct TheoryHomeView: View {
                                 RoundedRectangle(cornerRadius: 5)
                                         .fill(
                                                 LinearGradient(gradient: Gradient(stops: [
-                                                    .init(color: Color("fg"), location: grade.percentageCorrect/100),
-                                                    .init(color: Color("primary"), location: grade.percentageCorrect/100)
+                                                    .init(color: Color("darkBrown"), location: grade.percentageCorrect/100),
+                                                    .init(color: Color("darkLightBrown"), location: grade.percentageCorrect/100)
                                                 ]), startPoint: .leading, endPoint: .trailing)
                                         )
-                                        .foregroundColor(Color("primary"))
+                                        .foregroundColor(Color("darkLightBrown"))
                                         .padding(.bottom, 10)
                             }
                             .padding()
-                            .background(Color("secondary"))
+                            .background(Color("lightBrown"))
                             .cornerRadius(10)
                         }
                         .padding(.bottom, 5)

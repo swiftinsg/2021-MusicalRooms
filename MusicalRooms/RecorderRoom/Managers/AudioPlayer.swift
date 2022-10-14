@@ -13,10 +13,6 @@ import AVFoundation
 class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
     
     let objectWillChange = PassthroughSubject<AudioPlayer, Never>()
-    @Published var audioPlayer: AVAudioPlayer!
-    
-    @Published var playbackTime = TimeInterval(0.0)
-    var timer: Timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: {timer in print("")})
     
     var isPlaying = false {
         didSet {
@@ -24,17 +20,12 @@ class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
         }
     }
     
-    init(audioURL: URL) {
-        super.init()
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: audioURL)
-            audioPlayer.delegate = self
-        } catch {
-            print("Playback failed")
-        }
-    }
+    var audioPlayer: AVAudioPlayer!
     
-    func startPlayback () {
+    
+    
+    func startPlayback (audio: URL) {
+        
         let playbackSession = AVAudioSession.sharedInstance()
         
         do {
@@ -45,22 +36,18 @@ class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
         }
         
         do {
+            audioPlayer = try AVAudioPlayer(contentsOf: audio)
+            audioPlayer.delegate = self
             audioPlayer.play()
             isPlaying = true
         } catch {
             print("Playback failed.")
-        }
-        
-        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
-            self.playbackTime = self.audioPlayer.currentTime
-            self.objectWillChange.send(self)
         }
     }
     
     func stopPlayback() {
         audioPlayer.stop()
         isPlaying = false
-        self.timer.invalidate()
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
@@ -68,11 +55,6 @@ class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
             isPlaying = false
         }
     }
-
-    func getDuration() -> TimeInterval{
-        (audioPlayer != nil && audioPlayer.duration != nil) ? audioPlayer.duration : 0.0
-    }
-    func setCurrentTime(_ time: TimeInterval){
-        audioPlayer.currentTime = time
-    }
+    
 }
+

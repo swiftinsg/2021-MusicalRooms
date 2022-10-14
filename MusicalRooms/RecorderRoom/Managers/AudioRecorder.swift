@@ -101,6 +101,7 @@ class AudioRecorder: NSObject,ObservableObject {
         newRecordings.sort(by: { $0.createdAt.compare($1.createdAt) == .orderedAscending})
         
         recordings = newRecordings
+        print("Fetched \(recordings.map{$0.fileURL.lastPathComponent})")
         objectWillChange.send(self)
     }
     
@@ -113,5 +114,18 @@ class AudioRecorder: NSObject,ObservableObject {
             }
         }
         recordings.remove(atOffsets: indexes)
+        objectWillChange.send(self)
+        
+        print("Deleted. Rem \(recordings.map {$0.fileURL.lastPathComponent})")
+        objectWillChange.send(self)
+    }
+    
+    func deleteRecording(recording: Recording) {
+        do {
+            try FileManager.default.removeItem(at: recording.fileURL)
+        } catch {
+            print("File could not be deleted")
+        }
+        objectWillChange.send(self)
     }
 }

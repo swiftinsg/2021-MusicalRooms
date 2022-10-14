@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Recording {
+struct Recording: Hashable {
     let fileURL: URL
     let createdAt: Date
 }

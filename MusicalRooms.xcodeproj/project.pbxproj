@@ -85,7 +85,7 @@
 		2E16226227412CA500791ADC /* MusicalRoomsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicalRoomsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E58ADE6274E9767000B1CFB /* WordStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordStruct.swift; sourceTree = "<group>"; };
 		2E58ADE9274E979E000B1CFB /* GetEnharmonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEnharmonic.swift; sourceTree = "<group>"; };
-		2EBE5DDC27494FD6006162BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2EBE5DDC27494FD6006162BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C57AFE13275092CE00B630A9 /* CommonTuningsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTuningsView.swift; sourceTree = "<group>"; };
 		C57AFE15275094DF00B630A9 /* Tunings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tunings.swift; sourceTree = "<group>"; };
 		C5D98ADD274E89AD00A2A279 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
@@ -189,9 +189,9 @@
 				FF863050274E103E001086F8 /* MetronomeRoom */,
 				FF863071274E103E001086F8 /* RecorderRoom */,
 				FF863057274E103E001086F8 /* TunerRoom */,
-				2EBE5DDC27494FD6006162BD /* Info.plist */,
 				FF863054274E103E001086F8 /* assets */,
 				2E16224F27412CA500791ADC /* Assets.xcassets */,
+				2EBE5DDC27494FD6006162BD /* Info.plist */,
 				2E16225127412CA500791ADC /* Preview Content */,
 			);
 			path = MusicalRooms;

@@ -11,22 +11,29 @@ import AVFoundation
 
 struct RecordingRow: View {
 
-    @State var audioURL: URL
+    let id = UUID()
+    
+    var recording: Recording
+    var audioURL: URL
     @ObservedObject var audioPlayer: AudioPlayer
 
     @Binding var isExpanded: Bool
-    @State var nameEditorText = "placeholder"
 
-    @State var sliderOffset: CGFloat = 0.0
-    @State var lastSliderOffset: CGFloat = 0.0
-
+    init(recording: Recording, isExpanded: Binding<Bool>) {
+        self.recording = recording
+        self.audioURL = recording.fileURL
+        self.audioPlayer = AudioPlayer(audioURL: recording.fileURL)
+        
+        self._isExpanded = isExpanded
+    }
+    
     var body: some View {
         
         VStack {
             HStack{
                 VStack(alignment: .leading){
-                    let fileName = String(audioURL.lastPathComponent)
-                    Text(nameEditorText)
+                    let recordingName = String(recording.fileURL.lastPathComponent).replacingOccurrences(of: ".m4a", with: "")
+                    Text(recordingName)
                         .font(.system(size: 18, weight: .bold))
                         .foregroundColor(Color("fg"))
                         .padding(.vertical, 0.5)
@@ -38,7 +45,7 @@ struct RecordingRow: View {
 
                 Spacer()
 
-                if isExpanded{
+                if isExpanded {
                     //Share audiofile
                     Button{
                         shareAudioFile(audioURL)
@@ -47,7 +54,7 @@ struct RecordingRow: View {
                                 .foregroundColor(Color("fg"))
                     }
                     .buttonStyle(PlainButtonStyle())
-                }else{
+                } else {
                     Text(fmtDuration(duration: getAudioLength(for: audioURL)))
                             .font(.system(size: 12, weight: .semibold))
                             .foregroundColor(Color("fg"))
@@ -111,25 +118,9 @@ struct RecordingRow: View {
             }
 
         }
-        .onAppear{ //init
-            self.nameEditorText = String(audioURL.lastPathComponent).replacingOccurrences(of: ".m4a", with: "")
-        }
     }
     
     //funcs
-
-    func renameAudioFile(_ newName: String){
-        if(nameEditorText.count < 1){
-            nameEditorText = String(audioURL.lastPathComponent).replacingOccurrences(of: ".m4a", with: "")
-        }
-        do{
-            let newURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(newName + ".m4a")
-            try FileManager.default.moveItem(at: audioURL, to: newURL)
-            self.audioURL = newURL
-        }catch{
-            print(error)
-        }
-    }
 
     func shareAudioFile(_ url: URL){
         let avc = UIActivityViewController(activityItems: [url], applicationActivities: nil)

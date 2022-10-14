@@ -9,6 +9,8 @@ import SwiftUI
 import AVFoundation
 
 struct RecordingsList: View {
+    
+    @Namespace private var listAnimation
 
     @State var isEditing = false
     @ObservedObject var audioRecorder: AudioRecorder
@@ -40,9 +42,9 @@ struct RecordingsList: View {
             }
             if(audioRecorder.recordings.count > 0){
                 List {
-                    ForEach(0..<audioRecorder.recordings.count, id:\.self) { recordingIndex in
-                        let recording = audioRecorder.recordings[recordingIndex]
-                        RecordingRow(audioURL: recording.fileURL, audioPlayer: AudioPlayer(audioURL: recording.fileURL), isExpanded: $expandedRow[recordingIndex])
+                    ForEach(audioRecorder.recordings, id:\.self) { recording in
+                        let recordingIndex = audioRecorder.recordings.firstIndex(of: recording)!
+                        RecordingRow(recording: recording, isExpanded: $expandedRow[recordingIndex])
                             .onTapGesture {
                                 if (isEditing) { return }
                                 withAnimation {
@@ -55,6 +57,9 @@ struct RecordingsList: View {
                     .onDelete {indexSet in
                         audioRecorder.deleteRecording(at: indexSet)
                     }
+                }
+                .refreshable {
+                    audioRecorder.fetchRecordings()
                 }
                 .environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive))
                 .listStyle(.plain)

@@ -100,7 +100,7 @@ struct MetronomeHomeView: View {
                     Spacer()
                     
                     Text("\(bpm)")
-                        .frame(width: 80, height: 13)
+                        .frame(width: 80)
                         .font(.system(size: 20, weight: .bold))
                         .foregroundColor(Color.white)
                         .onTapGesture{

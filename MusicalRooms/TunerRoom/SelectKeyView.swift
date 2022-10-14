@@ -17,10 +17,35 @@ struct SelectKeyView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack(spacing: 4) {
-                
+                ForEach(7 ..< notes.count) { note in
+                    if(note == 9){
+                        Button{}
+                        label: {
+                            Text("  ")
+                                    .frame(maxWidth: .infinity)
+                        }
+                    }
 
+                    Button {
+                        playOscillator(note)
+                    } label: {
+                        VStack {
+                            Text(conversion(notes[note].name))
+                                    .fontWeight(.semibold)
+                            Text(getEnharmonic(conversion(notes[note].name)))
+                                    .fontWeight(.semibold)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .font(.system(size: 18))
+                        .foregroundColor(notes[note].isSelected ? Color("secondary") : Color("primary"))
+                        .padding(.vertical)
+                        .background(notes[note].isSelected ? Color("primary") : Color("secondary"))
+                        .cornerRadius(12)
+                    }
+                }
             }
-                    .padding(.horizontal, 20)
+            .padding(.horizontal, 20)
+            
             Spacer().frame(height: 7)
 
             HStack(spacing: 4) {

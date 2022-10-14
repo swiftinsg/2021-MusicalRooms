@@ -33,178 +33,169 @@ struct MetronomeHomeView: View {
     
     var body: some View {
         NavigationView{
-            GeometryReader { geometry in
-                ScrollView {
-                    VStack {
+            VStack {
+                
+                let internalHeight = CGFloat(300) //DO NOT CHANGE, other values are not reactive
+                let scaledHeight = UIScreen.main.bounds.height * 0.35
+                // Arm
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(Color("primary"))
+                        .frame(width: 8, height: 300, alignment: .center)
+                        .cornerRadius(2)
                     
-                        
-                        Spacer().frame(height: 15)
-                        
-                        // Arm
-                        ZStack {
-                            Rectangle()
-                                .foregroundColor(Color("fg"))
-                                .frame(width: 7, height: 300, alignment: .center)
-                                .cornerRadius(2)
-                            
-                            Circle()
-                                .foregroundColor(Color("fg"))
-                                .frame(width: 20, height: 20, alignment: .center)
-                                .offset(y: weightOffset)
-                                .gesture(
-                                    DragGesture(minimumDistance: 0.1)
-                                        .onChanged({value in
-                                            weightOffset = CGFloat(min(max(lastWeightOffset + value.translation.height, -120), 158.6))
+                    Circle()
+                        .foregroundColor(Color("primary"))
+                        .frame(width: 20, height: 20, alignment: .center)
+                        .offset(y: weightOffset)
+                        .gesture(
+                            DragGesture(minimumDistance: 0.1)
+                                .onChanged({value in
+                                    weightOffset = CGFloat(min(max(lastWeightOffset + value.translation.height, -120), 158.6))
 
-                                            let newBpm: Double = -(Double(weightOffset)-160)*200/280
-                                            withAnimation(.easeInOut(duration: 0.1)){
-                                                bpm = Int(newBpm)
-                                            }
-                                        })
-                                        .onEnded({value in
-                                            lastWeightOffset = weightOffset
-                                        })
-                                )
-                            
+                                    let newBpm: Double = -(Double(weightOffset)-160)*200/280
+                                    withAnimation(.easeInOut(duration: 0.1)){
+                                        bpm = Int(newBpm)
+                                    }
+                                })
+                                .onEnded({value in
+                                    lastWeightOffset = weightOffset
+                                })
+                        )
+                    
+                }
+                .scaleEffect(min(1, scaledHeight / internalHeight))
+                .frame(height: min(internalHeight, scaledHeight))
+                .rotationEffect(Angle.degrees(armAngle), anchor: .bottom)
+                .onChange(of: bpm, perform: {bpm in
+                    withAnimation(.easeInOut(duration: 0.2)){
+                        weightOffset = CGFloat( -bpm*280/200 + 160)
+                    }
+                })
+                
+                // Tempo name
+                Text(tempoName(bpm: bpm))
+                    .bold()
+                    .font(.title3)
+                    .foregroundColor(Color("fg"))
+                    .padding(.bottom)
+                
+                
+                // BPM modifier
+                HStack {
+                    Spacer()
+                    
+                    Button {
+                        withAnimation(.easeInOut(duration: 0.2)){
+                            if bpm > 1 { bpm -= 1 }
+                            updateOffsetFromBPM()
                         }
-                        .scaleEffect(x: 1, y: geometry.size.height*0.4 / 300)
-                        .rotationEffect(Angle.degrees(armAngle), anchor: .bottom)
-                        .onChange(of: bpm, perform: {bpm in
-                            withAnimation(.easeInOut(duration: 0.2)){
-                                weightOffset = CGFloat( -bpm*280/200 + 160)
-                            }
-                        })
-                        
-                        //TODO: fix scaling to fit virtual ticker
-                        
-                        // Tempo name
-                        Text(tempoName(bpm: bpm))
-                            .bold()
-                            .font(.title3)
-                            .foregroundColor(Color("fg"))
-                            .padding(.bottom)
-                        
-                        Spacer()
-                        
-                        
-                        // BPM modifier
-                        HStack {
+                    } label: {
+                        Image(systemName: "minus")
+                    }
+                    .padding(.leading)
+                    .foregroundColor(Color("fg"))
+                    .font(.title2.bold())
+                    
+                    Spacer()
+                    
+                    Text("\(bpm)")
+                        .frame(width: 70, height: 20)
+                        .font(.system(size: 22, weight: .bold))
+                        .foregroundColor(Color("fg"))
+                        .onTapGesture{
+                            displayNumpad.toggle()
+                        }
+                        .sheet(isPresented: $displayNumpad) {
+                            BpmNumpadView(bpm: $bpm, updateBPM: $updateBPM)
+                        }
+                        .padding(.vertical)
+                    
+                    Spacer()
+                    
+                    Button {
+                        withAnimation(.easeInOut(duration: 0.2)){
+                            if bpm < 230 { bpm += 1 }
+                            updateOffsetFromBPM()
+                        }
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    .padding(.trailing)
+                    .font(.title2.bold())
+                    .foregroundColor(Color("fg"))
+                    
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity)
+                .background(Color("secondary"))
+                .cornerRadius(10)
+                
+                HStack {
+                    //Play Button
+                    Button {
+                        withAnimation(.easeInOut(duration: 0.2)){
+                            isOn.toggle()
+                        }
+                        print("Toggle metronome")
+                    } label: {
+                        HStack{
                             Spacer()
-                            
-                            Button {
-                                withAnimation(.easeInOut(duration: 0.2)){
-                                    if bpm > 1 { bpm -= 1 }
-                                    updateOffsetFromBPM()
-                                }
-                            } label: {
-                                Image(systemName: "minus")
+                            if isOn{
+                                Image(systemName: "stop.fill")
+                                    .foregroundColor(Color("fg"))
+                                    .padding()
+                            } else {
+                                Image(systemName: "play.fill")
+                                    .foregroundColor(Color("fg"))
+                                    .padding()
                             }
-                            .padding(.leading)
-                            .foregroundColor(Color("fg"))
-                            .font(.title2.bold())
-                            
-                            Spacer()
-                            
-                            Text("\(bpm)")
-                                .frame(width: 70)
-                                .font(.title.bold())
-                                .foregroundColor(Color("fg"))
-                                .onTapGesture{
-                                    displayNumpad.toggle()
-                                }
-                                .sheet(isPresented: $displayNumpad) {
-                                    BpmNumpadView(bpm: $bpm, updateBPM: $updateBPM)
-                                }
-                                .padding(.vertical)
-                            
-                            Spacer()
-                            
-                            Button {
-                                withAnimation(.easeInOut(duration: 0.2)){
-                                    if bpm < 230 { bpm += 1 }
-                                    updateOffsetFromBPM()
-                                }
-                            } label: {
-                                Image(systemName: "plus")
-                            }
-                            .padding(.trailing)
-                            .font(.title2.bold())
-                            .foregroundColor(Color("fg"))
-                            
                             Spacer()
                         }
-                        .frame(maxWidth: .infinity)
                         .background(Color("secondary"))
                         .cornerRadius(10)
-                        .padding(.bottom)
-                        
-                        HStack {
-                            //Play Button
-                            Button {
-                                withAnimation(.easeInOut(duration: 0.2)){
-                                    isOn.toggle()
-                                }
-                                print("Toggle metronome")
-                            } label: {
-                                HStack{
-                                    Spacer()
-                                    if isOn{
-                                        Image(systemName: "stop.fill")
-                                            .foregroundColor(Color("fg"))
-                                            .padding()
-                                    } else {
-                                        Image(systemName: "play.fill")
-                                            .foregroundColor(Color("fg"))
-                                            .padding()
-                                    }
-                                    Spacer()
-                                }
-                                .background(Color("secondary"))
-                                .cornerRadius(10)
-                                .padding(.vertical)
-                            }
-                            .font(.title2.bold())
-                            .foregroundColor(Color("fg"))
-                            .onChange(of: isOn){ value in
-                                if(isOn){start()}
-                                else {
-                                    timer.invalidate()
-                                    soundDelayTimer.invalidate()
-                                    endSwing()
-                                }
-                            }
-                            Spacer()
-                            
-                            //Time Signature Selector
-                            Button {
-                                displaySigSelect.toggle()
-                            } label: {
-                                ZStack {
-                                    Text(signatures[sigIndex])
-                                        .bold()
-                                        .font(.title2)
-                                        .foregroundColor(Color("fg"))
-                                        .padding()
-                                        .background(Color("secondary"))
-                                        .cornerRadius(10)
-                                }.offset(x: 10)
-                                .padding(.vertical)
-                            }
-                            .background(Color.clear)
-                            .onChange(of: sigIndex){index in
-                                barNotes = sigNotes[sigIndex]
-                            }
-                            .sheet(isPresented: $displaySigSelect) {
-                                TimeSigSelectView(selIndex:$sigIndex)
-                            }
-                            
-                            Spacer().frame(width: 15)
+                        .padding(.vertical)
+                    }
+                    .font(.title2.bold())
+                    .foregroundColor(Color("fg"))
+                    .onChange(of: isOn){ value in
+                        if(isOn){start()}
+                        else {
+                            timer.invalidate()
+                            soundDelayTimer.invalidate()
+                            endSwing()
                         }
                     }
-                    .padding()
+                    Spacer()
+                    
+                    //Time Signature Selector
+                    Button {
+                        displaySigSelect.toggle()
+                    } label: {
+                        ZStack {
+                            Text(signatures[sigIndex])
+                                .bold()
+                                .font(.title2)
+                                .foregroundColor(Color("fg"))
+                                .padding()
+                                .background(Color("secondary"))
+                                .cornerRadius(10)
+                        }.offset(x: 10)
+                        .padding(.vertical)
+                    }
+                    .background(Color.clear)
+                    .onChange(of: sigIndex){index in
+                        barNotes = sigNotes[sigIndex]
+                    }
+                    .sheet(isPresented: $displaySigSelect) {
+                        TimeSigSelectView(selIndex:$sigIndex)
+                    }
+                    
+                    Spacer().frame(width: 15)
                 }
-                .navigationBarTitle("Metronome")
             }
+            .padding()
+            .navigationBarTitle("Metronome")
         }
     }
     

@@ -8,14 +8,14 @@ import SwiftUI
 
 struct TheoryHomeView: View {
 
-    @Binding var grades: [Grade]
+    @Binding var grades: Grades
     @State var percentCorrect: Float = 50
 
     var body: some View {
         NavigationView {
             ScrollView{
                 VStack {
-                    ForEach(grades) { grade in
+                    ForEach(grades.grades) { grade in
                         NavigationLink {
                             OverviewView(grades: $grades, grade: grade.number)
                         } label: {
@@ -46,11 +46,11 @@ struct TheoryHomeView: View {
                                 RoundedRectangle(cornerRadius: 5)
                                         .fill(
                                                 LinearGradient(gradient: Gradient(stops: [
-                                                    .init(color: Color("fg"), location: grade.percentageCorrect/100),
-                                                    .init(color: Color("primary"), location: grade.percentageCorrect/100)
+                                                    .init(color: Color("primary"), location: grade.percentageCorrect/100),
+                                                    .init(color: Color("tertiary"), location: grade.percentageCorrect/100)
                                                 ]), startPoint: .leading, endPoint: .trailing)
                                         )
-                                        .foregroundColor(Color("primary"))
+                                        .foregroundColor(Color("tertiary"))
                                         .padding(.bottom, 10)
                             }
                             .padding()
@@ -68,14 +68,5 @@ struct TheoryHomeView: View {
             .offset(y:20)
         }
 
-    }
-}
-
-struct TheoryHomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        TheoryHomeView(grades: .constant([
-            Grade(number: 1, percentageCorrect: 0),
-            Grade(number: 4, percentageCorrect: 0),
-            Grade(number: 5, percentageCorrect: 0)]))
     }
 }

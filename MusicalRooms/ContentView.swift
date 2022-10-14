@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @Binding var grades: [Grade]
+    @Binding var grades: Grades
     var lightBrown:Color = Color(red: 212/255, green: 177/255, blue: 148/255, opacity: 1.0)
 
     var body: some View {
@@ -46,16 +46,5 @@ struct ContentView: View {
             UITabBar.appearance().unselectedItemTintColor = UIColor.init(lightBrown)
         }
         
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(grades: .constant([
-            Grade(number: 1, percentageCorrect: 80),
-            Grade(number: 2, percentageCorrect: 80),
-            Grade(number: 3, percentageCorrect: 80),
-            Grade(number: 4, percentageCorrect: 80),
-            Grade(number: 5, percentageCorrect: 80)]))
     }
 }

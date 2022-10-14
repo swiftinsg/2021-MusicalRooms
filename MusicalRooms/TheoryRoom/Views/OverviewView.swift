@@ -8,7 +8,7 @@ import SwiftUI
 
 struct OverviewView: View {
     
-    @Binding var grades: [Grade]
+    @Binding var grades: Grades
     var grade: Int
     var words: [Word] {
         getWords(grade)
@@ -74,11 +74,5 @@ struct OverviewView: View {
         }
         .offset(y:-15)
             .padding(20)
-    }
-}
-
-struct OverviewView_Previews: PreviewProvider {
-    static var previews: some View {
-        OverviewView(grades: .constant([Grade(number: 1, percentageCorrect: 0)]), grade: 1)
     }
 }

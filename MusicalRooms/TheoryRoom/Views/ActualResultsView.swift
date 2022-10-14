@@ -12,7 +12,7 @@ struct ActualResultsView: View {
     @State var pastelGreen = Color.init(red: 0.3764705882, green: 0.8392156863, blue: 0.462745098)
     @State var pastelRed = Color.init(red: 0.8392156863, green: 0.4, blue: 0.3764705882)
     
-    @Binding var grades: [Grade]
+    @Binding var grades: Grades
     
     var questionAnswers: [Bool]
     var percentCorrect: Double
@@ -69,7 +69,7 @@ struct ActualResultsView: View {
                 .padding(.horizontal)
                 
                 Button {
-                    grades[grade-1].percentageCorrect = percentCorrect
+                    grades.grades[grade-1].percentageCorrect = percentCorrect
                     presentationMode.wrappedValue.dismiss()
                 } label: {
                     Text("Finish")

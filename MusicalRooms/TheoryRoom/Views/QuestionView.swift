@@ -9,7 +9,7 @@ import SwiftUI
 
 struct QuestionView: View {
     
-    @Binding var grades: [Grade]
+    @Binding var grades: Grades
     var grade: Int
     
     var words: [Word]
@@ -158,12 +158,5 @@ struct QuestionView: View {
                 foregroundColours[correctAnswer] = Color("fg")
             }
         }
-    }
-}
-
-
-struct QuestionView_Previews: PreviewProvider {
-    static var previews: some View {
-        QuestionView(grades: .constant([Grade(number: 1, percentageCorrect: 0)]), grade: 1, words: [Word(title: "placeholder", definition: "hi")])
     }
 }

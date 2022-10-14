@@ -44,15 +44,11 @@ struct RecordingsList: View {
                 List {
                     ForEach(audioRecorder.recordings, id:\.self) { recording in
                         let recordingIndex = audioRecorder.recordings.firstIndex(of: recording)!
-                        RecordingRow(recording: recording, isExpanded: $expandedRow[recordingIndex])
-                            .onTapGesture {
-                                if (isEditing) { return }
-                                withAnimation {
-                                    expandedRow = Array(repeating: false, count: 1000)
-                                    expandedRow[recordingIndex] = true
-
-                                }
-                            }
+                        Button {
+                            tapGesture(recordingIndex: recordingIndex)
+                        } label: {
+                            RecordingRow(recording: recording, isExpanded: $expandedRow[recordingIndex])
+                        }
                     }
                     .onDelete {indexSet in
                         audioRecorder.deleteRecording(at: indexSet)
@@ -76,6 +72,14 @@ struct RecordingsList: View {
         }
         .onAppear{ //init
             expandedRow = Array(repeating: false, count: 1000)
+        }
+    }
+    
+    func tapGesture(recordingIndex: Int) {
+        if (isEditing) { return }
+        withAnimation {
+            expandedRow = Array(repeating: false, count: 1000)
+            expandedRow[recordingIndex] = true
         }
     }
 }

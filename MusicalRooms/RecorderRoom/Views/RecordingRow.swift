@@ -18,7 +18,7 @@ struct RecordingRow: View {
     @ObservedObject var audioPlayer: AudioPlayer
 
     @Binding var isExpanded: Bool
-
+    
     init(recording: Recording, isExpanded: Binding<Bool>) {
         self.recording = recording
         self.audioURL = recording.fileURL
@@ -37,31 +37,31 @@ struct RecordingRow: View {
                         .font(.system(size: 18, weight: .bold))
                         .foregroundColor(Color("fg"))
                         .padding(.vertical, 0.5)
-
+                    
                     Text(getCreationDate(for: audioURL), style: .date)
-                            .font(.system(size: 12, weight: .semibold))
-                            .foregroundColor(Color("fg"))
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundColor(Color("fg"))
                 }
-
+                
                 Spacer()
-
+                
                 if isExpanded {
                     //Share audiofile
                     Button{
                         shareAudioFile(audioURL)
                     } label: {
                         Image(systemName: "square.and.arrow.up")
-                                .foregroundColor(Color("fg"))
+                            .foregroundColor(Color("fg"))
                     }
                     .buttonStyle(PlainButtonStyle())
                 } else {
                     Text(fmtDuration(duration: getAudioLength(for: audioURL)))
-                            .font(.system(size: 12, weight: .semibold))
-                            .foregroundColor(Color("fg"))
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundColor(Color("fg"))
                 }
             }
-
-
+            
+            
             // ----- CONTROLS -----
             var timestamp = audioPlayer.playbackTime
             var duration: TimeInterval = audioPlayer.getDuration()
@@ -70,7 +70,7 @@ struct RecordingRow: View {
             let durationFmt = fmtDuration(duration: duration)
             
             if (isExpanded){
-
+                
                 HStack{
                     Spacer()
                     
@@ -85,38 +85,43 @@ struct RecordingRow: View {
                         audioPlayer.setCurrentTime(timestamp-15)
                     } label: {
                         Image(systemName: "gobackward.15")
-                        .foregroundColor(Color("fg"))
+                            .foregroundColor(Color("fg"))
                     }
                     .buttonStyle(PlainButtonStyle())
-
+                    
                     Button{
                         (audioPlayer.isPlaying ? self.audioPlayer.stopPlayback() : self.audioPlayer.startPlayback())
                         print("Toggle playback")
                     } label: {
                         (audioPlayer.isPlaying ? Image(systemName: "pause.fill") : Image(systemName: "play.fill"))
-                        .foregroundColor(Color("fg"))
+                            .foregroundColor(Color("fg"))
                     }
                     .buttonStyle(PlainButtonStyle())
                     .padding(.horizontal)
-
+                    
                     Button{
                         audioPlayer.setCurrentTime(timestamp+15)
                     } label: {
                         Image(systemName: "goforward.15")
-                                .foregroundColor(Color("fg"))
+                            .foregroundColor(Color("fg"))
                     }
                     .buttonStyle(PlainButtonStyle())
                     
                     
                     Spacer()
-
+                    
                 }
-                    .padding(5)
-                    .background(Color("secondary"))
-                    .cornerRadius(5)
-
+                .padding(5)
+                .background(Color("secondary"))
+                .cornerRadius(5)
+                
             }
-
+            
+        }
+        .onChange(of: isExpanded) { exp in
+            if !exp && audioPlayer.isPlaying {
+                audioPlayer.stopPlayback()
+            }
         }
     }
     

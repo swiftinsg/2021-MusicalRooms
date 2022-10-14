@@ -19,6 +19,8 @@
 		2E58ADE7274E9767000B1CFB /* WordStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58ADE6274E9767000B1CFB /* WordStruct.swift */; };
 		2E58ADEA274E979E000B1CFB /* GetEnharmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58ADE9274E979E000B1CFB /* GetEnharmonic.swift */; };
 		2E9EF866274FA68C00704AE3 /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2E9EF865274FA68C00704AE3 /* AudioKitUI */; };
+		AFA09F8928F8F5250075CE12 /* TunerIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE245F2AF1A362E82CC855 /* TunerIndicatorView.swift */; };
+		AFA09F8A28F8F5260075CE12 /* TunerIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE245F2AF1A362E82CC855 /* TunerIndicatorView.swift */; };
 		C57AFE14275092CE00B630A9 /* CommonTuningsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57AFE13275092CE00B630A9 /* CommonTuningsView.swift */; };
 		C57AFE16275094DF00B630A9 /* Tunings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57AFE15275094DF00B630A9 /* Tunings.swift */; };
 		C5D98ADE274E89AD00A2A279 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D98ADD274E89AD00A2A279 /* ResultsView.swift */; };
@@ -495,6 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFA09F8928F8F5250075CE12 /* TunerIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +505,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFA09F8A28F8F5260075CE12 /* TunerIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

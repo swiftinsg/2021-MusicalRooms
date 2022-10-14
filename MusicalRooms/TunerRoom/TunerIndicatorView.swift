@@ -18,68 +18,70 @@ struct TunerIndicatorView: View {
     var tuner = TunerData()
 
     var body: some View {
-        ScrollView{
-            VStack {
-                RoundedRectangle(cornerRadius: 20)
-                        .frame(width: 370, height: 270, alignment: .center)
-                        .foregroundColor(Color("secondary"))
-                        .overlay(
-                                VStack(spacing: 1){
-                                    let freqOffset = CGFloat(max(min(conductor.data.freqDistance*150, 150), -150))
-                                    Rectangle()
-                                            .cornerRadius(2)
-                                            .frame(width: 5, height: 55)
-                                            .foregroundColor(topLineColor)
-                                            .offset(x: freqOffset, y: -15)
+        VStack {
+            RoundedRectangle(cornerRadius: 20)
+                    .frame(width: 370, height: 230, alignment: .center)
+                    .foregroundColor(Color("secondary"))
+                    .overlay(
+                            VStack{
+                                let freqOffset = CGFloat(max(min(conductor.data.freqDistance*150, 150), -150))
+                                Rectangle()
+                                        .cornerRadius(2)
+                                        .frame(width: 5, height: 35)
+                                        .foregroundColor(topLineColor)
+                                        .offset(x: freqOffset, y: -3)
 
-                                    Text((conductor.data.noteNameWithSharps).contains("♯") ? "\(conductor.data.noteNameWithSharps) / \(conductor.data.noteNameWithFlats)" : conductor.data.noteNameWithSharps)
-                                            .fontWeight(.heavy)
-                                            .font(.system(size: 30))
-                                            .multilineTextAlignment(.center)
+                                Text((conductor.data.noteNameWithSharps).contains("♯") ? "\(conductor.data.noteNameWithSharps) / \(conductor.data.noteNameWithFlats)" : conductor.data.noteNameWithSharps)
+                                        .fontWeight(.heavy)
+                                        .font(Font.system(size: 30))
+                                        .multilineTextAlignment(.center)
 
-                                    FrequencyAdjusterView(variance: $variance)
-                                    .padding(.vertical, 10)
-
-                                    HStack{
-                                        let amplitude = String(format: "%.1f", conductor.data.amplitude*100)
-                                        let frequency = String(format: "%.1f", conductor.data.pitch)
-                                        Text("\(amplitude) dB")
-                                        Text("\(frequency) Hz")
-                                    }
-
-                                    Spacer().frame(height: 20)
-
-                                    HStack{
-                                        ForEach(0 ..< 11) { rectangle in
-                                            Rectangle()
-                                                    .cornerRadius(3)
-                                                    .frame(
-                                                            width: (rectangle==4||rectangle==6) ? 3 : 2,
-                                                            height: (rectangle==4||rectangle==6) ? 40 : 17
-                                                    )
-                                                    .foregroundColor((rectangle==4||rectangle==6) ? .green : .black)
-                                                    .offset(y: (rectangle==4||rectangle==6) ? 20 : 32)
-
-                                        }.frame(width: 23, height: 50, alignment: .center)
-                                    }
-                                    .overlay(
-                                            Rectangle()
-                                                    .cornerRadius(2)
-                                                    .frame(width: 5, height: 70)
-                                                    .foregroundColor(bottomLineColor)
-                                                    .offset(x:freqOffset, y: 5)
-                                    )
+                                FrequencyAdjusterView(variance: $variance)
+                                    .padding(.vertical, 1)
+                                    .offset(y: -1)
+                                
+                                HStack{
+                                    let amplitude = String(format: "%.1f", conductor.data.amplitude*100)
+                                    let frequency = String(format: "%.1f", conductor.data.pitch)
+                                    Text("\(amplitude) dB")
+                                    Text("\(frequency) Hz")
                                 }
-                        )
-            }
-            .scaleEffect(min(1, 370/UIScreen.main.bounds.width))
-            .padding(.horizontal, 30)
-            .onAppear{
-                self.conductor.start()
-            }
-            .onDisappear{
-                self.conductor.stop()
-            }
+
+                                Spacer().frame(height: 10)
+
+                                HStack{
+                                    ForEach(0 ..< 11) { rectangle in
+                                        let isIndicator = rectangle==4 || rectangle==6
+                                        Rectangle()
+                                                .cornerRadius(3)
+                                                .frame(
+                                                        width: (isIndicator) ? 3 : 2,
+                                                        height: (isIndicator) ? 23 : 17
+                                                )
+                                                .foregroundColor(isIndicator ? .green : .black)
+                                                .offset(y: (isIndicator) ? 17 : 19)
+
+                                    }.frame(width: 23, height: 50, alignment: .center)
+                                }
+                                .overlay(
+                                        Rectangle()
+                                                .cornerRadius(2)
+                                                .frame(width: 5, height: 42)
+                                                .foregroundColor(bottomLineColor)
+                                                .offset(x:freqOffset, y: 7)
+                                )
+                            }
+                    )
+        }
+        .scaleEffect((UIScreen.main.bounds.width-30) / 370) // A series of bodges to make a frame layout responsive kill me pls
+        .frame(height: (UIScreen.main.bounds.width-30)/370 * 230)
+        .padding(.horizontal, 30)
+        .padding(.vertical, 5)
+        .onAppear{
+            self.conductor.start()
+        }
+        .onDisappear{
+            self.conductor.stop()
         }
     }
 }

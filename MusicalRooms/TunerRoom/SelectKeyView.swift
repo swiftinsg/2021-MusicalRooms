@@ -47,7 +47,7 @@ struct SelectKeyView: View {
 
             }
                     .padding(.horizontal, 20)
-            Spacer().frame(height: 13)
+            Spacer().frame(height: 7)
 
             HStack(spacing: 4) {
                 ForEach(0 ..< 7) { note in
@@ -67,11 +67,11 @@ struct SelectKeyView: View {
                     }
                 }
             }
-            Spacer()
 
-        }
-                .padding(.horizontal)
+        }.padding(.horizontal)
+        .padding(.vertical, 5)
     }
+    
     func playOscillator(_ note: Int) {
         if !isOn {
             for num in 0 ..< notes.count {

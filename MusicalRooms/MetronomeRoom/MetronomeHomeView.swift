@@ -102,7 +102,7 @@ struct MetronomeHomeView: View {
                     Text("\(bpm)")
                         .frame(width: 80, height: 13)
                         .font(.system(size: 20, weight: .bold))
-                        .foregroundColor(Color("secondary"))
+                        .foregroundColor(Color.white)
                         .onTapGesture{
                             displayNumpad.toggle()
                         }

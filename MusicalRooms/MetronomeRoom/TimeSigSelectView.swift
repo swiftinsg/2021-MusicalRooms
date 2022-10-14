@@ -28,7 +28,7 @@ struct TimeSigSelectView: View {
                     } label: {
                         ZStack{
                             Rectangle()
-                                .foregroundColor(selIndex == index ? Color("fg") : Color("secondary"))
+                                .foregroundColor(selIndex == index ? Color("primary") : Color("secondary"))
                                 .frame(width: 75, height: 50, alignment: .center)
                                 .cornerRadius(10)
                                 .padding(4)
@@ -51,11 +51,11 @@ struct TimeSigSelectView: View {
         } label: {
             ZStack{
                 Rectangle()
-                    .fill(Color("fg"))
-                    .frame(width: 270, height: 60, alignment: .center)
+                    .fill(Color("primary"))
+                    .frame(width: 180, height: 50, alignment: .center)
                     .cornerRadius(10)
                 Text("OK")
-                    .font(.system(size: 32, weight: .bold))
+                    .font(.system(size: 24, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
             }
         }

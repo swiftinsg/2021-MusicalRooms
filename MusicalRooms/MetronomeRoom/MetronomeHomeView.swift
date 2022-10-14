@@ -100,9 +100,9 @@ struct MetronomeHomeView: View {
                     Spacer()
                     
                     Text("\(bpm)")
-                        .frame(width: 70, height: 20)
-                        .font(.system(size: 22, weight: .bold))
-                        .foregroundColor(Color("fg"))
+                        .frame(width: 80, height: 13)
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundColor(Color("secondary"))
                         .onTapGesture{
                             displayNumpad.toggle()
                         }
@@ -110,6 +110,8 @@ struct MetronomeHomeView: View {
                             BpmNumpadView(bpm: $bpm, updateBPM: $updateBPM)
                         }
                         .padding(.vertical)
+                        .background(Color("primary"))
+                        .cornerRadius(10)
                     
                     Spacer()
                     
@@ -127,6 +129,7 @@ struct MetronomeHomeView: View {
                     
                     Spacer()
                 }
+                .padding(.vertical, 4)
                 .frame(maxWidth: .infinity)
                 .background(Color("secondary"))
                 .cornerRadius(10)

@@ -27,7 +27,7 @@ struct BpmNumpadView: View {
             .padding(.horizontal, 30)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color("fg"), lineWidth: 4)
+                    .stroke(Color("fg"), lineWidth: 1)
             )
         
         Spacer().frame(height: 30)
@@ -41,7 +41,7 @@ struct BpmNumpadView: View {
                     } label: {
                         ZStack {
                             Circle()
-                                .foregroundColor(Color("secondary"))
+                                .foregroundColor(Color("primary"))
                                 .frame(width: 60, height: 60, alignment: .center)
                             Text("\(num)")
                                 .font(.system(size: 24, weight: .bold, design: .rounded))
@@ -58,7 +58,7 @@ struct BpmNumpadView: View {
         } label: {
             ZStack{
                 Circle()
-                    .foregroundColor(Color("secondary"))
+                    .foregroundColor(Color("primary"))
                     .frame(width: 60, height: 60, alignment: .center)
                 Text("0")
                     .font(.system(size: 24, weight: .bold, design: .rounded))
@@ -79,11 +79,11 @@ struct BpmNumpadView: View {
         } label: {
             ZStack{
                 Rectangle()
-                    .fill(Color("fg"))
-                    .frame(width: 270, height: 60, alignment: .center)
+                    .fill(Color("primary"))
+                    .frame(width: 180, height: 50, alignment: .center)
                     .cornerRadius(10)
                 Text("OK")
-                    .font(.system(size: 32, weight: .bold, design: .rounded))
+                    .font(.system(size: 24, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
             }
         }
@@ -92,8 +92,7 @@ struct BpmNumpadView: View {
     func appendDigit(digit: Int) {
         if hasChanged {
             if(newBpm < 100){
-                let joinStr = "\(newBpm)\(digit)"
-                newBpm = Int(joinStr) ?? 0
+                newBpm = newBpm*10 + digit
             } else {return}
         } else {
             newBpm = digit

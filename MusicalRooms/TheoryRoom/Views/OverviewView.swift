@@ -48,9 +48,11 @@ struct OverviewView: View {
                         .listRowBackground(Color("lightBrown"))
                     }
             }
-            .padding(.horizontal, 20)
-            .cornerRadius(15)
-            .listStyle(.automatic)
+            .frame(maxHeight: .infinity)
+            .padding(.bottom, 5)
+            .padding(.horizontal, 2)
+            .cornerRadius(10)
+            .listStyle(.inset)
             .onAppear{
                 UITableView.appearance().backgroundColor = .clear
             }

@@ -81,10 +81,17 @@ struct SelectKeyView: View {
             osc.start(frequency: notes[note].hertz)
             isOn = true
         } else {
-            osc.stop()
-            isOn = false
-            for num in 0 ..< notes.count {
-                notes[num].isSelected = false
+            if notes[note].isSelected {
+                osc.stop()
+                isOn = false
+                notes[note].isSelected = false
+            } else {
+                osc.stop()
+                isOn = false
+                for num in 0 ..< notes.count {
+                    notes[num].isSelected = false
+                }
+                playOscillator(note)
             }
         }
     }

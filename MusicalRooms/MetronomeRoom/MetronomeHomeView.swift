@@ -72,12 +72,21 @@ struct MetronomeHomeView: View {
                         }
                     }
                     
-                    // Tempo name
-                    Text(tempoName(bpm: bpm))
-                        .bold()
-                        .font(.title3)
-                        .foregroundColor(Color("darkBrown"))
-                        .padding(.bottom)
+                    Spacer()
+
+                    Text("\(bpm)")
+                        .frame(width: 80, height: 13)
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundColor(Color.white)
+                        .onTapGesture{
+                            displayNumpad.toggle()
+                        }
+                        .sheet(isPresented: $displayNumpad) {
+                            BpmNumpadView(bpm: $bpm, updateBPM: $updateBPM)
+                        }
+                        .padding(.vertical)
+                        .background(Color("primary"))
+                        .cornerRadius(10)
                     
                     Spacer()
                     

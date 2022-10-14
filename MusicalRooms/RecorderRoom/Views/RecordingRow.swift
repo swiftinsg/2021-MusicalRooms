@@ -12,7 +12,7 @@ import AVFoundation
 struct RecordingRow: View {
 
     @State var audioURL: URL
-    @ObservedObject var audioPlayer = AudioPlayer()
+    @ObservedObject var audioPlayer: AudioPlayer
 
     @Binding var isExpanded: Bool
     @State var nameEditorText = "placeholder"
@@ -20,20 +20,19 @@ struct RecordingRow: View {
     @State var sliderOffset: CGFloat = 0.0
     @State var lastSliderOffset: CGFloat = 0.0
 
-
     var body: some View {
-
+        
         VStack {
             HStack{
                 VStack(alignment: .leading){
                     let fileName = String(audioURL.lastPathComponent)
                     Text(nameEditorText)
-                        .font(.system(size: 18, weight: .bold, design: .rounded))
+                        .font(.system(size: 18, weight: .bold))
                         .foregroundColor(Color("fg"))
-                        .padding(.vertical, 3)
+                        .padding(.vertical, 0.5)
 
                     Text(getCreationDate(for: audioURL), style: .date)
-                            .font(.system(size: 12, weight: .semibold, design: .default))
+                            .font(.system(size: 12, weight: .semibold))
                             .foregroundColor(Color("fg"))
                 }
 
@@ -47,45 +46,50 @@ struct RecordingRow: View {
                         Image(systemName: "square.and.arrow.up")
                                 .foregroundColor(Color("fg"))
                     }
+                    .buttonStyle(PlainButtonStyle())
                 }else{
-                    Text(String(format: "%.1f", getAudioLength(for: audioURL)) + "s")
-                            .font(.system(size: 12, weight: .semibold, design: .default))
+                    Text(fmtDuration(duration: getAudioLength(for: audioURL)))
+                            .font(.system(size: 12, weight: .semibold))
                             .foregroundColor(Color("fg"))
                 }
             }
 
 
             // ----- CONTROLS -----
-            let timestamp: TimeInterval = audioPlayer.getCurrentTime()
-            let duration: TimeInterval = audioPlayer.getDuration()
-            let trackPercentage: TimeInterval = audioPlayer.getCurrentTime()/audioPlayer.getDuration()
-            let timeStampStr = String(format: "%.1f", timestamp)
-            let durationStr = String(format: "%.1f", duration)
+            var timestamp = audioPlayer.playbackTime
+            var duration: TimeInterval = audioPlayer.getDuration()
+            var trackPercentage: TimeInterval = audioPlayer.playbackTime/audioPlayer.getDuration()
+            let timeStampFmt = fmtDuration(duration: timestamp)
+            let durationFmt = fmtDuration(duration: duration)
             
             if (isExpanded){
 
                 HStack{
                     Spacer()
                     
-                    Text( "\(timeStampStr)/\(durationStr)")
-                        .font(.system(size: 12, weight: .semibold, design: .default))
+                    Text( "\(timeStampFmt) / \(durationFmt)")
+                        .font(.system(size: 12, weight: .semibold))
                         .foregroundColor(Color("fg"))
                     
                     Spacer()
                     
                     Button{
+                        print(audioPlayer.playbackTime)
                         audioPlayer.setCurrentTime(timestamp-15)
                     } label: {
                         Image(systemName: "gobackward.15")
                         .foregroundColor(Color("fg"))
                     }
+                    .buttonStyle(PlainButtonStyle())
 
                     Button{
-                        (audioPlayer.isPlaying ? self.audioPlayer.stopPlayback() : self.audioPlayer.startPlayback(audio: audioURL))
+                        (audioPlayer.isPlaying ? self.audioPlayer.stopPlayback() : self.audioPlayer.startPlayback())
+                        print("Toggle playback")
                     } label: {
                         (audioPlayer.isPlaying ? Image(systemName: "pause.fill") : Image(systemName: "play.fill"))
                         .foregroundColor(Color("fg"))
                     }
+                    .buttonStyle(PlainButtonStyle())
                     .padding(.horizontal)
 
                     Button{
@@ -94,12 +98,15 @@ struct RecordingRow: View {
                         Image(systemName: "goforward.15")
                                 .foregroundColor(Color("fg"))
                     }
+                    .buttonStyle(PlainButtonStyle())
+                    
+                    
                     Spacer()
 
                 }
                     .padding(5)
                     .background(Color("secondary"))
-                    .cornerRadius(7.5)
+                    .cornerRadius(5)
 
             }
 
@@ -107,14 +114,8 @@ struct RecordingRow: View {
         .onAppear{ //init
             self.nameEditorText = String(audioURL.lastPathComponent).replacingOccurrences(of: ".m4a", with: "")
         }
-        .onTapGesture{
-            withAnimation {
-                isExpanded = true
-            }
-        }
     }
-
-
+    
     //funcs
 
     func renameAudioFile(_ newName: String){
@@ -137,6 +138,15 @@ struct RecordingRow: View {
         let windowScene = scenes.first as? UIWindowScene
             
         windowScene?.keyWindow?.rootViewController?.present(avc, animated: true, completion: nil)
+    }
+    
+    func fmtDuration(duration: TimeInterval) -> String {
+        let minutes = Int(duration / 60)
+        let seconds = Int(duration.truncatingRemainder(dividingBy: 60))
+        let minutesFmt = String(format: "%02d", minutes)
+        let secondsFmt = String(format: "%02d", seconds)
+                          
+        return "\(minutesFmt):\(secondsFmt)"
     }
 
 }

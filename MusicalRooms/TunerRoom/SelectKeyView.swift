@@ -36,7 +36,7 @@ struct SelectKeyView: View {
                                     .fontWeight(.semibold)
                         }
                         .frame(maxWidth: .infinity)
-                        .font(.system(size: 18, design: .rounded))
+                        .font(.system(size: 18))
                         .multilineTextAlignment(.center)
                         .foregroundColor(notes[note].isSelected ? Color("secondary") : Color("primary"))
                         .padding(.vertical)
@@ -56,7 +56,7 @@ struct SelectKeyView: View {
                     } label: {
                         Text(notes[note].name)
                                 .bold()
-                                .font(.system(size: 20, weight: .semibold, design: .rounded))
+                                .font(.system(size: 20, weight: .semibold))
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(notes[note].isSelected ? Color("secondary") : Color("primary"))
                                 .frame(maxWidth: .infinity)

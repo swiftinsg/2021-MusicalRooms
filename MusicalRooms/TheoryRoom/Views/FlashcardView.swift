@@ -29,7 +29,7 @@ struct FlashcardsView: View {
                     .overlay(
                             VStack(alignment:.leading){
                                 Text("\(duplicateCurrentWord + 1) / \(words.count)")
-                                        .font(.system(size: 25, design: .rounded))
+                                        .font(.system(size: 25))
                                         .foregroundColor(Color("secondary"))
                                         .bold()
                             }
@@ -38,19 +38,19 @@ struct FlashcardsView: View {
             VStack {
                 if isFlipped {
                     Text(words[duplicateCurrentWord].definition)
-                            .font(.system(size: 23, design: .rounded))
+                            .font(.system(size: 23))
                             .padding()
                             .rotation3DEffect(.degrees(180), axis: (x:0, y:1, z:0))
                 } else {
                     Text(words[duplicateCurrentWord].title)
                             .bold()
-                            .font(.system(size: 25, design: .rounded))
+                            .font(.system(size: 25))
                     if let altText = words[duplicateCurrentWord].altText {
                         Text(altText)
-                                .font(.system(size: 18, design: .rounded))
+                                .font(.system(size: 18))
                     } else {
                         Text("  ")
-                                .font(.system(size: 18, design: .rounded))
+                                .font(.system(size: 18))
                     }
                 }
             }

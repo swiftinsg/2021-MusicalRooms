@@ -23,18 +23,18 @@ struct TheoryHomeView: View {
 
                                 HStack(alignment: .bottom) {
                                     Text("Grade \(grade.number)")
-                                        .font(.system(size: 25, weight: .semibold, design: .rounded))
+                                        .font(.system(size: 25, weight: .semibold))
                                         .foregroundColor(Color("fg"))
                                     Spacer()
 
                                     Text(String(format: "%.2f", grade.percentageCorrect) + "%")
-                                        .font(.system(size: 25, weight: .semibold, design: .rounded))
+                                        .font(.system(size: 25, weight: .semibold))
                                         .foregroundColor(Color("fg"))
                                         .padding(.trailing, 15)
                                         .overlay(
                                             Text("Last Score")
                                                 .foregroundColor(Color("fg"))
-                                                .font(.system(size: 14, weight: .light, design: .rounded))
+                                                .font(.system(size: 14, weight: .light))
                                                 .offset(x: -10, y:22)
                                         )
 

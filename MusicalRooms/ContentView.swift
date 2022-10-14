@@ -10,11 +10,9 @@ import SwiftUI
 struct ContentView: View {
     
     @Binding var grades: [Grade]
-    var lightBrown:Color = Color(red: 180/255, green: 130/255, blue: 90/255, opacity: 1.0)
+    var lightBrown:Color = Color(red: 212/255, green: 177/255, blue: 148/255, opacity: 1.0)
 
     var body: some View {
-        
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { _ in print("") }
         
         TabView{
             TheoryHomeView(grades: $grades)
@@ -35,7 +33,7 @@ struct ContentView: View {
                     Text("Metronome")
                 }
             
-            RecorderHomeView(timer: timer)
+            RecorderHomeView()
                 .tabItem{
                     Image(systemName: "waveform")
                     Text("Recorder")

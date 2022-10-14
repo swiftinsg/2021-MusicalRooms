@@ -21,7 +21,7 @@ struct BpmNumpadView: View {
     var body: some View {
         
         Text("\(newBpm)")
-            .font(.system(size: 32, design: .rounded).bold())
+            .font(.system(size: 32).bold())
             .foregroundColor(Color("fg"))
             .padding(.vertical, 5)
             .padding(.horizontal, 30)
@@ -44,7 +44,7 @@ struct BpmNumpadView: View {
                                 .foregroundColor(Color("primary"))
                                 .frame(width: 60, height: 60, alignment: .center)
                             Text("\(num)")
-                                .font(.system(size: 24, weight: .bold, design: .rounded))
+                                .font(.system(size: 24, weight: .bold))
                                 .foregroundColor(.white)
                         }
                         
@@ -61,7 +61,7 @@ struct BpmNumpadView: View {
                     .foregroundColor(Color("primary"))
                     .frame(width: 60, height: 60, alignment: .center)
                 Text("0")
-                    .font(.system(size: 24, weight: .bold, design: .rounded))
+                    .font(.system(size: 24, weight: .bold))
                     .foregroundColor(.white)
             }
             

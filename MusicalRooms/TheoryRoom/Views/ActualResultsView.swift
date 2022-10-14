@@ -29,7 +29,7 @@ struct ActualResultsView: View {
             VStack {
                 Text(String(format: "%.2f", percentCorrect) + "%")
                     .multilineTextAlignment(.leading)
-                    .font(.system(size: 32, weight: .semibold, design: .rounded))
+                    .font(.system(size: 32, weight: .semibold))
                     .lineLimit(3)
                     .foregroundColor(Color("fg"))
                     .overlay(
@@ -47,13 +47,13 @@ struct ActualResultsView: View {
                             VStack {
                                 Text(words[word].title)
                                     .foregroundColor(Color("fg"))
-                                    .font(.system(size: 25, design: .rounded))
+                                    .font(.system(size: 25))
                                     .fontWeight(.semibold)
                                 
                                 if let altText = words[word].altText {
                                     Text(altText)
                                         .foregroundColor(Color("fg"))
-                                        .font(.system(size: 20, design: .rounded))
+                                        .font(.system(size: 20))
                                         .fontWeight(.medium)
                                         .multilineTextAlignment(.leading)
                                 }
@@ -73,7 +73,7 @@ struct ActualResultsView: View {
                     presentationMode.wrappedValue.dismiss()
                 } label: {
                     Text("Finish")
-                        .font(.system(size: 20, design: .rounded))
+                        .font(.system(size: 20))
                         .foregroundColor(Color("secondary"))
                         .fontWeight(.heavy)
                         .padding(.vertical)

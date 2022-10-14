@@ -35,7 +35,7 @@ struct DefinitionModalView: View {
                     .foregroundColor(Color("primary"))
                     .overlay(
                         Text("\(currentWord) / \(words.count)")
-                            .font(.system(size: 19, design: .rounded))
+                            .font(.system(size: 19))
                             .foregroundColor(Color("fg"))
                             .bold()
                             .offset(x: -120)
@@ -45,13 +45,13 @@ struct DefinitionModalView: View {
                 VStack {
                     Text(words[currentWord].title)
                         .bold()
-                        .font(.system(size: 30, design: .rounded))
+                        .font(.system(size: 30))
                     if let altText = words[currentWord].altText {
                         Text(altText)
-                            .font(.system(size: 20, design: .rounded))
+                            .font(.system(size: 20))
                     } else {
                         Text("---")
-                            .font(.system(size: 20, design: .rounded))
+                            .font(.system(size: 20))
                     }
                 }
             }

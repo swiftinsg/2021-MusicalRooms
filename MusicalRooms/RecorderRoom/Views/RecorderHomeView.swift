@@ -13,9 +13,9 @@ import Subsonic
 struct RecorderHomeView: View {
 
     
-    @State var recordButtonSize: CGFloat = 60
-    @State var recordBorderWidth: CGFloat = 3
-    @State var recordButtonBorder: CGFloat = 75
+    @State var recordButtonSize: CGFloat = 48
+    @State var recordBorderWidth: CGFloat = 2
+    @State var recordButtonBorder: CGFloat = 65
     @State var recordButtonRadius: CGFloat = 30
     
     @ObservedObject var audioRecorder = AudioRecorder()
@@ -29,16 +29,16 @@ struct RecorderHomeView: View {
         NavigationView {
             VStack{
 
-                Spacer().frame(height: 20)
-
                 RecordingsList(audioRecorder: audioRecorder)
+                    .padding(.bottom, 20)
 
                 if(lengthDisplayed){
                     Text("\(String(format: "%.2d", recordingLength / 60)):\(String(format: "%.2d", recordingLength % 60))")
                             .foregroundColor(Color("fg"))
-                            .font(.system(size: 18, weight: .semibold, design: .monospaced))
-                            .offset(y: -100)
+                            .font(.system(size: 16, weight: .semibold))
+                            .offset(y: -20)
                 }
+
 
                 // Record button
                 Button{
@@ -52,30 +52,31 @@ struct RecorderHomeView: View {
                     ZStack{
                         Circle()
                                 .stroke(Color("primary"), lineWidth: recordBorderWidth)
-                                .frame(width: 70, height: 70, alignment: .center)
+                                .frame(width: 55, height: 55, alignment: .center)
                         Rectangle()
                                 .fill(Color("primary"))
                                 .frame(width: recordButtonSize, height: recordButtonSize, alignment: .center)
                                 .cornerRadius(recordButtonRadius)
                     }
-                }.offset(y:-90)
-                        .onChange(of: audioRecorder.recording, perform: {isRecording in //Button indicates recording or not
-                            if(isRecording){
-                                withAnimation(.easeInOut(duration: 0.2)){
-                                    recordButtonSize = 30
-                                    recordBorderWidth = 5
-                                    recordButtonBorder = 90
-                                    recordButtonRadius = 8
-                                }
-                            }else{
-                                withAnimation(.easeInOut(duration: 0.2)){
-                                    recordButtonSize = 60
-                                    recordBorderWidth = 3
-                                    recordButtonBorder = 75
-                                    recordButtonRadius = 30
-                                }
-                            }
-                        })
+                }
+                .offset(y: -15)
+                .onChange(of: audioRecorder.recording, perform: {isRecording in //Button indicates recording or not
+                    if(isRecording){
+                        withAnimation(.easeInOut(duration: 0.2)){
+                            recordButtonSize = 30
+                            recordBorderWidth = 3
+                            recordButtonBorder = 90
+                            recordButtonRadius = 8
+                        }
+                    }else{
+                        withAnimation(.easeInOut(duration: 0.2)){
+                            recordButtonSize = 48
+                            recordBorderWidth = 2
+                            recordButtonBorder = 65
+                            recordButtonRadius = 30
+                        }
+                    }
+                })
 
             }.navigationBarTitle("Recordings")
         }
@@ -85,15 +86,6 @@ struct RecorderHomeView: View {
     
     
     //funcs
-    
-    func delete(at offsets: IndexSet) {
-        
-        var urlsToDelete = [URL]()
-        for index in offsets {
-            urlsToDelete.append(audioRecorder.recordings[index].fileURL)
-        }
-        audioRecorder.deleteRecording(urlsToDelete: urlsToDelete)
-    }
     
     func startRecorder(){
         self.audioRecorder.startRecording()

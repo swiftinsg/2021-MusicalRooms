@@ -31,13 +31,13 @@ struct OverviewView: View {
                         VStack {
                             Text(words[word].title)
                                     .foregroundColor(Color("fg"))
-                                    .font(.system(size: 25, design: .rounded))
+                                    .font(.system(size: 25))
                                     .fontWeight(.semibold)
 
                             if let altText = words[word].altText {
                                 Text(altText)
                                         .foregroundColor(Color("fg"))
-                                        .font(.system(size: 20, design: .rounded))
+                                        .font(.system(size: 20))
                                         .fontWeight(.medium)
                                         .multilineTextAlignment(.leading)
                                 }

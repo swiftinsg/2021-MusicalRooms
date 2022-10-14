@@ -45,17 +45,17 @@ struct QuestionView: View {
                                 .foregroundColor(Color("primary"))
                             
                             Text("\(currentQuestion + 1)/\(words.count)")
-                                .font(.system(size: 22, design: .rounded))
+                                .font(.system(size: 22))
                                 .foregroundColor(Color("secondary"))
                                 .bold()
                         }
                         VStack {
                             Text(words[currentQuestion].title)
                                 .bold()
-                                .font(.system(size: 28, design: .rounded))
+                                .font(.system(size: 28))
                             if let alt = words[currentQuestion].altText {
                                 Text(alt)
-                                    .font(.system(size: 28, design: .rounded))
+                                    .font(.system(size: 28))
                             }
                         }
                         .frame(maxHeight: .infinity, alignment: .center)
@@ -75,7 +75,7 @@ struct QuestionView: View {
                             .fontWeight(.bold)
                             .multilineTextAlignment(.center)
                             .foregroundColor(foregroundColours[button])
-                            .font(.system(size: 20, design: .rounded))
+                            .font(.system(size: 20))
                             .padding(5)
                             .frame(maxWidth: .infinity)
                     }
@@ -106,7 +106,7 @@ struct QuestionView: View {
                             Text("Continue")
                                 .foregroundColor(Color("secondary"))
                                 .bold()
-                                .font(.system(size: 18, design: .rounded))
+                                .font(.system(size: 18))
                                 .padding()
                                 .frame(maxWidth: .infinity)
                                 .background(Color("primary"))
@@ -119,7 +119,7 @@ struct QuestionView: View {
                             Text("Continue")
                                 .foregroundColor(Color("fg"))
                                 .bold()
-                                .font(.system(size: 18, design: .rounded))
+                                .font(.system(size: 18))
                                 .padding()
                                 .frame(maxWidth: .infinity)
                                 .background(Color("secondary"))

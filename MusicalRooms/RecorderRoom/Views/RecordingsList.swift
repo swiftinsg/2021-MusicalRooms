@@ -10,10 +10,14 @@ import AVFoundation
 
 struct RecordingsList: View {
 
-    
     @State var isEditing = false
     @ObservedObject var audioRecorder: AudioRecorder
-    @State var expandedRow = [false]
+    @State var expandedRow = Array(repeating: false, count: 1000) //UI updates before backend changes can take effect.
+    
+    init(audioRecorder: AudioRecorder) {
+        self.audioRecorder = audioRecorder
+        expandedRow = Array(repeating: false, count: audioRecorder.recordings.count+2)
+    }
     
     var body: some View {
         VStack{
@@ -27,28 +31,37 @@ struct RecordingsList: View {
                     }
                 } label: {
                     Text(isEditing ? "Done" : "Edit")
-                            .font(.system(size: 18, weight: .semibold, design: .default))
+                            .font(.system(size: 14, weight: .semibold))
                             .foregroundColor(Color("fg"))
                             .multilineTextAlignment(.trailing)
+                            .padding(.horizontal)
                 }
 
             }
-            .padding(.horizontal, 30)
-
             if(audioRecorder.recordings.count > 0){
                 List {
-                    ForEach(0..<audioRecorder.recordings.count) { recordingIndex in
-                        var recording = audioRecorder.recordings[recordingIndex]
-                        RecordingRow(audioURL: recording.fileURL, isExpanded: $expandedRow[recordingIndex])
+                    ForEach(0..<audioRecorder.recordings.count, id:\.self) { recordingIndex in
+                        let recording = audioRecorder.recordings[recordingIndex]
+                        RecordingRow(audioURL: recording.fileURL, audioPlayer: AudioPlayer(audioURL: recording.fileURL), isExpanded: $expandedRow[recordingIndex])
+                            .onTapGesture {
+                                if (isEditing) { return }
+                                withAnimation {
+                                    expandedRow = Array(repeating: false, count: 1000)
+                                    expandedRow[recordingIndex] = true
+
+                                }
+                            }
                     }
-                    .onDelete(perform: delete)
+                    .onDelete {indexSet in
+                        audioRecorder.deleteRecording(at: indexSet)
+                    }
                 }
                 .environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive))
                 .listStyle(.plain)
             }else{
                 List{
                     Text("No recordings")
-                            .font(.system(size: 18, weight: .bold, design: .default))
+                            .font(.system(size: 18, weight: .bold))
                             .foregroundColor(Color("fg"))
                 }
                 .listStyle(.plain)
@@ -57,17 +70,8 @@ struct RecordingsList: View {
 
         }
         .onAppear{ //init
-            expandedRow = Array(repeating: false, count: audioRecorder.recordings.count)
+            expandedRow = Array(repeating: false, count: 1000)
         }
-    }
-
-
-    func delete(at offsets: IndexSet) {
-        var urlsToDelete = [URL]()
-        for index in offsets {
-            urlsToDelete.append(audioRecorder.recordings[index].fileURL)
-        }
-        audioRecorder.deleteRecording(urlsToDelete: urlsToDelete)
     }
 }
 

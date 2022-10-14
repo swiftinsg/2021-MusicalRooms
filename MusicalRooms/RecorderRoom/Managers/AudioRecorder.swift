@@ -19,12 +19,34 @@ class AudioRecorder: NSObject,ObservableObject {
     
     let objectWillChange = PassthroughSubject<AudioRecorder, Never>()
     var audioRecorder: AVAudioRecorder!
-    var recordings = [Recording]()
+    @Published var recordings = [Recording]()
 
     var recording = false {
         didSet {
             objectWillChange.send(self)
         }
+    }
+    
+    func getNewRecordingName() -> String{
+        let prefix = "Recording "
+        let newRecordingNames = recordings.map {
+            $0.fileURL.lastPathComponent
+        }.filter {
+            $0.starts(with: prefix)
+        }
+
+        var iIndex = 1
+        var availNameFound = false
+        while (!availNameFound) {
+            print(newRecordingNames.contains("\(prefix)\(iIndex).m4a"))
+            if !newRecordingNames.contains("\(prefix)\(iIndex).m4a") {
+                availNameFound = true
+            } else {
+                iIndex += 1
+            }
+        }
+        
+        return "\(prefix)\(iIndex)"
     }
     
     func startRecording() {
@@ -39,7 +61,7 @@ class AudioRecorder: NSObject,ObservableObject {
         }
         
         let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let audioFilename = documentPath.appendingPathComponent("\(Date().toString(dateFormat: "HH:mm:ss_'on'_dd-MM-YY")).m4a")
+        let audioFilename = documentPath.appendingPathComponent("\(getNewRecordingName()).m4a")
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -68,30 +90,28 @@ class AudioRecorder: NSObject,ObservableObject {
     func fetchRecordings() {
         recordings.removeAll()
         
+        var newRecordings: [Recording] = []
         let fileManager = FileManager.default
         let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let directoryContents = try! fileManager.contentsOfDirectory(at: documentDirectory, includingPropertiesForKeys: nil)
         for audio in directoryContents {
             let recording = Recording(fileURL: audio, createdAt: getCreationDate(for: audio))
-            recordings.append(recording)
+            newRecordings.append(recording)
         }
+        newRecordings.sort(by: { $0.createdAt.compare($1.createdAt) == .orderedAscending})
         
-        recordings.sort(by: { $0.createdAt.compare($1.createdAt) == .orderedAscending})
-        
+        recordings = newRecordings
         objectWillChange.send(self)
     }
     
-    func deleteRecording(urlsToDelete: [URL]) {
-        
-        for url in urlsToDelete {
-            print(url)
+    func deleteRecording(at indexes: IndexSet) {
+        for i in indexes {
             do {
-               try FileManager.default.removeItem(at: url)
+                try FileManager.default.removeItem(at: recordings[i].fileURL)
             } catch {
-                print("File could not be deleted!")
+                print("File could not be deleted.")
             }
         }
-        
-        fetchRecordings()
+        recordings.remove(atOffsets: indexes)
     }
 }

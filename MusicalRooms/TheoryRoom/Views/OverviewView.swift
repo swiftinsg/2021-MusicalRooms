@@ -16,13 +16,12 @@ struct OverviewView: View {
     
     var body: some View {
         VStack {
-            Spacer().frame(height:30)
 
             Text("Musical terms")
-                .font(Font.system(size: 24, weight: .semibold))
+                .font(.system(size: 24, weight: .semibold))
                 .padding(.top, 20)
             Text("Click to open as flashcards")
-                .font(Font.system(size: 12, weight: .medium))
+                .font(.system(size: 12, weight: .medium))
 
             List {
                 ForEach(0 ..< (words.count), id:\.self) { word in
@@ -31,21 +30,21 @@ struct OverviewView: View {
                     } label: {
                         VStack {
                             Text(words[word].title)
-                                    .foregroundColor(Color("darkerBrown"))
-                                    .font(.system(size: 25, design: .rounded))
+                                    .foregroundColor(Color("fg"))
+                                    .font(.system(size: 25))
                                     .fontWeight(.semibold)
 
                             if let altText = words[word].altText {
                                 Text(altText)
-                                        .foregroundColor(Color("darkerBrown"))
-                                        .font(.system(size: 20, design: .rounded))
+                                        .foregroundColor(Color("fg"))
+                                        .font(.system(size: 20))
                                         .fontWeight(.medium)
                                         .multilineTextAlignment(.leading)
                                 }
                             }
                             .frame(width: 250, height: 45, alignment: .leading)
                         }
-                        .listRowBackground(Color("lightBrown"))
+                        .listRowBackground(Color("secondary"))
                     }
             }
             .frame(maxHeight: .infinity)
@@ -56,24 +55,25 @@ struct OverviewView: View {
             .onAppear{
                 UITableView.appearance().backgroundColor = .clear
             }
-            Spacer().frame(height:30)
             
             NavigationLink {
                 QuestionView(grades: $grades, grade: grade, words: words)
             } label: {
                 Text("Start Quiz")
-                    .foregroundColor(Color("evenLighterBrown"))
+                    .foregroundColor(Color("secondary"))
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
-                    .font(.system(size: 30, design: .rounded))
+                    .font(.system(size: 24))
+                    .padding()
             }
-            .padding(.horizontal, 10)
-            .frame(width: 300, height: 60, alignment: .center)
-            .background(Color("darkBrown"))
+            .padding(.horizontal)
+            .background(Color("primary"))
             .cornerRadius(10)
             .navigationTitle("Grade \(grade)")
 
-        }.offset(y:-40)
+        }
+        .offset(y:-15)
+            .padding(20)
     }
 }
 

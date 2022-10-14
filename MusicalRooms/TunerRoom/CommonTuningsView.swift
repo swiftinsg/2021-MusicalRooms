@@ -15,16 +15,22 @@ struct CommonTuningsView: View {
                           notes: "D A D G B E"),
                    Tuning(name:"Drop C#",
                           notes: "C♯ A D G B E"),
+                   
                    Tuning(name:"Drop C",
                           notes: "C G C F A D"),
+                   
                    Tuning(name:"Drop B",
                           notes: "B G♭ B E A♭ D♭"),
+                   
                    Tuning(name:"Drop A",
                           notes: "A E A D G♭ B"),
+                   
                    Tuning(name:"DADGAD",
                           notes: "D A D G A D"),
+                   
                    Tuning(name:"Half Step Down",
                           notes: "E♭ A♭ D♭ G♭ B♭ E♭"),
+                   
                    Tuning(name:"Full Step Down",
                           notes: "D G C F A D"),
                    Tuning(name:"Half Step Up",
@@ -47,18 +53,18 @@ struct CommonTuningsView: View {
                 VStack (alignment: .leading){
                     List{
                         Section{
-                            ForEach(tunings){ tuning in
+                            ForEach(tunings){tuning in
                                 HStack{
                                     Text(tuning.name)
-                                            .foregroundColor(Color("darkerBrown"))
-                                            .font(.system(size: 18, design: .rounded))
+                                            .foregroundColor(Color("fg"))
+                                            .font(.system(size: 18))
                                             .fontWeight(.bold)
                                             .padding(.leading, 5)
                                     Spacer()
 
                                     Text(tuning.notes)
-                                            .foregroundColor(Color("darkBrown"))
-                                            .font(.system(size: 20, design: .rounded))
+                                            .foregroundColor(Color("fg"))
+                                            .font(.system(size: 20))
                                             .fontWeight(.medium)
                                             .multilineTextAlignment(.leading)
                                             .padding(.trailing, 5)
@@ -66,9 +72,9 @@ struct CommonTuningsView: View {
                             }
                         } header: {
                             Text("Guitar 🎸")
-                                    .foregroundColor(Color("darkerBrown"))
-                                    .font(Font.system(size: 18, weight: .semibold, design: .rounded))
-                        }.listRowBackground(Color("lightBrown"))
+                                    .foregroundColor(Color("fg"))
+                                    .font(.system(size: 18, weight: .semibold))
+                        }.listRowBackground(Color("secondary"))
                     }
                     .listStyle(.automatic)
                     .padding(.horizontal, 5)

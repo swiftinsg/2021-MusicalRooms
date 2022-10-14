@@ -29,9 +29,9 @@ struct ActualResultsView: View {
             VStack {
                 Text(String(format: "%.2f", percentCorrect) + "%")
                     .multilineTextAlignment(.leading)
-                    .font(Font.system(size: 32, weight: .semibold, design: .rounded))
+                    .font(.system(size: 32, weight: .semibold))
                     .lineLimit(3)
-                    .foregroundColor(Color("darkerBrown"))
+                    .foregroundColor(Color("fg"))
                     .overlay(
                         ResultsView(progress: CGFloat(percentCorrect) / 100)
                             .frame(width: 200, height: 200)
@@ -46,14 +46,14 @@ struct ActualResultsView: View {
                         } label: {
                             VStack {
                                 Text(words[word].title)
-                                    .foregroundColor(Color("darkerBrown"))
-                                    .font(.system(size: 25, design: .rounded))
+                                    .foregroundColor(Color("fg"))
+                                    .font(.system(size: 25))
                                     .fontWeight(.semibold)
                                 
                                 if let altText = words[word].altText {
                                     Text(altText)
-                                        .foregroundColor(Color("darkerBrown"))
-                                        .font(.system(size: 20, design: .rounded))
+                                        .foregroundColor(Color("fg"))
+                                        .font(.system(size: 20))
                                         .fontWeight(.medium)
                                         .multilineTextAlignment(.leading)
                                 }
@@ -73,12 +73,12 @@ struct ActualResultsView: View {
                     presentationMode.wrappedValue.dismiss()
                 } label: {
                     Text("Finish")
-                        .font(Font.system(size: 20, design: .rounded))
-                        .foregroundColor(Color("evenLighterBrown"))
+                        .font(.system(size: 20))
+                        .foregroundColor(Color("secondary"))
                         .fontWeight(.heavy)
                         .padding(.vertical)
                         .frame(maxWidth: .infinity)
-                        .background(Color("darkBrown"))
+                        .background(Color("primary"))
                         .cornerRadius(10)
                 }
                 .padding()

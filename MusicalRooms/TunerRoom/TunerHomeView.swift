@@ -22,15 +22,10 @@ struct TunerHomeView: View {
     var body: some View {
         NavigationView{
             ScrollView(.vertical) {
-                VStack{
+                VStack {
                     TunerIndicatorView(variance: $variance)
-
-                    Spacer().frame(height:30)
                     
                     SelectKeyView(notes: $notes)
-                        .padding(.vertical)
-                    
-                    Spacer().frame(height:25)
                     
                     Button {
                         displaySheetSelect.toggle()
@@ -38,18 +33,17 @@ struct TunerHomeView: View {
                             Text("Common Tunings")
                                 .bold()
                                 .font(.title2)
-                                .foregroundColor(Color("lightBrown"))
+                                .foregroundColor(Color("primary"))
                                 .padding()
                                 .frame(maxWidth: .infinity)
-                                .background(Color("darkerBrown"))
+                                .background(Color("secondary"))
                                 .cornerRadius(15)
                     }
                     .padding(.horizontal)
 
                 }
                 .frame(width: UIScreen.main.bounds.width)
-            }
-            .navigationBarTitle("Tuner")
+            }.navigationBarTitle("Tuner")
         }
         .sheet(isPresented: $displaySheetSelect,
                      content: {

@@ -18,7 +18,7 @@ struct SelectKeyView: View {
         VStack(alignment: .leading) {
             HStack(spacing: 4) {
                 ForEach(7 ..< notes.count) { note in
-                    if note == 9{
+                    if(note == 9){
                         Button{}
                         label: {
                             Text("  ")
@@ -36,18 +36,18 @@ struct SelectKeyView: View {
                                     .fontWeight(.semibold)
                         }
                         .frame(maxWidth: .infinity)
-                        .font(.system(size: 18, design: .rounded))
+                        .font(.system(size: 18))
                         .multilineTextAlignment(.center)
-                        .foregroundColor(notes[note].isSelected ? Color("lightBrown") : Color("darkBrown"))
+                        .foregroundColor(notes[note].isSelected ? Color("secondary") : Color("primary"))
                         .padding(.vertical)
-                        .background(notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
+                        .background(notes[note].isSelected ? Color("primary") : Color("secondary"))
                         .cornerRadius(12)
                     }
                 }
 
             }
                     .padding(.horizontal, 20)
-            Spacer().frame(height: 13)
+            Spacer().frame(height: 7)
 
             HStack(spacing: 4) {
                 ForEach(0 ..< 7) { note in
@@ -56,22 +56,22 @@ struct SelectKeyView: View {
                     } label: {
                         Text(notes[note].name)
                                 .bold()
-                                .font(Font.system(size: 20, weight: .semibold, design: .rounded))
+                                .font(.system(size: 20, weight: .semibold))
                                 .multilineTextAlignment(.center)
-                                .foregroundColor(notes[note].isSelected ? Color("evenLighterBrown") : Color("darkBrown"))
+                                .foregroundColor(notes[note].isSelected ? Color("secondary") : Color("primary"))
                                 .frame(maxWidth: .infinity)
                                 .padding(8)
                                 .padding(.vertical, 18)
-                                .background(notes[note].isSelected ? Color("darkBrown") : Color("evenLighterBrown"))
+                                .background(notes[note].isSelected ? Color("primary") : Color("secondary"))
                                 .cornerRadius(12)
                     }
                 }
             }
-            Spacer()
 
-        }
-                .padding(.horizontal)
+        }.padding(.horizontal)
+        .padding(.vertical, 5)
     }
+    
     func playOscillator(_ note: Int) {
         if !isOn {
             for num in 0 ..< notes.count {

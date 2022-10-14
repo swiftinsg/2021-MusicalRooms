@@ -10,6 +10,7 @@ import SwiftUI
 struct TimeSigSelectView: View {
 
     @Environment(\.presentationMode) var presentationMode
+    
 
     var signatures:[String] = ["1/4", "2/4", "3/4", "4/4", "5/4", "6/4", "3/8", "5/8", "6/8", "7/8", "9/8", "12/8"]
     @Binding var selIndex: Int
@@ -32,7 +33,7 @@ struct TimeSigSelectView: View {
                                 .cornerRadius(10)
                                 .padding(4)
                             Text(sig)
-                                .font(Font.system(size: 24, weight: .bold, design: .rounded))
+                                .font(.system(size: 24, weight: .bold))
                                 .foregroundColor(.white)
                         }
                         .frame(width: 65, height: 50, alignment: .center)

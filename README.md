@@ -47,7 +47,8 @@ A microphone recording room to record and playback any form of music (not to be 
 Click the circular button at the bottom to start recording, and again to stop. 
 The recording would then be displayed at the top with a date and time
 
-The play/stop button on the right side of the name is used to playback the recording
+Click on the track you want to view and use the control panel that appears to move around the track.
+There is also a share button on the right side to export the audio file
 
 
 ## Theory Study

@@ -39,7 +39,6 @@ class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
         
         do {
             try playbackSession.setCategory(.playAndRecord, mode: .default)
-            try playbackSession.overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
         } catch {
             print("Playing over the device's speakers failed")
         }

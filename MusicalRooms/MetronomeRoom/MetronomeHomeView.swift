@@ -214,9 +214,6 @@ struct MetronomeHomeView: View {
     @State var timer: Timer
     @State var note:Int = 1
     
-    @State var metrSound = AudioPlayer(audioURL: Bundle.main.url(forResource: "metronome", withExtension: ".wav")!)
-    @StateObject var metrUpSound = AudioPlayer(audioURL: Bundle.main.url(forResource: "metronomeUp", withExtension: ".wav")!)
-    
     func start(){
         barNotes = sigNotes[sigIndex]
         note = 1
@@ -234,7 +231,7 @@ struct MetronomeHomeView: View {
         }
         swing(delay: delay)
         
-        let soundDelay = armAngle != 0 ? delay*0.72 : 0.0
+        let soundDelay = armAngle != 0 ? delay*0.55 : 0.0
         soundDelayTimer = Timer.scheduledTimer(withTimeInterval: soundDelay, repeats: false) { timer in
             sound()
         }
@@ -250,6 +247,9 @@ struct MetronomeHomeView: View {
     func sound(){
         let isOne = barNotes==1
         let isPulse = !isOne && note==1
+        
+        var metrSound = AudioPlayer(audioURL: Bundle.main.url(forResource: "metronome", withExtension: ".wav")!)
+        var metrUpSound = AudioPlayer(audioURL: Bundle.main.url(forResource: "metronomeUp", withExtension: ".wav")!)
         
         isPulse ? metrSound.startPlayback() : metrUpSound.startPlayback()
     }
